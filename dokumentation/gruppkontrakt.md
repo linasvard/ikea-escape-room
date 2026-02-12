@@ -111,3 +111,4 @@ Om ni vill ta upp någonting utöver det fördefinierade. Skriv gärna en egen r
 - [Erik Grahn](https://github.com/erik-grahn)
 - [Oscar Holmblad](https://github.com/oscarholmblad)
 - [Lina Svärd](https://github.com/linasvard)
+- [Elena Holmberg](https://github.com/elenaholmberg)
