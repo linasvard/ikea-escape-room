@@ -1,0 +1,53 @@
+/*
+ * ============================================
+ * GRUNDSTILAR — ÄNDRA INTE UTAN ATT PRATA MED GRUPPEN
+ * ============================================
+ * Reset och basstilar som gäller hela sidan.
+ * focus-visible stilarna gör att tangentbordsnavigering fungerar (tillgänglighetskrav).
+ */
+
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size-base;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $color-bg;
+  color: $color-text;
+  min-height: 100vh;
+}
+
+a {
+  color: $color-primary;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+
+  &:focus-visible {
+    outline: 3px solid $color-secondary;
+    outline-offset: 2px;
+  }
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+
+  &:focus-visible {
+    outline: 3px solid $color-primary;
+    outline-offset: 2px;
+  }
+}

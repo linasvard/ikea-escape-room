@@ -1,0 +1,16 @@
+/*
+ * ============================================
+ * MAIN SCSS — ÄNDRA INTE UTAN ATT PRATA MED GRUPPEN
+ * ============================================
+ * Importerar alla stilar. Det här är den enda SCSS-filen som kompileras.
+ * Om du skapar en ny SCSS-fil måste den importeras här.
+ */
+
+@use "base";
+@use "layout";
+
+/* Rum-specifika stilar — varje person jobbar i sin egen fil */
+@use "rooms/room1";
+@use "rooms/room2";
+@use "rooms/room3";
+@use "rooms/room4";
