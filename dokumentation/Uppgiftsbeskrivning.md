@@ -19,3 +19,19 @@
 ## Dokumentation för betygsunderlag:
 Ta en skärmdump på er sprint-board och backlog när den är färdigplanerad 
 och lägg in det i dokumentationsmappen under respektive vecka, som betygsunderlag.
+
+
+## Händelser
+(Här kommer er första "händelse" inom ramen för den agila kursen).
+
+Marknadsavdelningen har gjort målgruppsundersökningar och kommit fram till att top 3 är för lite för att engagera spelare/nya personer. De vill ha top 10 istället.
+
+De har också visat sig finnas en irritation bland spelarna att highscore-listan kan ha samma namn flera gånger efter varandra. T.ex. en väldigt aktiv spelare som heter Jörg4n har tagit alla top 5 platserna.
+
+Marknadsföringsteamet vill att för varje spelare så ska namnet bara visas en gång och bara det bästa resultatet. Toppen om ni kan fixa det här ASAP.
+
+Tack!
+Mvh Produktägaren
+
+(Pedagogisk kommentar: ofta kommer det "händelser" mitt i en sprint, och allt är alltid bråttom. Men syftet med det agila är att teamet själv också ska kunna "påverka" vad som är mest akut att åtgärda. Diskutera "när" denna ändring passar in i tidsplanen (det kanske inte är det viktigaste just nu och mest akuta). Ställ följdfrågor om någonting är oklart och kommunicera. Det går också att förhandla om en uppgift, t.ex. "vi tycker inte att det här passar in"). Har man också gjort en sprintplanering så ska den inte "ändras", då hamnar uppgiften istället på backlogen eller så måste något tas bort från sprinten för att göra plats för något annat. Dvs. se denna övning i att lära sig planera, sätta emot och säga nej där det behövs. Diskutera gärna i issuen…)
+
