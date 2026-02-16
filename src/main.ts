@@ -3,7 +3,6 @@
  * MAIN.TS — SPELETS HJÄRNA — ÄNDRA INTE UTAN ATT PRATA MED GRUPPEN
  * ============================================
  * Den här filen kopplar ihop ALLT: login, rum, timers, progress, highscore.
- * Om du ändrar här kan hela spelet gå sönder.
  *
  * Det enda ni kan behöva ändra här är om ni lägger till fler rum
  * eller vill ändra spellogiken — men prata med gruppen först!
@@ -27,13 +26,11 @@ import {
   addHighscore,
 } from "./utils/storage";
 
-/* Importera varje rum */
 import room1 from "./rooms/room1";
 import room2 from "./rooms/room2";
 import room3 from "./rooms/room3";
 import room4 from "./rooms/room4";
 
-/* Rumdata från JSON (namn och beskrivningar) */
 import roomsData from "./data/rooms.json";
 
 /* ============================================
@@ -99,11 +96,9 @@ function init(): void {
 function showStartScreen(): void {
   showScreen("start-screen");
 
-  /* Visa "Välkommen, namn!" */
   const welcome = getElement("#welcome-message");
   welcome.textContent = `Välkommen, ${progress.playerName}!`;
 
-  /* Uppdatera progress-baren */
   updateProgressBar(progress.completedRooms.length, roomsData.length);
   totalTimer.start();
 
@@ -148,7 +143,6 @@ function renderRoomsList(): void {
     })
     .join("");
 
-  /* Lägg click-listeners på rumkorten */
   container
     .querySelectorAll<HTMLButtonElement>(".room-card")
     .forEach((card) => {
@@ -163,7 +157,7 @@ function renderRoomsList(): void {
 
 /* ============================================
  * enterRoom() — Gå in i ett rum
- * Visar rummets namn/beskrivning, injicerar HTML och startar timern
+ * Visar rummets namn/beskrivning och visar rätt rum-div
  * ============================================ */
 function enterRoom(roomId: number): void {
   const roomData = (roomsData as RoomData[]).find((r) => r.id === roomId);
@@ -172,19 +166,21 @@ function enterRoom(roomId: number): void {
 
   showScreen("room-screen");
 
-  /* Visa rummets namn och beskrivning (från rooms.json) */
   getElement("#room-name").textContent = roomData.name;
   getElement("#room-description").textContent = roomData.description;
 
-  /* Injicera rummets HTML i #room-content */
-  const content = getElement("#room-content");
-  content.innerHTML = roomModule.init();
+  document.querySelectorAll<HTMLElement>(".room-content").forEach((el) => {
+    el.hidden = true;
+  });
 
-  /* Starta rum-timern */
+  const roomContent = document.getElementById(`room-${roomId}-content`);
+  if (roomContent) {
+    roomContent.hidden = false;
+  }
+
   roomTimer.reset();
   roomTimer.start();
 
-  /* Sätt upp rummets spel — onComplete anropas när spelaren klarar rummet */
   roomModule.setup((result: RoomResult) => {
     roomTimer.stop();
     result.timeSpent = roomTimer.getTime();
@@ -200,6 +196,11 @@ function completeRoom(result: RoomResult): void {
   const roomModule = roomModules[result.roomId];
   if (roomModule) roomModule.cleanup();
 
+  const roomContent = document.getElementById(`room-${result.roomId}-content`);
+  if (roomContent) {
+    roomContent.hidden = true;
+  }
+
   if (result.success) {
     if (!progress.completedRooms.includes(result.roomId)) {
       progress.completedRooms.push(result.roomId);
@@ -208,16 +209,13 @@ function completeRoom(result: RoomResult): void {
     progress.currentRoom = result.roomId + 1;
     saveProgress(progress);
 
-    /* Alla rum klara? → Game over (vinst) */
     if (progress.completedRooms.length >= roomsData.length) {
       totalTimer.stop();
       showGameOver(true);
     } else {
-      /* Annars → tillbaka till hubben */
       showStartScreen();
     }
   } else {
-    /* Misslyckades → Game over (förlust) */
     totalTimer.stop();
     showGameOver(false);
   }
@@ -281,6 +279,9 @@ function setupNavigation(): void {
 
   btnBackToHub?.addEventListener("click", () => {
     roomTimer.stop();
+    document.querySelectorAll<HTMLElement>(".room-content").forEach((el) => {
+      el.hidden = true;
+    });
     const currentRoomId = getNextRoom();
     const roomModule = roomModules[currentRoomId];
     if (roomModule) roomModule.cleanup();

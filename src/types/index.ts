@@ -19,7 +19,7 @@ export interface PlayerProgress {
   playerName: string;
   currentRoom: number;
   completedRooms: number[];
-  roomTimes: Record<number, number>; // rum-id -> tid i sekunder
+  roomTimes: Record<number, number>;
   totalTime: number;
 }
 
@@ -37,15 +37,7 @@ export interface RoomResult {
   timeSpent: number;
 }
 
-/*
- * VIKTIGT FÖR ALLA SOM BYGGER ETT RUM:
- * Ditt rum MÅSTE följa detta interface.
- * - init() → returnera HTML som en sträng
- * - setup() → sätt upp event listeners, anropa onComplete när spelaren klarat rummet
- * - cleanup() → ta bort event listeners när man lämnar rummet
- */
 export interface RoomModule {
-  init: () => string;
   setup: (onComplete: (result: RoomResult) => void) => void;
   cleanup: () => void;
 }

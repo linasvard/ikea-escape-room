@@ -1,22 +1,22 @@
 [
   {
     "id": 1,
-    "name": "Köksavdelningen",
-    "description": "Du har hamnat bland alla köksöar och bänkskivor. Lös pusslet för att hitta vägen vidare!"
+    "name": "Barnavdelningen",
+    "description": ""
   },
   {
     "id": 2,
-    "name": "Vardagsrummet",
-    "description": "Bland alla KALLAX-hyllor och KLIPPAN-soffor måste du hitta den rätta koden för att ta dig vidare."
+    "name": "Mattorna",
+    "description": ""
   },
   {
     "id": 3,
-    "name": "Sovrummet",
-    "description": "MALM-byråerna och HEMNES-sängarna gömmer hemligheter. Kan du lösa mysteriet?"
+    "name": "Ta själv-lagret",
+    "description": ""
   },
   {
     "id": 4,
     "name": "Kassan",
-    "description": "Du är nästan ute! Men kassakön verkar oändlig. Klara det sista hindret för att ta dig ut!"
+    "description": ""
   }
 ]
