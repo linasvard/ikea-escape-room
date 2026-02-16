@@ -2,6 +2,10 @@
 
 # Uppgiftsbeskrivning
 
+## Dokumentation för betygsunderlag:
+Ta en skärmdump på er sprint-board och backlog när den är färdigplanerad 
+och lägg in det i dokumentationsmappen under respektive vecka, som betygsunderlag.
+
 - Rum 1: Elena - Kök
   
 - Rum 2: Erik - Mattor
@@ -12,6 +16,7 @@
 
   
 
+## Uppgiften
 
 - Så många rum/problem som ni är gruppmedlemmar.
 - Sammanhängande "storytelling"/spelflöde och design. Samarbete & kommunikation.
@@ -28,9 +33,7 @@
 - Spelet ska vara tillgängligt och gå att navigera med tangentbordet.
 - Det ska finnas en game over-sidan, som visar lyckat resultat eller misslyckat resultat.
 
-## Dokumentation för betygsunderlag:
-Ta en skärmdump på er sprint-board och backlog när den är färdigplanerad 
-och lägg in det i dokumentationsmappen under respektive vecka, som betygsunderlag.
+
 
 
 ## Händelser
