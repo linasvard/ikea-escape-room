@@ -6,4 +6,4 @@ Erik har rum 2 - Mattorna!
 
 Lina har rum 3 - Ta själv-lagret!
 
-Oscar har rum 4 - Kassan!
+Oscar har rum 4 - Kassan
