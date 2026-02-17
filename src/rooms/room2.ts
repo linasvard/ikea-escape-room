@@ -4,32 +4,16 @@
  * ============================================
  */
 
-import type { RoomModule, RoomResult } from "../types";
+import type {  } from "../types/models"; // Om du vill använda dig av models på samma sätt vi fick lära oss på budgetappen, så kan du använda denna för att importera från ../types/models
 
-let onCompleteCb: ((result: RoomResult) => void) | null = null;
+export default function initRoom2() {
+  const colorChangeBtn: HTMLButtonElement |null = document.querySelector('#room2Btn');
+  colorChangeBtn?.addEventListener('click', toggleColorBtn);
 
-function handleComplete(): void {
-  if (onCompleteCb) {
-    onCompleteCb({ roomId: 2, success: true, timeSpent: 0 });
+  function toggleColorBtn() {
+    const room2Paragraph: HTMLElement |null = document.querySelector('#room2');
+    room2Paragraph?.classList.toggle('red');
   }
+
+  // övrig kod för rum 2
 }
-
-const room2: RoomModule = {
-  setup(onComplete) {
-    onCompleteCb = onComplete;
-    const btn = document.getElementById("room2Complete");
-    if (btn) {
-      btn.addEventListener("click", handleComplete);
-    }
-  },
-
-  cleanup() {
-    onCompleteCb = null;
-    const btn = document.getElementById("room2Complete");
-    if (btn) {
-      btn.removeEventListener("click", handleComplete);
-    }
-  },
-};
-
-export default room2;

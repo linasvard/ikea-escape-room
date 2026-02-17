@@ -1,161 +1,50 @@
 <!doctype html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IKEA Escape Room</title>
-  </head>
-  <body>
-    <div id="app">
-      <!--
-        VIKTIGT FÖR GRUPPEN:
-        Varje <section> nedan är en "skärm" i spelet.
-        Klassen "screen" döljer sektionen, "active" visar den.
-        Logiken för att byta skärm finns i src/utils/dom.ts
 
-        NAMNSTANDARD:
-        id = camelCase (t.ex. loginScreen, playerName)
-        class = kebab-case (t.ex. room-card, room-content)
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IKEA Escape Room</title>
+</head>
 
-        ÄNDRA INTE id-attributen — de används av TypeScript-koden.
-        Ni FÅR ändra text, lägga till nya element, och styla om.
-      -->
+<body>
+  <header>
+    <h1>IKEA</h1>
+    <h2>Välkommen till spelet</h2>
+    <button type="button">starta spelet</button>
+  </header>
+  <main>
+    <!-- ================================== -->
+    <!-- ============= RUM 1 ============== -->
+    <!-- ================================== -->
+    <section class="room-1" id="room1">
+      <h3>Rum 1</h3>
+    </section>
+    <!-- ================================== -->
+    <!-- ============= RUM 2 ============== -->
+    <!-- ================================== -->
+    <section class="room-2" id="room2">
+      <h3>Rum 2</h3>
+      <p id="room2Paragraph"></p>
+    </section>
+    <button type="button" id="room2Btn">Klicka här för att ändra färg på rum 2</button>
+    <!-- ================================== -->
+    <!-- ============= RUM 3 ============== -->
+    <!-- ================================== -->
+    <section class="room-3" id="room3">
+      <h3>Rum 3</h3>
+    </section>
+    <!-- ================================== -->
+    <!-- ============= RUM 4 ============== -->
+    <!-- ================================== -->
+    <section class="room-4" id="room4">
+      <h3>Rum 4</h3>
+    </section>
+    <button type="button" disabled>Gå ut från IKEA</button>
+  </main>
+  <footer>
+  </footer>
+  <script type="module" src="/src/main.ts"></script>
+</body>
 
-      <!-- ============================================
-           LOGIN — Första skärmen spelaren ser
-           ============================================ -->
-      <section id="loginScreen" class="screen active">
-        <h1>IKEA Escape Room</h1>
-        <p>Ta dig ut ur IKEA innan det stänger!</p>
-        <form id="loginForm">
-          <label for="playerName">Ditt namn:</label>
-          <input
-            type="text"
-            id="playerName"
-            placeholder="Ange ditt namn..."
-            required
-            autofocus
-          />
-          <button type="submit">Starta</button>
-        </form>
-      </section>
-
-      <!-- ============================================
-           HUBB — Visar rum, progress och timer efter inloggning
-           ============================================ -->
-      <section id="startScreen" class="screen">
-        <header>
-          <p id="welcomeMessage"></p>
-          <nav>
-            <button id="btnAbout" type="button">Om spelet</button>
-            <button id="btnHighscore" type="button">Highscore</button>
-          </nav>
-        </header>
-        <div id="progressContainer">
-          <div id="progressBar"></div>
-          <span id="progressText"></span>
-        </div>
-        <p id="totalTimer">Total tid: 00:00</p>
-        <!-- Rumlistan genereras automatiskt av main.ts — rör inte denna div -->
-        <div id="roomsList"></div>
-      </section>
-
-      <!-- ============================================
-           RUM-SKÄRMEN — Gemensam header + rummets innehåll
-           ============================================ -->
-      <section id="roomScreen" class="screen">
-        <header class="room-header">
-          <h2 id="roomName"></h2>
-          <p id="roomDescription"></p>
-          <p id="roomTimer">Tid: 00:00</p>
-        </header>
-
-        <!-- ============================================
-             RUM 1: BARNAVDELNINGEN — ELENA SKRIVER SIN HTML HÄR
-             ============================================ -->
-        <div id="room1Content" class="room-content" hidden>
-          <div class="room-game room-1">
-            <h3>Barnavdelningen - Pussel</h3>
-            <p>Här kommer ditt pussel/spel att vara.</p>
-            <button id="room1Complete" type="button">
-              Klara rummet (placeholder)
-            </button>
-          </div>
-        </div>
-
-        <!-- ============================================
-             RUM 2: MATTORNA — ERIK SKRIVER SIN HTML HÄR
-             ============================================ -->
-        <div id="room2Content" class="room-content" hidden>
-          <div class="room-game room-2">
-            <h3>Mattorna - Pussel</h3>
-            <p>Här kommer ditt pussel/spel att vara.</p>
-            <button id="room2Complete" type="button">
-              Klara rummet (placeholder)
-            </button>
-          </div>
-        </div>
-
-        <!-- ============================================
-             RUM 3: TA SJÄLV-LAGRET — LINA SKRIVER SIN HTML HÄR
-             ============================================ -->
-        <div id="room3Content" class="room-content" hidden>
-          <div class="room-game room-3">
-            <h3>Ta själv-lagret - Pussel</h3>
-            <p>Här kommer ditt pussel/spel att vara.</p>
-            <button id="room3Complete" type="button">
-              Klara rummet (placeholder)
-            </button>
-          </div>
-        </div>
-
-        <!-- ============================================
-             RUM 4: KASSAN — OSCAR SKRIVER SIN HTML HÄR
-             ============================================ -->
-        <div id="room4Content" class="room-content" hidden>
-          <div class="room-game room-4">
-            <h3>Kassan - Pussel</h3>
-            <p>Här kommer ditt pussel/spel att vara.</p>
-            <button id="room4Complete" type="button">
-              Klara rummet (placeholder)
-            </button>
-          </div>
-        </div>
-
-        <button id="btnBackToHub" type="button">Tillbaka</button>
-      </section>
-
-      <!-- ============================================
-           OM-SIDAN — Fyll i med info om spelet och teamet
-           ============================================ -->
-      <section id="aboutScreen" class="screen">
-        <h2>Om spelet</h2>
-        <div id="aboutContent">
-          <!-- ÄNDRA HÄR -->
-        </div>
-        <button id="btnBackFromAbout" type="button">Tillbaka</button>
-      </section>
-
-      <!-- ============================================
-           HIGHSCORE — Genereras automatiskt
-           ============================================ -->
-      <section id="highscoreScreen" class="screen">
-        <h2>Highscore - Top 3</h2>
-        <ol id="highscoreList"></ol>
-        <button id="btnBackFromHighscore" type="button">Tillbaka</button>
-      </section>
-
-      <!-- ============================================
-           GAME OVER — Visar resultat
-           ============================================ -->
-      <section id="gameoverScreen" class="screen">
-        <h2 id="gameoverTitle"></h2>
-        <p id="gameoverMessage"></p>
-        <p id="gameoverTime"></p>
-        <button id="btnPlayAgain" type="button">Spela igen</button>
-      </section>
-    </div>
-
-    <script type="module" src="/src/main.ts"></script>
-  </body>
 </html>

@@ -10,19 +10,3 @@ import { formatTime } from "../utils/timer";
 import { getElement } from "../utils/dom";
 
 /** Renderar highscore-listan i #highscoreList */
-export function renderHighscores(): void {
-  const list = getElement<HTMLOListElement>("#highscoreList");
-  const scores = getHighscores();
-
-  if (scores.length === 0) {
-    list.innerHTML = "<li>Inga highscores ännu!</li>";
-    return;
-  }
-
-  list.innerHTML = scores
-    .map(
-      (entry) =>
-        `<li><strong>${entry.name}</strong> - ${formatTime(entry.totalTime)} (${entry.date})</li>`,
-    )
-    .join("");
-}
