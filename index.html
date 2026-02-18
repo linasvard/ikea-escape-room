@@ -1,50 +1,52 @@
 <!doctype html>
 <html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IKEA Escape Room</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IKEA Escape Room</title>
-</head>
-
-<body>
-  <header>
-    <h1>IKEA</h1>
-    <h2>Välkommen till spelet</h2>
-    <button type="button">starta spelet</button>
-  </header>
-  <main>
-    <!-- ================================== -->
-    <!-- ============= RUM 1 ============== -->
-    <!-- ================================== -->
-    <section class="room-1" id="room1">
-      <h3>Rum 1</h3>
-    </section>
-    <!-- ================================== -->
-    <!-- ============= RUM 2 ============== -->
-    <!-- ================================== -->
-    <section class="room-2" id="room2">
-      <h3>Rum 2</h3>
-      <p id="room2Paragraph"></p>
-    </section>
-    <button type="button" id="room2Btn">Klicka här för att ändra färg på rum 2</button>
-    <!-- ================================== -->
-    <!-- ============= RUM 3 ============== -->
-    <!-- ================================== -->
-    <section class="room-3" id="room3">
-      <h3>Rum 3</h3>
-    </section>
-    <!-- ================================== -->
-    <!-- ============= RUM 4 ============== -->
-    <!-- ================================== -->
-    <section class="room-4" id="room4">
-      <h3>Rum 4</h3>
-    </section>
-    <button type="button" disabled>Gå ut från IKEA</button>
-  </main>
-  <footer>
-  </footer>
-  <script type="module" src="/src/main.ts"></script>
-</body>
-
+  <body>
+    <header>
+      <h1>IKEA</h1>
+      <h2>Välkommen till spelet</h2>
+      <button type="button">starta spelet</button>
+    </header>
+    <main>
+      <!-- ================================== -->
+      <!-- ============= RUM 1 ============== -->
+      <!-- ================================== -->
+      <section class="room-1" id="room1">
+        <h3 class="heading">Rum 1, Överlev barnavdelningen!</h3>
+        <div id="map">
+          <img src="/src/my_src/map.png" alt="" />
+        </div>
+      </section>
+      <!-- ================================== -->
+      <!-- ============= RUM 2 ============== -->
+      <!-- ================================== -->
+      <section class="room-2" id="room2">
+        <h3>Rum 2</h3>
+        <p id="room2Paragraph"></p>
+      </section>
+      <button type="button" id="room2Btn">
+        Klicka här för att ändra färg på rum 2
+      </button>
+      <!-- ================================== -->
+      <!-- ============= RUM 3 ============== -->
+      <!-- ================================== -->
+      <section class="room-3" id="room3">
+        <h3>Rum 3</h3>
+      </section>
+      <!-- ================================== -->
+      <!-- ============= RUM 4 ============== -->
+      <!-- ================================== -->
+      <section class="room-4" id="room4">
+        <h3>Rum 4</h3>
+      </section>
+      <button type="button" disabled>Gå ut från IKEA</button>
+    </main>
+    <footer></footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

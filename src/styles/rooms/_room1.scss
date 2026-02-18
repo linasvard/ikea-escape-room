@@ -5,6 +5,56 @@
  * I FILEN _VARIABLES.SCSS FINNS FÄRGER/FÄRGKODER SOM ÄR VANLIGA ATT SE HOS IKEA
 */
 .room-1 {
+  width: 800px;
+  height: auto;
   background-color: #ffda1a;
   color: #333333;
+}
+
+.heading {
+  font-size: 24px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#map img {
+  background-image: url(src/my_src/map.png);
+  position: relative;
+  width: 700px;
+  background-size: cover;
+  padding: 50px;
+}
+
+.zone-start {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  width: 70%;
+}
+
+.zone-teddybear img {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  width: 20%;
+}
+
+.zone-pillow img {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  width: 20%;
+}
+
+.zone-bedsheets img {
+  position: absolute;
+  top: 60%;
+  left: 55%;
+  width: 20%;
+}
+
+.zone-path {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
