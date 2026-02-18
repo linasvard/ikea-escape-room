@@ -19,11 +19,11 @@
 
 .introduction-div {
   border: 2px solid #333333;
-  margin: 20px;
+  margin: 50px;
   padding: 20px;
 }
 
-.startRoom1Btn {
+#startRoom1Btn {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
@@ -91,4 +91,13 @@
   top: 80%;
   left: 70%;
   width: 130px;
+}
+
+.zone-active {
+  cursor: pointer;
+}
+
+.zone-inactive {
+  cursor: not-allowed;
+  opacity: 0.4;
 }
