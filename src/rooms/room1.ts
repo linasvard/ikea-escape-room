@@ -9,10 +9,9 @@ import type {} from "../types/models"; // Om du vill använda dig av models på 
 export default function initRoom1() {
   const introductionDiv = document.getElementById("introductionDiv");
   const startRoom1Btn = document.getElementById("startRoom1Btn");
-  const map = document.getElementById("map");
 
   startRoom1Btn?.addEventListener("click", () => {
-    introductionDiv?.remove();
-    map?.classList.remove("hidden");
+    introductionDiv?.classList.add("hidden");
+    // Här kan du lägga till mer kod som ska köras när man klickar på startknappen, t.ex. visa kartan eller liknande
   });
 }
