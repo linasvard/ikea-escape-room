@@ -17,6 +17,23 @@
   padding-top: 20px;
 }
 
+.introduction-div {
+  border: 2px solid #333333;
+  margin: 20px;
+  padding: 20px;
+}
+
+.startRoom1Btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
 #map {
   position: relative;
 }
