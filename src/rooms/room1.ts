@@ -15,10 +15,12 @@ export default function initRoom1() {
   });
 
   // Pillow-zone
+
   const zonePillow = document.getElementById("zonePillow");
   const pillowDialog = document.getElementById(
     "pillowArgument",
   ) as HTMLDialogElement;
+  const resetBtn = document.getElementById("resetBtn");
 
   zonePillow?.addEventListener("click", () => {
     pillowDialog.showModal();
@@ -47,9 +49,18 @@ export default function initRoom1() {
         pillowDialog.close();
       } else {
         // Wrong answer — tantrum
+
         pillowDialog.close();
-        handleTantrum("wantPillowTantrum", "wantPillowTantrumBtn");
+        handleTantrum("wantPillowTantrum", "resetBtn");
       }
+
+      resetBtn?.addEventListener(
+        "click",
+        () => {
+          initRoom1();
+        },
+        { once: true },
+      );
     });
 
   // Teddybear-zone
@@ -148,8 +159,25 @@ function handleTantrum(dialogId: string, btnId: string) {
     "click",
     () => {
       tantrum.close();
+      resetRoom1();
       document.getElementById("introductionDiv")?.classList.remove("hidden");
     },
     { once: true },
   );
+}
+
+//Function to reset room and all zones to initial state
+function resetRoom1() {
+  document
+    .querySelector("#zonePillow")
+    ?.classList.replace("zone-active", "zone-inactive");
+  document
+    .querySelector("#zoneCarpet")
+    ?.classList.replace("zone-active", "zone-inactive");
+  document
+    .querySelector("#zoneBedsheets")
+    ?.classList.replace("zone-active", "zone-inactive");
+  document
+    .querySelector(".zone-lamp")
+    ?.classList.replace("zone-active", "zone-inactive");
 }
