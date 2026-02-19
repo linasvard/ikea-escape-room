@@ -37,9 +37,12 @@ export default function initRoom1() {
       }
 
       if (selected.value === "C") {
-        // Correct answer — unlock pillow
+        // Correct answer — unlock carpet and bedsheet
         document
-          .querySelector("#zonePillow")
+          .querySelector("#zoneCarpet")
+          ?.classList.replace("zone-inactive", "zone-active");
+        document
+          .querySelector("#zoneBedsheets")
           ?.classList.replace("zone-inactive", "zone-active");
         pillowDialog.close();
       } else {
