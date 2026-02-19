@@ -14,9 +14,7 @@ Vilka dagar och tider jobbar vi gemensamt?
 - Daily standup: klockan 10 eller efter lektionstid.
 - Backlogrefining: 1h onsdag efter daily standup.
 - Sprint: fredagar efter daily standup för att möjliggöra arbete över helgen om man har behov eller vill det! :)
-- Retrospektiv är vi osäkra i dagsläget på hur det går till och när det är bästa att göra. Vi uppdaterar denna senast onsdag 18/2!
-
-  Alla dessa dagar är öppna för justering alltefter vi blir bättre på förstå och uppskatta hur och när dessa moment fungerar som bäst!
+- Alla dessa dagar är öppna för justering alltefter vi blir bättre på förstå och uppskatta hur och när dessa moment fungerar som bäst!
 
 ## Möteskanaler & format
 
@@ -49,7 +47,7 @@ Vi har diskuterat våra personlighetstyper och fått en bra förståelse för va
 ## Övriga förväntningar
 
 - Våe ambition i detta arbeta är att vi ska kunna samarbeta på ett bra sätt och lära oss hur man arbetar frontend med andra. Dessutom vill vi på ett smart och effektivt sätt arbeta efter kravlistan som finns för projektet/uppgiften.
-- Vi förväntar oss av varandra att vi är aktiva i arbetet och i daily standups. Våra daily standups tror vi kommer bli en viktig kärna i vårt samarbete.
+- Vi förväntar oss av varandra att vi är aktiva i arbetet och i dayli standups. Våra daily standups tror vi kommer bli en viktig kärna i vårt samarbete.
 - Har vi inte hört något från en gruppkompis inom 48h så kontaktar vi personen via sms innan vi hör av oss till kursledare. :)
 - Saker vi skulle vilja bli bättre på i denna uppgift är: GIT/GITHUB, projektledning samt att bli effektiva och konstruktiva i vårat samarbetet, både i arbetet men även vid möten etc.
 
