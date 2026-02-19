@@ -63,13 +63,15 @@
 
   /* Firefox */
   input[type="number"] {
-  -moz-appearance: textfield;
+    appearance: textfield;
+    -moz-appearancse: textfield;
   }
 
 }
 
 #titleHylla {
-  font-style: bold;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .guess-input-room-3 {
