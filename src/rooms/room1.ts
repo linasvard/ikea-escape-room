@@ -14,7 +14,7 @@ export default function initRoom1() {
     introductionDiv?.classList.add("hidden");
   });
 
-  // Kudde-zonen
+  // Pillow-zone
   const zonePillow = document.getElementById("zonePillow");
   const pillowDialog = document.getElementById(
     "pillowArgument",
@@ -37,7 +37,7 @@ export default function initRoom1() {
       }
 
       if (selected.value === "C") {
-        // Rätt svar — lås upp carpet och bedsheets
+        // Correct answer — unlock carpet and bedsheets
         document
           .querySelector(".zone-carpet")
           ?.classList.replace("zone-inactive", "zone-active");
@@ -46,13 +46,13 @@ export default function initRoom1() {
           ?.classList.replace("zone-inactive", "zone-active");
         pillowDialog.close();
       } else {
-        // Fel svar — utbrott, skicka tillbaka till entrén
+        // Wrong answer — tantrum, send back to entrance
         pillowDialog.close();
         handleTantrum();
       }
     });
 
-  // Gosedjur-zonen
+  // Teddybear-zone
   const zoneTeddybear = document.getElementById("zoneTeddybear");
   const teddybearArgument = document.getElementById(
     "teddybearArgument",
@@ -75,7 +75,7 @@ export default function initRoom1() {
       }
 
       if (selected.value === "B") {
-        // Rätt svar — lås upp carpet och bedsheets
+        // Correct answer — unlock carpet and bedsheets
         document
           .querySelector(".zone-carpet")
           ?.classList.replace("zone-inactive", "zone-active");
@@ -84,13 +84,13 @@ export default function initRoom1() {
           ?.classList.replace("zone-inactive", "zone-active");
         teddybearArgument.close();
       } else {
-        // Fel svar — utbrott, skicka tillbaka till entrén
+        // Wrong answer — tantrum, send back to entrance
         teddybearArgument.close();
         handleTantrum();
       }
     });
 
-  // Bedsheets-zonen
+  // Bedsheets-zone
   const zoneBedsheets = document.getElementById("zoneBedsheets");
   const bedsheetsDialog = document.getElementById("bedsheetsDialog");
   const bedsheetsDialogBtn = document.getElementById("bedsheetsDialogBtn");
@@ -126,9 +126,23 @@ export default function initRoom1() {
       .querySelector(".zone-lamp")
       ?.classList.replace("zone-inactive", "zone-active");
   });
+
+  // Lamp-zone
+  const zoneLamp = document.getElementById("zoneLamp");
+  const lampDialog = document.getElementById("lampDialog");
+  const lampDialogBtn = document.getElementById("lampDialogBtn");
+
+  zoneLamp?.addEventListener("click", () => {
+    lampDialog.showModal();
+  });
+
+  lampDialogBtn?.addEventListener("click", () => {
+    lampDialog.close();
+    document.getElementById("room2").classList.remove("hidden");
+  });
 }
 
-// Funktion för att hantera utbrottet
+// Function to handle tantrum — show tantrum dialog
 function handleTantrum() {
   const wantTantrum = document.getElementById(
     "wantTantrum",
