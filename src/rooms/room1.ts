@@ -46,20 +46,20 @@ export default function initRoom1() {
           ?.classList.replace("zone-inactive", "zone-active");
         pillowDialog.close();
       } else {
-        // Wrong answer — tantrum, send back to entrance
+        // Wrong answer — tantrum
         pillowDialog.close();
-        handleTantrum();
+        handleTantrum("wantTantrum", "wantTantrumBtn");
       }
     });
 
   // Teddybear-zone
   const zoneTeddybear = document.getElementById("zoneTeddybear");
-  const teddybearArgument = document.getElementById(
-    "teddybearArgument",
+  const teddybearDialog = document.getElementById(
+    "teddybearDialog",
   ) as HTMLDialogElement;
 
   zoneTeddybear?.addEventListener("click", () => {
-    teddybearArgument.showModal();
+    teddybearDialog.showModal();
   });
 
   document
@@ -74,42 +74,40 @@ export default function initRoom1() {
         return;
       }
 
-      if (selected.value === "B") {
-        // Correct answer — unlock carpet and bedsheets
+      if (selected.value === "E") {
+        // Correct answer — unlock pillow
         document
-          .querySelector(".zone-carpet")
+          .querySelector("#zonePillow")
           ?.classList.replace("zone-inactive", "zone-active");
-        document
-          .querySelector(".zone-bedsheets")
-          ?.classList.replace("zone-inactive", "zone-active");
-        teddybearArgument.close();
+        teddybearDialog.close();
       } else {
-        // Wrong answer — tantrum, send back to entrance
-        teddybearArgument.close();
-        handleTantrum();
+        // Wrong answer — tantrum
+        teddybearDialog.close();
+        handleTantrum("wantTeddyTantrum", "wantTeddyTantrumBtn");
       }
     });
 
   // Bedsheets-zone
   const zoneBedsheets = document.getElementById("zoneBedsheets");
-  const bedsheetsDialog = document.getElementById("bedsheetsDialog");
+  const bedsheetsDialog = document.getElementById(
+    "bedsheetsDialog",
+  ) as HTMLDialogElement;
   const bedsheetsDialogBtn = document.getElementById("bedsheetsDialogBtn");
 
   zoneBedsheets?.addEventListener("click", () => {
     bedsheetsDialog.showModal();
   });
 
-  bedsheetsDialogBtn?.addEventListener("click", () => {
-    bedsheetsDialog.close();
-    const introductionDiv = document.getElementById("introductionDiv");
-    introductionDiv?.classList.remove("hidden");
-  });
+  bedsheetsDialogBtn?.addEventListener(
+    "click",
+    () => {
+      bedsheetsDialog.close();
+      introductionDiv?.classList.remove("hidden");
+    },
+    { once: true },
+  );
 
-  if (!bedsheetsDialogBtn) {
-    return;
-  }
-
-  // Carpet-zonen
+  // Carpet-zone
   const zoneCarpet = document.getElementById("zoneCarpet");
   const carpetDialog = document.getElementById(
     "carpetDialog",
@@ -129,7 +127,7 @@ export default function initRoom1() {
 
   // Lamp-zone
   const zoneLamp = document.getElementById("zoneLamp");
-  const lampDialog = document.getElementById("lampDialog");
+  const lampDialog = document.getElementById("lampDialog") as HTMLDialogElement;
   const lampDialogBtn = document.getElementById("lampDialogBtn");
 
   zoneLamp?.addEventListener("click", () => {
@@ -138,22 +136,19 @@ export default function initRoom1() {
 
   lampDialogBtn?.addEventListener("click", () => {
     lampDialog.close();
-    document.getElementById("room2").classList.remove("hidden");
+    document.getElementById("room2")?.classList.remove("hidden");
   });
 }
 
 // Function to handle tantrum — show tantrum dialog
-function handleTantrum() {
-  const wantTantrum = document.getElementById(
-    "wantTantrum",
-  ) as HTMLDialogElement;
-  wantTantrum.showModal();
-  document.getElementById("wantTantrumBtn")?.addEventListener(
+function handleTantrum(dialogId: string, btnId: string) {
+  const tantrum = document.getElementById(dialogId) as HTMLDialogElement;
+  tantrum.showModal();
+  document.getElementById(btnId)?.addEventListener(
     "click",
     () => {
-      wantTantrum.close();
-      const introductionDiv = document.getElementById("introductionDiv");
-      introductionDiv?.classList.remove("hidden");
+      tantrum.close();
+      document.getElementById("introductionDiv")?.classList.remove("hidden");
     },
     { once: true },
   );

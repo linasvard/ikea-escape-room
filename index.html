@@ -51,35 +51,50 @@
           <button id="submitPillowArgument">Skicka in argument</button>
         </dialog>
 
-        <dialog id="teddybearArgument">
-          <p>dotterns argument "VILL HA!"</p>
+        <dialog id="teddybearDialog">
+          <p>
+            Dottern säger: "PAPPA! Grise-knoa MÅSTE följa med hem, hon är min
+            själsfrände och om du inte köper henne nu så berättar jag för mamma
+            att du åt en hel påse chips i smyg igår!"
+          </p>
           <input
             type="radio"
             name="teddybear-choose-argument"
-            value="A"
+            value="D"
             id="teddyArgA"
           />
-          <label for="teddyArgA">Argumentets 1</label>
+          <label for="teddyArgA">
+            "Om du slutar tjata nu får du bestämma vad vi äter till middag i en
+            hel vecka." (ger med sig indirekt — fel)</label
+          >
           <input
             type="radio"
             name="teddybear-choose-argument"
-            value="B"
+            value="E"
             id="teddyArgB"
           />
-          <label for="teddyArgB">Argumentets 2</label>
+          <label for="teddyArgB"
+            >"Lyssna, chips-grejen funkar inte. Men jag lovar att om du hittar
+            något ännu coolare längre in i butiken så överväger jag det. Och du
+            VET att det finns coolare saker." (rätt — utmanar hennes
+            nyfikenhet)</label
+          >
           <input
             type="radio"
             name="teddybear-choose-argument"
-            value="C"
+            value="F"
             id="teddyArgC"
           />
-          <label for="teddyArgC">Argumentets 3</label>
+          <label for="teddyArgC"
+            >"Den där grisen är ful och du har redan tio gosedjur hemma, sluta
+            tjata." (utbrott)</label
+          >
           <button id="submitTeddybearArgument">Skicka in argument</button>
         </dialog>
 
-        <dialog id="wantTantrum">
+        <dialog id="wantTeddyTantrum">
           <p>JAG VIIIIIILL HA!!!!!</p>
-          <button id="wantTantrumBtn">Börja om</button>
+          <button id="wantTeddyTantrumBtn">Börja om</button>
         </dialog>
 
         <dialog id="carpetDialog">
@@ -114,11 +129,15 @@
 
             <button id="startRoom1Btn">Starta rum 1</button>
           </div>
-          <img class="map-image" src="/src/my_src/map.png" alt="" />
+          <img
+            class="map-image"
+            src="/src/my_src/Färgglad IKEA-labyrint i fågelperspektiv.png"
+            alt=""
+          />
 
           <div class="entry">ENTRE</div>
 
-          <div id="zonePillow" class="zone-pillow zone-active">
+          <div id="zonePillow" class="zone-pillow zone-inactive">
             <img src="/src/my_src/heartpillow.png" alt="" />
           </div>
 
