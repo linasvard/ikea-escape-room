@@ -89,6 +89,21 @@ export default function initRoom1() {
         handleTantrum();
       }
     });
+
+  // Bedsheets-zonen
+  const zoneBedsheets = document.getElementById("zoneBedsheets");
+  const bedsheetsDialog = document.getElementById("bedsheetsDialog");
+  const bedsheetsDialogBtn = document.getElementById("bedsheetsDialogBtn");
+
+  zoneBedsheets?.addEventListener("click", () => {
+    bedsheetsDialog.showModal();
+  });
+
+  bedsheetsDialogBtn?.addEventListener("click", () => {
+    bedsheetsDialog.close();
+    const introductionDiv = document.getElementById("introductionDiv");
+    introductionDiv?.classList.remove("hidden");
+  });
 }
 
 // Funktion för att hantera utbrottet
