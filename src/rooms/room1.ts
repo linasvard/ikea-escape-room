@@ -148,6 +148,12 @@ export default function initRoom1() {
     lampDialog.close();
     zoneSuccess?.classList.replace("zone-inactive", "zone-active");
   });
+
+  //Exit-zone
+
+  zoneSuccess?.addEventListener("click", () => {
+    document.getElementById("introductionDiv")?.classList.remove("hidden");
+  });
 }
 
 // Function to handle tantrum — show tantrum dialog

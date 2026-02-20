@@ -16,130 +16,31 @@
       <!-- ================================== -->
       <!-- ============= RUM 1 ============== -->
       <!-- ================================== -->
+
       <section class="room-1" id="room1">
         <h3 class="heading">Rum 1, Överlev barnavdelningen!</h3>
 
-        <dialog id="pillowArgument">
-          <p>Dottern skriker: "VILL HA DEN HÄR KUDDEN!"</p>
-          <input
-            type="radio"
-            name="pillow-choose-argument"
-            value="A"
-            id="argA"
-          />
-          <label for="argA"
-            >Den kudden har vi redan en likadan av hemma, titta så lika de
-            är!</label
-          >
-          <input
-            type="radio"
-            name="pillow-choose-argument"
-            value="B"
-            id="argB"
-          />
-          <label for="argB">Ja, den är jättefin! Låt oss köpa den!</label>
-          <input
-            type="radio"
-            name="pillow-choose-argument"
-            value="C"
-            id="argC"
-          />
-          <label for="argC"
-            >Du får välja en sak idag, och du har inte sett allt än. Kanske
-            finns det något ännu finare längre in!</label
-          >
-          <button id="submitPillowArgument">Skicka in argument</button>
-        </dialog>
-
-        <dialog id="wantPillowTantrum">
-          <p>JAG VIIIIIILL HA KUDDEN!!!!!</p>
-          <button id="resetBtnPillow">Börja om</button>
-        </dialog>
-
-        <dialog id="teddybearDialog">
-          <p>
-            Dottern säger: "PAPPA! Grise-knoa MÅSTE följa med hem, hon är min
-            själsfrände och om du inte köper henne nu så berättar jag för mamma
-            att du åt en hel påse chips i smyg igår!"
-          </p>
-          <input
-            type="radio"
-            name="teddybear-choose-argument"
-            value="D"
-            id="teddyArgA"
-          />
-          <label for="teddyArgA">
-            "Om du slutar tjata nu får du bestämma vad vi äter till middag i en
-            hel vecka." (ger med sig indirekt — fel)</label
-          >
-          <input
-            type="radio"
-            name="teddybear-choose-argument"
-            value="E"
-            id="teddyArgB"
-          />
-          <label for="teddyArgB"
-            >"Lyssna, chips-grejen funkar inte. Men jag lovar att om du hittar
-            något ännu coolare längre in i butiken så överväger jag det. Och du
-            VET att det finns coolare saker." (rätt — utmanar hennes
-            nyfikenhet)</label
-          >
-          <input
-            type="radio"
-            name="teddybear-choose-argument"
-            value="F"
-            id="teddyArgC"
-          />
-          <label for="teddyArgC"
-            >"Den där grisen är ful och du har redan tio gosedjur hemma, sluta
-            tjata." (utbrott)</label
-          >
-          <button id="submitTeddybearArgument">Skicka in argument</button>
-        </dialog>
-
-        <dialog id="wantTeddyTantrum">
-          <p>JAG VIIIIIILL HA Grisen!!!!!</p>
-          <button id="resetBtnTeddy">Börja om</button>
-        </dialog>
-
-        <dialog id="carpetDialog">
-          <p>Bra! Du valde rätt väg! Nu kan du fortsätta till lampan</p>
-          <button id="carpetDialogBtn">Gå vidare till lampan</button>
-        </dialog>
-
-        <dialog id="bedsheetsDialog">
-          <p>
-            oh no! Du glömde att du skulle plocka upp lampan. Börja om från
-            början och välj rätt väg
-          </p>
-          <button id="resetBtnBedsheets">Börja om</button>
-        </dialog>
-
-        <dialog id="lampDialog">
-          <p>
-            Grattis! Du lyckades ta dig till lampan utan att köpa något mer! Gå
-            till utgången så kommer du till rum 2 där mattorna finns.
-          </p>
-          <button id="lampDialogBtn">Ta mig till Utgången</button>
-        </dialog>
-
         <div id="map">
+          <!--INTRODUCTION-->
           <div id="introductionDiv" class="introduction-div">
-            <p class="welcome-information">
-              "Din dotter vill ha en hjärtlampa till sitt rum. Ta dig till
-              lampan så smidigt som möjligt och undvik att köpa något mer på
-              vägen — trots dotterns tjat. Börja med att välja rätt väg: klicka
-              på gosedjuret eller kudden."
-            </p>
-
-            <button id="startRoom1Btn">Starta rum 1</button>
+            <article class="welcome-information">
+              <p>Din dotter vill ha en hjärtlampa till sitt rum.</p>
+              <p>Ta dig till lampan så smidigt som möjligt</p>
+              <p>och undvik att köpa något mer på vägen</p>
+              <p>— trots dotterns tjat.</p>
+              <p>Börja med att välja rätt väg: "Klicka på gosedjuret!"</p>
+              <button id="startRoom1Btn">Starta rum 1</button>
+            </article>
           </div>
+
+          <!--MAZE-->
           <img
             class="map-image"
             src="/src/my_src/maze_no_background.png"
             alt=""
           />
 
+          <!--ZONES-->
           <div class="entry">ENTRE</div>
 
           <div id="zonePillow" class="zone-pillow zone-inactive zone-restart">
@@ -167,6 +68,134 @@
 
           <div id="zoneSuccess" class="exit zone-inactive">UTGÅNG</div>
         </div>
+
+        <!--ACTIONS-->
+
+        <!-- TEDDYBEAR -->
+        <dialog id="teddybearDialog" class="dialog">
+          <p>
+            👧 💬 "PAPPA! Grise-knoa MÅSTE följa med hem, hon är min själsfrände
+            och om du inte köper henne nu så berättar jag för mamma att du åt en
+            hel påse chips i smyg igår!"
+          </p>
+
+          <div class="daddy-argument">
+            <input
+              type="radio"
+              name="teddybear-choose-argument"
+              value="D"
+              id="teddyArgA"
+            />
+            <label for="teddyArgA">
+              "Om du slutar tjata nu får du bestämma vad vi äter till middag i
+              en hel vecka." (ger med sig indirekt — fel)</label
+            >
+          </div>
+
+          <div class="daddy-argument">
+            <input
+              type="radio"
+              name="teddybear-choose-argument"
+              value="E"
+              id="teddyArgB"
+            />
+            <label for="teddyArgB"
+              >"Lyssna, chips-grejen funkar inte. Men jag lovar att om du hittar
+              något ännu coolare längre in i butiken så överväger jag det. Och
+              du VET att det finns coolare saker." (rätt — utmanar hennes
+              nyfikenhet)</label
+            >
+          </div>
+
+          <div class="daddy-argument">
+            <input
+              type="radio"
+              name="teddybear-choose-argument"
+              value="F"
+              id="teddyArgC"
+            />
+            <label for="teddyArgC"
+              >"Den där grisen är ful och du har redan tio gosedjur hemma, sluta
+              tjata." (utbrott)</label
+            >
+          </div>
+
+          <button id="submitTeddybearArgument">Skicka in argument</button>
+        </dialog>
+
+        <dialog id="wantTeddyTantrum">
+          <p>JAG VIIIIIILL HA Grisen!!!!!</p>
+          <button id="resetBtnTeddy">Börja om</button>
+        </dialog>
+
+        <!-- PILLOW -->
+
+        <dialog id="pillowArgument" class="dialog">
+          <p>👧 💬 "VILL HA DEN HÄR KUDDEN!"</p>
+
+          <div class="daddy-argument">
+            <input
+              type="radio"
+              name="pillow-choose-argument"
+              value="A"
+              id="argA"
+            />
+            <label for="argA"
+              >Den kudden har vi redan en likadan av hemma, titta så lika de
+              är!</label
+            >
+          </div>
+          <div class="daddy-argument">
+            <input
+              type="radio"
+              name="pillow-choose-argument"
+              value="B"
+              id="argB"
+            />
+            <label for="argB">Ja, den är jättefin! Låt oss köpa den!</label>
+            <input
+              type="radio"
+              name="pillow-choose-argument"
+              value="C"
+              id="argC"
+            />
+          </div>
+
+          <div class="daddy-argument">
+            <label for="argC"
+              >Du får välja en sak idag, och du har inte sett allt än. Kanske
+              finns det något ännu finare längre in!</label
+            >
+          </div>
+
+          <button id="submitPillowArgument">Skicka in argument</button>
+        </dialog>
+
+        <dialog id="wantPillowTantrum">
+          <p>JAG VIIIIIILL HA KUDDEN!!!!!</p>
+          <button id="resetBtnPillow">Börja om</button>
+        </dialog>
+
+        <dialog id="carpetDialog">
+          <p>Bra! Du valde rätt väg! Nu kan du fortsätta till lampan</p>
+          <button id="carpetDialogBtn">Gå vidare till lampan</button>
+        </dialog>
+
+        <dialog id="bedsheetsDialog">
+          <p>
+            oh no! Du glömde att du skulle plocka upp lampan. Börja om från
+            början och välj rätt väg
+          </p>
+          <button id="resetBtnBedsheets">Börja om</button>
+        </dialog>
+
+        <dialog id="lampDialog">
+          <p>
+            Grattis! Du lyckades ta dig till lampan utan att köpa något mer! Gå
+            till utgången så kommer du till rum 2 där mattorna finns.
+          </p>
+          <button id="lampDialogBtn">Ta mig till Utgången</button>
+        </dialog>
       </section>
       <!-- ================================== -->
       <!-- ============= RUM 2 ============== -->
