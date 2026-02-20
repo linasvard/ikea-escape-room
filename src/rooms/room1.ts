@@ -138,6 +138,7 @@ export default function initRoom1() {
   const zoneLamp = document.getElementById("zoneLamp");
   const lampDialog = document.getElementById("lampDialog") as HTMLDialogElement;
   const lampDialogBtn = document.getElementById("lampDialogBtn");
+  const zoneSuccess = document.getElementById("zoneSuccess");
 
   zoneLamp?.addEventListener("click", () => {
     lampDialog.showModal();
@@ -145,7 +146,7 @@ export default function initRoom1() {
 
   lampDialogBtn?.addEventListener("click", () => {
     lampDialog.close();
-    document.getElementById("room2")?.classList.remove("hidden");
+    zoneSuccess?.classList.replace("zone-inactive", "zone-active");
   });
 }
 
@@ -199,7 +200,7 @@ function resetRoom1() {
   });
 
   // Gör samtliga zoner inaktiva igen
-  document.querySelectorAll(".zoneRestart").forEach((zone) => {
+  document.querySelectorAll(".zone-restart").forEach((zone) => {
     zone.classList.replace("zone-active", "zone-inactive");
   });
 }
