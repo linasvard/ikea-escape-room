@@ -14,6 +14,15 @@ export default function initRoom1() {
     introductionDiv?.classList.add("hidden");
   });
 
+  //Arrows
+
+  const arrow1 = document.querySelector(".arrow-1");
+  arrow1?.addEventListener("click", () => {
+    document
+      .querySelector("#zoneTeddybear")
+      ?.classList.replace("zone-inactive", "zone-active");
+  });
+
   // Teddybear-zone
 
   const zoneTeddybear = document.getElementById("zoneTeddybear");
