@@ -16,7 +16,7 @@ export default function initRoom1() {
 
   //Arrows
 
-  const arrow1 = document.querySelector(".arrow-1");
+  const arrow1 = document.getElementById("arrow1");
   arrow1?.addEventListener("click", () => {
     document
       .querySelector("#zoneTeddybear")
@@ -29,7 +29,6 @@ export default function initRoom1() {
   const teddybearDialog = document.getElementById(
     "teddybearDialog",
   ) as HTMLDialogElement;
-  const resetBtnTeddy = document.getElementById("resetBtnTeddy");
 
   zoneTeddybear?.addEventListener("click", () => {
     teddybearDialog.showModal();
