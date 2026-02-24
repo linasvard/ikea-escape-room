@@ -1,50 +1,71 @@
 <!doctype html>
 <html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IKEA Escape Room</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IKEA Escape Room</title>
-</head>
+  <body>
+    <header>
+      <h1>IKEA</h1>
+      <h2>Välkommen till spelet</h2>
+      <button type="button">starta spelet</button>
+    </header>
+    <main>
+      <!-- ================================== -->
+      <!-- ============= RUM 1 ============== -->
+      <!-- ================================== -->
+      <section class="room-1" id="room1">
+        <h3>Rum 1</h3>
+      </section>
+      <!-- ================================== -->
+      <!-- ============= RUM 2 ============== -->
+      <!-- ================================== -->
+      <section class="room-2" id="room2">
+        <h3>Rum 2</h3>
+        <p id="room2Paragraph"></p>
+      </section>
+      <button type="button" id="room2Btn">
+        Klicka här för att ändra färg på rum 2
+      </button>
+      <!-- ================================== -->
+      <!-- ============= RUM 3 ============== -->
+      <!-- ================================== -->
+      <section class="room-3" id="room3">
+        <h3>Rum 3</h3>
+      </section>
+      <!-- ================================== -->
+      <!-- ============= RUM 4 ============== -->
+      <!-- ================================== -->
+      <section class="room-4" id="room4">
+        <h3>Rum 4 - Kassan</h3>
+        <p class="room4-instructions" id="room4-instructions">
+          Memorera var de gula rutorna är!
+        </p>
 
-<body>
-  <header>
-    <h1>IKEA</h1>
-    <h2>Välkommen till spelet</h2>
-    <button type="button">starta spelet</button>
-  </header>
-  <main>
-    <!-- ================================== -->
-    <!-- ============= RUM 1 ============== -->
-    <!-- ================================== -->
-    <section class="room-1" id="room1">
-      <h3>Rum 1</h3>
-    </section>
-    <!-- ================================== -->
-    <!-- ============= RUM 2 ============== -->
-    <!-- ================================== -->
-    <section class="room-2" id="room2">
-      <h3>Rum 2</h3>
-      <p id="room2Paragraph"></p>
-    </section>
-    <button type="button" id="room2Btn">Klicka här för att ändra färg på rum 2</button>
-    <!-- ================================== -->
-    <!-- ============= RUM 3 ============== -->
-    <!-- ================================== -->
-    <section class="room-3" id="room3">
-      <h3>Rum 3</h3>
-    </section>
-    <!-- ================================== -->
-    <!-- ============= RUM 4 ============== -->
-    <!-- ================================== -->
-    <section class="room-4" id="room4">
-      <h3>Rum 4</h3>
-    </section>
-    <button type="button" disabled>Gå ut från IKEA</button>
-  </main>
-  <footer>
-  </footer>
-  <script type="module" src="/src/main.ts"></script>
-</body>
+        <p class="room4-timer" id="room4-timer"></p>
 
+        <button type="button" id="room4-start-btn">Visa de gula rutorna</button>
+
+        <div class="room4-grid" id="room4-grid">
+          <div class="room4-cell" data-index="0"></div>
+          <div class="room4-cell" data-index="1"></div>
+          <div class="room4-cell" data-index="2"></div>
+          <div class="room4-cell" data-index="3"></div>
+          <div class="room4-cell" data-index="4"></div>
+          <div class="room4-cell" data-index="5"></div>
+          <div class="room4-cell" data-index="6"></div>
+          <div class="room4-cell" data-index="7"></div>
+          <div class="room4-cell" data-index="8"></div>
+          <div class="room4-cell" data-index="9"></div>
+        </div>
+
+        <p class="room4-message" id="room4-message"></p>
+      </section>
+      <button type="button" disabled>Gå ut från IKEA</button>
+    </main>
+    <footer></footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
