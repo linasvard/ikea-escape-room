@@ -23,7 +23,7 @@
    h3 {
     font-size: 3.5rem;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 600;
    }
 
    h4 {
@@ -82,7 +82,14 @@
   
 }
 
-#guessHyllaSection {
+#guessInput1Room3 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 70px;
+}
+
+#guessHyllaFackSection {
   display: flex;
   justify-content: flex-start;
   gap: 40px;

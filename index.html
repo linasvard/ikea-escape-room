@@ -36,25 +36,30 @@
     <!-------✨ Linas Rum ✨-------->
     
     <section class="room-3" id="room3">
-      <h3>Rum 3</h3>
-      <h4>Tag själv lagret</h4>
-      <p>Puh! Du tog dig ut från mattavdelningen, du är snart ute. 
-        MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den kommer vi inte till kassorna.</p>
+      <h3>Tag själv lagret</h3>
+      <h4>Rum 3</h4>
+      <p>Puh! Du tog dig ut från lampavdelningen, du är snart ute.</p> 
+        <p>MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den kommer vi inte till kassorna.</p>
       <p>Du kommer ihåg lappen du fick med dig hemifrån och blir lite fundersam över vad som står.</p>  
       <h4>Lös koden:</h4>
 
       <p id="titleHylla">1x Hylla</p>
       <p>BILLY</p>
-      <div id="guessHyllaSection">
-        <p>
-          <span class="id-number-item">403.834.74</span>
-        </p>
-        <p class="guess-input-room-3">
-          <label>Hylla:</label><input type="number" placeholder="00">
-        </p>
-        <p class="guess-input-room-3">
-          <label>Fack:</label><input type="number" placeholder="00">
-        </p>
+      <div id ="guessInput1Room3" class="hidden">
+        <form id="guessHyllaFackSection">
+          <p>
+            <span class="id-number-item">403.834.74</span>
+          </p>
+          <p class="guess-input-room-3">
+            <label>Hylla:</label><input id="hyllaInput" maxlength="2" type="number" placeholder="00">
+          </p>
+          <p class="guess-input-room-3">
+            <label>Fack:</label><input id="fackInput" maxlength="2" type="number" placeholder="00">
+          </p>
+        </form>
+        <div id="submitHyllaFackBtnWrapper">
+          <button type="button" id="submitHyllaFackBtn">Gå vidare</button>
+        </div>
       </div>
     </section>
     
