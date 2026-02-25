@@ -23,12 +23,12 @@
 ```
 Spelaren klickar på zone-pillow ELLER zone-teddybear
   → pappan flyttas till vald zon
-  → dialog-popup öppnas (se sektion 3)
+  → div-popup öppnas (se sektion 3)
 ```
 
 ---
 
-## 3. Dialog-popup — möte med dottern
+## 3. div-popup — möte med dottern
 
 Popup-rutan innehåller:
 
@@ -64,7 +64,7 @@ Efter godkänt argument i steg 1 låses två nya zoner upp:
 ```
 Spelaren klickar på zone-carpet ELLER zone-bedsheets
   → pappan flyttas till vald zon
-  → dialog-popup öppnas med dotterns argument + pappans motargument
+  → div-popup öppnas med dotterns argument + pappans motargument
   → samma logik som sektion 3
 ```
 
@@ -80,7 +80,7 @@ Efter godkänt argument i steg 2 låses två nya zoner upp:
 ```
 Spelaren klickar på zone-lamp
   → pappan flyttas till lampan
-  → dialog-popup öppnas:
+  → div-popup öppnas:
         "Bra jobbat! Nu tar vi lampan och går hem 😅"
         → Lås upp exit
         → Stäng popup
