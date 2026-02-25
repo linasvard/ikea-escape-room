@@ -24,10 +24,55 @@
     <!-- ============= RUM 2 ============== -->
     <!-- ================================== -->
     <section class="room-2" id="room2">
-      <h3>Rum 2</h3>
-      <p id="room2Paragraph"></p>
+      <div class="room-2-instruction-container" id="room2InstructionContainer">
+        <div>
+          <img class="room-2-ikea-man-box" src="/public/room_2_ikea_man_box.png" alt="">
+          <p>
+            Åh, sådär, nu har vi äntligen hittat lampavdelningen! Men vad var det vi skulle ha nu igen? Juste, vi skulle
+            ju testa den nya, flefärgade, smarta, coola, och trådlösa ljuskällan <a href="">KAJPLATS</a>!
+          </p>
+          <p>
+            Men, alla lampor är ju släckta!?
+          </p>
+          <p>
+            Jag vet vad vi måste göra! Om vi trycker på lampknapparna så att alla lampor lyser samtidigt, så ser vi
+            vilken hylla KAJPLATS ligger i och vi kan då lägga den i vår gula påse och gå vidare!
+          </p>
+          <button id="room2GoToGameBtn"> > </button>
+
+
+        </div>
+      </div>
+      <div class="room-2-gamewrapper">
+        <div class="room-2-lampcontainer"><img src="" id="lamp1" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-lampcontainer"><img src="" id="lamp2" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-lampcontainer"><img src="" id="lamp3" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-lampcontainer"><img src="" id="lamp4" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn1"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn2"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn3"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn4"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+
+      </div>
+      <div class="room-2-hidden room-2-win-screen" id="room2WinScreen">
+        <div>
+          <img class="room-2-ikea-man-box" src="/public/room_2_ikea_man_box.png" alt="">
+          <div id="room2WinScreenDiv1"></div>
+          <div id="room2WinScreenDiv2"></div>
+          <!-- <button id="goToRoom3Btn" disabled><span>Till ta-själv-lagret!</span></button> -->
+        </div>
+      </div>
+
     </section>
-    <button type="button" id="room2Btn">Klicka här för att ändra färg på rum 2</button>
+
     <!-- ================================== -->
     <!-- ============= RUM 3 ============== -->
     <!-- ================================== -->
