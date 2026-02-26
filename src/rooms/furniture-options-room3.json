@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Billy",
+        "type": "shelf",
+        "img": "/src/images/billy.png"
+    },
+    {
+        "id": 2,
+        "name": "Malm",
+        "type": "cabinet",
+        "img": "/src/images/malm.png"
+    },
+    {
+        "id": 3,
+        "name": "Pax",
+        "type": "wardrobe",
+        "img": "/src/images/pax.png"
+    },
+    {
+        "id": 4,
+        "name": "Eket",
+        "type": "shelf",
+        "img": "/src/images/eket.png"
+    },   
+    {
+        "id": 5,
+        "name": "Lack",
+        "type": "table",
+        "img": "/src/images/lack.png"
+    },
+    {
+        "id": 6,
+        "name": "Kyrre",
+        "type": "stool",
+        "img": "/src/images/kyrre.png"
+    }
+]
