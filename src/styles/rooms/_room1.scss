@@ -24,7 +24,7 @@
   left: 0;
 
   width: 800px;
-  height: auto;
+  height: 800px;
   z-index: 1;
 }
 
@@ -78,13 +78,13 @@
 }
 
 .zone-teddybear img {
-  width: 150px;
+  width: 100px;
 }
 
 .zone-teddybear {
   position: absolute;
-  top: 60%;
-  left: 30%;
+  top: 66%;
+  left: 35%;
 }
 
 .zone-chair img {
@@ -151,56 +151,19 @@
 // Dialogs
 .dialog {
   width: 800px;
-  height: auto;
+  height: 800px;
 }
 
-.happening-info {
-  margin-left: 129px;
-  margin-bottom: 40px;
-}
-
-.girl-comment {
-  border: 1px solid black;
-  border-radius: 20px;
-  width: 500px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.dialog p {
+  font-size: 18px;
   padding: 20px;
-  margin-left: 129px;
-  margin-bottom: 40px;
-}
-
-.girl-picture {
-  width: 60px;
-  padding-right: 50px;
-}
-
-.daddy-picture {
-  position: absolute;
-  width: 150px;
-}
-.daddy-argu-container {
-  position: relative;
-  border: 1px solid black;
-  border-radius: 20px;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-
-  padding: 20px;
-  margin-left: 129px;
 }
 
 .daddy-argument {
-  top:;
   font-size: 18px;
-  border-radius: 20px;
-  background-color: rgba(168, 178, 186, 0.3);
+  background-color: rgba(0, 88, 163, 0.3);
   padding: 20px;
   margin-bottom: 20px;
-  margin-left: 35px;
-  width: 400px;
 }
 
 button {
