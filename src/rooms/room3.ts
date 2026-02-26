@@ -52,6 +52,7 @@ interface IOptionsRoom3 {
   name: string;
   type: string;
   img: string;
+  correct: boolean;
 }
 
 function renderRoom3Options(items: IOptionsRoom3[]): void {
@@ -65,6 +66,21 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
     <p>${item.id}</p></div>
   `)
   .join("");
+
+  // Lägg till event listeners på varje bild
+  const furnitureOptions = optionsContainerRoom3.querySelectorAll(".furniture-option");
+  furnitureOptions.forEach(items => {
+    items.addEventListener("click", () => {
+      const selectedId = items.getAttribute("data-id");
+      console.log(`Vald möbel ID: ${selectedId}`);
+      
+      if (selectedId === "1") {
+        alert("Rätt val! Du har hittat Billy-hyllan.");
+      } else {
+        alert("Fel val. Försök igen!");
+      }
+    });
+  });
 }
 
 renderRoom3Options(optionsRoom3);

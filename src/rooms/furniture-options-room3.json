@@ -3,36 +3,42 @@
         "id": 1,
         "name": "Billy",
         "type": "shelf",
-        "img": "/src/images/billy-test.png"
+        "img": "/src/images/billy-test.png",
+        "correct": true
     },
     {
         "id": 2,
         "name": "Malm",
         "type": "cabinet",
-        "img": "/src/images/billy-test.png"
+        "img": "/src/images/billy-test.png",
+        "correct": false
     },
     {
         "id": 3,
         "name": "Pax",
         "type": "wardrobe",
-        "img": "/src/images/billy-test.png"
+        "img": "/src/images/billy-test.png",
+        "correct": false
     },
     {
         "id": 4,
         "name": "Eket",
         "type": "shelf",
-        "img": "/src/images/billy-test.png"
+        "img": "/src/images/billy-test.png",
+        "correct": false
     },   
     {
         "id": 5,
         "name": "Lack",
         "type": "table",
-        "img": "/src/images/billy-test.png"
+        "img": "/src/images/billy-test.png",
+        "correct": false
     },
     {
         "id": 6,
         "name": "Kyrre",
         "type": "stool",
-        "img": "/src/images/billy-test.png"
+        "img": "/src/images/billy-test.png",
+        "correct": false
     }
 ]

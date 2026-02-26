@@ -175,6 +175,18 @@
   }
 }
 
+#shelfForFurnituresRoom3Wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+#shelfImageRoom3 img {
+  max-width: 250px;
+}
+#hyllaAndFackShelfRoom3 {
+  background-color: rgb(204, 0, 8);
+}
+
 /* TA BORT VID MERGE */
 .hidden {
   display: none;
