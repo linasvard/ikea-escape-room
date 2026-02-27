@@ -71,10 +71,12 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
   const optionsContainerRoom3 = document.querySelector("#guessFurniture") as HTMLDivElement;
   if (!optionsContainerRoom3) return;
 
+  let wrongClicksRoom3 = 0;
+
   const shuffledOptionsRoom3 = [...items].sort(() => Math.random() - 0.5);
 
   optionsContainerRoom3.innerHTML = shuffledOptionsRoom3.map((item) => `
-    <div class="optionContainer">
+    <div class="option-container">
       <img 
         src="${item.img}" 
         alt="${item.name}" 
@@ -83,7 +85,7 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
         tabindex="0"
         role="button"
         aria-label="Välj ${item.name}">
-      <!--<p>${item.id}</p>-->
+      <p>${item.id}</p>
     </div>
   `).join("");
 
@@ -105,13 +107,21 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
 
   function handleSelection(item: Element): void {
     const selectedId = item.getAttribute("data-id");
-    console.log(`Vald möbel ID: ${selectedId}`);
+
     if (selectedId === "1") {
       document.querySelector("#room3Part2")?.classList.add("hidden");
       document.querySelector("#room3End")?.classList.remove("hidden");
       
     } else {
-      alert("Fel val. Försök igen!");
+      wrongClicksRoom3++; {
+          if (wrongClicksRoom3 >= 2) {
+            document.querySelector("#room3Part2")?.classList.add("hidden");
+            document.querySelector("#gameOverScreenTest")?.classList.remove("hidden");
+          } else {
+            alert("Fel val. Försök igen!"); // Eller visa ett meddelande på sidan istället för alert
+          }
+      }
+      
     }
   }
 }

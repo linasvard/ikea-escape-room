@@ -38,8 +38,8 @@
     <section class="room-3" id="room3">
       <div class="room-3-header">  
         <h1>Tag själv lagret</h1>
-        <div>
-          <span class="progress-in-room-3">Rum 3</span>
+        <div class="room3Title">
+          <p class="progress-in-room-3">Rum 3</p>
         </div>
       </div>
       <div id="room3start"><!--class="hidden"-->
@@ -88,7 +88,7 @@
           </div>
         </div>  
       </section>
-      <section id="room3Part2"> <!--class="hidden"-->
+      <section id="room3Part2" class="hidden"> <!--class="hidden"-->
         <h2>Korrekt</h2>
         <div class="descriptionRoom3">
           <p>Bra jobbat! Du har hittat rätt hylla och fack. 
@@ -116,13 +116,16 @@
         <div id="guessFurniture">
             <!---Rendering av alternativ--->
         </div>
+        <div id="clueRoom3Part2">
+          <p>Psst! Klicka inte för många gånger.</p>
+        </div>
       </section>
       <section id="room3End" class="hidden">
         <h2>Rum 3: Klart!</h2>
         <p>Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu är det dags och ta sig till kassan för att betala.</p>
         <div id="room3ToRoom4">
           
-          <button><span>→</span><span>Till kassan</span></button>
+          <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button><span>Till kassan</span>
         </div>
         
       </section>

@@ -9,7 +9,7 @@
   background-color: white;
   color: #000000;
   width: 800px;
-  padding: 20px 40px 35px;
+  padding: 20px 40px 15px;
   margin: 15px auto;
   
   h1, h2 {
@@ -138,7 +138,7 @@
   font-family: "futura-pt", sans-serif;
   font-weight: 600;
   font-size: 1rem;
-  border: 1px solid black;
+  color: #3b3b3b;
   padding: 5px 10px;
   height: 30px;
   width: 100%;
@@ -147,6 +147,7 @@
   justify-content: center;
   align-items: center;
   margin: 0;
+  background-color: #ececec;
 }
 
 .clue-1-room-3-wrapper {
@@ -191,6 +192,14 @@
 #confusedIkeaManRoom3 {
   max-width: 250px;
 } 
+
+#guessInput1Room3Wrapper {
+  border: 1.5px solid black;
+  border-radius: 20px;
+  padding: 20px 35px;
+  margin: 35px 0;
+  justify-content: center;
+}
 
 #guessFurniture {
   display: grid;
@@ -238,6 +247,7 @@
   justify-content: flex-start;
   align-items: center;
   margin-top: 50px;
+  margin-bottom: 30px;
     
   button {
     width: 45px;
@@ -252,22 +262,47 @@
     
     
     }
+
+    button:hover {
+      background-color: #ffda1a;
+      border-color: #ffda1a;
+      color: #333333;
+    }
   
   span {
     margin-inline: 10px;
+    font-family: "futura-pt", sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    
   }  
 
 }
 
-  
+.option-container {
+  margin: 0;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.option-container:hover {
+  background-color: #ececec; 
+}
 
 #shelfImageRoom3 {
   border: 1.5px solid black;
   border-radius: 20px;
 }
 
+#clueRoom3Part2 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 /* TA BORT VID MERGE */
 .hidden {
   display: none;
+  
 }
 
