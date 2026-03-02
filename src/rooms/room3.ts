@@ -85,7 +85,7 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
         tabindex="0"
         role="button"
         aria-label="Välj ${item.name}">
-      <p>${item.id}</p>
+      <!---<p>${item.id}</p>--->
     </div>
   `).join("");
 
