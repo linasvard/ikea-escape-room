@@ -1,4 +1,5 @@
 //@ts-nocheck
+/* eslint-disable no-console */
 
 /*
  * ============================================
@@ -70,33 +71,76 @@ export default function initRoom2() {
   ];
 
   function setAllLampsOn() { // funktion för att kunna redigera i winScreen utan att spela spelet. ställer alla lampor till on = true istället för on = false
-  lamps.forEach(lamp => {
-    lamp.on = true;
-  });
-  renderLamps();
-}
+    lamps.forEach(lamp => {
+      lamp.on = true;
+    });
+    renderLamps();
+  }
 
   
-
+  
   renderLamps();
   // setAllLampsOn(); ///kör ovan funktion för att kunna starta sidan med winScreen i redigeringssyfte!
   checkWinCondition();
+  
 
 
   function toggleLampState(index: number) { // liten funktion för att säga till att om lampan är on = true så ska lampan ändras till on = false (och vise-versa)
     lamps[index].on = !lamps[index].on;
   }
 
+  let numberOfClicks = 0;
+  const maxNumberOfClicks = 10;
 
   function buttonClick(buttonIndex: number) {
+    const loseScreen: HTMLDivElement |null = document.querySelector('#room2LoseScreen');
+    
+    numberOfClicks += 1;
+    printNumberOfClicks();
+    
     buttonMapping[buttonIndex].forEach(lampIndex => {
       toggleLampState(lampIndex);
     });
-
+    
     renderLamps();
+
     checkWinCondition();
+    
+    if (room2Finished) {
+      return;
+    };
+
+    if (numberOfClicks >= maxNumberOfClicks) {
+      lampChangeBtn1?.setAttribute('disabled', '');
+      lampChangeBtn2?.setAttribute('disabled', '');
+      lampChangeBtn3?.setAttribute('disabled', '');
+      lampChangeBtn4?.setAttribute('disabled', '');
+      console.log("Inga fler klick kvar!");
+      setTimeout(() => room2PlayLosingSound(), 300);
+      setTimeout(() => loseScreen?.classList.add('room-2-is-visible'), 1200);
+      
+      return;
+    }
+    
+    console.log(`Du har klickat ${numberOfClicks} / ${maxNumberOfClicks} gånger`);
+
+
+    
   }
 
+  function printNumberOfClicks() {
+    const numberOfClicksEl: HTMLDivElement |null = document.querySelector('#room2ClickCounter');
+
+    const html = `
+
+    <span>${numberOfClicks}</span>
+    <span>/</span>
+    <span>${maxNumberOfClicks}</span>
+    
+    `;
+
+    numberOfClicksEl.innerHTML = html;
+  }
 
   function getLampImage(lamp: ILamp): string {
     return lamp.on 
@@ -115,25 +159,47 @@ export default function initRoom2() {
   }
 
 
+
   function checkWinCondition() {
     const allLampsOn = lamps.every(lamp => lamp.on);
     
 
     if (allLampsOn) {
 
-      const winScreen: HTMLDivElement |null = document.querySelector('#room2WinScreen');
-      setTimeout(() => winScreen?.classList.remove('room-2-hidden'), 300);
+      room2Finished = true;
 
       lampChangeBtn1?.setAttribute('disabled', '');
       lampChangeBtn2?.setAttribute('disabled', '');
       lampChangeBtn3?.setAttribute('disabled', '');
       lampChangeBtn4?.setAttribute('disabled', '');
 
-      setTimeout(() => textTypingEffect1(room2WinScreenDiv1, room2WinScreenText1), 500);
+      setTimeout(() => room2PlaySuccessSound(), 250);
 
-      setTimeout(() => textTypingEffect2(room2WinScreenDiv2, room2WinScreenText2), 4500);
+      const winScreen: HTMLDivElement |null = document.querySelector('#room2WinScreen');
+      setTimeout(() => winScreen?.classList.add('room-2-is-visible'), 1400);
+
+
+
+      // setTimeout(() => textTypingEffect1(room2WinScreenDiv1, room2WinScreenText1), 0);
+
+      // setTimeout(() => textTypingEffect2(room2WinScreenDiv2, room2WinScreenText2), 0);
     };
 
+  }
+
+  function room2PlaySuccessSound() {
+    const audio = new Audio('/room_2_success_sound.wav');
+    audio.volume = 0.2;
+    audio.play();
+  
+  }
+  function room2PlayLosingSound() {
+    const audio1 = new Audio('/room_2_game_over_sound.wav');
+    const audio2 = new Audio('/room_2_game_over_mario_sound.wav');
+    audio1.volume = 0.2;
+    audio2.volume = 0.2;
+    audio1.play();
+    setTimeout(() => audio2.play(), 1300);
   }
 
   const room2GoToGameBtn: HTMLButtonElement |null = document.querySelector('#room2GoToGameBtn');
@@ -141,56 +207,65 @@ export default function initRoom2() {
 
   function room2GoToGame() {
     const room2InstructionContainer: HTMLDivElement |null = document.querySelector('#room2InstructionContainer');
-    room2InstructionContainer?.classList.add('room-2-hidden');
+    room2InstructionContainer?.classList.remove('room-2-is-visible');
   }
 
+  printNumberOfClicks();
+
+
+  /*
+  
+  ===OBS===============================================================OBS===
+  ===========Kod för att skriva ut meddelande en bokstav i taget=============
+  ===OBS===============================================================OBS===
+  
+  const TIME_BETWEEN_LETTERS = 0;
 
 
 
 
+   const room2WinScreenDiv1: HTMLDivElement |null = document.querySelector('#room2WinScreenDiv1');
+   const room2WinScreenDiv2: HTMLDivElement |null = document.querySelector('#room2WinScreenDiv2');
+   const room2WinScreenText1 = "Yes! Vi lyckades tända alla lampor och vi kan nu se vart ta-själv-lagret är någonstans!";
+   const room2WinScreenText2 = "Vad säger du, ska vi gå till ta-själv-lagret?";
 
 
-  const room2WinScreenDiv1: HTMLDivElement |null = document.querySelector('#room2WinScreenDiv1');
-  const room2WinScreenDiv2: HTMLDivElement |null = document.querySelector('#room2WinScreenDiv2');
-  const room2WinScreenText1 = "Yes! Vi lyckades tända alla lampor och vi kan nu se vart ta-själv-lagret är någonstans!";
-  const room2WinScreenText2 = "Vad säger du, ska vi gå till ta-själv-lagret?";
+   function textTypingEffect1(element, text, i = 0) {
+     element.textContent += room2WinScreenText1[i];
+
+     if (i === room2WinScreenText1.length - 1) {
+       return;
+     }
+
+     setTimeout(() => textTypingEffect1(element, text, i + 1), TIME_BETWEEN_LETTERS);
+
+   }
 
 
-  function textTypingEffect1(element, text, i = 0) {
-    element.textContent += room2WinScreenText1[i];
+   function textTypingEffect2(element, text, i = 0) {
+     element.textContent += room2WinScreenText2[i];
 
-    if (i === room2WinScreenText1.length - 1) {
-      return;
-    }
-
-    setTimeout(() => textTypingEffect1(element, text, i + 1), 35);
-
-  }
-
-
-  function textTypingEffect2(element, text, i = 0) {
-    element.textContent += room2WinScreenText2[i];
-
-    if (i === room2WinScreenText2.length - 1) {
-      const br: HTMLBRElement |null = document.createElement('br');
-      element.appendChild(br);
-      const button: HTMLButtonElement |null = document.createElement('button');
-      button.id = 'goToRoom3Btn';
-      button.textContent = '>';
-      element.appendChild(button);
+     if (i === room2WinScreenText2.length - 1) {
+       const br: HTMLBRElement |null = document.createElement('br');
+       element.appendChild(br);
+       const button: HTMLButtonElement |null = document.createElement('button');
+       button.id = 'goToRoom3Btn';
+       button.textContent = '>';
+       element.appendChild(button);
       
       
-      // button.removeAttribute('disabled');
+        button.removeAttribute('disabled');
       
 
-      return;
-    }
+       return;
+     }
 
     
 
-    setTimeout(() => textTypingEffect2(element, text, i + 1), 35);
+     setTimeout(() => textTypingEffect2(element, text, i + 1), TIME_BETWEEN_LETTERS);
 
-  }
+   }*/
+  
 
 
 
