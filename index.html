@@ -692,135 +692,135 @@
     <!-------✨ Linas Rum ✨-------->
     
     <section class="room-3" id="room3">
-        <div class="room-3-header">  
-          <h1>Tag själv lagret</h1>
-          <div class="room3Title">
-            <p class="progress-in-room-3">Rum 3</p>
+      <div class="room-3-header">  
+        <h1>Tag själv lagret</h1>
+        <div class="room3Title">
+          <p class="progress-in-room-3">Rum 3</p>
+        </div>
+      </div>
+      <div id="room3Start"><!--class="hidden"-->
+        <h2>Välkommen till rum 3</h2>
+        <p>Nu när du har lämnat lampavdelningen, är nästa steg att hitta rätt möbel inne på lagret.</p>
+        <h3>Är du redo?</h3>
+        <div id="room3StartBtnWrapper">
+          <div>
+            <button id="room3StartBtn" aria-label="Gå till rum 3">→</button><span>Till rum 3</span>
           </div>
         </div>
-        <div id="room3Start"><!--class="hidden"-->
-          <h2>Välkommen till rum 3</h2>
-          <p>Nu när du har lämnat lampavdelningen, är nästa steg att hitta rätt möbel inne på lagret.</p>
-          <h3>Är du redo?</h3>
-          <div id="room3StartBtnWrapper">
-            <div>
-              <button id="room3StartBtn" aria-label="Gå till rum 3">→</button><span>Till rum 3</span>
+          
+      </div>
+      <section id="room3Part1" class="hidden"> <!--class="hidden"-->
+        <h2>Vilken hylla och fack?</h2>
+        <p>Puh! Du tog dig ut från lampavdelningen, du är snart ute.</p> 
+          <p>MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den kommer vi inte till kassorna.</p>
+        <p>Du kommer ihåg lappen du fick med dig hemifrån och blir lite fundersam över vad som står.</p>  
+          
+        <div class="clue-1-room-3-wrapper">
+          <img id="confusedIkeaManRoom3" src="/src/images/gubbe-ikea-forvirrad.png" alt="Lapp med kod">
+          <div>
+            <h3>Lös rebusen:</h3>
+              
+            <div id="clue1Room3">
+              <p>1.</p>
+              <img src="/src/images/clue-room-3-1.png" alt="Lapp där det står: Hylla = Kyrre, Fack = Pax + Ekenäset">
+              
             </div>
-          </div>
-          
+          </div>  
         </div>
-        <section id="room3Part1" class="hidden"> <!--class="hidden"-->
-          <h2>Vilken hylla och fack?</h2>
-          <p>Puh! Du tog dig ut från lampavdelningen, du är snart ute.</p> 
-            <p>MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den kommer vi inte till kassorna.</p>
-          <p>Du kommer ihåg lappen du fick med dig hemifrån och blir lite fundersam över vad som står.</p>  
           
-          <div class="clue-1-room-3-wrapper">
-            <img id="confusedIkeaManRoom3" src="/src/images/gubbe-ikea-forvirrad.png" alt="Lapp med kod">
-            <div>
-              <h3>Lös rebusen:</h3>
+          
+        <div id="guessInput1Room3Wrapper">
+          <p id="titleHylla">1x Hylla</p>
+          <p>BILLY</p>
+          <div id ="guessInput1Room3">
+            <form id="guessHyllaFackSection">
+              <p>
+                <span class="id-number-item">403.834.74</span>
+              </p>
+              <p class="guess-input-room-3">
+                <label>Hylla:</label><input id="hyllaInput" maxlength="2" type="number" placeholder="00">
+              </p>
+              <p class="guess-input-room-3">
+                <label>Fack:</label><input id="fackInput" maxlength="2" type="number" placeholder="00">
+              </p>
+            </form>
               
-              <div id="clue1Room3">
-                <p>1.</p>
-                <img src="/src/images/clue-room-3-1.png" alt="Lapp där det står: Hylla = Kyrre, Fack = Pax + Ekenäset">
-              
+          </div>
+        </div>  
+      </section>
+      <section id="room3Part2" class="hidden"> <!--class="hidden"-->
+        <h2>Korrekt</h2>
+        <div class="descriptionRoom3">
+          <p>Bra jobbat! Du har hittat rätt hylla och fack. 
+            <span>MEN</span> 
+            någon har lämnat det i totalt kaos och skyltningen är förstörd, nu måste du hitta rätt möbel.</p>
+          <p><span>Var du uppmärksam i förra steget?</span></p>  
+        </div>
+        <div class="clue-2-room-3-wrapper">
+          <div id="shelfForFurnituresRoom3Wrapper">
+            <div id="shelfImageRoom3">
+              <div id="scribbleColumn1">
+                <img src="/src/images/scribble-room3.png" alt="Överstrykning av möbelbild i blått">
               </div>
+              <div id="scribbleColumn2">
+                <img id="scribbleYellowRoom3" src="/src/images/scribble-yellow.png" alt="Överstrykning av möbelnamn i gult">
+                  
+                <p>000.000.00</p>
+                <img id="barcodeRoom3" src="/src/images/barcodeRoom3.png">
+
+              </div>
+                
+            </div>
+            
+            <div id="hyllaAndFackShelfRoom3">
+              <div id="redBackgroundHyllaFack">  
+                <p class="hylla-fack-title">Hylla</p>
+                <p>05</p>
+                <p class="hylla-fack-title">Fack</p>
+                <p>38</p>
+              </div>  
             </div>  
           </div>
-          
-          
-          <div id="guessInput1Room3Wrapper">
-            <p id="titleHylla">1x Hylla</p>
-            <p>BILLY</p>
-            <div id ="guessInput1Room3">
-              <form id="guessHyllaFackSection">
-                <p>
-                  <span class="id-number-item">403.834.74</span>
-                </p>
-                <p class="guess-input-room-3">
-                  <label>Hylla:</label><input id="hyllaInput" maxlength="2" type="number" placeholder="00">
-                </p>
-                <p class="guess-input-room-3">
-                  <label>Fack:</label><input id="fackInput" maxlength="2" type="number" placeholder="00">
-                </p>
-              </form>
-              
-            </div>
-          </div>  
-        </section>
-        <section id="room3Part2" class="hidden"> <!--class="hidden"-->
-          <h2>Korrekt</h2>
-          <div class="descriptionRoom3">
-            <p>Bra jobbat! Du har hittat rätt hylla och fack. 
-              <span>MEN</span> 
-              någon har lämnat det i totalt kaos och skyltningen är förstörd, nu måste du hitta rätt möbel.</p>
-            <p><span>Var du uppmärksam i förra steget?</span></p>  
-          </div>
-          <div class="clue-2-room-3-wrapper">
-            <div id="shelfForFurnituresRoom3Wrapper">
-              <div id="shelfImageRoom3">
-                <div id="scribbleColumn1">
-                  <img src="/src/images/scribble-room3.png" alt="Överstrykning av möbelbild i blått">
-                </div>
-                <div id="scribbleColumn2">
-                  <img id="scribbleYellowRoom3" src="/src/images/scribble-yellow.png" alt="Överstrykning av möbelnamn i gult">
-                  
-                  <p>000.000.00</p>
-                  <img id="barcodeRoom3" src="/src/images/barcodeRoom3.png">
-
-                </div>
-                
-              </div>
-            
-              <div id="hyllaAndFackShelfRoom3">
-                <div id="redBackgroundHyllaFack">  
-                  <p class="hylla-fack-title">Hylla</p>
-                  <p>05</p>
-                  <p class="hylla-fack-title">Fack</p>
-                  <p>38</p>
-                </div>  
-              </div>  
-            </div>
-          </div>
-          <h3>Välj rätt möbel:</h3>
-          <div id="guessFurniture">
-              <!---Rendering av alternativ--->
-          </div>
-          <div id="clueRoom3Part2">
-            <p>Psst! Klicka inte för många gånger.</p>
-          </div>
-        </section>
-        
-        <section id="room3End" class="hidden">
-          <h2>Rum 3: Klart!</h2>
-          <p>Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu är det dags och ta sig till kassan för att betala.</p>
-          <div id="room3ToRoom4">
-            
-            <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button><span>Till kassan</span>
-          </div>
-          
-        </section>
-        <section id="room3GameOver" class="hidden">
-          <div>
-            <h2>Game Over</h2>
-            <p>Tyvärr tog tålamodet slut hos ditt barn och istället för att leta rätt på möbeln måste du nu leta rätt på ditt barn istället.</p>
-            <p class="right-before-button-room-3">När du letat klart, vill du spela igen eller vill du lämna varuhuset?</p>
-            <div>
-              <div>
-                <button id="restartGameBtn">Spela igen</button>
-                <button id="toIndexBtn">Ta mig hem</button>
-              </div>
-            </div>
-          </div>  
-        </section>
-        <div class="overlayRoom3" id="warnOverlayRoom3">
-          <div class="popupRoom3">
-            <div class="warningSymbol">⚠</div>
-            <h2>Fel möbel</h2>
-            <p>Var försiktig, du har bara ett försök kvar!</p>
-            <button class="popup-room-3-btn" id="closeWarnPopupRoom3Btn">Försök igen</button>
-          </div>
         </div>
+        <h3>Välj rätt möbel:</h3>
+        <div id="guessFurniture">
+          <!---Rendering av alternativ--->
+        </div>
+        <div id="clueRoom3Part2">
+          <p>Psst! Klicka inte för många gånger.</p>
+        </div>
+      </section>
+        
+      <section id="room3End" class="hidden">
+        <h2>Rum 3: Klart!</h2>
+        <p>Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu är det dags och ta sig till kassan för att betala.</p>
+        <div id="room3ToRoom4">
+            
+          <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button><span>Till kassan</span>
+        </div>
+          
+      </section>
+      <section id="room3GameOver" class="hidden">
+        <div>
+          <h2>Game Over</h2>
+          <p>Tyvärr tog tålamodet slut hos ditt barn och istället för att leta rätt på möbeln måste du nu leta rätt på ditt barn istället.</p>
+          <p class="right-before-button-room-3">När du letat klart, vill du spela igen eller vill du lämna varuhuset?</p>
+          <div>
+            <div>
+              <button id="restartGameBtn">Spela igen</button>
+              <button id="toIndexBtn">Ta mig hem</button>
+            </div>
+          </div>
+        </div>  
+      </section>
+      <div class="overlayRoom3" id="warnOverlayRoom3">
+        <div class="popupRoom3">
+          <div class="warningSymbol">⚠</div>
+          <h2>Fel möbel</h2>
+          <p>Var försiktig, du har bara ett försök kvar!</p>
+          <button class="popup-room-3-btn" id="closeWarnPopupRoom3Btn">Försök igen</button>
+        </div>
+      </div>
         
     </section>
       <!-- ================================== -->
