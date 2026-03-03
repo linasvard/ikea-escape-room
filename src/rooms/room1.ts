@@ -10,6 +10,9 @@ export default function initRoom1() {
   const introductionDiv = document.getElementById("introductionDiv");
   const startRoom1Btn = document.getElementById("startRoom1Btn");
 
+  // Håller koll på vilka zoner som redan använts denna runda
+  const usedZones = new Set<string>();
+
   // STARTKNAPP
   startRoom1Btn?.addEventListener("click", () => {
     introductionDiv?.classList.add("hidden");
@@ -18,6 +21,7 @@ export default function initRoom1() {
   // ALLA RESETKNAPPAR
   document.querySelectorAll(".resetBtn").forEach((btn) => {
     btn.addEventListener("click", () => {
+      usedZones.clear();
       resetRoom1();
       introductionDiv?.classList.remove("hidden");
     });
@@ -26,12 +30,13 @@ export default function initRoom1() {
   // -------------------------
   // MONKEY-ZONE
   // -------------------------
-  // let monkeyUsed = false;
   const zoneMonkey = document.getElementById("zoneMonkey");
   const monkeyDialog = document.getElementById("monkeyDialog");
   const submitMonkeyArgument = document.getElementById("submitMonkeyArgument");
 
   zoneMonkey?.addEventListener("click", () => {
+    if (usedZones.has("monkey")) return;
+    usedZones.add("monkey");
     monkeyDialog?.classList.remove("hidden");
   });
 
@@ -46,7 +51,6 @@ export default function initRoom1() {
     }
 
     monkeyDialog?.classList.add("hidden");
-    // monkeyUsed = true;
 
     if (selected.value === "E") {
       document
@@ -57,7 +61,7 @@ export default function initRoom1() {
       showArrow("arrow3");
       hideArrow("arrow1");
     } else {
-      handleTantrum("wantmonkeyTantrum", "wantmonkeyTantrumBtn");
+      handleTantrum("wantmonkeyTantrum", "wantmonkeyTantrumBtn", usedZones);
     }
   });
 
@@ -69,6 +73,8 @@ export default function initRoom1() {
   const submitPillowArgument = document.getElementById("submitPillowArgument");
 
   zonePillow?.addEventListener("click", () => {
+    if (usedZones.has("pillow")) return;
+    usedZones.add("pillow");
     pillowArgument?.classList.remove("hidden");
   });
 
@@ -97,7 +103,7 @@ export default function initRoom1() {
       hideArrow("arrow2");
       hideArrow("arrow3");
     } else {
-      handleTantrum("wantPillowTantrum", "wantPillowTantrumBtn");
+      handleTantrum("wantPillowTantrum", "wantPillowTantrumBtn", usedZones);
     }
   });
 
@@ -108,6 +114,8 @@ export default function initRoom1() {
   const bedsheetDialog = document.getElementById("bedsheetDialog");
 
   zoneBedsheets?.addEventListener("click", () => {
+    if (usedZones.has("bedsheets")) return;
+    usedZones.add("bedsheets");
     bedsheetDialog?.classList.remove("hidden");
   });
 
@@ -119,6 +127,8 @@ export default function initRoom1() {
   const chairDialogBtn = document.getElementById("chairDialogBtn");
 
   zoneChair?.addEventListener("click", () => {
+    if (usedZones.has("chair")) return;
+    usedZones.add("chair");
     chairDialog?.classList.remove("hidden");
   });
 
@@ -145,6 +155,8 @@ export default function initRoom1() {
   const zoneSuccess = document.getElementById("zoneSuccess");
 
   zoneLamp?.addEventListener("click", () => {
+    if (usedZones.has("lamp")) return;
+    usedZones.add("lamp");
     lampDialog?.classList.remove("hidden");
   });
 
@@ -162,6 +174,7 @@ export default function initRoom1() {
   // EXIT-ZONE
   // -------------------------
   zoneSuccess?.addEventListener("click", () => {
+    usedZones.clear();
     resetRoom1();
   });
 }
@@ -169,7 +182,11 @@ export default function initRoom1() {
 // -------------------------
 // TANTRUM-HANDLER
 // -------------------------
-function handleTantrum(dialogId: string, btnId: string) {
+function handleTantrum(
+  dialogId: string,
+  btnId: string,
+  usedZones: Set<string>,
+) {
   const tantrum = document.getElementById(dialogId);
 
   tantrum?.classList.remove("hidden");
@@ -178,6 +195,7 @@ function handleTantrum(dialogId: string, btnId: string) {
     "click",
     () => {
       tantrum?.classList.add("hidden");
+      usedZones.clear();
       resetRoom1();
     },
     { once: true },
@@ -188,17 +206,14 @@ function handleTantrum(dialogId: string, btnId: string) {
 // RESET-FUNKTION
 // -------------------------
 function resetRoom1() {
-  // Nollställ zoner
   document.querySelectorAll(".zone").forEach((zone) => {
     zone.classList.replace("zone-active", "zone-inactive");
   });
 
-  // Nollställ radioknappar
   document.querySelectorAll('input[type="radio"]').forEach((radio) => {
     (radio as HTMLInputElement).checked = false;
   });
 
-  // Dölj alla dialoger
   const allDialogs = [
     "wantmonkeyTantrum",
     "wantPillowTantrum",
@@ -213,7 +228,6 @@ function resetRoom1() {
     document.getElementById(id)?.classList.add("hidden");
   });
 
-  // Dölj alla arrows
   document.querySelectorAll(".arrow").forEach((arrow) => {
     arrow.classList.remove("visible");
   });
