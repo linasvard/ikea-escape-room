@@ -16,13 +16,19 @@
 
 import "./styles/main.scss"; // importerar scss till .ts som sedan körs i html via script-taggen
 
-import type {} from "./types/models";
+import type { } from "./types/models";
 
+
+import initHeader from "./rooms/header"; // importerar funktionen initHeader från filen header.ts i mappen rooms
 import initRoom1 from "./rooms/room1"; // importerar funktionen initRoom1 från filen room1.ts i mappen rooms
 import initRoom2 from "./rooms/room2"; // importerar funktionen initRoom2 från filen room2.ts i mappen rooms
 import initRoom3 from "./rooms/room3"; // importerar funktionen initRoom3 från filen room3.ts i mappen rooms
 import initRoom4 from "./rooms/room4"; // importerar funktionen initRoom4 från filen room4.ts i mappen rooms
 
+
+
+
+initHeader();
 initRoom1(); // kör funktionen initRoom1 som vi importerat från filen room1.ts i mappen rooms
 initRoom2(); // kör funktionen initRoom2 som vi importerat från filen room2.ts i mappen rooms
 initRoom3(); // kör funktionen initRoom3 som vi importerat från filen room3.ts i mappen rooms

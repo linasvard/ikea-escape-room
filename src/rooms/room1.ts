@@ -26,7 +26,7 @@ export default function initRoom1() {
   // -------------------------
   // MONKEY-ZONE
   // -------------------------
-  let monkeyUsed = false;
+  // let monkeyUsed = false;
   const zoneMonkey = document.getElementById("zoneMonkey");
   const monkeyDialog = document.getElementById("monkeyDialog");
   const submitMonkeyArgument = document.getElementById("submitMonkeyArgument");
@@ -46,7 +46,7 @@ export default function initRoom1() {
     }
 
     monkeyDialog?.classList.add("hidden");
-    monkeyUsed = true;
+    // monkeyUsed = true;
 
     if (selected.value === "E") {
       document
