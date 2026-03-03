@@ -11,7 +11,7 @@ export default function initRoom4() {
   const startBtn = document.getElementById(
     "room4-start-btn",
   ) as HTMLButtonElement;
-  const grid = document.getElementById("room4-grid") as HTMLDivElement;
+  // const grid = document.getElementById("room4-grid") as HTMLDivElement;
   const cells = document.querySelectorAll(
     ".room4-cell",
   ) as NodeListOf<HTMLDivElement>;
