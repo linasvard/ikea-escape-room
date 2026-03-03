@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="sv">
+  
 
 <head>
   <link rel="stylesheet" href="https://use.typekit.net/hmn0sku.css">
@@ -25,10 +26,127 @@
     <!-- ============= RUM 2 ============== -->
     <!-- ================================== -->
     <section class="room-2" id="room2">
-      <h3>Rum 2</h3>
-      <p id="room2Paragraph"></p>
+      <div class="room-2-instruction-container room-2-overlay room-2-is-visible" id="room2InstructionContainer">
+        <div>
+          <img class="room-2-ikea-man-box" src="/room_2_ikea_man_box.png" alt="">
+          <h2>Lamporna
+          </h2>
+          <p>
+            Åh, sådär, nu har vi äntligen hittat lampavdelningen! Men vad var det vi skulle ha nu igen? Juste, vi skulle
+            ju testa den nya, flefärgade, smarta, coola, och trådlösa ljuskällan <span class="room-2-tooltip"
+              href="">KAJPLATS!<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat och vitt</span>
+            </span>
+          </p>
+          <p>
+            Men, alla lampor är ju släckta!?
+          </p>
+          <p>
+            Jag vet vad vi måste göra! Om vi trycker på lampknappen <span class="room-2-tooltip" href="">BILRESA<span
+                class="room-2-tooltip-box">Fjärrkontroll, vit smart/två knappar</span>
+            </span> så att alla lampor i slutet lyser samtidigt, så
+            ser vi
+            vilken hylla <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla,
+                smart, färgat och vitt</span>
+            </span>
+            </span> ligger i och vi kan då lägga den i vår gula
+            påse och gå vidare!
+          </p>
+          <p class="room-2-instruction-last-line">Men kom ihåg: vi har bara 10 stycken tryck på oss innan 'ungen'
+            tröttnar och vill åka
+            hem!</p>
+
+          <button id="room2GoToGameBtn">Nästa</button>
+
+
+
+
+        </div>
+      </div>
+      <div class="room-2-game-info-header">
+        <div class="room-2-hint-wrapper">
+          <img class="room-2-ikea-man-question" src="/room_2_ikea_man_question.png" alt="Hint for solution">
+          <div class="room-2-hint-infobox">
+            <div>
+              <h4>Tips:</h4>
+              <span>Alla knappar måste användas för att lösa spelet!</span>
+            </div>
+          </div>
+        </div>
+        <div class="room-2-game-info-text">
+          <h2>Lamporna</h2>
+          <p>Tryck på <span class="room-2-tooltip" href="">BILRESA<span class="room-2-tooltip-box">Fjärrkontroll, vit
+                smart/två knappar</span></span> för att tända <span class=" room-2-tooltip" href="">KAJPLATS!<span
+                class="room-2-tooltip-box">LED ljuskälla, smart, färgat och vitt</span>
+            </span> Rummet är klarat när alla lampor lyser samtidigt!</p>
+        </div>
+        <div class="room-2-click-counter" id="room2ClickCounter"></div>
+
+      </div>
+
+      <div class="room-2-gamewrapper">
+
+        <div class="room-2-lampcontainer"><img src="" id="lamp1" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-lampcontainer"><img src="" id="lamp2" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-lampcontainer"><img src="" id="lamp3" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-lampcontainer"><img src="" id="lamp4" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn1"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn2"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn3"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn4"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+
+      </div>
+      <div class="room-2-lose-screen room-2-overlay" id="room2LoseScreen">
+        <div>
+          <img class="room-2-ikea-man-sad" src="/room_2_ikea_man_sad.png" alt="">
+          <h2>Lamporna
+          </h2>
+          <p>
+            Åh, nej! Vi lyckades inte tända alla lampor i tid och nu har 'insert
+            ungens namn här' tröttnat och sprungit iväg.
+          </p>
+          <p>
+            Vi måste gå ut från <span class="room-2-ikea-word">IKEA</span>, så
+            får lov att åka hit en annan dag.
+          </p>
+
+          <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
+          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
+          <button id="goToStartBtn" disabled><span>Gå ut från varuhuset</span></button>
+        </div>
+      </div>
+      <div class="room-2-win-screen room-2-overlay" id="room2WinScreen">
+        <div>
+          <img class="room-2-ikea-man-box" src="/room_2_ikea_man_box.png" alt="">
+          <h2>Lamporna
+          </h2>
+          <p>
+            Yes! Vi lyckades tända alla lampor och nu ser vi ju var <span class="room-2-tooltip" href="">KAJPLATS<span
+                class="room-2-tooltip-box">LED ljuskälla, smart färgat och vitt</span>
+            </span> ligger någonstans!
+          </p>
+          <p>
+            Vi tar en <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla,
+                smart, färgat och vitt</span>
+            </span> och lägger den i vår <span class="room-2-ikea-word">IKEA</span>-påse, så
+            går kan vi gå vidare till <span class="room-2-ikea-word">Ta-själv-lagret</span>?
+          </p>
+
+          <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
+          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
+          <button id="goToRoom3Btn" disabled><span>Till ta-själv-lagret!</span></button>
+        </div>
+      </div>
+
     </section>
-    <button type="button" id="room2Btn">Klicka här för att ändra färg på rum 2</button>
+
     <!-- ================================== -->
     <!-- ============= RUM 3 ============== -->
     <!-- ================================== -->
@@ -161,21 +279,110 @@
         </div>
       </div>
     </section>
+      <!-- ================================== -->
+      <!-- ============= RUM 4 ============== -->
+      <!-- ================================== -->
+      <section class="room-4" id="room4">
+        <h3>Rum 4 - Kassan</h3>
+
+        <!-- Memory -->
+        <div id="room4memory">
+          <p class="room4-instructions" id="room4-instructions">
+            Memorera var de gula rutorna är och dess siffror!
+          </p>
+
+          <p class="room4-timer" id="room4-timer"></p>
+
+          <button type="button" id="room4-start-btn">
+            Visa de gula rutorna
+          </button>
+
+          <div class="room4-grid" id="room4-grid">
+            <div class="room4-cell" data-index="0"></div>
+            <div class="room4-cell" data-index="1"></div>
+            <div class="room4-cell" data-index="2"></div>
+            <div class="room4-cell" data-index="3"></div>
+            <div class="room4-cell" data-index="4"></div>
+            <div class="room4-cell" data-index="5"></div>
+            <div class="room4-cell" data-index="6"></div>
+            <div class="room4-cell" data-index="7"></div>
+            <div class="room4-cell" data-index="8"></div>
+            <div class="room4-cell" data-index="9"></div>
+          </div>
+
+          <p class="room4-message" id="room4-message"></p>
+        </div>
+
+        <!-- Kassakoden -->
+        <div id="room4checkout" hidden>
+          <h3>Kassan</h3>
+          <p class="room4-checkout-instruction">
+            Skriv in koden från de gula rutorna för att betala dina varor!
+          </p>
+
+          <div class="room4-cart">
+            <h4>Varukorgssammanfattning</h4>
+            <ul class="room4-cart-list">
+              <li><span>BILLY</span><span>399 kr</span></li>
+              <li><span>[Placeholder]</span><span>59 kr</span></li>
+              <li><span>UPPLYST</span><span>149 kr</span></li>
+            </ul>
+            <div class="room4-cart-total">
+              <span>Totalt</span><span>607 kr</span>
+            </div>
+          </div>
+
+          <div class="room4-terminal">
+            <div class="room4-display">
+              <div class="room4-display-price">607,00 kr</div>
+              <div class="room4-display-blipp">
+                <img src="/assets/blipp.png" alt="Blipp" width="40" />
+              </div>
+              <div class="room4-display-code">
+                <span id="room4CodeDisplay">----</span>
+              </div>
+            </div>
+
+            <div class="room4-keypad">
+              <button type="button" class="room4-key" data-key="1">1</button>
+              <button type="button" class="room4-key" data-key="2">2</button>
+              <button type="button" class="room4-key" data-key="3">3</button>
+              <button type="button" class="room4-key" data-key="4">4</button>
+              <button type="button" class="room4-key" data-key="5">5</button>
+              <button type="button" class="room4-key" data-key="6">6</button>
+              <button type="button" class="room4-key" data-key="7">7</button>
+              <button type="button" class="room4-key" data-key="8">8</button>
+              <button type="button" class="room4-key" data-key="9">9</button>
+              <button
+                type="button"
+                class="room4-key room4-key-clear"
+                data-key="clear"
+              >
+                C
+              </button>
+              <button type="button" class="room4-key" data-key="0">0</button>
+              <button
+                type="button"
+                class="room4-key room4-key-enter"
+                data-key="enter"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+
+          <p class="room4-message" id="room4CheckoutMessage"></p>
+        </div>
+      </section>
+      <button type="button" disabled>Gå ut från IKEA</button>
+    </main>
+    <footer></footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
     
    
     
     
-    <!-- ================================== -->
-    <!-- ============= RUM 4 ============== -->
-    <!-- ================================== -->
-    <section class="room-4" id="room4">
-      <h3>Rum 4</h3>
-    </section>
-    <button type="button" disabled>Gå ut från IKEA</button>
-  </main>
-  <footer>
-  </footer>
-  <script type="module" src="/src/main.ts"></script>
-</body>
+    
 
 </html>
