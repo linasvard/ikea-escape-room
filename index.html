@@ -24,10 +24,127 @@
     <!-- ============= RUM 2 ============== -->
     <!-- ================================== -->
     <section class="room-2" id="room2">
-      <h3>Rum 2</h3>
-      <p id="room2Paragraph"></p>
+      <div class="room-2-instruction-container room-2-overlay room-2-is-visible" id="room2InstructionContainer">
+        <div>
+          <img class="room-2-ikea-man-box" src="/room_2_ikea_man_box.png" alt="">
+          <h2>Lamporna
+          </h2>
+          <p>
+            Åh, sådär, nu har vi äntligen hittat lampavdelningen! Men vad var det vi skulle ha nu igen? Juste, vi skulle
+            ju testa den nya, flefärgade, smarta, coola, och trådlösa ljuskällan <span class="room-2-tooltip"
+              href="">KAJPLATS!<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat och vitt</span>
+            </span>
+          </p>
+          <p>
+            Men, alla lampor är ju släckta!?
+          </p>
+          <p>
+            Jag vet vad vi måste göra! Om vi trycker på lampknappen <span class="room-2-tooltip" href="">BILRESA<span
+                class="room-2-tooltip-box">Fjärrkontroll, vit smart/två knappar</span>
+            </span> så att alla lampor i slutet lyser samtidigt, så
+            ser vi
+            vilken hylla <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla,
+                smart, färgat och vitt</span>
+            </span>
+            </span> ligger i och vi kan då lägga den i vår gula
+            påse och gå vidare!
+          </p>
+          <p class="room-2-instruction-last-line">Men kom ihåg: vi har bara 10 stycken tryck på oss innan 'ungen'
+            tröttnar och vill åka
+            hem!</p>
+
+          <button id="room2GoToGameBtn">Nästa</button>
+
+
+
+
+        </div>
+      </div>
+      <div class="room-2-game-info-header">
+        <div class="room-2-hint-wrapper">
+          <img class="room-2-ikea-man-question" src="/room_2_ikea_man_question.png" alt="Hint for solution">
+          <div class="room-2-hint-infobox">
+            <div>
+              <h4>Tips:</h4>
+              <span>Alla knappar måste användas för att lösa spelet!</span>
+            </div>
+          </div>
+        </div>
+        <div class="room-2-game-info-text">
+          <h2>Lamporna</h2>
+          <p>Tryck på <span class="room-2-tooltip" href="">BILRESA<span class="room-2-tooltip-box">Fjärrkontroll, vit
+                smart/två knappar</span></span> för att tända <span class=" room-2-tooltip" href="">KAJPLATS!<span
+                class="room-2-tooltip-box">LED ljuskälla, smart, färgat och vitt</span>
+            </span> Rummet är klarat när alla lampor lyser samtidigt!</p>
+        </div>
+        <div class="room-2-click-counter" id="room2ClickCounter"></div>
+
+      </div>
+
+      <div class="room-2-gamewrapper">
+
+        <div class="room-2-lampcontainer"><img src="" id="lamp1" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-lampcontainer"><img src="" id="lamp2" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-lampcontainer"><img src="" id="lamp3" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-lampcontainer"><img src="" id="lamp4" alt="" class="room-2-lamp-img"></div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn1"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn2"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn3"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn4"><img src="/room_2_remote.jpg" alt=""></button>
+        </div>
+
+      </div>
+      <div class="room-2-lose-screen room-2-overlay" id="room2LoseScreen">
+        <div>
+          <img class="room-2-ikea-man-sad" src="/room_2_ikea_man_sad.png" alt="">
+          <h2>Lamporna
+          </h2>
+          <p>
+            Åh, nej! Vi lyckades inte tända alla lampor i tid och nu har 'insert
+            ungens namn här' tröttnat och sprungit iväg.
+          </p>
+          <p>
+            Vi måste gå ut från <span class="room-2-ikea-word">IKEA</span>, så
+            får lov att åka hit en annan dag.
+          </p>
+
+          <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
+          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
+          <button id="goToStartBtn" disabled><span>Gå ut från varuhuset</span></button>
+        </div>
+      </div>
+      <div class="room-2-win-screen room-2-overlay" id="room2WinScreen">
+        <div>
+          <img class="room-2-ikea-man-box" src="/room_2_ikea_man_box.png" alt="">
+          <h2>Lamporna
+          </h2>
+          <p>
+            Yes! Vi lyckades tända alla lampor och nu ser vi ju var <span class="room-2-tooltip" href="">KAJPLATS<span
+                class="room-2-tooltip-box">LED ljuskälla, smart färgat och vitt</span>
+            </span> ligger någonstans!
+          </p>
+          <p>
+            Vi tar en <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla,
+                smart, färgat och vitt</span>
+            </span> och lägger den i vår <span class="room-2-ikea-word">IKEA</span>-påse, så
+            går kan vi gå vidare till <span class="room-2-ikea-word">Ta-själv-lagret</span>?
+          </p>
+
+          <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
+          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
+          <button id="goToRoom3Btn" disabled><span>Till ta-själv-lagret!</span></button>
+        </div>
+      </div>
+
     </section>
-    <button type="button" id="room2Btn">Klicka här för att ändra färg på rum 2</button>
+
     <!-- ================================== -->
     <!-- ============= RUM 3 ============== -->
     <!-- ================================== -->

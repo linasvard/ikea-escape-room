@@ -5,11 +5,286 @@
  * I FILEN _VARIABLES.SCSS FINNS FÄRGER/FÄRGKODER SOM ÄR VANLIGA ATT SE HOS IKEA
  */
 
-.room-2 {
-  background-color: #ffda1a;
-  color: #333333;
+@font-face {
+  font-family: "Noto";
+  src: url(/NotoSans-VariableFont_wdth\,wght.ttf);
 }
 
-.red {
+.room-2 {
+  font-family: "Noto", Courier, monospace;
+  display: grid;
+  background-color: #ffffff;
+  color: #333333;
+  height: 600px;
+  width: 800px;
+  position: relative;
+}
+
+.room-2-instruction-container,
+.room-2-win-screen,
+.room-2-lose-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffffeb;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  div {
+    display: block;
+    margin-top: 64px;
+    color: #333333;
+    font-size: 1rem;
+    width: 50%;
+    padding-bottom: 16px;
+    h2 {
+      margin-top: 16px;
+    }
+    button {
+      font-family: "Noto", Courier, monospace;
+      min-height: 56px;
+      padding: 16px 64px;
+      margin-top: 16px;
+      margin-bottom: 32px;
+      border-radius: 64px;
+      background-color: #006fd0;
+      color: #ffffff;
+      border: none;
+      margin-left: auto;
+      display: block;
+    }
+    button:hover {
+      background-color: #0057a3;
+    }
+  }
+}
+.room-2-instruction-last-line {
+  margin-bottom: 0;
+}
+
+.room-2-tooltip {
+  position: relative;
+  cursor: help;
+
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+}
+
+.room-2-tooltip-box {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #ffffff;
+  color: inherit;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.room-2-tooltip:hover .room-2-tooltip-box {
+  opacity: 1;
+}
+
+.room-2-ikea-word,
+h3 {
+  color: #007cc1;
+  font-weight: 700;
+}
+.room-2-ikea-man-box {
+  position: absolute;
+  left: -20px;
+  bottom: 0px;
+  height: 590px;
+  pointer-events: none;
+}
+
+.room-2-game-info-header {
+  display: flex;
+  height: 50px;
+  margin: 16px 32px;
+  justify-content: space-between;
+  .room-2-game-info-text {
+    width: 50%;
+  }
+}
+.room-2-hint-wrapper {
+  position: relative;
+}
+.room-2-hint-infobox {
+  position: absolute;
+  transform: translate(45%, -55%) scale(0.95);
+
+  background: #ffffff;
+
+  opacity: 0;
+  transition: 0.3s ease;
+  border-radius: 2px;
+
+  div {
+    margin: 6px;
+  }
+}
+
+.room-2-ikea-man-question {
+  height: 150px;
+}
+.room-2-hint-wrapper {
+  &:hover .room-2-hint-infobox,
+  &:focus-within .room-2-hint-infobox {
+    opacity: 1;
+    transform: translate(50%, -50%) scale(1);
+  }
+}
+
+.room-2-click-counter {
+  align-self: center;
+  margin-top: 20px;
+  padding: 8px 24px;
+  color: #ffffff;
+  background-color: #000000;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.room-2-gamewrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: auto;
+}
+
+.room-2-lampcontainer {
+  height: 50%;
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+}
+
+.room-2-lamp-img {
+  width: 100px;
+  height: auto;
+}
+
+.room-2-btncontainer {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  button {
+    justify-items: center;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+  button:disabled {
+    cursor: default;
+  }
+  img {
+    width: 100px;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.room-2-overlay {
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1);
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease,
+    visibility 1s ease;
+}
+.room-2-is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.room-2-lose-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  div {
+    position: relative;
+    border: 1px solid #000000;
+    padding: 32px 32px;
+    display: block;
+    margin: 64px;
+    color: #333333;
+    font-size: 1rem;
+    width: 50%;
+    padding-bottom: 16px;
+    p {
+      padding: 0;
+    }
+    button {
+      font-family: "Noto", Courier, monospace;
+      min-height: 56px;
+      padding: 16px 62px;
+      margin-top: 150px;
+      margin-bottom: 32px;
+      border-radius: 64px;
+      background-color: #006fd0;
+      color: #ffffff;
+      border: none;
+      margin-left: auto;
+      display: block;
+    }
+    button:hover {
+      background-color: #0057a3;
+    }
+  }
+}
+
+.room-2-ikea-man-sad {
+  width: 200px;
+  position: absolute;
+  right: 450px;
+}
+
+// .room-2-lose-screen {
+//   border: 1px solid black;
+// }
+
+.room2WinScreenDiv1,
+.room2WinScreenDiv2 {
+  justify-self: start;
+}
+
+#goToRoom3Btn {
+  margin-top: 200px;
+}
+
+.ikea-man {
+  height: 40px;
+  margin-top: 16px;
+}
+
+.room-2-red-color {
   background-color: #e53935;
+}
+.room-2-green-color {
+  background-color: #4caf50;
 }

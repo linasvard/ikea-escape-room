@@ -3,3 +3,8 @@
  * ==============DELADE TYPER==================
  * ============================================
 */
+
+export interface ILamp {
+  id: number;
+  on: boolean;
+};
