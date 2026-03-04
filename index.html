@@ -632,23 +632,28 @@
             <button id="room3StartBtn" aria-label="Gå till rum 3">→</button><span>Till rum 3</span>
           </div>
         </div>
-
+          
       </div>
       <section id="room3Part1" class="hidden"> <!--class="hidden"-->
         <h2>Vilken hylla och fack?</h2>
-        <p>Puh! Du tog dig ut från lampavdelningen, du är snart ute.</p>
-        <p>MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den kommer vi inte till kassorna.</p>
-        <p>Du kommer ihåg lappen du fick med dig hemifrån och blir lite fundersam över vad som står.</p>
-        <h3>Lös rebusen:</h3>
+        <p>Puh! Du tog dig ut från lampavdelningen, du är snart ute.</p> 
+          <p>MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den kommer vi inte till kassorna.</p>
+        <p>Du kommer ihåg lappen du fick med dig hemifrån och blir lite fundersam över vad som står.</p>  
+          
         <div class="clue-1-room-3-wrapper">
           <img id="confusedIkeaManRoom3" src="/src/images/gubbe-ikea-forvirrad.png" alt="Lapp med kod">
-          <div id="clue1Room3">
-            <p>1.</p>
-            <img src="/src/images/ledtrad-1-rum-3.png" alt="Lapp där det står: Hylla = EKET, Fack = PAX + SÖDERHAMN">
-          </div>
+          <div>
+            <h3>Lös rebusen:</h3>
+              
+            <div id="clue1Room3">
+              <p>1.</p>
+              <img src="/src/images/clue-room-3-1.png" alt="Lapp där det står: Hylla = Kyrre, Fack = Pax + Ekenäset">
+              
+            </div>
+          </div>  
         </div>
-
-
+          
+          
         <div id="guessInput1Room3Wrapper">
           <p id="titleHylla">1x Hylla</p>
           <p>BILLY</p>
@@ -664,7 +669,7 @@
                 <label>Fack:</label><input id="fackInput" maxlength="2" type="number" placeholder="00">
               </p>
             </form>
-
+              
           </div>
         </div>
       </section>
@@ -684,24 +689,23 @@
                 <img src="/src/images/scribble-room3.png" alt="Överstrykning av möbelbild i blått">
               </div>
               <div id="scribbleColumn2">
-                <img id="scribbleYellowRoom3" src="/src/images/scribble-yellow.png"
-                  alt="Överstrykning av möbelnamn i gult">
-
+                <img id="scribbleYellowRoom3" src="/src/images/scribble-yellow.png" alt="Överstrykning av möbelnamn i gult">
+                  
                 <p>000.000.00</p>
                 <img id="barcodeRoom3" src="/src/images/barcodeRoom3.png">
 
               </div>
-
+                
             </div>
-
+            
             <div id="hyllaAndFackShelfRoom3">
               <div id="redBackgroundHyllaFack">
                 <p class="hylla-fack-title">Hylla</p>
                 <p>05</p>
                 <p class="hylla-fack-title">Fack</p>
-                <p>39</p>
-              </div>
-            </div>
+                <p>38</p>
+              </div>  
+            </div>  
           </div>
         </div>
         <h3>Välj rätt möbel:</h3>
@@ -712,16 +716,16 @@
           <p>Psst! Klicka inte för många gånger.</p>
         </div>
       </section>
-
+        
       <section id="room3End" class="hidden">
         <h2>Rum 3: Klart!</h2>
         <p>Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu är det dags och ta sig till kassan för
           att betala.</p>
         <div id="room3ToRoom4">
-
+            
           <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button><span>Till kassan</span>
         </div>
-
+          
       </section>
       <section id="room3GameOver" class="hidden">
         <div>
@@ -746,6 +750,7 @@
           <button class="popup-room-3-btn" id="closeWarnPopupRoom3Btn">Försök igen</button>
         </div>
       </div>
+        
     </section>
     <!-- ================================== -->
     <!-- ============= RUM 4 ============== -->

@@ -29,7 +29,7 @@ room3StartBtn.addEventListener("click", () => {
 // Del ett
 
 const regexHylla = /^5$/;
-const regexFack = /^39$/;
+const regexFack = /^38$/;
 
 // const formFackHylla = document.querySelector("#guessHyllaFackSection") as HTMLFormElement;
 const fackInput = document.querySelector("#fackInput") as HTMLInputElement;
