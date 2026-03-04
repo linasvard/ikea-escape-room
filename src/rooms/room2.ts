@@ -115,8 +115,7 @@ export default function initRoom2() {
   }
 
   function printNumberOfClicks() {
-    const numberOfClicksEl: HTMLDivElement | null =
-      document.querySelector("#room2ClickCounter");
+    const numberOfClicksEl: HTMLDivElement |null = document.querySelector("#room2ClickCounter");
 
     const html = `
 
@@ -126,7 +125,9 @@ export default function initRoom2() {
     
     `;
 
-    numberOfClicksEl.innerHTML = html;
+    if (numberOfClicksEl) {
+      numberOfClicksEl.innerHTML = html;
+    }
   }
 
   function getLampImage(lamp: ILamp): string {
