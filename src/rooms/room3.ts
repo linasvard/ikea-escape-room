@@ -8,6 +8,8 @@
 import optionsRoom3 from "./furniture-options-room3.json";
 import type {  } from "../types/models"; // Om du vill använda dig av models på samma sätt vi fick lära oss på budgetappen, så kan du använda denna för att importera från ../types/models
 
+import { saveFinishedRoomToLS, showRoom } from "./roomProgress"; // funktioner som ligger i filen roomProgress.ts. I den filen finns info om vad varje funktion gör!
+
 export default function initRoom3() {
   // Visa div:en för rum 3
   // övrig kod för rum 3
@@ -110,24 +112,32 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
   });
 
   function handleSelection(item: Element): void {
-  const selectedId = item.getAttribute("data-id");
+    const selectedId = item.getAttribute("data-id");
 
-  if (selectedId === "1") {
-    document.querySelector("#room3Part2")?.classList.add("hidden");
-    document.querySelector("#room3End")?.classList.remove("hidden");
-  } else {
-    wrongClicksRoom3++;
-    
-    if (wrongClicksRoom3 >= 2) {
+    if (selectedId === "1") {
+      saveFinishedRoomToLS();
       document.querySelector("#room3Part2")?.classList.add("hidden");
-      document.querySelector("#room3GameOver")?.classList.remove("hidden");
-      document.querySelector("#room2Start")?.classList.add("hidden");
-      
+      document.querySelector("#room3End")?.classList.remove("hidden");
+
+      const goToRoom4Btn = document.querySelector('#room3ToRoom4Btn') as HTMLButtonElement;
+      goToRoom4Btn.addEventListener('click', () => {
+        showRoom(4);
+      });
+
     } else {
-      document.querySelector("#warnOverlayRoom3")?.classList.add("show");
+      wrongClicksRoom3++;
+      
+      if (wrongClicksRoom3 >= 2) {
+        localStorage.removeItem('currentRoom');  // kör denna kod för att ta bort minnet av hur måga rum som är klarade!
+        document.querySelector("#room3Part2")?.classList.add("hidden");
+        document.querySelector("#room3GameOver")?.classList.remove("hidden");
+        document.querySelector("#room2Start")?.classList.add("hidden");
+        
+      } else {
+        document.querySelector("#warnOverlayRoom3")?.classList.add("show");
+      }
     }
   }
-}
 }
 // stänga popup
 document.querySelector("#closeWarnPopupRoom3Btn")?.addEventListener("click", () => {

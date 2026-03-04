@@ -118,7 +118,7 @@
     <!-- ============= RUM 1 ============== -->
     <!-- ================================== -->
 
-    <section class="room-1" id="room1">
+    <section class="main-rooms room-1 hidden" id="room1">
       <div id="map">
         <!--INTRODUCTION-->
         <div id="introductionDiv" class="introduction-div">
@@ -486,7 +486,7 @@
     <!-- ================================== -->
     <!-- ============= RUM 2 ============== -->
     <!-- ================================== -->
-    <section class="room-2" id="room2">
+    <section class="main-rooms room-2 hidden" id="room2">
       <div class="room-2-instruction-container room-2-overlay room-2-is-visible" id="room2InstructionContainer">
         <div>
           <img class="room-2-ikea-man-box" src="/room_2_ikea_man_box.png" alt="">
@@ -580,7 +580,9 @@
 
           <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
           <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
-          <button id="goToStartBtn" disabled><span>Gå ut från varuhuset</span></button>
+          <a class="room-2-game-over-btn" href="">
+            <button id="goToStartBtn"><span>Gå ut från varuhuset</span></button>
+          </a>
         </div>
       </div>
       <div class="room-2-win-screen room-2-overlay" id="room2WinScreen">
@@ -602,7 +604,7 @@
 
           <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
           <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
-          <button id="goToRoom3Btn" disabled><span>Till ta-själv-lagret!</span></button>
+          <button id="goToRoom3Btn"><span>Till ta-själv-lagret!</span></button>
         </div>
       </div>
 
@@ -614,7 +616,7 @@
 
     <!-------✨ Linas Rum ✨-------->
 
-    <section class="room-3" id="room3">
+    <section class="main-rooms room-3 hidden" id="room3">
       <div class="room-3-header">
         <h1>Tag själv lagret</h1>
         <div class="room3Title">
@@ -748,7 +750,7 @@
     <!-- ================================== -->
     <!-- ============= RUM 4 ============== -->
     <!-- ================================== -->
-    <section class="room-4" id="room4">
+    <section class="main-rooms room-4 hidden" id="room4">
       <h3>Rum 4 - Kassan</h3>
 
       <!-- Memory -->
@@ -790,7 +792,7 @@
           <h4>Varukorgssammanfattning</h4>
           <ul class="room4-cart-list">
             <li><span>BILLY</span><span>399 kr</span></li>
-            <li><span>[Placeholder]</span><span>59 kr</span></li>
+            <li><span>KAJPLATS</span><span>59 kr</span></li>
             <li><span>UPPLYST</span><span>149 kr</span></li>
           </ul>
           <div class="room4-cart-total">
@@ -832,6 +834,10 @@
         <p class="room4-message" id="room4CheckoutMessage"></p>
       </div>
     </section>
+
+
+
+    <section id="gameOverRoom"></section>
     <button type="button" disabled>Gå ut från IKEA</button>
   </main>
   <footer></footer>

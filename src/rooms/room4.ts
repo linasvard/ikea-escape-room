@@ -6,6 +6,8 @@
 
 import type {} from "../types/models";
 
+import { saveFinishedRoomToLS } from "./roomProgress";
+
 export default function initRoom4() {
   // Hämta HTML-element - Memory
   const startBtn = document.getElementById(
@@ -176,6 +178,7 @@ export default function initRoom4() {
 
     if (key === "enter") {
       if (enteredCode === correctCode) {
+        saveFinishedRoomToLS();
         checkoutMessage.textContent = "Rätt kod!";
         checkoutMessage.style.color = "#27ae60";
       } else {

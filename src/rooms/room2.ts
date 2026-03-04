@@ -1,4 +1,4 @@
-//@ts-nocheck
+
 /* eslint-disable no-console */
 
 /*
@@ -8,6 +8,8 @@
  */
 
 import { type ILamp } from "../types/models"; // Om du vill använda dig av models på samma sätt vi fick lära oss på budgetappen, så kan du använda denna för att importera från ../types/models
+
+import { saveFinishedRoomToLS, showRoom } from "./roomProgress"; // Importerar funktion from roomProgress som sparar
 
 export default function initRoom2() {
   const lamps: ILamp[] = [
@@ -31,23 +33,6 @@ export default function initRoom2() {
   ];
 
   let room2Finished = false;
-
-  // function saveRoom2ProgToLS() {
-  //   const stringified = JSON.stringify(room2Finished);
-
-  //   localStorage.setItem(isRoom2Finished, stringified);
-
-  // }
-
-  // function readRoom2ProgFromLS() {
-  //   const savedValue = localStorage.getItem(isRoom2Finished);
-
-  //   if(savedValue === false) {
-  //     return;
-  //   }
-  //   room2Finished = JSON.parse(savedValue);
-
-  // }
 
   const lampChangeBtn1: HTMLButtonElement | null =
     document.querySelector("#room2Btn1");
@@ -73,25 +58,25 @@ export default function initRoom2() {
     [0, 1],
   ];
 
-  function setAllLampsOn() {
-    // funktion för att kunna redigera i winScreen utan att spela spelet. ställer alla lampor till on = true istället för on = false
-    lamps.forEach((lamp) => {
-      lamp.on = true;
-    });
-    renderLamps();
-  }
+  // function setAllLampsOn() {
+  //   // funktion för att kunna redigera i winScreen utan att spela spelet. ställer alla lampor till on = true istället för on = false
+  //   lamps.forEach((lamp) => {
+  //     lamp.on = true;
+  //   });
+  //   renderLamps();
+  // }
 
   renderLamps();
   // setAllLampsOn(); ///kör ovan funktion för att kunna starta sidan med winScreen i redigeringssyfte!
   checkWinCondition();
 
   function toggleLampState(index: number) {
-    // liten funktion för att säga till att om lampan är on = true så ska lampan ändras till on = false (och vise-versa)
+    // liten funktion för att säga till att om lampan är on = true så ska lampan ändras till on = false (och vise-versa) när man klickar på lampknappen
     lamps[index].on = !lamps[index].on;
   }
 
-  let numberOfClicks = 0;
-  const maxNumberOfClicks = 10;
+  let numberOfClicks = 0; // start för räknare av hur många klick man gjort
+  const maxNumberOfClicks = 10; // max antal klick man har på sig
 
   function buttonClick(buttonIndex: number) {
     const loseScreen: HTMLDivElement | null =
@@ -113,6 +98,7 @@ export default function initRoom2() {
     }
 
     if (numberOfClicks >= maxNumberOfClicks) {
+      localStorage.removeItem('currentRoom');
       lampChangeBtn1?.setAttribute("disabled", "");
       lampChangeBtn2?.setAttribute("disabled", "");
       lampChangeBtn3?.setAttribute("disabled", "");
@@ -120,7 +106,6 @@ export default function initRoom2() {
       console.log("Inga fler klick kvar!");
       setTimeout(() => room2PlayLosingSound(), 300);
       setTimeout(() => loseScreen?.classList.add("room-2-is-visible"), 1200);
-
       return;
     }
 
@@ -165,6 +150,8 @@ export default function initRoom2() {
     if (allLampsOn) {
       room2Finished = true;
 
+      saveFinishedRoomToLS();
+
       lampChangeBtn1?.setAttribute("disabled", "");
       lampChangeBtn2?.setAttribute("disabled", "");
       lampChangeBtn3?.setAttribute("disabled", "");
@@ -176,11 +163,17 @@ export default function initRoom2() {
         document.querySelector("#room2WinScreen");
       setTimeout(() => winScreen?.classList.add("room-2-is-visible"), 1400);
 
+      const goToRoom3Btn: HTMLButtonElement |null = document.querySelector('#goToRoom3Btn');
+      goToRoom3Btn?.addEventListener('click', () => {
+        showRoom(3);
+      });
+
       // setTimeout(() => textTypingEffect1(room2WinScreenDiv1, room2WinScreenText1), 0);
 
       // setTimeout(() => textTypingEffect2(room2WinScreenDiv2, room2WinScreenText2), 0);
-    }
+    };
   }
+  
 
   function room2PlaySuccessSound() {
     const audio = new Audio("/room_2_success_sound.wav");
@@ -260,47 +253,4 @@ export default function initRoom2() {
      setTimeout(() => textTypingEffect2(element, text, i + 1), TIME_BETWEEN_LETTERS);
 
    }*/
-
-  // function toggleColorBtn1() {
-  //   const room2Lamp1: HTMLElement |null = document.querySelector('#lamp1');
-  //   const room2Lamp2: HTMLElement |null = document.querySelector('#lamp2');
-  //   const room2Lamp3: HTMLElement |null = document.querySelector('#lamp3');
-  //   room2Lamp1?.classList.toggle('room-2-green-color');
-  //   room2Lamp2?.classList.toggle('room-2-green-color');
-  //   room2Lamp3?.classList.toggle('room-2-green-color');
-  // }
-
-  // const colorChangeBtn2: HTMLButtonElement |null = document.querySelector('#room2Btn2');
-  // colorChangeBtn2?.addEventListener('click', toggleColorBtn2);
-
-  // function toggleColorBtn2() {
-  //   const room2Lamp2: HTMLElement |null = document.querySelector('#lamp2');
-  //   const room2Lamp3: HTMLElement |null = document.querySelector('#lamp3');
-  //   room2Lamp2?.classList.toggle('room-2-green-color');
-  //   room2Lamp3?.classList.toggle('room-2-green-color');
-  // }
-
-  // const colorChangeBtn3: HTMLButtonElement |null = document.querySelector('#room2Btn3');
-  // colorChangeBtn3?.addEventListener('click', toggleColorBtn3);
-
-  // function toggleColorBtn3() {
-  //   const room2Lamp1: HTMLElement |null = document.querySelector('#lamp1');
-  //   const room2Lamp3: HTMLElement |null = document.querySelector('#lamp3');
-  //   const room2Lamp4: HTMLElement |null = document.querySelector('#lamp4');
-  //   room2Lamp1?.classList.toggle('room-2-green-color');
-  //   room2Lamp3?.classList.toggle('room-2-green-color');
-  //   room2Lamp4?.classList.toggle('room-2-green-color');
-  // }
-
-  // const colorChangeBtn4: HTMLButtonElement |null = document.querySelector('#room2Btn4');
-  // colorChangeBtn4?.addEventListener('click', toggleColorBtn4);
-
-  // function toggleColorBtn4() {
-  //   const room2Lamp1: HTMLElement |null = document.querySelector('#lamp1');
-  //   const room2Lamp2: HTMLElement |null = document.querySelector('#lamp2');
-  //   room2Lamp1?.classList.toggle('room-2-green-color');
-  //   room2Lamp2?.classList.toggle('room-2-green-color');
-  // }
-
-  // övrig kod för rum 2
 }
