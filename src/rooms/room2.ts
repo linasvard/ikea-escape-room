@@ -9,6 +9,9 @@
 
 import { type ILamp } from "../types/models"; // Om du vill använda dig av models på samma sätt vi fick lära oss på budgetappen, så kan du använda denna för att importera från ../types/models
 
+import lampOff from "/room2_lamp_off.png";
+import lampOn from "/room2_lamp_on.png";
+
 import { saveFinishedRoomToLS, showRoom } from "./roomProgress"; // Importerar funktion from roomProgress som sparar
 
 export default function initRoom2() {
@@ -131,7 +134,7 @@ export default function initRoom2() {
   }
 
   function getLampImage(lamp: ILamp): string {
-    return lamp.on ? "/room2_lamp_on.png" : "/room2_lamp_off.png";
+    return lamp.on ? lampOn : lampOff;
   }
 
   function renderLamps() {
