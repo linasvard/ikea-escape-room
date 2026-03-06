@@ -7,6 +7,7 @@
 import type {} from "../types/models";
 
 import { saveFinishedRoomToLS } from "./roomProgress";
+import { stopTimer } from "./timer";
 
 export default function initRoom4() {
   // Hämta HTML-element - Memory
@@ -178,6 +179,7 @@ export default function initRoom4() {
 
     if (key === "enter") {
       if (enteredCode === correctCode) {
+        stopTimer();
         saveFinishedRoomToLS();
         checkoutMessage.textContent = "Rätt kod!";
         checkoutMessage.style.color = "#27ae60";

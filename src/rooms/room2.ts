@@ -13,6 +13,8 @@ import lampOff from "/room2_lamp_off.png";
 import lampOn from "/room2_lamp_on.png";
 
 import { saveFinishedRoomToLS, showRoom } from "./roomProgress"; // Importerar funktion from roomProgress som sparar
+import { resetTimer } from "./timer";
+
 
 export default function initRoom2() {
   const lamps: ILamp[] = [
@@ -109,6 +111,7 @@ export default function initRoom2() {
       console.log("Inga fler klick kvar!");
       setTimeout(() => room2PlayLosingSound(), 300);
       setTimeout(() => loseScreen?.classList.add("room-2-is-visible"), 1200);
+      resetTimer();
       return;
     }
 
@@ -180,13 +183,13 @@ export default function initRoom2() {
   
 
   function room2PlaySuccessSound() {
-    const audio = new Audio("/room_2_success_sound.wav");
+    const audio = new Audio("./room_2_success_sound.wav");
     audio.volume = 0.2;
     audio.play();
   }
   function room2PlayLosingSound() {
-    const audio1 = new Audio("/room_2_game_over_sound.wav");
-    const audio2 = new Audio("/room_2_game_over_mario_sound.wav");
+    const audio1 = new Audio("./room_2_game_over_sound.wav");
+    const audio2 = new Audio("./room_2_game_over_mario_sound.wav");
     audio1.volume = 0.2;
     audio2.volume = 0.2;
     audio1.play();
