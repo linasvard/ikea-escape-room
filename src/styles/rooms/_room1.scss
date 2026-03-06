@@ -73,6 +73,10 @@
   background-size: cover;
 }
 
+.line-1 {
+  position: absolute;
+  width: 100px;
+}
 .zone-pillow img {
   width: 200px;
 }
@@ -269,8 +273,8 @@
 
 #arrow1 {
   position: absolute;
-  top: 79%;
-  left: 36.5%;
+  top: 35%;
+  left: 10.5%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
 }
