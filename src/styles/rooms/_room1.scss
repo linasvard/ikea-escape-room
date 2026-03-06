@@ -90,7 +90,7 @@
 .zone-monkey {
   position: absolute;
   top: 15%;
-  left: 22%;
+  left: 20%;
 }
 
 .zone-chair img {
@@ -273,15 +273,17 @@
   top: 20%;
   left: 0%;
   cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
+  //animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow2 {
   position: absolute;
-  top: 67.5%;
-  left: 55%;
+  width: 55%;
+  top: 8%;
+  left: 8%;
+
   cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
+  //animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow3 {
