@@ -74,13 +74,13 @@
 }
 
 .zone-pillow img {
-  width: 200px;
+  width: 180px;
 }
 
 .zone-pillow {
   position: absolute;
-  top: 28%;
-  left: 43%;
+  top: 30%;
+  left: 45%;
 }
 
 .zone-monkey img {
@@ -100,27 +100,27 @@
 .zone-chair {
   position: absolute;
   top: 10%;
-  left: 50%;
+  left: 53%;
 }
 
 .zone-bedsheets img {
-  width: 100px;
+  width: 120px;
 }
 
 .zone-bedsheets {
   position: absolute;
   top: 55%;
-  left: 60%;
+  left: 58%;
 }
 
 .zone-lamp img {
-  width: 100px;
+  width: 140px;
 }
 
 .zone-lamp {
   position: absolute;
-  top: 20%;
-  left: 80%;
+  top: 17%;
+  left: 76%;
 }
 
 .entry {
@@ -267,63 +267,67 @@
 
 //Arrows
 
-#arrow1 {
+#arrow1 img {
   position: absolute;
-  width: 30%;
-  top: 20%;
-  left: 0%;
+  width: 26%;
+  top: 27%;
+  left: 3%;
   cursor: pointer;
   //animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow2 {
+#arrow2 img {
   position: absolute;
-  width: 55%;
-  top: 8%;
-  left: 8%;
-
+  width: 50%;
+  top: 10.5%;
+  left: 12%;
   cursor: pointer;
   //animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow3 {
+#arrow3 img {
   position: absolute;
-  top: 55%;
-  left: 64%;
+  width: 53%;
+  top: 10%;
+  left: 35%;
   cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
+  //animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow4 {
+#arrow4 img {
   position: absolute;
-  top: 40%;
-  left: 42%;
+  width: 16%;
+  top: 18%;
+  left: 41%;
   cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
+  //animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow5 {
+#arrow5 img {
   position: absolute;
-  top: 46%;
-  left: 39%;
+  width: 50%;
+  top: -18%;
+  left: 45%;
   cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
+  //animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow6 {
+#arrow6 img {
   position: absolute;
-  top: 17%;
-  left: 53%;
+  width: 50%;
+  top: 5%;
+  left: 59%;
   cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
+  //animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow7 {
+#arrow7 img {
   position: absolute;
+  width: 60%;
   top: 30%;
-  left: 34%;
+  left: 27%;
   cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
+  // animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow9 {
@@ -337,9 +341,9 @@
 #arrow8 {
   position: absolute;
   top: 18%;
-  left: 65%;
+  left: 15%;
   cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
+  //animation: pulse 1.5s ease-in-out infinite;
 }
 
 .arrow {

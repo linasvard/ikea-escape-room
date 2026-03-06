@@ -60,8 +60,6 @@ export default function initRoom1() {
         ?.classList.replace("zone-inactive", "zone-active");
 
       showArrow("arrow2");
-      showArrow("arrow3");
-      hideArrow("arrow1");
     } else {
       handleTantrum("wantmonkeyTantrum", "wantmonkeyTantrumBtn", usedZones);
     }
@@ -100,10 +98,8 @@ export default function initRoom1() {
         .querySelector("#zoneBedsheets")
         ?.classList.replace("zone-inactive", "zone-active");
 
+      showArrow("arrow3");
       showArrow("arrow4");
-      showArrow("arrow5");
-      hideArrow("arrow2");
-      hideArrow("arrow3");
     } else {
       handleTantrum("wantPillowTantrum", "wantPillowTantrumBtn", usedZones);
     }
@@ -141,11 +137,8 @@ export default function initRoom1() {
       .querySelector(".zone-lamp")
       ?.classList.replace("zone-inactive", "zone-active");
 
-    showArrow("arrow6");
-    showArrow("arrow7");
-    showArrow("arrow9");
-    hideArrow("arrow4");
-    hideArrow("arrow5");
+    showArrow("arrow5");
+    hideArrow("arrow3");
   });
 
   // -------------------------
@@ -168,10 +161,8 @@ export default function initRoom1() {
 
     saveFinishedRoomToLS(); // funktion som ligger i roomProgress.ts som sparar vilket rum man klarat i LocalStorage
 
-    showArrow("arrow8");
-    hideArrow("arrow6");
-    hideArrow("arrow7");
-    hideArrow("arrow9");
+    showArrow("arrow6");
+    showArrow("arrow7");
   });
 
   // -------------------------

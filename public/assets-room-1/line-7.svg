@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path11" />
+    </marker>
+  </defs>
+  <g
+     id="layer1">
+    <path
+       style="display:inline;fill:none;stroke:#fff9f9;stroke-width:6.005;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24.02, 24.02;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#ArrowWideHeavy)"
+       d="m 477.11234,499.74217 c -11.60255,22.38836 -29.41351,41.51865 -50.91713,54.68877 -21.14326,12.94942 -45.39017,20.03356 -69.77532,24.51565 -16.19322,2.97638 -32.58577,4.86783 -49.03131,5.65746"
+       id="path10"
+       transform="matrix(0.26458333,0,0,0.26458333,-12.009567,-8.39779)" />
+  </g>
+</svg>
