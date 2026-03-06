@@ -73,10 +73,6 @@
   background-size: cover;
 }
 
-.line-1 {
-  position: absolute;
-  width: 100px;
-}
 .zone-pillow img {
   width: 200px;
 }
@@ -94,7 +90,7 @@
 .zone-monkey {
   position: absolute;
   top: 15%;
-  left: 15%;
+  left: 22%;
 }
 
 .zone-chair img {
@@ -273,8 +269,9 @@
 
 #arrow1 {
   position: absolute;
-  top: 35%;
-  left: 10.5%;
+  width: 30%;
+  top: 20%;
+  left: 0%;
   cursor: pointer;
   animation: pulse 1.5s ease-in-out infinite;
 }
