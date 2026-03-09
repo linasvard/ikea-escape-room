@@ -8,28 +8,36 @@
 .room-4 {
   background-color: #ffffff;
   color: #333333;
-  padding: 2rem 1rem;
   text-align: center;
   border-radius: 12px;
   width: 800px;
+  margin: 0 auto;
 
   h3 {
     color: #0058a3;
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
+
+  
+}
+
+.room-4-memory {
+  margin-top: 30px;
 }
 
 #room4-start-btn {
-  margin-bottom: 1rem;
-  padding: 0.6rem 1.5rem;
+  font-family: "futura-pt", sans-serif;
+  padding: 0.7rem 1.5rem;
   font-size: 1rem;
   font-weight: bold;
   background-color: #ffda1a;
   color: #333;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto 2rem;
 
   &:hover {
     background-color: #e6c200;
@@ -44,17 +52,18 @@
 .room4-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 0.5rem;
-  max-width: 300px;
+  gap: 1rem;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .room4-cell {
   aspect-ratio: 1;
-  background-color: #003d75;
+  font-size: 2rem;
+  background-color: #0058a3;
   border-radius: 8px;
   cursor: pointer;
-  border: 2px solid #004f93;
+  border: 2px solid #003c71;
   transition: transform 0.1s;
 
   &:hover {
@@ -63,6 +72,7 @@
 }
 
 .room4-message {
+  font-family: "noto-sans", sans-serif;
   margin-top: 1rem;
   font-weight: bold;
 }
@@ -98,7 +108,7 @@
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.8rem;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "futura-pt", sans-serif;
   margin-top: 0.5rem;
 }
 
@@ -157,19 +167,26 @@
 }
 
 .room4-terminal {
-  background: #ffffff;
+  position: relative;
+  background: #ffe667;
   border-radius: 20px;
-  padding: 1.5rem;
-  max-width: 300px;
-  margin: 1rem auto;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .room4-instructions {
   color: #333;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1rem; 
 }
+
+.room4-instructions {
+  margin: 0 auto;
+  width: 400px;
+}
+
 
 .room4-checkout-instruction {
   color: #333;
@@ -181,10 +198,12 @@
   background: #ffffff;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
-  padding: 1rem 1.2rem;
-  max-width: 300px;
-  margin: 0 auto 1rem auto;
+  padding: 20px 20px;
+  width: 100%;
+  margin: 0 auto;
   text-align: left;
+  height: 200px;
+  margin-top: 8px;
 
   h4 {
     font-size: 1rem;
@@ -215,4 +234,27 @@
   font-weight: bold;
   font-size: 1rem;
   color: #333;
+  height: 100%;
+}
+
+.cart-terminal-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  
+  margin: 0 auto;
+  gap: 50px;
+}
+
+.room-4-last-message { /* Lagt till så att rätt kod kommer upp ovanpå terminal*/
+  position: absolute;
+  right: 60px;
+  left: 60px;
+  
+  top: 530px;
+  /*background-color: white;
+  box-shadow: 1px 1.5px 5px rgba(0, 0, 0, 0.3);*/
+  padding: 15px 40px;
+  border-radius: 50px;
+  
+  
 }
