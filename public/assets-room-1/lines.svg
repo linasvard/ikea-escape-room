@@ -16,6 +16,29 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path11" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect11"
+       is_visible="true"
+       lpeversion="1" />
     <inkscape:path-effect
        effect="spiro"
        id="path-effect10"
@@ -82,8 +105,8 @@
      inkscape:cy="519.54328"
      inkscape:window-width="1072"
      inkscape:window-height="762"
-     inkscape:window-x="389"
-     inkscape:window-y="43"
+     inkscape:window-x="452"
+     inkscape:window-y="25"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      showguides="false" />
@@ -118,11 +141,10 @@
        inkscape:path-effect="#path-effect3"
        inkscape:original-d="m 477.11234,311.16022 c 0,-26.40147 3.77164,-54.68877 3.77164,-82.97606 0,-28.28729 32.68754,-47.77409 50.91712,-71.66114" />
     <path
-       style="fill:none;stroke:#fff9f9;stroke-width:6.005;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24.02, 24.02;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 677.0092,209.32597 c -24.99027,9.77826 -48.56738,23.15986 -69.77532,39.60221 -10.97061,8.50543 -21.50323,18.06224 -28.28729,30.17311 -5.74424,10.25458 -8.56848,22.5571 -5.65746,33.94475 2.8424,11.1192 10.94329,20.42975 20.74402,26.40147 11.26532,6.86411 24.60215,9.64582 37.77341,10.3815 13.17127,0.73568 26.36272,-0.45644 39.54519,-0.9524 24.55949,-0.924 49.17917,0.57271 73.54696,3.77164 17.10802,2.24589 34.65618,5.54274 49.0313,15.08655 14.93901,9.91818 25.33294,26.41807 27.82128,44.17623 2.48833,17.75817 -2.97185,36.48199 -14.62054,50.11475 -13.7223,16.05956 -34.41694,24.23475 -54.68876,30.17311 -59.12919,17.32111 -122.32774,20.57877 -182.9245,9.4291"
-       id="path9"
-       inkscape:path-effect="#path-effect10"
-       inkscape:original-d="m 677.0092,209.32597 c -22.00122,11.94352 -47.77409,27.65868 -69.77532,39.60221 -22.00122,11.94352 -17.60098,20.1154 -28.28729,30.17311 -10.68631,10.0577 -3.77164,21.37262 -5.65746,33.94475 -1.88582,12.57213 13.82934,17.60098 20.74402,26.40147 6.91467,8.80049 52.80294,6.28607 77.3186,9.4291 24.51565,3.14303 47.77409,2.51443 73.54696,3.77164 25.77286,1.25721 32.68754,11.31492 49.0313,15.08655 16.34377,3.77164 7.54328,62.23205 13.20074,94.29098 5.65746,32.05893 -35.83057,20.74402 -54.68876,30.17311 -18.8582,9.4291 -121.32106,5.02885 -182.9245,9.4291"
-       transform="matrix(0.99832005,0,0,1.1995349,1.1712807,-41.40461)" />
+       style="fill:none;stroke:#fff9f9;stroke-width:6.005;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24.02, 24.02;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#ArrowWideHeavy)"
+       d="m 477.11234,499.74217 c -11.60255,22.38836 -29.41351,41.51865 -50.91713,54.68877 -21.14326,12.94942 -45.39017,20.03356 -69.77532,24.51565 -16.19322,2.97638 -32.58577,4.86783 -49.03131,5.65746"
+       id="path10"
+       inkscape:path-effect="#path-effect11"
+       inkscape:original-d="m 477.11234,499.74217 c -15.71517,18.22959 -35.20197,36.45918 -50.91713,54.68877 -15.71516,18.22959 -44.00246,16.34377 -69.77532,24.51565 -25.77287,8.17188 -33.94475,3.77164 -49.03131,5.65746" />
   </g>
 </svg>

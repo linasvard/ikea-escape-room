@@ -40,6 +40,7 @@ export default function initRoom1() {
     if (usedZones.has("monkey")) return;
     usedZones.add("monkey");
     monkeyDialog?.classList.remove("hidden");
+    document.querySelector(".animation")?.classList.remove("animation");
   });
 
   submitMonkeyArgument?.addEventListener("click", () => {
@@ -76,6 +77,7 @@ export default function initRoom1() {
     if (usedZones.has("pillow")) return;
     usedZones.add("pillow");
     pillowArgument?.classList.remove("hidden");
+    document.querySelector(".animation")?.classList.remove("animation");
   });
 
   submitPillowArgument?.addEventListener("click", () => {
@@ -115,6 +117,7 @@ export default function initRoom1() {
     if (usedZones.has("bedsheets")) return;
     usedZones.add("bedsheets");
     bedsheetDialog?.classList.remove("hidden");
+    document.querySelector(".animation")?.classList.remove("animation");
   });
 
   // -------------------------
@@ -153,6 +156,7 @@ export default function initRoom1() {
     if (usedZones.has("lamp")) return;
     usedZones.add("lamp");
     lampDialog?.classList.remove("hidden");
+    document.querySelector(".animation")?.classList.remove("animation");
   });
 
   lampDialogBtn?.addEventListener("click", () => {

@@ -273,7 +273,10 @@
   top: 27%;
   left: 3%;
   cursor: pointer;
-  //animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow1.animation img {
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow2 img {
@@ -282,7 +285,10 @@
   top: 10.5%;
   left: 12%;
   cursor: pointer;
-  //animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow2.animation img {
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow3 img {
@@ -291,7 +297,9 @@
   top: 10%;
   left: 35%;
   cursor: pointer;
-  //animation: pulse 1.5s ease-in-out infinite;
+}
+#arrow3.animation img {
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow4 img {
@@ -300,7 +308,10 @@
   top: 18%;
   left: 41%;
   cursor: pointer;
-  //animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow4.animation img {
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow5 img {
@@ -309,7 +320,9 @@
   top: -18%;
   left: 45%;
   cursor: pointer;
-  //animation: pulse 1.5s ease-in-out infinite;
+}
+#arrow5.animation img {
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow6 img {
@@ -318,7 +331,9 @@
   top: 5%;
   left: 59%;
   cursor: pointer;
-  //animation: pulse 1.5s ease-in-out infinite;
+}
+#arrow6.animation img {
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 #arrow7 img {
@@ -327,23 +342,9 @@
   top: 30%;
   left: 27%;
   cursor: pointer;
-  // animation: pulse 1.5s ease-in-out infinite;
 }
-
-#arrow9 {
-  position: absolute;
-  top: 25%;
-  left: 45%;
-  cursor: pointer;
+#arrow7.animation img {
   animation: pulse 1.5s ease-in-out infinite;
-}
-
-#arrow8 {
-  position: absolute;
-  top: 18%;
-  left: 15%;
-  cursor: pointer;
-  //animation: pulse 1.5s ease-in-out infinite;
 }
 
 .arrow {
