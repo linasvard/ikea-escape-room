@@ -17,20 +17,131 @@
 @use "./rooms/room3";
 @use "./rooms/room4";
 
+* {
+  outline: none;
+}
+
+
+ 
+
+button:focus-visible, 
+input:focus-visible {
+  outline: 2px solid #0058a3;
+  outline-offset: 4px;
+  
+}
+
+.furniture-option:focus-visible {
+  outline: 2px solid #0058a3;
+  outline-offset: 2px;
+  border-radius: 2px;
+  
+}
+
+.main-rooms {
+  margin: 15px auto;
+  
+}
+
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "futura-pt", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ffffff;
   color: #333333;
   display: grid;
 }
+p {
+  font-family: "noto-sans", sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+
+}
+
+h1, h2 {
+    font-family: "futura-pt", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    
+    
+  }
+
+h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  
+  color: #000000;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0058a3;
+}
+
+h3 {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 15px 0 10px 0;
+  color: #0058a3;
+}
+   
+p {
+  line-height: 1.4;
+}
 
 button {
   background-color: #ffda1a;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ffda1a;
   color: #333333;
   cursor: pointer;
 }
 
+button:hover {
+  background-color: #0058a3;
+  color: white;
+}
+
 .hidden {
   display: none;
+}
+
+.header-for-all-rooms {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  width: 800px;
+  margin: 0 auto;
+  
+  
+}
+
+.for-all-room-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline-end: 20px;
+
+  h1 {
+    align-self:first baseline;
+  }
+    
+}
+
+.for-all-room-header {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #3b3b3b;
+  padding: 10px 10px;
+  height: fit-content;
+  width: 100%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  
+  margin: 0;
+  background-color: #ececec;
 }
