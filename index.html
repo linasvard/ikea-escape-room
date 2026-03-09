@@ -180,45 +180,54 @@
       <!-- ================================== -->
 
       <section class="main-rooms room-1 hidden" id="room1">
+        <div class="for-all-room-header-wrapper">
+          <h1>Barnavdelningen</h1>
+          <div>
+            <p class="for-all-room-header">Rum 1</p>
+          </div>
+        </div>
         <div id="map">
           <!--INTRODUCTION-->
           <div id="introductionDiv" class="introduction-div">
             <article class="welcome-information">
               <div class="description-flex">
-                <p class="introduction-text all-dad-arguments">
-                  <span>Du kliver in på barnavdelningen på IKEA.</span>
-                  <span>Ditt uppdrag är tydligt:</span>
-                  <span>Ta dig från ingången till utgången</span>
-                  <span>Samtidigt finns ett krav:</span>
-                  <span
-                    >Du måste plocka upp hjärtlampan. Missar du den måste du
-                    börja om.</span
-                  >
-                  <span
-                    >Men vägen är långt ifrån rak. Och full med
-                    prövningar.</span
-                  >
-                  <span
-                    >Femåringen drar. Pekar. Förhandlar. Hotar med att sätta sig
-                    på golvet.</span
-                  >
-                  <span>⚠️ Reglerna är enkla men brutala:</span>
-                  <span>Du får inte lägga något extra i vagnen.</span>
-                  <span>Du får inte ge med dig.</span>
-                  <span>Du får inte orsaka ett utbrott.</span>
-                  <span
-                    >Välj väg med omsorg. Ignorera distraktionerna. Håll energin
-                    uppe.</span
-                  >
-                  <span>Lycka till!</span>
-                </p>
-                <img
-                  class="intro-picture"
-                  src="/assets-room-1/intro-pic.png"
-                  alt=""
-                />
+                <div>
+                  
+                  <div class="introduction-text all-dad-arguments">
+                    <p>
+                    <p><span class="bold-blue-text-room-1">Du kliver in på barnavdelningen på IKEA.</span></p>
+                    <p>Ditt uppdrag är tydligt:
+                    Ta dig från ingången till utgången</p>
+                    <p>Samtidigt finns ett krav:
+                    Du måste plocka upp hjärtlampan. 
+                    Missar du den måste du börja om. Men vägen är långt ifrån rak. 
+                    Och full med prövningar. Femåringen drar. Pekar. Förhandlar. 
+                    Hotar med att sätta sig på golvet.</p>
+                    
+                    
+                    
+                    
+                    
+                    <p><span class="bold-blue-text-room-1">⚠️ Reglerna är enkla men brutala:</span></p>
+                    <p>Du får inte lägga något extra i vagnen.
+                    Du får inte ge med dig.
+                    Du får inte orsaka ett utbrott.</p>
+                    <p>Välj väg med omsorg. Ignorera distraktionerna. Håll energin uppe.</p>
+                    
+                    <p><span class="bold-blue-text-room-1">Lycka till!</span></p>
+                    </p>
+                  </div>
+                  <button id="startRoom1Btn">Starta rum 1</button>
+                </div>
+                <div>  
+                  <img
+                    class="intro-picture"
+                    src="/assets-room-1/intro-pic.png"
+                    alt=""
+                  />
+                </div>  
               </div>
-              <button id="startRoom1Btn">Starta rum 1</button>
+              
             </article>
           </div>
 
@@ -248,7 +257,7 @@
             <img src="/assets-room-1/heartlamp.png" alt="" />
           </div>
 
-          <div id="zoneSuccess" class="zone exit zone-inactive">UTGÅNG</div>
+          <div id="zoneSuccess" class="zone exit zone-inactive">← UTGÅNG</div>
 
           <!--LINES-->
 
@@ -296,13 +305,15 @@
 
         <div id="monkeyDialog" class="hidden">
           <div class="dialog-div">
+            <h2 class="dialog-header-room-1">Den söta apan</h2>
             <div class="daughter-argument">
+              
               <p>
-                Ni har knappt hunnit innanför dörren förrän första hindret dyker
+                <span class="bold-blue-text-room-1">Ni har knappt hunnit innanför dörren förrän</span> första hindret dyker
                 upp! Den virala apan Punch! Din dotter drar fram det tunga
                 artilleriet- lägger huvudet på sned, tittar på dig med de stora
                 blanka valpögonen och drar till med det mest bedårande
-                "Snäääääällla" du någonsin hört. Hur tusan ska du ta dig ur det
+                <span class="bold-blue-text-room-1">"Snäääääällla"</span> du någonsin hört. Hur tusan ska du ta dig ur det
                 här?!
               </p>
 
@@ -382,11 +393,12 @@
 
         <div id="pillowArgument" class="hidden dialog">
           <div class="dialog-div">
+            <h2 class="dialog-header-room-1">Men den röda kudden då?</h2>
             <div class="daughter-argument">
               <p class="please-section">
-                Nästa utmaning blir en fluffig, röd hjärtkudde. Din dotter
+                <span class="bold-blue-text-room-1">Nästa utmaning </span>blir en fluffig, röd hjärtkudde. Din dotter
                 trycker den mot bröstet, tittar på dig med stora ögon och viskar
-                ett utdraget: "Snääääälla…"
+                ett utdraget: <span class="bold-blue-text-room-1">"Snääääälla…"</span>
               </p>
 
               <img
@@ -449,12 +461,14 @@
 
         <!--chair-->
         <div class="hidden dialog-div" id="chairDialog">
+          <h2 class="dialog-header-room-1">Snart där!</h2>
           <div class="tantrum">
+            
             <p>
-              Du valde rätt väg! Som tur var nöjde Emma sig med att provsitta
+              <span class="bold-blue-text-room-1">Du valde rätt väg!</span> Som tur var nöjde Emma sig med att provsitta
               den lurviga stolen så ni kan fortsätta fram till lampan!
             </p>
-            <img src="/assets-room-1/chair.png" alt="" />
+            <img class="chair-image" src="/assets-room-1/chair.png" alt="" />
           </div>
           <button class="tantrum-buttons" id="chairDialogBtn">Gå vidare</button>
         </div>
@@ -463,7 +477,7 @@
         <div class="hidden dialog-div" id="bedsheetDialog">
           <div class="tantrum">
             <p>
-              oh no! Du glömde att du skulle plocka upp lampan. Börja om från
+              Oh no! Du glömde att du skulle plocka upp lampan. Börja om från
               början och välj rätt väg
             </p>
           </div>
@@ -474,13 +488,13 @@
         <div class="hidden dialog-div" id="lampDialog">
           <div class="tantrum">
             <p>
-              Grattis! Du lyckades ta dig till lampan utan att plocka på dig
+              <span class="bold-blue-text-room-1">Grattis! </span>Du lyckades ta dig till lampan utan att plocka på dig
               något mer! Gå till utgången så kommer du till rum 2 där du ska
               hitta en glödlampa.
             </p>
           </div>
           <button class="lamp-button" id="lampDialogBtn">
-            Ta mig till Utgången
+            Ta mig till utgången
           </button>
         </div>
       </section>
