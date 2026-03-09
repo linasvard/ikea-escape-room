@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   sodipodi:docname="line-6.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.023162177"
+     inkscape:cx="410.15142"
+     inkscape:cy="561.25984"
+     inkscape:window-width="896"
+     inkscape:window-height="245"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect9"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect9-8"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10-3"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10-1"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10-8"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path10" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10-4"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Lager 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="display:inline;fill:none;stroke:#fff9f9;stroke-width:6.005;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24.02, 24.02;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#ArrowWideHeavy)"
+       d="m 677.0092,209.32597 c -24.98925,9.78052 -48.56595,23.16189 -69.77532,39.60221 -10.97153,8.50452 -21.50596,18.06052 -28.28729,30.17311 -5.74148,10.25524 -8.55955,22.55562 -5.65746,33.94475 2.83448,11.12383 10.92513,20.45477 20.74402,26.40147 11.27587,6.82911 24.62794,9.51053 37.79232,10.20424 13.16438,0.69371 26.34694,-0.48019 39.52628,-0.77514 24.55283,-0.54948 49.0555,1.95172 73.54696,3.77164 26.57736,1.97492 54.37768,3.48756 77.35607,16.98755 11.48919,6.75 21.43508,16.55483 26.90763,28.70453 2.73628,6.07486 4.32864,12.68499 4.44878,19.34657 0.12013,6.66157 -1.24822,13.36923 -4.157,19.36339 -3.68445,7.59258 -9.72513,13.85699 -16.54332,18.83037 -6.8182,4.97339 -14.42841,8.74302 -22.07851,12.3065 -19.08183,8.88847 -38.66901,16.65041 -58.39037,24.01173 -57.39009,21.42179 -116.02964,39.49565 -175.52128,54.09909"
+       id="path9"
+       inkscape:path-effect="#path-effect10-4"
+       inkscape:original-d="m 677.0092,209.32597 c -22.00122,11.94352 -47.77409,27.65868 -69.77532,39.60221 -22.00122,11.94352 -17.60098,20.1154 -28.28729,30.17311 -10.68631,10.0577 -3.77164,21.37262 -5.65746,33.94475 -1.88582,12.57213 13.82934,17.60098 20.74402,26.40147 6.91467,8.80049 52.80294,6.28607 77.3186,9.4291 24.51565,3.14303 47.77409,2.51443 73.54696,3.77164 25.77286,1.25721 87.85075,81.9603 104.55548,84.40204 60.79336,8.88622 -17.72819,-27.48988 -38.62183,31.13687 -9.97104,27.97837 -39.53218,14.58264 -58.39037,24.01173 -18.8582,9.4291 -113.91784,49.69884 -175.52128,54.09909"
+       transform="matrix(0.26958869,0,0,0.32392524,-100.97319,47.190658)"
+       sodipodi:nodetypes="csssssssssc" />
+  </g>
+</svg>

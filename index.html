@@ -1,24 +1,33 @@
 <!doctype html>
 <html lang="sv">
+  <head>
+    <link rel="stylesheet" href="https://use.typekit.net/hmn0sku.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IKEA Escape Room</title>
+  </head>
 
-<head>
-  <link rel="stylesheet" href="https://use.typekit.net/hmn0sku.css" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IKEA Escape Room</title>
-</head>
-
-<body>
-  <!-- ================================== -->
-  <!-- ============= HEADER ============= -->
-  <!-- ================================== -->
-  <header>
-    <div class="top-header">
-      <div class="top-header-left">
-        <svg fill="#f5f5f5" viewBox="0 0 24 24" focusable="false" width="24" height="24" data-skapa="ssr-icon@11.3.1"
-          aria-hidden="true" class="hnf-svg-icon hnf-btn__icon">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M13.7467 18.1766C12.9482 19.7737 12.2151 20 12 20c-.2151 
+  <body>
+    <!-- ================================== -->
+    <!-- ============= HEADER ============= -->
+    <!-- ================================== -->
+    <header>
+      <div class="top-header">
+        <div class="top-header-left">
+          <svg
+            fill="#f5f5f5"
+            viewBox="0 0 24 24"
+            focusable="false"
+            width="24"
+            height="24"
+            data-skapa="ssr-icon@11.3.1"
+            aria-hidden="true"
+            class="hnf-svg-icon hnf-btn__icon"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13.7467 18.1766C12.9482 19.7737 12.2151 20 12 20c-.2151 
             0-.9482-.2263-1.7467-1.8234-.3065-.6131-.5745-1.3473-.7831-2.1766h5.0596c-.2086.8293-.4766 
             1.5635-.7831 2.1766zM14.8885 14h-5.777A17.7354 17.7354 0 0 1 9 12c0-.6949.0392-1.3641.1115-2h5.777c.0723.6359.1115 
             1.3051.1115 2 0 .6949-.0392 1.3641-.1115 2zm1.6955 2c-.2658 1.2166-.6492 2.307-1.1213 
@@ -28,866 +37,927 @@
             1.8234-.3065.613-.5745 1.3473-.7831 2.1766h5.0596zM7.416 8c.2658-1.2166.6491-2.307 1.1213-3.2138A8.035 8.035 0 0 0 5.0703 
             8H7.416zm-3.164 2A8.0147 8.0147 0 0 0 4 12c0 .6906.0875 1.3608.252 2H7.1a19.829 19.829 0 0 
             1-.1-2c0-.6849.0344-1.3538.1-2H4.252zm3.164 6H5.0704a8.0347 8.0347 0 0 0 3.467 3.2138C8.0651 18.307 7.6818 17.2166 
-            7.4161 16zM22 12c0-5.5229-4.4772-10-10-10C6.4771 2 2 6.4771 2 12c0 5.5228 4.4771 10 10 10 5.5228 0 10-4.4772 10-10z"></path>
-        </svg>
-        <span class="header-lang-left">SE</span>
-        <span class="header-lang-right">svenska</span>
-      </div>
-      <div class="top-header-right">
-        <button id="storePageBtn">
-          <svg fill="#f5f5f5" viewBox="0 0 24 24" focusable="false" width="24" height="24" data-skapa="ssr-icon@11.3.1"
-            aria-hidden="true" class="hnf-svg-icon">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M2 4v16h20V4H2zm2 4V6h16v2H4zm0 2v8h3v-6h10v6h3v-8H4zm11 4h-2v4h2v-4zm-4 0H9v4h2v-4z"></path>
+            7.4161 16zM22 12c0-5.5229-4.4772-10-10-10C6.4771 2 2 6.4771 2 12c0 5.5228 4.4771 10 10 10 5.5228 0 10-4.4772 10-10z"
+            ></path>
           </svg>
-          <span>Stockholm Gallerian</span>
-        </button>
-      </div>
-    </div>
-    <div class="bottom-header">
-      <a href="https://www.ikea.com/se/sv/" target="_blank" rel="noopener noreferrer">
-        <img src="/IKEA-Logo.wine.svg" alt="" />
-      </a>
-      <h2>Välkommen till spelet...</h2>
-      <div class="header-ikea-icons-wrapper">
-        <button>
-          <svg class="header-person-icon" viewBox="0 0 24 24" focusable="false" width="24" height="24"
-            data-skapa="ssr-icon@11.3.1" aria-hidden="true">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M10.6724 6.4678c.2734-.2812.6804-.4707 1.3493-.4707.3971 0 .705.0838.9529.2225.241.1348.4379.3311.5934.6193l.0033.006c.1394.2541.237.6185.237 1.1403 0 .7856-.2046 1.2451-.4796 1.5278l-.0048.005c-.2759.2876-.679.4764-1.334.4764-.3857 0-.6962-.082-.956-.2241-.2388-.1344-.4342-.3293-.5888-.6147-.1454-.275-.2419-.652-.2419-1.1704 0-.7902.2035-1.2442.4692-1.5174zm1.3493-2.4717c-1.0834 0-2.054.3262-2.7838 1.0766-.7376.7583-1.0358 1.781-1.0358 2.9125 0 .7656.1431 1.483.4773 2.112l.0031.0058c.3249.602.785 1.084 1.3777 1.4154l.0062.0035c.5874.323 1.2368.4736 1.9235.4736 1.0818 0 2.0484-.3333 2.7755-1.0896.7406-.7627 1.044-1.786 1.044-2.9207 0-.7629-.1421-1.4784-.482-2.0996-.3247-.6006-.7844-1.0815-1.376-1.4125-.5858-.3276-1.2388-.477-1.9297-.477zM6.4691 16.8582c.2983-.5803.7228-1.0273 1.29-1.3572.5582-.3191 1.2834-.5049 2.2209-.5049h4.04c.9375 0 1.6626.1858 2.2209.5049.5672.3299.9917.7769 1.29 1.3572.3031.5896.4691 1.2936.4691 2.1379v1h2v-1c0-1.1122-.2205-2.1384-.6904-3.0523a5.3218 5.3218 0 0 0-2.0722-2.1769c-.9279-.5315-2.0157-.7708-3.2174-.7708H9.98c-1.1145 0-2.2483.212-3.2225.7737-.8982.5215-1.5928 1.2515-2.0671 2.174C4.2205 16.8577 4 17.8839 4 18.9961v1h2v-1c0-.8443.166-1.5483.4691-2.1379z">
-            </path>
-          </svg>
-        </button>
-        <button id="shoppingCartBtn">
-          <svg class="header-shoppingcart-icon" viewBox="0 0 24 24" focusable="false" width="24" height="24"
-            data-skapa="ssr-icon@11.3.1" aria-hidden="true">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M11.9997 4c1.7048 0 2.9806 1.122 3.4578 2.7127.3246 1.0819.5718 2.1886.8335 3.2873h6.1517l-3.75 10H5.3067l-3.75-10h6.1516c.2617-1.0987.509-2.2054.8335-3.2873C9.019 5.122 10.2948 4 11.9997 4zm2.2348 6H9.7648c.2293-.9532.5299-2.1701.6927-2.7127C10.6838 6.533 11.1739 6 11.9997 6s1.3158.533 1.5421 1.2873c.1628.5426.4634 1.7595.6927 2.7127zm-9.7918 2 2.25 6h10.614l2.25-6h-3.3252c-.6633 2.1065-1.7665 4-4.2318 4-2.4654 0-3.5686-1.8935-4.2319-4h-3.325zm5.4308 0c.3635 1.0612.8841 2 2.1262 2 1.242 0 1.7626-.9388 2.1261-2H9.8735z">
-            </path>
-          </svg>
-        </button>
-        <button id="highscoreBtn">
-          <svg class="header-highscore-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-            width="24px" fill-rule="evenodd">
-            <path
-              d="M160-200h160v-320H160v320Zm240 0h160v-560H400v560Zm240 0h160v-240H640v240ZM80-120v-480h240v-240h320v320h240v400H80Z" />
-          </svg>
-        </button>
-      </div>
-      <div class="main-timer-wrapper">
-        <div id="mainTimer" class="main-timer"></div>
-      </div>
-    </div>
-    <div id="storePage" class="store-info-wrapper store-hidden" tabindex="0" class="hnf-sheets__content-wrapper">
-      <div class="store-info">
-        <h2 class="">Stockholm Gallerian</h2>
-        <p>Hamngatan 37, Stockholm</p>
-        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Stockholm%20Gallerian&amp;destination_place_id=ChIJ7Vztgl6dX0YRHVGPrPNF_10"
-          target="_blank" rel="noreferrer" data-skapa="button@19.0.9"
-          class="hnf-btn hnf-btn--xsmall hnf-leading-icon hnf-btn--secondary"><span
-            class="hnf-typography-label-s hnf-btn__inner"><svg viewBox="0 0 24 24" focusable="false" width="24"
-              height="24" data-skapa="ssr-icon@11.3.1" aria-hidden="true" class="hnf-svg-icon hnf-btn__icon">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M11.9905 2.625c4.007 0 7.4121 3.4574 7.4121 7.4606 0 4.7561-3.6581 8.7836-7.4025 11.288-3.744-2.5057-7.4024-6.5309-7.4024-11.288 0-3.9992 3.382-7.4606 7.3928-7.4606zM14 9.2188c0 1.1045-.8954 2-2 2s-2-.8955-2-2c0-1.1046.8954-2 2-2s2 .8954 2 2z">
-              </path>
-            </svg><span class="hnf-btn__label">Få vägbeskrivningar</span></span></a>
-        <div class="">
-          <h3 class="">Öppettider</h3>
-          <dl class="open-hours">
-            <dt>Mån - Fre</dt>
-            <dd>10:00 - 20:00</dd>
-            <dt>Lör</dt>
-            <dd>10:00 - 19:00</dd>
-            <dt>Sön</dt>
-            <dd>11:00 - 19:00</dd>
-          </dl>
+          <span class="header-lang-left">SE</span>
+          <span class="header-lang-right">svenska</span>
         </div>
-      </div>
-    </div>
-  </header>
-  <main>
-    <!-- ================================== -->
-    <!-- ============= RUM 1 ============== -->
-    <!-- ================================== -->
-
-    <section class="main-rooms room-1 hidden" id="room1">
-      <div id="map">
-        <!--INTRODUCTION-->
-        <div id="introductionDiv" class="introduction-div">
-          <article class="welcome-information">
-            <div class="description-flex">
-              <p class="introduction-text all-dad-arguments">
-                <span>Du kliver in på barnavdelningen på IKEA.</span>
-                <span>Ditt uppdrag är tydligt:</span>
-                <span>Ta dig från ingången till utgången</span>
-                <span>Samtidigt finns ett krav:</span>
-                <span>Du måste plocka upp hjärtlampan. Missar du den måste du
-                  börja om.</span>
-                <span>Men vägen är långt ifrån rak. Och full med
-                  prövningar.</span>
-                <span>Femåringen drar. Pekar. Förhandlar. Hotar med att sätta sig
-                  på golvet.</span>
-                <span>⚠️ Reglerna är enkla men brutala:</span>
-                <span>Du får inte lägga något extra i vagnen.</span>
-                <span>Du får inte ge med dig.</span>
-                <span>Du får inte orsaka ett utbrott.</span>
-                <span>Välj väg med omsorg. Ignorera distraktionerna. Håll energin
-                  uppe.</span>
-                <span>Lycka till!</span>
-              </p>
-              <img class="intro-picture" src="/public/assets-room-1/intro-pic.png" alt="" />
-            </div>
-            <button id="startRoom1Btn">Starta rum 1</button>
-          </article>
-        </div>
-
-        <!--MAZE-->
-        <img class="map-image" src="/public/assets-room-1/map_picture.jpg" alt="" />
-
-        <!--ZONES-->
-
-        <div id="zonePillow" class="zone zone-pillow zone-inactive">
-          <img src="/public/assets-room-1/heartpillow.png" alt="" />
-        </div>
-
-        <div id="zoneMonkey" class="zone zone-monkey">
-          <img src="/public/assets-room-1/monkey-small.png" alt="" />
-        </div>
-
-        <div id="zoneChair" class="zone zone-chair zone-inactive">
-          <img src="/public/assets-room-1/chair.png" alt="" />
-        </div>
-
-        <div id="zoneBedsheets" class="zone zone-bedsheets zone-inactive">
-          <img src="/public/assets-room-1/heartsheets.png" alt="" />
-        </div>
-
-        <div id="zoneLamp" class="zone zone-lamp zone-inactive">
-          <img src="/public/assets-room-1/heartlamp.png" alt="" />
-        </div>
-
-        <div id="zoneSuccess" class="zone exit zone-inactive">UTGÅNG</div>
-
-        <!--ARROWS-->
-
-        <!--arrow-1-->
-        <div id="arrow1" class="arrow visible">
-          <svg height="70px" width="70px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6.19 -6.19 39.31 39.31" xml:space="preserve"
-            fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <g>
-                <g id="c194_arrow">
-                  <path style="fill: #030104"
-                    d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z ">
-                  </path>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!--arrow-2-->
-        <div id="arrow2" class="arrow">
-          <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6.19 -6.19 39.31 39.31" xml:space="preserve"
-            fill="#000000">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <g>
-                <g id="c194_arrow">
-                  <path style="fill: #030104"
-                    d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z ">
-                  </path>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!--arrow-3-->
-        <div id="arrow3" class="arrow">
-          <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6.19 -6.19 39.31 39.31" xml:space="preserve"
-            fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <g>
-                <g id="c194_arrow">
-                  <path style="fill: #030104"
-                    d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z ">
-                  </path>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!--arrow-4-->
-        <div id="arrow4" class="arrow">
-          <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6.19 -6.19 39.31 39.31" xml:space="preserve"
-            fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <g>
-                <g id="c194_arrow">
-                  <path style="fill: #030104"
-                    d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z ">
-                  </path>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!--arrow-5-->
-        <div id="arrow5" class="arrow">
-          <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6.19 -6.19 39.31 39.31" xml:space="preserve"
-            fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)rotate(180)">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <g>
-                <g id="c194_arrow">
-                  <path style="fill: #030104"
-                    d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z ">
-                  </path>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!--arrow-6-->
-        <div id="arrow6" class="arrow">
-          <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6.19 -6.19 39.31 39.31" xml:space="preserve"
-            fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <g>
-                <g id="c194_arrow">
-                  <path style="fill: #030104"
-                    d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z ">
-                  </path>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!--arrow-7-->
-        <div id="arrow7" class="arrow">
-          <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6.19 -6.19 39.31 39.31" xml:space="preserve"
-            fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <g>
-                <g id="c194_arrow">
-                  <path style="fill: #030104"
-                    d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z ">
-                  </path>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!--arrow-9-->
-        <div id="arrow9" class="arrow">
-          <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6.19 -6.19 39.31 39.31" xml:space="preserve"
-            fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)rotate()">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <g>
-                <g id="c194_arrow">
-                  <path style="fill: #030104"
-                    d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z ">
-                  </path>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!--arrow-8-->
-        <div id="arrow8" class="arrow">
-          <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6.19 -6.19 39.31 39.31" xml:space="preserve"
-            fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)rotate()">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <g>
-                <g id="c194_arrow">
-                  <path style="fill: #030104"
-                    d="M13.464,0.002C6.027,0.002,0,6.027,0,13.464c0,7.435,6.027,13.462,13.464,13.462 c7.432,0,13.463-6.027,13.463-13.462C26.928,6.027,20.896,0.002,13.464,0.002z M22.816,15.302l-6.355,6.354 c-0.826,0.828-2.121,0.867-2.895,0.094c-0.772-0.773-0.732-2.068,0.094-2.893l3.04-3.042H5.447c-1.097,0-1.982-0.888-1.984-1.981 c0-1.094,0.887-1.98,1.984-1.98h11.311L13.702,8.8c-0.812-0.814-0.847-2.103-0.07-2.875c0.773-0.772,2.058-0.741,2.871,0.073 l6.271,6.268c0.027,0.027,0.047,0.062,0.07,0.088c0.023,0.02,0.047,0.033,0.066,0.054C23.684,13.177,23.643,14.474,22.816,15.302z ">
-                  </path>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-      </div>
-
-      <!--------------------------->
-      <!-----------ACTIONS--------->
-      <!--------------------------->
-
-      <!-- monkey -->
-
-      <div id="monkeyDialog" class="hidden">
-        <div class="dialog-div">
-          <div class="daughter-argument">
-            <p>
-              Ni har knappt hunnit innanför dörren förrän första hindret dyker
-              upp! Den virala apan Punch! Din dotter drar fram det tunga
-              artilleriet- lägger huvudet på sned, tittar på dig med de stora
-              blanka valpögonen och drar till med det mest bedårande
-              "Snäääääällla" du någonsin hört. Hur tusan ska du ta dig ur det
-              här?!
-            </p>
-
-            <img class="want-monkey-pic" src="/public/assets-room-1/monkey-big.png" alt="" />
-          </div>
-
-          <div class="all-dad-arguments">
-            <img class="dad-image" src="/public/assets-room-1/mr_ikea.png" alt="" />
-
-            <div class="daddy-argument">
-              <input type="radio" name="monkey-choose-argument" value="D" id="monkeyArgA" />
-              <label for="monkeyArgA">
-                "Det blir absolut ingen apa! Du har redan hela rummet fullt av
-                gosedjur."</label>
-            </div>
-
-            <div class="daddy-argument">
-              <input type="radio" name="monkey-choose-argument" value="E" id="monkeyArgB" />
-              <label for="monkeyArgB">
-                " Vet du vad, vi kom ju precis in på IKEA... ska vi inte titta
-                vidare lite först. Det finns ju en massa fina saker längre
-                in!</label>
-            </div>
-
-            <div class="daddy-argument">
-              <input type="radio" name="monkey-choose-argument" value="F" id="monkeyArgC" />
-              <label for="monkeyArgC">
-                "Ska du redan börja tjata om mer! Vi sa ju att vi skulle ha en
-                lampa till ditt rum och inget mer."</label>
-            </div>
-            <button class="all-dialog-buttons" id="submitMonkeyArgument">
-              Skicka in argument
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="hidden dialog-div" id="wantmonkeyTantrum">
-        <div class="tantrum">
-          <p>
-            Å nej! Dottern gillar inte ditt svar. Hon får världens utbrott och
-            du får skynda ut till bistron för att muta henne med en glass
-            innan du kan börja om din runda.
-          </p>
-          <img class="icecream-pic" src="/public/assets-room-1/icecream.png" alt="" />
-        </div>
-        <button class="tantrum-buttons resetBtn">Börja om</button>
-      </div>
-
-      <!-- PILLOW -->
-
-      <div id="pillowArgument" class="hidden dialog">
-        <div class="dialog-div">
-          <div class="daughter-argument">
-            <p class="please-section">
-              Nästa utmaning blir en fluffig, röd hjärtkudde. Din dotter
-              trycker den mot bröstet, tittar på dig med stora ögon och viskar
-              ett utdraget: "Snääääälla…"
-            </p>
-
-            <img class="want-pillow-pic" src="/public/assets-room-1/heartpillow.png" alt="" />
-          </div>
-
-          <div class="all-dad-arguments">
-            <img class="dad-image" src="/public/mr_ikea.png" alt="" />
-
-            <div class="daddy-argument">
-              <input type="radio" name="pillow-choose-argument" value="A" id="argA" />
-              <label for="argA">Den kudden har vi redan en likadan av hemma, titta så lika de
-                är!</label>
-            </div>
-            <div class="daddy-argument">
-              <input type="radio" name="pillow-choose-argument" value="B" id="argB" />
-              <label for="argB">Ja, den är jättefin! Låt oss köpa den!</label>
-            </div>
-            <div class="daddy-argument">
-              <input type="radio" name="pillow-choose-argument" value="C" id="argC" />
-              <label for="argC">Du får välja en sak idag, och du har inte sett allt än.
-                Kanske finns det något ännu finare längre in!</label>
-            </div>
-
-            <button id="submitPillowArgument" class="all-dialog-buttons">
-              Skicka in argument
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="hidden dialog-div" id="wantPillowTantrum">
-        <div class="tantrum">
-          <p>JAG VIIIIIILL HA KUDDEN!!!!!</p>
-        </div>
-        <button class="tantrum-buttons resetBtn">Börja om</button>
-      </div>
-
-      <!--chair-->
-      <div class="hidden dialog-div" id="chairDialog">
-        <div class="tantrum">
-          <p>
-            Du valde rätt väg! Som tur var nöjde Emma sig med att provsitta
-            den lurviga stolen så ni kan fortsätta fram till lampan!
-          </p>
-          <img src="/public/assets-room-1/chair.png" alt="" />
-        </div>
-        <button class="tantrum-buttons" id="chairDialogBtn">Gå vidare</button>
-      </div>
-
-      <!--bedsheet-->
-      <div class="hidden dialog-div" id="bedsheetDialog">
-        <div class="tantrum">
-          <p>
-            oh no! Du glömde att du skulle plocka upp lampan. Börja om från
-            början och välj rätt väg
-          </p>
-        </div>
-        <button class="tantrum-buttons resetBtn">Börja om</button>
-      </div>
-
-      <!--lamp-->
-      <div class="hidden dialog-div" id="lampDialog">
-        <div class="tantrum">
-          <p>
-            Grattis! Du lyckades ta dig till lampan utan att plocka på dig
-            något mer! Gå till utgången så kommer du till rum 2 där du ska
-            hitta en glödlampa.
-          </p>
-        </div>
-        <button class="lamp-button" id="lampDialogBtn">
-          Ta mig till Utgången
-        </button>
-      </div>
-    </section>
-    <!-- ================================== -->
-    <!-- ============= RUM 2 ============== -->
-    <!-- ================================== -->
-    <section class="main-rooms room-2 hidden" id="room2">
-      <div class="room-2-instruction-container room-2-overlay room-2-is-visible" id="room2InstructionContainer">
-        <div>
-          <img class="room-2-ikea-man-box" src="/room_2_ikea_man_box.png" alt="" />
-          <h2>Lamporna</h2>
-          <p>
-            Åh, sådär, nu har vi äntligen hittat lampavdelningen! Men vad var
-            det vi skulle ha nu igen? Juste, vi skulle ju testa den nya,
-            flefärgade, smarta, coola, och trådlösa ljuskällan
-            <span class="room-2-tooltip" href="">KAJPLATS!<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat
-                och vitt</span>
-            </span>
-          </p>
-          <p>Men, alla lampor är ju släckta!?</p>
-          <p>
-            Jag vet vad vi måste göra! Om vi trycker på lampknappen
-            <span class="room-2-tooltip" href="">BILRESA
-              <span class="room-2-tooltip-box">Fjärrkontroll, vit smart/två knappar</span></span>
-            <span>
-              så att alla lampor i slutet lyser samtidigt, så ser vi vilken
-              hylla</span>
-            <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla, smart,
-                färgat och vitt</span></span>
-
-            <span>
-              ligger i och vi kan då lägga den i vår gula påse och gå
-              vidare!</span>
-          </p>
-          <p class="room-2-instruction-last-line">
-            Men kom ihåg: vi har bara 10 stycken tryck på oss innan 'ungen'
-            tröttnar och vill åka hem!
-          </p>
-
-          <button id="room2GoToGameBtn">Nästa</button>
-        </div>
-      </div>
-      <div class="room-2-game-info-header">
-        <div class="room-2-hint-wrapper">
-          <img class="room-2-ikea-man-question" src="/room_2_ikea_man_question.png" alt="Hint for solution" />
-          <div class="room-2-hint-infobox">
-            <div>
-              <h4>Tips:</h4>
-              <span>Alla knappar måste användas för att lösa spelet!</span>
-            </div>
-          </div>
-        </div>
-        <div class="room-2-game-info-text">
-          <h2>Lamporna</h2>
-          <p>
-            Tryck på
-            <span class="room-2-tooltip" href="">BILRESA<span class="room-2-tooltip-box">Fjärrkontroll, vit smart/två
-                knappar</span></span>
-            för att tända
-            <span class="room-2-tooltip" href="">KAJPLATS!<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat
-                och vitt</span>
-            </span>
-            Rummet är klarat när alla lampor lyser samtidigt!
-          </p>
-        </div>
-        <div class="room-2-click-counter" id="room2ClickCounter"></div>
-      </div>
-
-      <div class="room-2-gamewrapper">
-        <div class="room-2-lampcontainer">
-          <img src="" id="lamp1" alt="" class="room-2-lamp-img" />
-        </div>
-        <div class="room-2-lampcontainer">
-          <img src="" id="lamp2" alt="" class="room-2-lamp-img" />
-        </div>
-        <div class="room-2-lampcontainer">
-          <img src="" id="lamp3" alt="" class="room-2-lamp-img" />
-        </div>
-        <div class="room-2-lampcontainer">
-          <img src="" id="lamp4" alt="" class="room-2-lamp-img" />
-        </div>
-        <div class="room-2-btncontainer">
-          <button type="button" id="room2Btn1">
-            <img src="/room_2_remote.jpg" alt="" />
-          </button>
-        </div>
-        <div class="room-2-btncontainer">
-          <button type="button" id="room2Btn2">
-            <img src="/room_2_remote.jpg" alt="" />
-          </button>
-        </div>
-        <div class="room-2-btncontainer">
-          <button type="button" id="room2Btn3">
-            <img src="/room_2_remote.jpg" alt="" />
-          </button>
-        </div>
-        <div class="room-2-btncontainer">
-          <button type="button" id="room2Btn4">
-            <img src="/room_2_remote.jpg" alt="" />
+        <div class="top-header-right">
+          <button id="storePageBtn">
+            <svg
+              fill="#f5f5f5"
+              viewBox="0 0 24 24"
+              focusable="false"
+              width="24"
+              height="24"
+              data-skapa="ssr-icon@11.3.1"
+              aria-hidden="true"
+              class="hnf-svg-icon"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M2 4v16h20V4H2zm2 4V6h16v2H4zm0 2v8h3v-6h10v6h3v-8H4zm11 4h-2v4h2v-4zm-4 0H9v4h2v-4z"
+              ></path>
+            </svg>
+            <span>Stockholm Gallerian</span>
           </button>
         </div>
       </div>
-      <div class="room-2-lose-screen room-2-overlay" id="room2LoseScreen">
-        <div>
-          <img class="room-2-ikea-man-sad" src="/room_2_ikea_man_sad.png" alt="" />
-          <h2>Lamporna</h2>
-          <p>
-            Åh, nej! Vi lyckades inte tända alla lampor i tid och nu har
-            'insert ungens namn här' tröttnat och sprungit iväg.
-          </p>
-          <p>
-            Vi måste gå ut från <span class="room-2-ikea-word">IKEA</span>, så
-            får lov att åka hit en annan dag.
-          </p>
-
-          <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
-          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
-          <a class="room-2-game-over-btn" href="">
-            <button id="goToStartBtn">
-              <span>Gå ut från varuhuset</span>
-            </button>
-          </a>
-        </div>
-      </div>
-      <div class="room-2-win-screen room-2-overlay" id="room2WinScreen">
-        <div>
-          <img class="room-2-ikea-man-box" src="/room_2_ikea_man_box.png" alt="" />
-          <h2>Lamporna</h2>
-          <p>
-            Yes! Vi lyckades tända alla lampor och nu ser vi ju var
-            <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla, smart färgat
-                och vitt</span>
-            </span>
-            ligger någonstans!
-          </p>
-          <p>
-            Vi tar en
-            <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat
-                och vitt</span>
-            </span>
-            och lägger den i vår
-            <span class="room-2-ikea-word">IKEA</span>-påse, så går kan vi gå
-            vidare till <span class="room-2-ikea-word">Ta-själv-lagret</span>?
-          </p>
-
-          <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
-          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
-          <button id="goToRoom3Btn">
-            <span>Till ta-själv-lagret!</span>
+      <div class="bottom-header">
+        <a
+          href="https://www.ikea.com/se/sv/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/IKEA-Logo.wine.svg" alt="" />
+        </a>
+        <h2>Välkommen till spelet...</h2>
+        <div class="header-ikea-icons-wrapper">
+          <button>
+            <svg
+              class="header-person-icon"
+              viewBox="0 0 24 24"
+              focusable="false"
+              width="24"
+              height="24"
+              data-skapa="ssr-icon@11.3.1"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10.6724 6.4678c.2734-.2812.6804-.4707 1.3493-.4707.3971 0 .705.0838.9529.2225.241.1348.4379.3311.5934.6193l.0033.006c.1394.2541.237.6185.237 1.1403 0 .7856-.2046 1.2451-.4796 1.5278l-.0048.005c-.2759.2876-.679.4764-1.334.4764-.3857 0-.6962-.082-.956-.2241-.2388-.1344-.4342-.3293-.5888-.6147-.1454-.275-.2419-.652-.2419-1.1704 0-.7902.2035-1.2442.4692-1.5174zm1.3493-2.4717c-1.0834 0-2.054.3262-2.7838 1.0766-.7376.7583-1.0358 1.781-1.0358 2.9125 0 .7656.1431 1.483.4773 2.112l.0031.0058c.3249.602.785 1.084 1.3777 1.4154l.0062.0035c.5874.323 1.2368.4736 1.9235.4736 1.0818 0 2.0484-.3333 2.7755-1.0896.7406-.7627 1.044-1.786 1.044-2.9207 0-.7629-.1421-1.4784-.482-2.0996-.3247-.6006-.7844-1.0815-1.376-1.4125-.5858-.3276-1.2388-.477-1.9297-.477zM6.4691 16.8582c.2983-.5803.7228-1.0273 1.29-1.3572.5582-.3191 1.2834-.5049 2.2209-.5049h4.04c.9375 0 1.6626.1858 2.2209.5049.5672.3299.9917.7769 1.29 1.3572.3031.5896.4691 1.2936.4691 2.1379v1h2v-1c0-1.1122-.2205-2.1384-.6904-3.0523a5.3218 5.3218 0 0 0-2.0722-2.1769c-.9279-.5315-2.0157-.7708-3.2174-.7708H9.98c-1.1145 0-2.2483.212-3.2225.7737-.8982.5215-1.5928 1.2515-2.0671 2.174C4.2205 16.8577 4 17.8839 4 18.9961v1h2v-1c0-.8443.166-1.5483.4691-2.1379z"
+              ></path>
+            </svg>
+          </button>
+          <button id="shoppingCartBtn">
+            <svg
+              class="header-shoppingcart-icon"
+              viewBox="0 0 24 24"
+              focusable="false"
+              width="24"
+              height="24"
+              data-skapa="ssr-icon@11.3.1"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.9997 4c1.7048 0 2.9806 1.122 3.4578 2.7127.3246 1.0819.5718 2.1886.8335 3.2873h6.1517l-3.75 10H5.3067l-3.75-10h6.1516c.2617-1.0987.509-2.2054.8335-3.2873C9.019 5.122 10.2948 4 11.9997 4zm2.2348 6H9.7648c.2293-.9532.5299-2.1701.6927-2.7127C10.6838 6.533 11.1739 6 11.9997 6s1.3158.533 1.5421 1.2873c.1628.5426.4634 1.7595.6927 2.7127zm-9.7918 2 2.25 6h10.614l2.25-6h-3.3252c-.6633 2.1065-1.7665 4-4.2318 4-2.4654 0-3.5686-1.8935-4.2319-4h-3.325zm5.4308 0c.3635 1.0612.8841 2 2.1262 2 1.242 0 1.7626-.9388 2.1261-2H9.8735z"
+              ></path>
+            </svg>
+          </button>
+          <button id="highscoreBtn">
+            <svg
+              class="header-highscore-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill-rule="evenodd"
+            >
+              <path
+                d="M160-200h160v-320H160v320Zm240 0h160v-560H400v560Zm240 0h160v-240H640v240ZM80-120v-480h240v-240h320v320h240v400H80Z"
+              />
+            </svg>
           </button>
         </div>
-      </div>
-    </section>
-
-    <!-- ================================== -->
-    <!-- ============= RUM 3 ============== -->
-    <!-- ================================== -->
-
-    <!-------✨ Linas Rum ✨-------->
-
-    <section class="main-rooms room-3 hidden" id="room3">
-      <div class="room-3-header">
-        <h1>Tag själv lagret</h1>
-        <div class="room3Title">
-          <p class="progress-in-room-3">Rum 3</p>
+        <div class="main-timer-wrapper">
+          <div id="mainTimer" class="main-timer"></div>
         </div>
       </div>
-      <div id="room3Start">
-        <!--class="hidden"-->
-        <h2>Välkommen till rum 3</h2>
-        <p>
-          Nu när du har lämnat lampavdelningen, är nästa steg att hitta rätt
-          möbel inne på lagret.
-        </p>
-        <h3>Är du redo?</h3>
-        <div id="room3StartBtnWrapper">
-          <div>
-            <button id="room3StartBtn" aria-label="Gå till rum 3">→</button><span>Till rum 3</span>
+      <div
+        id="storePage"
+        class="store-info-wrapper store-hidden"
+        tabindex="0"
+        class="hnf-sheets__content-wrapper"
+      >
+        <div class="store-info">
+          <h2 class="">Stockholm Gallerian</h2>
+          <p>Hamngatan 37, Stockholm</p>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&amp;destination=Stockholm%20Gallerian&amp;destination_place_id=ChIJ7Vztgl6dX0YRHVGPrPNF_10"
+            target="_blank"
+            rel="noreferrer"
+            data-skapa="button@19.0.9"
+            class="hnf-btn hnf-btn--xsmall hnf-leading-icon hnf-btn--secondary"
+            ><span class="hnf-typography-label-s hnf-btn__inner"
+              ><svg
+                viewBox="0 0 24 24"
+                focusable="false"
+                width="24"
+                height="24"
+                data-skapa="ssr-icon@11.3.1"
+                aria-hidden="true"
+                class="hnf-svg-icon hnf-btn__icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M11.9905 2.625c4.007 0 7.4121 3.4574 7.4121 7.4606 0 4.7561-3.6581 8.7836-7.4025 11.288-3.744-2.5057-7.4024-6.5309-7.4024-11.288 0-3.9992 3.382-7.4606 7.3928-7.4606zM14 9.2188c0 1.1045-.8954 2-2 2s-2-.8955-2-2c0-1.1046.8954-2 2-2s2 .8954 2 2z"
+                ></path></svg
+              ><span class="hnf-btn__label">Få vägbeskrivningar</span></span
+            ></a
+          >
+          <div class="">
+            <h3 class="">Öppettider</h3>
+            <dl class="open-hours">
+              <dt>Mån - Fre</dt>
+              <dd>10:00 - 20:00</dd>
+              <dt>Lör</dt>
+              <dd>10:00 - 19:00</dd>
+              <dt>Sön</dt>
+              <dd>11:00 - 19:00</dd>
+            </dl>
           </div>
         </div>
       </div>
-      <section id="room3Part1" class="hidden">
-        <!--class="hidden"-->
-        <h2>Vilken hylla och fack?</h2>
-        <p>Puh! Du tog dig ut från lampavdelningen, du är snart ute.</p>
-        <p>
-          MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den
-          kommer vi inte till kassorna.
-        </p>
-        <p>
-          Du kommer ihåg lappen du fick med dig hemifrån och blir lite
-          fundersam över vad som står.
-        </p>
+    </header>
+    <main>
+      <!-- ================================== -->
+      <!-- ============= RUM 1 ============== -->
+      <!-- ================================== -->
 
-        <div class="clue-1-room-3-wrapper">
-          <img id="confusedIkeaManRoom3" src="/gubbe-ikea-forvirrad.png" alt="Lapp med kod" />
-          <div>
-            <h3>Lös rebusen:</h3>
+      <section class="main-rooms room-1 hidden" id="room1">
+        <div id="map">
+          <!--INTRODUCTION-->
+          <div id="introductionDiv" class="introduction-div">
+            <article class="welcome-information">
+              <div class="description-flex">
+                <p class="introduction-text all-dad-arguments">
+                  <span>Du kliver in på barnavdelningen på IKEA.</span>
+                  <span>Ditt uppdrag är tydligt:</span>
+                  <span>Ta dig från ingången till utgången</span>
+                  <span>Samtidigt finns ett krav:</span>
+                  <span
+                    >Du måste plocka upp hjärtlampan. Missar du den måste du
+                    börja om.</span
+                  >
+                  <span
+                    >Men vägen är långt ifrån rak. Och full med
+                    prövningar.</span
+                  >
+                  <span
+                    >Femåringen drar. Pekar. Förhandlar. Hotar med att sätta sig
+                    på golvet.</span
+                  >
+                  <span>⚠️ Reglerna är enkla men brutala:</span>
+                  <span>Du får inte lägga något extra i vagnen.</span>
+                  <span>Du får inte ge med dig.</span>
+                  <span>Du får inte orsaka ett utbrott.</span>
+                  <span
+                    >Välj väg med omsorg. Ignorera distraktionerna. Håll energin
+                    uppe.</span
+                  >
+                  <span>Lycka till!</span>
+                </p>
+                <img
+                  class="intro-picture"
+                  src="/assets-room-1/intro-pic.png"
+                  alt=""
+                />
+              </div>
+              <button id="startRoom1Btn">Starta rum 1</button>
+            </article>
+          </div>
 
-            <div id="clue1Room3">
-              <p>1.</p>
-              <img src="/clue-room-3-1.png" alt="Lapp där det står: Hylla = Kyrre, Fack = Pax + Ekenäset" />
-            </div>
+          <!--MAZE-->
+
+          <img class="map-image" src="/assets-room-1/ikea-map.png" alt="" />
+
+          <!--ZONES-->
+
+          <div id="zonePillow" class="zone zone-pillow zone-inactive">
+            <img src="/assets-room-1/heartpillow.png" alt="" />
+          </div>
+
+          <div id="zoneMonkey" class="zone zone-monkey">
+            <img src="/assets-room-1/monkey-small.png" alt="" />
+          </div>
+
+          <div id="zoneChair" class="zone zone-chair zone-inactive">
+            <img src="/assets-room-1/chair.png" alt="" />
+          </div>
+
+          <div id="zoneBedsheets" class="zone zone-bedsheets zone-inactive">
+            <img src="/assets-room-1/heartsheets.png" alt="" />
+          </div>
+
+          <div id="zoneLamp" class="zone zone-lamp zone-inactive">
+            <img src="/assets-room-1/heartlamp.png" alt="" />
+          </div>
+
+          <div id="zoneSuccess" class="zone exit zone-inactive">UTGÅNG</div>
+
+          <!--LINES-->
+
+          <!--line 1-->
+          <div id="arrow1" class="arrow visible animation">
+            <img src="/assets-room-1/line1.svg" alt="" />
+          </div>
+
+          <!--line 2-->
+          <div id="arrow2" class="arrow animation">
+            <img src="/assets-room-1/line2.svg" alt="" />
+          </div>
+
+          <!--line 3-->
+          <div id="arrow3" class="arrow animation">
+            <img src="/assets-room-1/line-3.svg" alt="" />
+          </div>
+
+          <!--line 4-->
+          <div id="arrow4" class="arrow animation">
+            <img src="/assets-room-1/line-4.svg" alt="" />
+          </div>
+
+          <!--arrow-5-->
+          <div id="arrow5" class="arrow animation">
+            <img src="/assets-room-1/line-5.svg" alt="" />
+          </div>
+
+          <!--arrow-6-->
+          <div id="arrow6" class="arrow animation">
+            <img src="/assets-room-1/line-6.svg" alt="" />
+          </div>
+
+          <!--arrow-7-->
+          <div id="arrow7" class="arrow animation">
+            <img src="/assets-room-1/line-7.svg" alt="" />
           </div>
         </div>
 
-        <div id="guessInput1Room3Wrapper">
-          <p id="titleHylla">1x Hylla</p>
-          <p>BILLY</p>
-          <div id="guessInput1Room3">
-            <form id="guessHyllaFackSection">
+        <!--------------------------->
+        <!-----------ACTIONS--------->
+        <!--------------------------->
+
+        <!-- monkey -->
+
+        <div id="monkeyDialog" class="hidden">
+          <div class="dialog-div">
+            <div class="daughter-argument">
               <p>
-                <span class="id-number-item">403.834.74</span>
+                Ni har knappt hunnit innanför dörren förrän första hindret dyker
+                upp! Den virala apan Punch! Din dotter drar fram det tunga
+                artilleriet- lägger huvudet på sned, tittar på dig med de stora
+                blanka valpögonen och drar till med det mest bedårande
+                "Snäääääällla" du någonsin hört. Hur tusan ska du ta dig ur det
+                här?!
               </p>
-              <p class="guess-input-room-3">
-                <label>Hylla:</label><input id="hyllaInput" maxlength="2" type="number" placeholder="00" />
-              </p>
-              <p class="guess-input-room-3">
-                <label>Fack:</label><input id="fackInput" maxlength="2" type="number" placeholder="00" />
-              </p>
-            </form>
-          </div>
-        </div>
-      </section>
-      <section id="room3Part2" class="hidden">
-        <!--class="hidden"-->
-        <h2>Korrekt</h2>
-        <div class="descriptionRoom3">
-          <p>
-            Bra jobbat! Du har hittat rätt hylla och fack.
-            <span>MEN</span>
-            någon har lämnat det i totalt kaos och skyltningen är förstörd, nu
-            måste du hitta rätt möbel.
-          </p>
-          <p><span>Var du uppmärksam i förra steget?</span></p>
-        </div>
-        <div class="clue-2-room-3-wrapper">
-          <div id="shelfForFurnituresRoom3Wrapper">
-            <div id="shelfImageRoom3">
-              <div id="scribbleColumn1">
-                <img src="/scribble-room3.png" alt="Överstrykning av möbelbild i blått" />
-              </div>
-              <div id="scribbleColumn2">
-                <img id="scribbleYellowRoom3" src="/scribble-yellow.png" alt="Överstrykning av möbelnamn i gult" />
 
-                <p>000.000.00</p>
-                <img id="barcodeRoom3" src="/barcodeRoom3.png" />
-              </div>
+              <img
+                class="want-monkey-pic"
+                src="/assets-room-1/monkey-big.png"
+                alt=""
+              />
             </div>
 
-            <div id="hyllaAndFackShelfRoom3">
-              <div id="redBackgroundHyllaFack">
-                <p class="hylla-fack-title">Hylla</p>
-                <p>05</p>
-                <p class="hylla-fack-title">Fack</p>
-                <p>38</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>Välj rätt möbel:</h3>
-        <div id="guessFurniture">
-          <!---Rendering av alternativ--->
-        </div>
-        <div id="clueRoom3Part2">
-          <p>Psst! Klicka inte för många gånger.</p>
-        </div>
-      </section>
+            <div class="all-dad-arguments">
+              <img class="dad-image" src="/assets-room-1/mr_ikea.png" alt="" />
 
-      <section id="room3End" class="hidden">
-        <h2>Rum 3: Klart!</h2>
-        <p>
-          Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu
-          är det dags och ta sig till kassan för att betala.
-        </p>
-        <div id="room3ToRoom4">
-          <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button><span>Till kassan</span>
-        </div>
-      </section>
-      <section id="room3GameOver" class="hidden">
-        <div>
-          <h2>Game Over</h2>
-          <p>
-            Tyvärr tog tålamodet slut hos ditt barn och istället för att leta
-            rätt på möbeln måste du nu leta rätt på ditt barn istället.
-          </p>
-          <p class="right-before-button-room-3">
-            När du letat klart, vill du spela igen eller vill du lämna
-            varuhuset?
-          </p>
-          <div>
-            <div>
-              <button id="restartGameBtn">Spela igen</button>
-              <button id="toIndexBtn">Ta mig hem</button>
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="monkey-choose-argument"
+                  value="D"
+                  id="monkeyArgA"
+                />
+                <label for="monkeyArgA">
+                  "Det blir absolut ingen apa! Du har redan hela rummet fullt av
+                  gosedjur."</label
+                >
+              </div>
+
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="monkey-choose-argument"
+                  value="E"
+                  id="monkeyArgB"
+                />
+                <label for="monkeyArgB">
+                  " Vet du vad, vi kom ju precis in på IKEA... ska vi inte titta
+                  vidare lite först. Det finns ju en massa fina saker längre
+                  in!</label
+                >
+              </div>
+
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="monkey-choose-argument"
+                  value="F"
+                  id="monkeyArgC"
+                />
+                <label for="monkeyArgC">
+                  "Ska du redan börja tjata om mer! Vi sa ju att vi skulle ha en
+                  lampa till ditt rum och inget mer."</label
+                >
+              </div>
+              <button class="all-dialog-buttons" id="submitMonkeyArgument">
+                Skicka in argument
+              </button>
             </div>
           </div>
         </div>
-      </section>
-      <div class="overlayRoom3" id="warnOverlayRoom3">
-        <div class="popupRoom3">
-          <div class="warningSymbol">⚠</div>
-          <h2>Fel möbel</h2>
-          <p>Var försiktig, du har bara ett försök kvar!</p>
-          <button class="popup-room-3-btn" id="closeWarnPopupRoom3Btn">
-            Försök igen
+
+        <div class="hidden dialog-div" id="wantmonkeyTantrum">
+          <div class="tantrum">
+            <p>
+              Å nej! Dottern gillar inte ditt svar. Hon får världens utbrott och
+              du får skynda ut till bistron för att muta henne med en glass
+              innan du kan börja om din runda.
+            </p>
+            <img
+              class="icecream-pic"
+              src="/assets-room-1/icecream.png"
+              alt=""
+            />
+          </div>
+          <button class="tantrum-buttons resetBtn">Börja om</button>
+        </div>
+
+        <!-- PILLOW -->
+
+        <div id="pillowArgument" class="hidden dialog">
+          <div class="dialog-div">
+            <div class="daughter-argument">
+              <p class="please-section">
+                Nästa utmaning blir en fluffig, röd hjärtkudde. Din dotter
+                trycker den mot bröstet, tittar på dig med stora ögon och viskar
+                ett utdraget: "Snääääälla…"
+              </p>
+
+              <img
+                class="want-pillow-pic"
+                src="/assets-room-1/heartpillow.png"
+                alt=""
+              />
+            </div>
+
+            <div class="all-dad-arguments">
+              <img class="dad-image" src="/assets-room-1/mr_ikea.png" alt="" />
+
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="pillow-choose-argument"
+                  value="A"
+                  id="argA"
+                />
+                <label for="argA"
+                  >Den kudden har vi redan en likadan av hemma, titta så lika de
+                  är!</label
+                >
+              </div>
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="pillow-choose-argument"
+                  value="B"
+                  id="argB"
+                />
+                <label for="argB">Ja, den är jättefin! Låt oss köpa den!</label>
+              </div>
+              <div class="daddy-argument">
+                <input
+                  type="radio"
+                  name="pillow-choose-argument"
+                  value="C"
+                  id="argC"
+                />
+                <label for="argC"
+                  >Du får välja en sak idag, och du har inte sett allt än.
+                  Kanske finns det något ännu finare längre in!</label
+                >
+              </div>
+
+              <button id="submitPillowArgument" class="all-dialog-buttons">
+                Skicka in argument
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden dialog-div" id="wantPillowTantrum">
+          <div class="tantrum">
+            <p>JAG VIIIIIILL HA KUDDEN!!!!!</p>
+          </div>
+          <button class="tantrum-buttons resetBtn">Börja om</button>
+        </div>
+
+        <!--chair-->
+        <div class="hidden dialog-div" id="chairDialog">
+          <div class="tantrum">
+            <p>
+              Du valde rätt väg! Som tur var nöjde Emma sig med att provsitta
+              den lurviga stolen så ni kan fortsätta fram till lampan!
+            </p>
+            <img src="/assets-room-1/chair.png" alt="" />
+          </div>
+          <button class="tantrum-buttons" id="chairDialogBtn">Gå vidare</button>
+        </div>
+
+        <!--bedsheet-->
+        <div class="hidden dialog-div" id="bedsheetDialog">
+          <div class="tantrum">
+            <p>
+              oh no! Du glömde att du skulle plocka upp lampan. Börja om från
+              början och välj rätt väg
+            </p>
+          </div>
+          <button class="tantrum-buttons resetBtn">Börja om</button>
+        </div>
+
+        <!--lamp-->
+        <div class="hidden dialog-div" id="lampDialog">
+          <div class="tantrum">
+            <p>
+              Grattis! Du lyckades ta dig till lampan utan att plocka på dig
+              något mer! Gå till utgången så kommer du till rum 2 där du ska
+              hitta en glödlampa.
+            </p>
+          </div>
+          <button class="lamp-button" id="lampDialogBtn">
+            Ta mig till Utgången
           </button>
         </div>
-      </div>
-    </section>
-    <!-- ================================== -->
-    <!-- ============= RUM 4 ============== -->
-    <!-- ================================== -->
-    <section class="main-rooms room-4 hidden" id="room4">
-      <h3>Rum 4 - Kassan</h3>
+      </section>
+      <!-- ================================== -->
+      <!-- ============= RUM 2 ============== -->
+      <!-- ================================== -->
+      <section class="main-rooms room-2 hidden" id="room2">
+        <div
+          class="room-2-instruction-container room-2-overlay room-2-is-visible"
+          id="room2InstructionContainer"
+        >
+          <div>
+            <img
+              class="room-2-ikea-man-box"
+              src="/room_2_ikea_man_box.png"
+              alt=""
+            />
+            <h2>Lamporna</h2>
+            <p>
+              Åh, sådär, nu har vi äntligen hittat lampavdelningen! Men vad var
+              det vi skulle ha nu igen? Juste, vi skulle ju testa den nya,
+              flefärgade, smarta, coola, och trådlösa ljuskällan
+              <span class="room-2-tooltip" href=""
+                >KAJPLATS!<span class="room-2-tooltip-box"
+                  >LED ljuskälla, smart, färgat och vitt</span
+                >
+              </span>
+            </p>
+            <p>Men, alla lampor är ju släckta!?</p>
+            <p>
+              Jag vet vad vi måste göra! Om vi trycker på lampknappen
+              <span class="room-2-tooltip" href=""
+                >BILRESA
+                <span class="room-2-tooltip-box"
+                  >Fjärrkontroll, vit smart/två knappar</span
+                ></span
+              >
+              <span>
+                så att alla lampor i slutet lyser samtidigt, så ser vi vilken
+                hylla</span
+              >
+              <span class="room-2-tooltip" href=""
+                >KAJPLATS<span class="room-2-tooltip-box"
+                  >LED ljuskälla, smart, färgat och vitt</span
+                ></span
+              >
 
-      <!-- Memory -->
-      <div id="room4memory">
-        <p class="room4-instructions" id="room4-instructions">
-          Memorera var de gula rutorna är och dess siffror!
-        </p>
+              <span>
+                ligger i och vi kan då lägga den i vår gula påse och gå
+                vidare!</span
+              >
+            </p>
+            <p class="room-2-instruction-last-line">
+              Men kom ihåg: vi har bara 10 stycken tryck på oss innan 'ungen'
+              tröttnar och vill åka hem!
+            </p>
 
-        <p class="room4-timer" id="room4-timer"></p>
-
-        <button type="button" id="room4-start-btn">
-          Visa de gula rutorna
-        </button>
-
-        <div class="room4-grid" id="room4-grid">
-          <div class="room4-cell" data-index="0"></div>
-          <div class="room4-cell" data-index="1"></div>
-          <div class="room4-cell" data-index="2"></div>
-          <div class="room4-cell" data-index="3"></div>
-          <div class="room4-cell" data-index="4"></div>
-          <div class="room4-cell" data-index="5"></div>
-          <div class="room4-cell" data-index="6"></div>
-          <div class="room4-cell" data-index="7"></div>
-          <div class="room4-cell" data-index="8"></div>
-          <div class="room4-cell" data-index="9"></div>
-        </div>
-
-        <p class="room4-message" id="room4-message"></p>
-      </div>
-
-      <!-- Kassakoden -->
-      <div id="room4checkout" hidden>
-        <h3>Kassan</h3>
-        <p class="room4-checkout-instruction">
-          Skriv in koden från de gula rutorna för att betala dina varor!
-        </p>
-
-        <div class="room4-cart">
-          <h4>Varukorgssammanfattning</h4>
-          <ul class="room4-cart-list">
-            <li><span>BILLY</span><span>399 kr</span></li>
-            <li><span>KAJPLATS</span><span>59 kr</span></li>
-            <li><span>UPPLYST</span><span>149 kr</span></li>
-          </ul>
-          <div class="room4-cart-total">
-            <span>Totalt</span><span>607 kr</span>
+            <button id="room2GoToGameBtn">Nästa</button>
           </div>
         </div>
-
-        <div class="room4-terminal">
-          <div class="room4-display">
-            <div class="room4-display-price">607,00 kr</div>
-            <div class="room4-display-blipp">
-              <img src="/assets/blipp.png" alt="Blipp" width="40" />
+        <div class="room-2-game-info-header">
+          <div class="room-2-hint-wrapper">
+            <img
+              class="room-2-ikea-man-question"
+              src="/room_2_ikea_man_question.png"
+              alt="Hint for solution"
+            />
+            <div class="room-2-hint-infobox">
+              <div>
+                <h4>Tips:</h4>
+                <span>Alla knappar måste användas för att lösa spelet!</span>
+              </div>
             </div>
-            <div class="room4-display-code">
-              <span id="room4CodeDisplay">----</span>
-            </div>
           </div>
+          <div class="room-2-game-info-text">
+            <h2>Lamporna</h2>
+            <p>
+              Tryck på
+              <span class="room-2-tooltip" href=""
+                >BILRESA<span class="room-2-tooltip-box"
+                  >Fjärrkontroll, vit smart/två knappar</span
+                ></span
+              >
+              för att tända
+              <span class="room-2-tooltip" href=""
+                >KAJPLATS!<span class="room-2-tooltip-box"
+                  >LED ljuskälla, smart, färgat och vitt</span
+                >
+              </span>
+              Rummet är klarat när alla lampor lyser samtidigt!
+            </p>
+          </div>
+          <div class="room-2-click-counter" id="room2ClickCounter"></div>
+        </div>
 
-          <div class="room4-keypad">
-            <button type="button" class="room4-key" data-key="1">1</button>
-            <button type="button" class="room4-key" data-key="2">2</button>
-            <button type="button" class="room4-key" data-key="3">3</button>
-            <button type="button" class="room4-key" data-key="4">4</button>
-            <button type="button" class="room4-key" data-key="5">5</button>
-            <button type="button" class="room4-key" data-key="6">6</button>
-            <button type="button" class="room4-key" data-key="7">7</button>
-            <button type="button" class="room4-key" data-key="8">8</button>
-            <button type="button" class="room4-key" data-key="9">9</button>
-            <button type="button" class="room4-key room4-key-clear" data-key="clear">
-              C
+        <div class="room-2-gamewrapper">
+          <div class="room-2-lampcontainer">
+            <img src="" id="lamp1" alt="" class="room-2-lamp-img" />
+          </div>
+          <div class="room-2-lampcontainer">
+            <img src="" id="lamp2" alt="" class="room-2-lamp-img" />
+          </div>
+          <div class="room-2-lampcontainer">
+            <img src="" id="lamp3" alt="" class="room-2-lamp-img" />
+          </div>
+          <div class="room-2-lampcontainer">
+            <img src="" id="lamp4" alt="" class="room-2-lamp-img" />
+          </div>
+          <div class="room-2-btncontainer">
+            <button type="button" id="room2Btn1">
+              <img src="/room_2_remote.jpg" alt="" />
             </button>
-            <button type="button" class="room4-key" data-key="0">0</button>
-            <button type="button" class="room4-key room4-key-enter" data-key="enter">
-              OK
+          </div>
+          <div class="room-2-btncontainer">
+            <button type="button" id="room2Btn2">
+              <img src="/room_2_remote.jpg" alt="" />
+            </button>
+          </div>
+          <div class="room-2-btncontainer">
+            <button type="button" id="room2Btn3">
+              <img src="/room_2_remote.jpg" alt="" />
+            </button>
+          </div>
+          <div class="room-2-btncontainer">
+            <button type="button" id="room2Btn4">
+              <img src="/room_2_remote.jpg" alt="" />
             </button>
           </div>
         </div>
+        <div class="room-2-lose-screen room-2-overlay" id="room2LoseScreen">
+          <div>
+            <img
+              class="room-2-ikea-man-sad"
+              src="/room_2_ikea_man_sad.png"
+              alt=""
+            />
+            <h2>Lamporna</h2>
+            <p>
+              Åh, nej! Vi lyckades inte tända alla lampor i tid och nu har
+              'insert ungens namn här' tröttnat och sprungit iväg.
+            </p>
+            <p>
+              Vi måste gå ut från <span class="room-2-ikea-word">IKEA</span>, så
+              får lov att åka hit en annan dag.
+            </p>
 
-        <p class="room4-message" id="room4CheckoutMessage"></p>
-      </div>
-    </section>
+            <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
+          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
+            <a class="room-2-game-over-btn" href="">
+              <button id="goToStartBtn">
+                <span>Gå ut från varuhuset</span>
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="room-2-win-screen room-2-overlay" id="room2WinScreen">
+          <div>
+            <img
+              class="room-2-ikea-man-box"
+              src="/room_2_ikea_man_box.png"
+              alt=""
+            />
+            <h2>Lamporna</h2>
+            <p>
+              Yes! Vi lyckades tända alla lampor och nu ser vi ju var
+              <span class="room-2-tooltip" href=""
+                >KAJPLATS<span class="room-2-tooltip-box"
+                  >LED ljuskälla, smart färgat och vitt</span
+                >
+              </span>
+              ligger någonstans!
+            </p>
+            <p>
+              Vi tar en
+              <span class="room-2-tooltip" href=""
+                >KAJPLATS<span class="room-2-tooltip-box"
+                  >LED ljuskälla, smart, färgat och vitt</span
+                >
+              </span>
+              och lägger den i vår
+              <span class="room-2-ikea-word">IKEA</span>-påse, så går kan vi gå
+              vidare till <span class="room-2-ikea-word">Ta-själv-lagret</span>?
+            </p>
 
-    <section id="gameOverRoom"></section>
-    <button type="button" disabled>Gå ut från IKEA</button>
-  </main>
-  <footer></footer>
-  <script type="module" src="/src/main.ts"></script>
-</body>
+            <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
+          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
+            <button id="goToRoom3Btn">
+              <span>Till ta-själv-lagret!</span>
+            </button>
+          </div>
+        </div>
+      </section>
 
+      <!-- ================================== -->
+      <!-- ============= RUM 3 ============== -->
+      <!-- ================================== -->
+
+      <!-------✨ Linas Rum ✨-------->
+
+      <section class="main-rooms room-3 hidden" id="room3">
+        <div class="room-3-header">
+          <h1>Tag själv lagret</h1>
+          <div class="room3Title">
+            <p class="progress-in-room-3">Rum 3</p>
+          </div>
+        </div>
+        <div id="room3Start">
+          <!--class="hidden"-->
+          <h2>Välkommen till rum 3</h2>
+          <p>
+            Nu när du har lämnat lampavdelningen, är nästa steg att hitta rätt
+            möbel inne på lagret.
+          </p>
+          <h3>Är du redo?</h3>
+          <div id="room3StartBtnWrapper">
+            <div>
+              <button id="room3StartBtn" aria-label="Gå till rum 3">→</button
+              ><span>Till rum 3</span>
+            </div>
+          </div>
+        </div>
+        <section id="room3Part1" class="hidden">
+          <!--class="hidden"-->
+          <h2>Vilken hylla och fack?</h2>
+          <p>Puh! Du tog dig ut från lampavdelningen, du är snart ute.</p>
+          <p>
+            MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den
+            kommer vi inte till kassorna.
+          </p>
+          <p>
+            Du kommer ihåg lappen du fick med dig hemifrån och blir lite
+            fundersam över vad som står.
+          </p>
+
+          <div class="clue-1-room-3-wrapper">
+            <img
+              id="confusedIkeaManRoom3"
+              src="/gubbe-ikea-forvirrad.png"
+              alt="Lapp med kod"
+            />
+            <div>
+              <h3>Lös rebusen:</h3>
+
+              <div id="clue1Room3">
+                <p>1.</p>
+                <img
+                  src="/clue-room-3-1.png"
+                  alt="Lapp där det står: Hylla = Kyrre, Fack = Pax + Ekenäset"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div id="guessInput1Room3Wrapper">
+            <p id="titleHylla">1x Hylla</p>
+            <p>BILLY</p>
+            <div id="guessInput1Room3">
+              <form id="guessHyllaFackSection">
+                <p>
+                  <span class="id-number-item">403.834.74</span>
+                </p>
+                <p class="guess-input-room-3">
+                  <label>Hylla:</label
+                  ><input
+                    id="hyllaInput"
+                    maxlength="2"
+                    type="number"
+                    placeholder="00"
+                  />
+                </p>
+                <p class="guess-input-room-3">
+                  <label>Fack:</label
+                  ><input
+                    id="fackInput"
+                    maxlength="2"
+                    type="number"
+                    placeholder="00"
+                  />
+                </p>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section id="room3Part2" class="hidden">
+          <!--class="hidden"-->
+          <h2>Korrekt</h2>
+          <div class="descriptionRoom3">
+            <p>
+              Bra jobbat! Du har hittat rätt hylla och fack.
+              <span>MEN</span>
+              någon har lämnat det i totalt kaos och skyltningen är förstörd, nu
+              måste du hitta rätt möbel.
+            </p>
+            <p><span>Var du uppmärksam i förra steget?</span></p>
+          </div>
+          <div class="clue-2-room-3-wrapper">
+            <div id="shelfForFurnituresRoom3Wrapper">
+              <div id="shelfImageRoom3">
+                <div id="scribbleColumn1">
+                  <img
+                    src="/scribble-room3.png"
+                    alt="Överstrykning av möbelbild i blått"
+                  />
+                </div>
+                <div id="scribbleColumn2">
+                  <img
+                    id="scribbleYellowRoom3"
+                    src="/scribble-yellow.png"
+                    alt="Överstrykning av möbelnamn i gult"
+                  />
+
+                  <p>000.000.00</p>
+                  <img id="barcodeRoom3" src="/barcodeRoom3.png" />
+                </div>
+              </div>
+
+              <div id="hyllaAndFackShelfRoom3">
+                <div id="redBackgroundHyllaFack">
+                  <p class="hylla-fack-title">Hylla</p>
+                  <p>05</p>
+                  <p class="hylla-fack-title">Fack</p>
+                  <p>38</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>Välj rätt möbel:</h3>
+          <div id="guessFurniture">
+            <!---Rendering av alternativ--->
+          </div>
+          <div id="clueRoom3Part2">
+            <p>Psst! Klicka inte för många gånger.</p>
+          </div>
+        </section>
+
+        <section id="room3End" class="hidden">
+          <h2>Rum 3: Klart!</h2>
+          <p>
+            Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu
+            är det dags och ta sig till kassan för att betala.
+          </p>
+          <div id="room3ToRoom4">
+            <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button
+            ><span>Till kassan</span>
+          </div>
+        </section>
+        <section id="room3GameOver" class="hidden">
+          <div>
+            <h2>Game Over</h2>
+            <p>
+              Tyvärr tog tålamodet slut hos ditt barn och istället för att leta
+              rätt på möbeln måste du nu leta rätt på ditt barn istället.
+            </p>
+            <p class="right-before-button-room-3">
+              När du letat klart, vill du spela igen eller vill du lämna
+              varuhuset?
+            </p>
+            <div>
+              <div>
+                <button id="restartGameBtn">Spela igen</button>
+                <button id="toIndexBtn">Ta mig hem</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="overlayRoom3" id="warnOverlayRoom3">
+          <div class="popupRoom3">
+            <div class="warningSymbol">⚠</div>
+            <h2>Fel möbel</h2>
+            <p>Var försiktig, du har bara ett försök kvar!</p>
+            <button class="popup-room-3-btn" id="closeWarnPopupRoom3Btn">
+              Försök igen
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- ================================== -->
+      <!-- ============= RUM 4 ============== -->
+      <!-- ================================== -->
+      <section class="main-rooms room-4 hidden" id="room4">
+        <h3>Rum 4 - Kassan</h3>
+
+        <!-- Memory -->
+        <div id="room4memory">
+          <p class="room4-instructions" id="room4-instructions">
+            Memorera var de gula rutorna är och dess siffror!
+          </p>
+
+          <p class="room4-timer" id="room4-timer"></p>
+
+          <button type="button" id="room4-start-btn">
+            Visa de gula rutorna
+          </button>
+
+          <div class="room4-grid" id="room4-grid">
+            <div class="room4-cell" data-index="0"></div>
+            <div class="room4-cell" data-index="1"></div>
+            <div class="room4-cell" data-index="2"></div>
+            <div class="room4-cell" data-index="3"></div>
+            <div class="room4-cell" data-index="4"></div>
+            <div class="room4-cell" data-index="5"></div>
+            <div class="room4-cell" data-index="6"></div>
+            <div class="room4-cell" data-index="7"></div>
+            <div class="room4-cell" data-index="8"></div>
+            <div class="room4-cell" data-index="9"></div>
+          </div>
+
+          <p class="room4-message" id="room4-message"></p>
+        </div>
+
+        <!-- Kassakoden -->
+        <div id="room4checkout" hidden>
+          <h3>Kassan</h3>
+          <p class="room4-checkout-instruction">
+            Skriv in koden från de gula rutorna för att betala dina varor!
+          </p>
+
+          <div class="room4-cart">
+            <h4>Varukorgssammanfattning</h4>
+            <ul class="room4-cart-list">
+              <li><span>BILLY</span><span>399 kr</span></li>
+              <li><span>KAJPLATS</span><span>59 kr</span></li>
+              <li><span>UPPLYST</span><span>149 kr</span></li>
+            </ul>
+            <div class="room4-cart-total">
+              <span>Totalt</span><span>607 kr</span>
+            </div>
+          </div>
+
+          <div class="room4-terminal">
+            <div class="room4-display">
+              <div class="room4-display-price">607,00 kr</div>
+              <div class="room4-display-blipp">
+                <img src="/assets/blipp.png" alt="Blipp" width="40" />
+              </div>
+              <div class="room4-display-code">
+                <span id="room4CodeDisplay">----</span>
+              </div>
+            </div>
+
+            <div class="room4-keypad">
+              <button type="button" class="room4-key" data-key="1">1</button>
+              <button type="button" class="room4-key" data-key="2">2</button>
+              <button type="button" class="room4-key" data-key="3">3</button>
+              <button type="button" class="room4-key" data-key="4">4</button>
+              <button type="button" class="room4-key" data-key="5">5</button>
+              <button type="button" class="room4-key" data-key="6">6</button>
+              <button type="button" class="room4-key" data-key="7">7</button>
+              <button type="button" class="room4-key" data-key="8">8</button>
+              <button type="button" class="room4-key" data-key="9">9</button>
+              <button
+                type="button"
+                class="room4-key room4-key-clear"
+                data-key="clear"
+              >
+                C
+              </button>
+              <button type="button" class="room4-key" data-key="0">0</button>
+              <button
+                type="button"
+                class="room4-key room4-key-enter"
+                data-key="enter"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+
+          <p class="room4-message" id="room4CheckoutMessage"></p>
+        </div>
+      </section>
+
+      <section id="gameOverRoom"></section>
+      <button type="button" disabled>Gå ut från IKEA</button>
+    </main>
+    <footer></footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker12"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path12" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker12_Fnone_S-fdfdfd"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:#fdfdfd;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path1" />
+    </marker>
+  </defs>
+  <g
+     id="layer1">
+    <path
+       style="display:inline;fill:none;stroke:#fdfdfd;stroke-width:6.005;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24.02, 24.02;stroke-dashoffset:0;marker-end:url(#marker12_Fnone_S-fdfdfd)"
+       d="m 812.78821,326.24678 c 19.97971,-6.56804 41.26173,-9.14768 62.23204,-7.54328 10.65991,0.81557 21.7069,2.90056 30.17312,9.4291 5.97689,4.60895 10.2807,11.2263 12.56254,18.42065 2.28185,7.19436 2.5967,14.93988 1.41945,22.39505 -2.35451,14.91035 -10.44346,28.3039 -19.63945,40.27453 -24.13106,31.41193 -57.19706,55.88078 -94.29098,69.77533"
+       id="path18"
+       transform="matrix(0.26458333,0,0,0.26458333,-113.4061,7.6096597)" />
+  </g>
+</svg>

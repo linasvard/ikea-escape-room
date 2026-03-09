@@ -74,23 +74,23 @@
 }
 
 .zone-pillow img {
-  width: 150px;
+  width: 180px;
 }
 
 .zone-pillow {
   position: absolute;
-  top: 43%;
-  left: 51%;
+  top: 30%;
+  left: 45%;
 }
 
 .zone-monkey img {
-  width: 100px;
+  width: 140px;
 }
 
 .zone-monkey {
   position: absolute;
-  top: 66%;
-  left: 35%;
+  top: 15%;
+  left: 20%;
 }
 
 .zone-chair img {
@@ -99,28 +99,28 @@
 
 .zone-chair {
   position: absolute;
-  top: 38%;
-  left: 25%;
+  top: 10%;
+  left: 53%;
 }
 
 .zone-bedsheets img {
-  width: 100px;
+  width: 120px;
 }
 
 .zone-bedsheets {
   position: absolute;
-  top: 30%;
-  left: 40%;
+  top: 55%;
+  left: 58%;
 }
 
 .zone-lamp img {
-  width: 100px;
+  width: 140px;
 }
 
 .zone-lamp {
   position: absolute;
-  top: 6%;
-  left: 40%;
+  top: 17%;
+  left: 76%;
 }
 
 .entry {
@@ -132,8 +132,8 @@
 
 .exit {
   position: absolute;
-  top: 15%;
-  left: 80%;
+  top: 70%;
+  left: 30%;
   width: 130px;
 }
 
@@ -267,75 +267,83 @@
 
 //Arrows
 
-#arrow1 {
+#arrow1 img {
   position: absolute;
-  top: 79%;
-  left: 36.5%;
+  width: 26%;
+  top: 27%;
+  left: 3%;
   cursor: pointer;
+}
+
+#arrow1.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow2 {
+#arrow2 img {
   position: absolute;
-  top: 67.5%;
-  left: 55%;
+  width: 50%;
+  top: 10.5%;
+  left: 12%;
   cursor: pointer;
+}
+
+#arrow2.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow3 {
+#arrow3 img {
   position: absolute;
-  top: 55%;
-  left: 64%;
+  width: 53%;
+  top: 10%;
+  left: 35%;
   cursor: pointer;
+}
+#arrow3.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow4 {
+#arrow4 img {
   position: absolute;
-  top: 40%;
-  left: 42%;
+  width: 16%;
+  top: 18%;
+  left: 41%;
   cursor: pointer;
+}
+
+#arrow4.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow5 {
+#arrow5 img {
   position: absolute;
-  top: 46%;
-  left: 39%;
-  cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-#arrow6 {
-  position: absolute;
-  top: 17%;
-  left: 53%;
-  cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-#arrow7 {
-  position: absolute;
-  top: 30%;
-  left: 34%;
-  cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-#arrow9 {
-  position: absolute;
-  top: 25%;
+  width: 50%;
+  top: -18%;
   left: 45%;
   cursor: pointer;
+}
+#arrow5.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow8 {
+#arrow6 img {
   position: absolute;
-  top: 18%;
-  left: 65%;
+  width: 50%;
+  top: 5%;
+  left: 59%;
   cursor: pointer;
+}
+#arrow6.animation img {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow7 img {
+  position: absolute;
+  width: 60%;
+  top: 30%;
+  left: 27%;
+  cursor: pointer;
+}
+#arrow7.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
