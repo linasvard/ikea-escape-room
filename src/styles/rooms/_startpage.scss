@@ -1,0 +1,109 @@
+.game-intro {
+  width: 50%;
+
+  background-color: #f5f5f5;
+  margin: 20px;
+  margin-right: 0px;
+  padding: 10px;
+}
+
+.intro-header {
+  color: black;
+  padding: 5px;
+}
+
+#login {
+  color: yellow;
+  width: 200px;
+  height: 200px;
+}
+.rooms-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 50%;
+
+  margin: 20px;
+  margin-left: 0px;
+
+  gap: 20px;
+}
+
+.main-flexer {
+  display: flex;
+  height: 700px;
+}
+
+.tag {
+  background-color: rgb(201, 72, 12);
+  width: 110px;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+.scene {
+  perspective: 600px; /* Djupkänsla */
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: rotateY(180deg); /* Snurrar vid hover */
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(201, 72, 12);
+  backface-visibility: hidden; /* Döljer när den är vänd bort */
+
+  h2 {
+    color: white;
+    padding: 20px;
+  }
+}
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Döljer när den är vänd bort */
+}
+
+.back {
+  transform: rotateY(180deg); /* Baksidan är förvänd från start */
+}
+
+#startGameBtn {
+  width: 45px;
+  height: 45px;
+  font-size: 1rem;
+  font-weight: 500;
+  background: none;
+  padding: 10px;
+  border: 1.5px solid black;
+  border-radius: 30px;
+  pointer-events: all;
+
+  button:hover {
+    //varför fungerar inte hoover
+    background-color: #ffda1a;
+    border-color: #ffda1a;
+    color: #333333;
+  }
+
+  span {
+    margin-inline: 10px;
+    font-family: "futura-pt", sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+}

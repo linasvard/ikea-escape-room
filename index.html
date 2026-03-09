@@ -181,31 +181,99 @@
       <!-- ================================== -->
       <section class="startpage">
         <main class="main-flexer">
-          <p class="game-intro">
-            Det som skulle bli en snabb och harmonisk tur till IKEA har
-            förvandlats till ett prövningarnas test. Du har en lista. Du har en
-            plan. Du har… en trött och mycket bestämd femåring vid din sida.
-            Butiken är enorm. Det finns ingen genväg. Ingen återvändo. Bara
-            avdelning efter avdelning. 🎯 Ditt uppdrag Du måste ta dig igenom
-            fyra stationer och överleva varje utmaning: Barnavdelningen Hitta
-            och plocka upp en hjärtlampa till dotterns sovrum – utan att bli
-            påtvingad en massa andra gulliga prylar av din dotter.
-            Lampavdelningen Säkerställ att du väljer rätt glödlampa. (Fel
-            ljusstyrka kan få konsekvenser…) Tag-själv-lagret Lokalisera rätt
-            hyllplats och lasta på en platt kartong med en BILLY. Varning:
-            Vagnens svängradie är begränsad. Femåringens tålamod ännu mer.
-            Kassan Det sista hindret. Du måste minnas din pinkod. Ett enda
-            feltryck… och dramatiken eskalerar. ⚠️ Regler Femåringen följer med
-            överallt. Energinivån sjunker för varje minut. Mutor är begränsade.
-            Tiden är knapp. Kan du genomföra köpuppdraget utan sammanbrott,
-            borttappade artiklar eller ett akut behov av köttbullar? Lycka till.
-            Du kommer att behöva det.
-          </p>
+          <div class="game-intro">
+            <h4 class="tag">Instruktioner</h4>
+            <h4 class="intro-header">
+              Det som skulle bli en snabb och harmonisk tur till IKEA har
+              förvandlats till ett prövningarnas test.
+            </h4>
+            <p>Du har en lista.</p>
+            <p>Du har en plan.</p>
+            <p>Du har… en trött och mycket bestämd femåring vid din sida.</p>
+            <p>
+              Butiken är enorm. Det finns ingen genväg. Ingen återvändo. Bara
+              avdelning efter avdelning.
+            </p>
+            <p>🎯 Ditt uppdrag:</p>
+            <p>
+              Du måste ta dig igenom fyra stationer och överleva varje utmaning.
+            </p>
+
+            <p>Lycka till. Du kommer att behöva det.</p>
+
+            <div id="login"></div>
+          </div>
+
           <div class="rooms-intro">
-            <div class="game-maker"></div>
-            <div class="game-maker"></div>
-            <div class="game-maker"></div>
-            <div class="game-maker"></div>
+            <!-- card 1-->
+
+            <div class="scene">
+              <div class="card">
+                <div class="front">
+                  <h2>Utforska BARNAVDELNINGEN</h2>
+                </div>
+                <div class="back">
+                  <h4>
+                    Hitta och plocka upp en hjärtlampa till dotterns sovrum –
+                    <br />
+                    utan att bli påtvingad en massa andra gulliga prylar av din
+                    dotter.
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- card 2-->
+
+            <div class="scene">
+              <div class="card">
+                <div class="front">
+                  <h2>Utforska LAMPAVDELNINGEN</h2>
+                </div>
+                <div class="back">
+                  <h4>
+                    Säkerställ att du väljer rätt glödlampa. (Fel ljusstyrka kan
+                    få konsekvenser…)
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- card 3-->
+
+            <div class="scene">
+              <div class="card">
+                <div class="front">
+                  <h2>Utforska <br />TAG-SJÄLV-LAGRET</h2>
+                </div>
+                <div class="back">
+                  <h4>
+                    Lokalisera rätt hyllplats och lasta på en platt kartong med
+                    en BILLY. Varning: Vagnens svängradie är begränsad.
+                    Femåringens tålamod ännu mer.
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- card 4-->
+
+            <div class="scene">
+              <div class="card">
+                <div class="front">
+                  <h2>
+                    Utforska <br />
+                    KASSAN
+                  </h2>
+                </div>
+                <div class="back">
+                  <h4>
+                    Du måste minnas din pinkod. Ett enda feltryck… och
+                    dramatiken eskalerar.
+                  </h4>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       </section>
@@ -896,96 +964,109 @@
       <!-- ============= RUM 4 ============== -->
       <!-- ================================== -->
       <section class="main-rooms room-4 hidden" id="room4">
-      <div class="for-all-room-header-wrapper">
-        <h1>Kassan</h1>
-        <div>
-          <p class="for-all-room-header">Rum 4</p>
-        </div>
-      </div>
-
-      <!-- Memory -->
-      <div id="room4memory" class="room-4-memory">
-        <p class="room4-instructions" id="room4-instructions">
-          Memorera var de gula rutorna är och dess siffror!
-        </p>
-
-        <p class="room4-timer" id="room4-timer"></p>
-
-        <button type="button" id="room4-start-btn" class="show-yellow-cards-btn">
-          Visa de gula rutorna
-        </button>
-
-        <div class="room4-grid" id="room4-grid">
-          <div class="room4-cell" data-index="0"></div>
-          <div class="room4-cell" data-index="1"></div>
-          <div class="room4-cell" data-index="2"></div>
-          <div class="room4-cell" data-index="3"></div>
-          <div class="room4-cell" data-index="4"></div>
-          <div class="room4-cell" data-index="5"></div>
-          <div class="room4-cell" data-index="6"></div>
-          <div class="room4-cell" data-index="7"></div>
-          <div class="room4-cell" data-index="8"></div>
-          <div class="room4-cell" data-index="9"></div>
+        <div class="for-all-room-header-wrapper">
+          <h1>Kassan</h1>
+          <div>
+            <p class="for-all-room-header">Rum 4</p>
+          </div>
         </div>
 
-        <p class="room4-message" id="room4-message"></p>
-      </div>
+        <!-- Memory -->
+        <div id="room4memory" class="room-4-memory">
+          <p class="room4-instructions" id="room4-instructions">
+            Memorera var de gula rutorna är och dess siffror!
+          </p>
 
-      <!-- Kassakoden -->
-      <div id="room4checkout" hidden>
-        <h3>Du är så nära!</h3>
-        <p class="room4-checkout-instruction">
-          Skriv in koden från de gula rutorna för att betala dina varor!
-        </p>
-        <div class="cart-terminal-wrapper">
-          <div class="room4-cart">
-            <h4>Sammanfattning</h4>
-            <ul class="room4-cart-list">
-              <li><span>BILLY</span><span>399 kr</span></li>
-              <li><span>KAJPLATS</span><span>59 kr</span></li>
-              <li><span>UPPLYST</span><span>149 kr</span></li>
-            </ul>
-            <div class="room4-cart-total">
-              <span>Totalt</span><span>607 kr</span>
-            </div>
+          <p class="room4-timer" id="room4-timer"></p>
+
+          <button
+            type="button"
+            id="room4-start-btn"
+            class="show-yellow-cards-btn"
+          >
+            Visa de gula rutorna
+          </button>
+
+          <div class="room4-grid" id="room4-grid">
+            <div class="room4-cell" data-index="0"></div>
+            <div class="room4-cell" data-index="1"></div>
+            <div class="room4-cell" data-index="2"></div>
+            <div class="room4-cell" data-index="3"></div>
+            <div class="room4-cell" data-index="4"></div>
+            <div class="room4-cell" data-index="5"></div>
+            <div class="room4-cell" data-index="6"></div>
+            <div class="room4-cell" data-index="7"></div>
+            <div class="room4-cell" data-index="8"></div>
+            <div class="room4-cell" data-index="9"></div>
           </div>
 
-          <div class="room4-terminal">
-            <div class="room4-display">
-              <div class="room4-display-price">607,00 kr</div>
-              <div class="room4-display-blipp">
-                <img src="/assets/blipp.png" alt="Blipp" width="40" />
-              </div>
-              <div class="room4-display-code">
-                <span id="room4CodeDisplay">----</span>
+          <p class="room4-message" id="room4-message"></p>
+        </div>
+
+        <!-- Kassakoden -->
+        <div id="room4checkout" hidden>
+          <h3>Du är så nära!</h3>
+          <p class="room4-checkout-instruction">
+            Skriv in koden från de gula rutorna för att betala dina varor!
+          </p>
+          <div class="cart-terminal-wrapper">
+            <div class="room4-cart">
+              <h4>Sammanfattning</h4>
+              <ul class="room4-cart-list">
+                <li><span>BILLY</span><span>399 kr</span></li>
+                <li><span>KAJPLATS</span><span>59 kr</span></li>
+                <li><span>UPPLYST</span><span>149 kr</span></li>
+              </ul>
+              <div class="room4-cart-total">
+                <span>Totalt</span><span>607 kr</span>
               </div>
             </div>
 
-            <div class="room4-keypad">
-              <button type="button" class="room4-key" data-key="1">1</button>
-              <button type="button" class="room4-key" data-key="2">2</button>
-              <button type="button" class="room4-key" data-key="3">3</button>
-              <button type="button" class="room4-key" data-key="4">4</button>
-              <button type="button" class="room4-key" data-key="5">5</button>
-              <button type="button" class="room4-key" data-key="6">6</button>
-              <button type="button" class="room4-key" data-key="7">7</button>
-              <button type="button" class="room4-key" data-key="8">8</button>
-              <button type="button" class="room4-key" data-key="9">9</button>
-              <button type="button" class="room4-key room4-key-clear" data-key="clear">
-                C
-              </button>
-              <button type="button" class="room4-key" data-key="0">0</button>
-              <button type="button" class="room4-key room4-key-enter" data-key="enter">
-                OK
-              </button>
+            <div class="room4-terminal">
+              <div class="room4-display">
+                <div class="room4-display-price">607,00 kr</div>
+                <div class="room4-display-blipp">
+                  <img src="/assets/blipp.png" alt="Blipp" width="40" />
+                </div>
+                <div class="room4-display-code">
+                  <span id="room4CodeDisplay">----</span>
+                </div>
+              </div>
+
+              <div class="room4-keypad">
+                <button type="button" class="room4-key" data-key="1">1</button>
+                <button type="button" class="room4-key" data-key="2">2</button>
+                <button type="button" class="room4-key" data-key="3">3</button>
+                <button type="button" class="room4-key" data-key="4">4</button>
+                <button type="button" class="room4-key" data-key="5">5</button>
+                <button type="button" class="room4-key" data-key="6">6</button>
+                <button type="button" class="room4-key" data-key="7">7</button>
+                <button type="button" class="room4-key" data-key="8">8</button>
+                <button type="button" class="room4-key" data-key="9">9</button>
+                <button
+                  type="button"
+                  class="room4-key room4-key-clear"
+                  data-key="clear"
+                >
+                  C
+                </button>
+                <button type="button" class="room4-key" data-key="0">0</button>
+                <button
+                  type="button"
+                  class="room4-key room4-key-enter"
+                  data-key="enter"
+                >
+                  OK
+                </button>
+              </div>
+              <p
+                class="room4-message room-4-last-message"
+                id="room4CheckoutMessage"
+              ></p>
             </div>
-            <p class="room4-message room-4-last-message" id="room4CheckoutMessage"></p>
           </div>
-          
-        </div>  
-        
-      </div>
-    </section>
+        </div>
+      </section>
 
       <section id="gameOverRoom"></section>
       <button type="button" disabled>Gå ut från IKEA</button>
