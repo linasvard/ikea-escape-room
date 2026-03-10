@@ -18,4 +18,4 @@ I fredags fixade jag med timern, ett par buggar som fanns med att den inte start
 
 ### Scrum-master = Lina
 
-## Oscar frånvarande pga unknown.
+## Oscar frånvarande pga försov sig.
