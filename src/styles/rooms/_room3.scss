@@ -43,6 +43,7 @@
    
   p {
     margin: 0.5rem 0;
+    max-width: 600px;
   }
 
   input, .id-number-item {
@@ -244,42 +245,7 @@
   }
 }
 
-#room3ToRoom4, #room3StartBtnWrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
-    
-  button {
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
-    font-weight: 500;
-    background: none;
-    padding: 10px;
-    border: 1.5px solid black;
-    border-radius: 30px;
-    pointer-events: all;
-    
-    
-    }
 
-    button:hover {
-      background-color: #ffda1a;
-      border-color: #ffda1a;
-      color: #333333;
-    }
-  
-  span {
-    margin-inline: 10px;
-    font-family: "futura-pt", sans-serif;
-    font-weight: 500;
-    font-size: 1.1rem;
-    
-  }  
-
-}
 
 .option-container {
   margin: 0;
