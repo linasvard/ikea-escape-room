@@ -280,7 +280,7 @@
             </div>
           </div>
 
-          <form>
+          <form class="log-in-form">
             <label for="name">
               <span class="login-text">Logga in med</span>
               <span class="family-text">Ikea Family</span></label
@@ -390,7 +390,7 @@
 
                 <div class="introduction-text all-dad-arguments">
                   <p>
-                  <p><span class="bold-blue-text-room-1">Du kliver in på barnavdelningen på IKEA.</span></p>
+                  <p><span class="bold-blue-text-p">Du kliver in på barnavdelningen på IKEA.</span></p>
                   <p>Ditt uppdrag är tydligt:
                     Ta dig från ingången till utgången</p>
                   <p>Samtidigt finns ett krav:
@@ -403,16 +403,20 @@
 
 
 
-                  <p><span class="bold-blue-text-room-1">⚠️ Reglerna är enkla men brutala:</span></p>
+                  <p><span class="bold-blue-text-p">⚠️ Reglerna är enkla men brutala:</span></p>
                   <p>Du får inte lägga något extra i vagnen.
                     Du får inte ge med dig.
                     Du får inte orsaka ett utbrott.</p>
                   <p>Välj väg med omsorg. Ignorera distraktionerna. Håll energin uppe.</p>
 
-                  <p><span class="bold-blue-text-room-1">Lycka till!</span></p>
+                  <p><span class="bold-blue-text-p">Lycka till!</span></p>
                   </p>
                 </div>
-                <button id="startRoom1Btn">Starta rum 1</button>
+                <div id="startRoom1Btn" class="intro-room-btn">
+                  <button>→</button>
+                  <span>Till rum 3</span>
+                </div>
+                
               </div>
               <div>
                 <img class="intro-picture" src="/assets-room-1/intro-pic.png" alt="" />
@@ -501,11 +505,11 @@
             <div class="daughter-argument">
               
               <p>
-                <span class="bold-blue-text-room-1">Ni har knappt hunnit innanför dörren förrän</span> första hindret dyker
+                <span class="bold-blue-text-p">Ni har knappt hunnit innanför dörren förrän</span> första hindret dyker
                 upp! Den virala apan Punch! Din dotter drar fram det tunga
                 artilleriet- lägger huvudet på sned, tittar på dig med de stora
                 blanka valpögonen och drar till med det mest bedårande
-                <span class="bold-blue-text-room-1">"Snäääääällla"</span> du någonsin hört. Hur tusan ska du ta dig ur det
+                <span class="bold-blue-text-p">"Snäääääällla"</span> du någonsin hört. Hur tusan ska du ta dig ur det
                 här?!
               </p>
 
@@ -591,9 +595,9 @@
           <h2 class="dialog-header-room-1">Men den röda kudden då?</h2>
           <div class="daughter-argument">
             <p class="please-section">
-              <span class="bold-blue-text-room-1">Nästa utmaning </span>blir en fluffig, röd hjärtkudde. Din dotter
+              <span class="bold-blue-text-p">Nästa utmaning </span>blir en fluffig, röd hjärtkudde. Din dotter
               trycker den mot bröstet, tittar på dig med stora ögon och viskar
-              ett utdraget: <span class="bold-blue-text-room-1">"Snääääälla…"</span>
+              ett utdraget: <span class="bold-blue-text-p">"Snääääälla…"</span>
             </p>
 
             <img class="want-pillow-pic" src="/assets-room-1/heartpillow.png" alt="" />
@@ -665,7 +669,7 @@
           <div class="tantrum">
             
             <p>
-              <span class="bold-blue-text-room-1">Du valde rätt väg!</span> Som tur var nöjde Emma sig med att provsitta
+              <span class="bold-blue-text-p">Du valde rätt väg!</span> Som tur var nöjde Emma sig med att provsitta
               den lurviga stolen så ni kan fortsätta fram till lampan!
             </p>
             <img class="chair-image" src="/assets-room-1/chair.png" alt="" />
@@ -696,7 +700,7 @@
           <div class="tantrum">
             
             <p>
-              <span class="bold-blue-text-room-1">Grattis! </span>Du lyckades ta dig till lampan utan att plocka på dig
+              <span class="bold-blue-text-p">Grattis! </span>Du lyckades ta dig till lampan utan att plocka på dig
               något mer! Gå till utgången så kommer du till rum 2 där du ska
               hitta en glödlampa.
             </p>
@@ -766,8 +770,11 @@
               Men kom ihåg: vi har bara 10 stycken tryck på oss innan 'ungen'
               tröttnar och vill åka hem!
             </p>
-
-            <button id="room2GoToGameBtn">Nästa</button>
+            <div class="intro-room-btn">
+              <button id="room2GoToGameBtn">→</button>
+              <span>Till rum 2</span>
+            </div>
+            
           </div>
         </div>
         <div class="room-2-game-info-header">
@@ -931,8 +938,8 @@
             möbel inne på lagret.
           </p>
           <h3>Är du redo?</h3>
-          <div id="room3StartBtnWrapper">
-            <div>
+          <div>
+            <div class="intro-room-btn">
               <button id="room3StartBtn" aria-label="Gå till rum 3">→</button
               ><span>Till rum 3</span>
             </div>
@@ -976,11 +983,11 @@
             </div>
           </div>
 
-          <div id="guessInput1Room3Wrapper">
+          <div id="guessInput1Room3Wrapper" class="guess-input-1-room-3-wrapper">
             <p id="titleHylla">1x Hylla</p>
             <p>BILLY</p>
-            <div id="guessInput1Room3">
-              <form id="guessHyllaFackSection">
+            <div id="guessInput1Room3" class="guess-input-1-room-3">
+              <form id="guessHyllaFackSection" class="guess-hylla-fack-section">
                 <p>
                   <span class="id-number-item">403.834.74</span>
                 </p>
@@ -1071,12 +1078,12 @@
               <p class="progress-in-room-3">Rum 3</p>
             </div>
           </div>
-          <h2>Rum 3: Klart!</h2>
+          <h2>Du hittade Billy</h2>
           <p>
-            Bra jobbat! Du tog dig från tag själv lagret med bokhyllan Billy. Nu
+            <span class="bold-blue-text-p">Bra jobbat!</span> Du tog dig från tag själv lagret med bokhyllan Billy. Nu
             är det dags och ta sig till kassan för att betala.
           </p>
-          <div id="room3ToRoom4">
+          <div id="room3ToRoom4" class="intro-room-btn">
             <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button
             ><span>Till kassan</span>
           </div>
@@ -1095,7 +1102,10 @@
             </p>
             <div>
               <div>
-                <button id="restartGameBtn" class="go-to-start-btn">Spela igen</button>
+                <a href="">
+                  <button id="restartGameBtn" class="go-to-start-btn">Spela igen</button>
+                </a>
+                
                 <button id="toIndexBtn">Ta mig hem</button>
               </div>
             </div>
@@ -1116,7 +1126,7 @@
       <!-- ============= RUM 4 ============== -->
       <!-- ================================== -->
       <section class="main-rooms room-4 hidden" id="room4">
-      <div class="for-all-room-header-wrapper">
+      <div id="headerRoom4Wrapper" class="for-all-room-header-wrapper">
         <h1>Kassan</h1>
         <div>
           <p class="for-all-room-header">Rum 4</p>
@@ -1153,19 +1163,16 @@
 
         <!-- Kassakoden -->
         <div id="room4checkout" hidden>
-          <h3>Du är så nära!</h3>
+          <h3 class="header-room-4">Du är så nära!</h3>
 
-          <div class="room4-daughter">
-            <img src="/assets/daughter67.png" alt="Liten flicka" />
-            <div class="room4-daughter-bubble">
-              Pappa är 67 år... nej vänta, 67 år... öh, 6767?
-            </div>
-          </div>
+          
 
           <p class="room4-checkout-instruction">
-            Skriv in koden från de gula rutorna för att betala dina varor!
+            Skriv in koden från de gula rutorna för att betala dina varor. 
+            <span>Kommer du ihåg vad som stod på rutorna?</span>
           </p>
         <div class="cart-terminal-wrapper">
+          <div class="summary-and-clue-room-4">
             <div class="room4-cart">
               <h4>Sammanfattning</h4>
               <ul class="room4-cart-list">
@@ -1177,7 +1184,15 @@
                 <span>Totalt</span><span>607 kr</span>
               </div>
             </div>
-
+            <div class="room4-daughter">
+              <figure class="girl-illustration">
+                <img src="/assets/daughter67.png" alt="Liten flicka"/>
+              </figure>
+              <div class="room4-daughter-bubble">
+                <p class="daughter-bubble-p"><span>Pappa är 67 år...</span> nej vänta, 67 år... öh, 6767?</p>
+              </div>
+            </div>
+          </div>  
           <div class="room4-terminal">
             <div class="room4-display">
               <div class="room4-display-price">607,00 kr</div>
@@ -1215,14 +1230,14 @@
       </div>
       
       </section>
-      <section id="room4GameOver" class="room-game-over-section"> <!--class="hidden"-->
+      <section id="room4GameOver" class="room-game-over-section hidden"> <!--class="hidden"-->
         <div>
           <h1 class="all-game-over-header">Game over</h1>
           <h2 class="subheading-game-over">Köpet gick inte igenom</h2>
           <p>Du tog alldeles för många försök på dig och kunde inte genomföra ditt köp. Din dotter blir jätteledsen och du funderar på vad du vill göra.</p>
           <p class="right-before-button-room-3">Vill du testa igen eller vill du ge upp och åka hem?</p>
           <div>
-            <a>
+            <a href="">
               <button class="go-to-start-btn">Börja om</button>
             </a>
               

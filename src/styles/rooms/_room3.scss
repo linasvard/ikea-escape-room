@@ -43,6 +43,7 @@
    
   p {
     margin: 0.5rem 0;
+    max-width: 600px;
   }
 
   input, .id-number-item {
@@ -109,26 +110,24 @@
 }
 
 .guess-input-room-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0px;
+  display: flex;            // change from grid to flex
   align-items: center;
-  
+  gap: 15px;
+  margin: 0;               // remove any default <p> margin
 }
 
-#guessInput1Room3 {
+.guess-hylla-fack-section {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;      // already default, but be explicit
   align-items: center;
-  margin-inline-end: 10px; 
+  gap: 40px;                // space between the three columns
 }
 
-#guessHyllaFackSection {
-  display: flex;
-  justify-content: flex-start;
-  gap: 40px;
-  align-items: center;
+.guess-hylla-fack-section p {
+  margin: 0;
 }
+
+
 
 #room3Part2 {
   margin-bottom: 40px;
@@ -193,12 +192,13 @@
   max-width: 250px;
 } 
 
-#guessInput1Room3Wrapper {
+.guess-input-1-room-3-wrapper {
   border: 1.5px solid black;
   border-radius: 20px;
-  padding: 20px 35px;
+  padding: 25px 35px;
   margin: 35px 0;
   justify-content: center;
+  padding-bottom: 30px;
 }
 
 #guessFurniture {
@@ -244,42 +244,7 @@
   }
 }
 
-#room3ToRoom4, #room3StartBtnWrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
-    
-  button {
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
-    font-weight: 500;
-    background: none;
-    padding: 10px;
-    border: 1.5px solid black;
-    border-radius: 30px;
-    pointer-events: all;
-    
-    
-    }
 
-    button:hover {
-      background-color: #ffda1a;
-      border-color: #ffda1a;
-      color: #333333;
-    }
-  
-  span {
-    margin-inline: 10px;
-    font-family: "futura-pt", sans-serif;
-    font-weight: 500;
-    font-size: 1.1rem;
-    
-  }  
-
-}
 
 .option-container {
   margin: 0;

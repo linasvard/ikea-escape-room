@@ -8,6 +8,7 @@ import type {} from "../types/models";
 import { saveHighscore } from "./highscore";
 import { saveFinishedRoomToLS } from "./roomProgress";
 import { stopTimer } from "./timer";
+import { resetTimer } from "./timer";
 
 export default function initRoom4() {
   // Hämta HTML-element - Memory
@@ -162,6 +163,11 @@ export default function initRoom4() {
       wrongMemoryAttempts++;
       if (wrongMemoryAttempts >= 3) {
         handleLose("Game over! Du misslyckades 3 gånger.");
+        localStorage.removeItem('currentRoom');  // kör denna kod för att ta bort minnet av hur måga rum som är klarade!
+        resetTimer(); // resettar timern när man misslyckas med rummet
+        document.querySelector("#room4memory")?.classList.add("hidden"); // tar bort memory div
+        document.querySelector("#room4GameOver")?.classList.remove("hidden"); // lägger till game over sidan
+        document.querySelector("#headerRoom4Wrapper")?.classList.add("hidden"); // tar bort header för att skapa enhetlighet
       } else {
         message.textContent = `Fel! Du hade ${correctGuesses} av 4 rätt. ${3 - wrongMemoryAttempts} försök kvar.`;
         message.style.color = "#e74c3c";
@@ -184,15 +190,23 @@ export default function initRoom4() {
         saveFinishedRoomToLS();
         checkoutMessage.textContent = "Rätt kod!";
         checkoutMessage.style.color = "#27ae60";
+        checkoutMessage.style.backgroundColor = "#ffffff";
+        checkoutMessage.style.boxShadow = "0px 4px 8px 0px rgba(0, 0, 0, 0.3)";
         stopTimer();
         saveHighscore();
       } else {
         wrongCodeAttempts++;
         if (wrongCodeAttempts >= 3) {
           handleLose("Game over! Du angav fel kod 3 gånger. Larmet gick!");
+          localStorage.removeItem('currentRoom');  // kör denna kod för att ta bort minnet av hur måga rum som är klarade!
+          resetTimer(); // resettar timern när man misslyckas med rummet
+          document.querySelector("#room4checkout")?.classList.add("hidden"); // tar bort div
+          document.querySelector("#room4GameOver")?.classList.remove("hidden"); // lägger till game over sida
+          document.querySelector("#headerRoom4Wrapper")?.classList.add("hidden"); // Tar bort header för att göra det mer enhetligt med övriga rum
         } else {
           checkoutMessage.textContent = `Fel kod! ${3 - wrongCodeAttempts} försök kvar.`;
           checkoutMessage.style.color = "#e74c3c";
+          checkoutMessage.style.boxShadow = "0px 4px 8px 0px rgba(0, 0, 0, 0.3)";
           enteredCode = "";
           codeDisplay.textContent = "----";
         }

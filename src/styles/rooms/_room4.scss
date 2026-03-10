@@ -76,6 +76,7 @@
 }
 
 .room4-timer {
+  font-family: "futura-pt", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   color: #0058a3;
@@ -170,13 +171,15 @@
   border-radius: 20px;
   padding: 20px;
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   margin: 0 auto;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .room4-instructions {
-  color: #333;
+  font-family: "noto-sans", sans-serif;
+  font-weight: 600;
+  color: #0058a3;
   font-size: 1rem;
 }
 
@@ -187,8 +190,20 @@
 
 .room4-checkout-instruction {
   color: #333;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  text-align: left;
+  width: 500px;
+  
+  span {
+    font-weight: 800;
+    color: #0058a3;
+  }
+
+}
+
+.header-room-4 {
+  text-align: left;
 }
 
 .room4-cart {
@@ -200,10 +215,10 @@
   margin: 0 auto;
   text-align: left;
   height: 200px;
-  margin-top: 8px;
+  margin-top: 10px;
 
   h4 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: #0058a3;
     margin-bottom: 0.5rem;
   }
@@ -236,26 +251,55 @@
 
 .cart-terminal-wrapper {
   display: flex;
-  justify-content: space-evenly;
-
+  justify-content: space-between;
+ 
   margin: 0 auto;
-  gap: 50px;
+  gap: 80px;
 }
 
 .room-4-last-message {
-  /* Lagt till så att rätt kod kommer upp ovanpå terminal*/
+  /* Lagt till så att "rätt kod" kommer upp ovanpå terminal*/
   position: absolute;
   right: 60px;
   left: 60px;
-
   top: 530px;
-  /*background-color: white;
-  box-shadow: 1px 1.5px 5px rgba(0, 0, 0, 0.3);*/
   padding: 15px 40px;
   border-radius: 50px;
 }
 .room4-daughter {
-  img {
-    width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  gap: 20px;
+  align-items: center;
+}
+
+.girl-illustration {
+  width: 250px;
+  height: 200px;
+
+  margin: 0 auto;
+}
+
+.girl-illustration img {
+  width: 120%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room4-daughter-bubble {
+  text-align: left;
+  border: 1.5px solid #e0e0e0;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+.daughter-bubble-p {
+  font-size: 0.85rem;
+
+  span {
+    font-weight: 600;
+    color: #0058a3;
   }
 }
