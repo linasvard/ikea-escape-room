@@ -7,7 +7,7 @@
 .room-1 {
   width: 800px;
   height: auto;
-  background-color: #ffda1a;
+  
   color: #333333;
 
   position: relative;
@@ -31,16 +31,17 @@
 }
 
 .introduction-text {
-  padding: 30px;
-}
-.welcome-information {
-  margin: 100px;
+  padding: 0 40px;
+  
+
 }
 
+
 .intro-picture {
-  width: 150px;
-  position: absolute;
-  top: 250px;
+  width: 200px;
+  height: 100%;  
+  padding: 10px;
+  
 }
 
 #startRoom1Btn {
@@ -50,16 +51,20 @@
   background-color: #006fd0;
   border-radius: 30px;
   border: #006fd0;
-  position: absolute;
-  left: 530px;
-  top: 450px;
+  margin: 0 30px;
+  margin-top: 40px;
   cursor: pointer;
 }
 
 .description-flex {
   display: flex;
-  flex-direction: column;
-  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  h2 {
+    margin: 0 30px;
+  }
 }
 
 #map {
@@ -74,23 +79,23 @@
 }
 
 .zone-pillow img {
-  width: 150px;
+  width: 180px;
 }
 
 .zone-pillow {
   position: absolute;
-  top: 43%;
-  left: 51%;
+  top: 30%;
+  left: 45%;
 }
 
 .zone-monkey img {
-  width: 100px;
+  width: 140px;
 }
 
 .zone-monkey {
   position: absolute;
-  top: 66%;
-  left: 35%;
+  top: 15%;
+  left: 20%;
 }
 
 .zone-chair img {
@@ -99,28 +104,28 @@
 
 .zone-chair {
   position: absolute;
-  top: 38%;
-  left: 25%;
+  top: 10%;
+  left: 53%;
 }
 
 .zone-bedsheets img {
-  width: 100px;
+  width: 120px;
 }
 
 .zone-bedsheets {
   position: absolute;
-  top: 30%;
-  left: 40%;
+  top: 55%;
+  left: 58%;
 }
 
 .zone-lamp img {
-  width: 100px;
+  width: 140px;
 }
 
 .zone-lamp {
   position: absolute;
-  top: 6%;
-  left: 40%;
+  top: 17%;
+  left: 76%;
 }
 
 .entry {
@@ -132,9 +137,15 @@
 
 .exit {
   position: absolute;
-  top: 15%;
-  left: 80%;
+  top: 70%;
+  left: 25%;
   width: 130px;
+  color: #0057a3;
+  padding: 10px 20px;
+  background-color: #ffda1a;
+  width: fit-content;
+  border-radius: 20px;
+  
 }
 
 .zone {
@@ -148,6 +159,9 @@
   cursor: not-allowed;
   opacity: 0.4;
   pointer-events: none;
+  color: white;
+  background: none;
+
 }
 
 .hidden {
@@ -163,25 +177,33 @@
 .dialog-div {
   background-color: #ffffff;
   width: 800px;
-  height: 800px;
+  height: 100%;
   position: absolute;
   top: 0px;
   margin: 0 auto;
 }
 
+.dialog-header-room-1 {
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
 .daughter-argument {
   display: flex;
+  align-items: center;
   width: 600px;
   margin-top: 30px;
   margin-bottom: 30px;
   margin: 0 auto;
-  padding-top: 40px;
+ 
 }
 
 .want-monkey-pic,
 .want-pillow-pic {
-  width: 40%;
-  margin-left: 50px;
+  width: 150px;
+  margin-left: 40px;
 }
 
 .icecream-pic {
@@ -190,9 +212,10 @@
 }
 .all-dad-arguments {
   position: relative;
-  border: 1px solid black;
-  width: 600px;
-  height: 300px;
+  border: 1px solid #333;
+  width: 75%;
+  border-radius: 20px;
+  height: fit-content;
   padding-top: 40px;
   margin: 0 auto;
   padding-bottom: 40px;
@@ -203,23 +226,25 @@
   position: absolute;
   width: 100px;
   top: 25px;
-  left: -25px;
+  left: -120px;
 }
 
 .daddy-argument {
   width: 450px;
   margin: 0 auto;
-  margin-left: 70px;
+  
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 20px 30px;
   background-color: rgba(175, 183, 191, 0.3);
   border-radius: 30px;
+  background: #ffda1a;
 }
 
 .tantrum {
   display: flex;
   position: relative;
   border: 1px solid black;
+  border-radius: 20px;
   width: 600px;
   height: 300px;
   padding-top: 40px;
@@ -238,9 +263,12 @@
   background-color: #006fd0;
   border-radius: 30px;
   border: #006fd0;
-  position: absolute;
-  left: 385px;
-  top: 320px;
+  margin: 20px 45px;
+}
+
+.bold-blue-text-room-1 {
+  font-weight: 600;
+  color: #0057a3;
 }
 
 .tantrum-buttons {
@@ -250,8 +278,14 @@
   border-radius: 30px;
   border: #006fd0;
   position: absolute;
-  left: 580px;
+  left: 130px;
   top: 350px;
+}
+
+.chair-image {
+  width: 170px;
+  margin-inline-end: 20px;
+  height: fit-content;
 }
 
 .lamp-button {
@@ -267,75 +301,83 @@
 
 //Arrows
 
-#arrow1 {
+#arrow1 img {
   position: absolute;
-  top: 79%;
-  left: 36.5%;
+  width: 26%;
+  top: 27%;
+  left: 3%;
   cursor: pointer;
+}
+
+#arrow1.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow2 {
+#arrow2 img {
   position: absolute;
-  top: 67.5%;
-  left: 55%;
+  width: 50%;
+  top: 10.5%;
+  left: 12%;
   cursor: pointer;
+}
+
+#arrow2.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow3 {
+#arrow3 img {
   position: absolute;
-  top: 55%;
-  left: 64%;
+  width: 53%;
+  top: 10%;
+  left: 35%;
   cursor: pointer;
+}
+#arrow3.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow4 {
+#arrow4 img {
   position: absolute;
-  top: 40%;
-  left: 42%;
+  width: 16%;
+  top: 18%;
+  left: 41%;
   cursor: pointer;
+}
+
+#arrow4.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow5 {
+#arrow5 img {
   position: absolute;
-  top: 46%;
-  left: 39%;
-  cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-#arrow6 {
-  position: absolute;
-  top: 17%;
-  left: 53%;
-  cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-#arrow7 {
-  position: absolute;
-  top: 30%;
-  left: 34%;
-  cursor: pointer;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-#arrow9 {
-  position: absolute;
-  top: 25%;
+  width: 50%;
+  top: -18%;
   left: 45%;
   cursor: pointer;
+}
+#arrow5.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-#arrow8 {
+#arrow6 img {
   position: absolute;
-  top: 18%;
-  left: 65%;
+  width: 50%;
+  top: 5%;
+  left: 59%;
   cursor: pointer;
+}
+#arrow6.animation img {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+#arrow7 img {
+  position: absolute;
+  width: 60%;
+  top: 30%;
+  left: 27%;
+  cursor: pointer;
+}
+#arrow7.animation img {
   animation: pulse 1.5s ease-in-out infinite;
 }
 

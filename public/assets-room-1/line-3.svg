@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker13_Fnone_S-fdfdfd"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:#fdfdfd;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path1" />
+    </marker>
+  </defs>
+  <g
+     id="layer1">
+    <path
+       style="display:inline;fill:none;stroke:#fdfdfd;stroke-width:6.005;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24.02, 24.02;marker-end:url(#marker13_Fnone_S-fdfdfd)"
+       d="m 626.09208,390.36464 c 7.95933,4.58744 14.39813,11.7646 18.09797,20.17332 3.69984,8.40873 4.64124,18.00475 2.64605,26.97217 -2.34643,10.54609 -8.50936,19.81886 -15.11081,28.37145 -6.60145,8.55258 -13.81882,16.74788 -18.83395,26.31732 -10.02337,19.12572 -10.06913,43.14804 -0.11871,62.31181 9.95042,19.16378 29.62565,32.94635 51.03584,35.7508"
+       id="path4"
+       transform="matrix(0.26458333,0,0,0.26458333,-59.885497,17.102097)" />
+  </g>
+</svg>
