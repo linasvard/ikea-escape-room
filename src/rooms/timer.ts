@@ -1,95 +1,94 @@
-const TIMER_STORAGE_KEY = 'gameTimerState';
+const TIMER_STORAGE_KEY = "gameTimerState";
 
 let elapsedTime = 0;
 let intervalId: number | null = null;
 let isRunning = false; // timer should not start automatically
 
 function saveTimer() {
-    const timerState = {
-        elapsedTime,
-        isRunning
-    };
-    localStorage.setItem(TIMER_STORAGE_KEY, JSON.stringify(timerState));
+  const timerState = {
+    elapsedTime,
+    isRunning,
+  };
+  localStorage.setItem(TIMER_STORAGE_KEY, JSON.stringify(timerState));
 }
 
 function loadTimer() {
-    const saved = localStorage.getItem(TIMER_STORAGE_KEY);
-    if (!saved) {
-        // nothing stored yet; keep defaults (elapsedTime=0, isRunning=false)
-        return;
-    }
-    
-    const parsedState = JSON.parse(saved);
+  const saved = localStorage.getItem(TIMER_STORAGE_KEY);
+  if (!saved) {
+    // nothing stored yet; keep defaults (elapsedTime=0, isRunning=false)
+    return;
+  }
 
-    elapsedTime = parsedState.elapsedTime ?? 0;
-    isRunning = parsedState.isRunning ?? false;
+  const parsedState = JSON.parse(saved);
+
+  elapsedTime = parsedState.elapsedTime ?? 0;
+  isRunning = parsedState.isRunning ?? false;
 }
 
 function startTimer() {
-    if (intervalId !== null) return;
+  if (intervalId !== null) return;
 
-    isRunning = true;
+  isRunning = true;
 
-    intervalId = setInterval(() => {
-        elapsedTime += 1000;
-        updateDisplay();
-        saveTimer();
-    }, 1000);
+  intervalId = setInterval(() => {
+    elapsedTime += 1000;
+    updateDisplay();
+    saveTimer();
+  }, 1000);
 }
 
 export function stopTimer() {
-    if (intervalId === null) return;
+  if (intervalId === null) return;
 
-    clearInterval(intervalId);
-    intervalId = null; // när vi stoppar timern så ändrar vi ID till null
-    isRunning = false; // samt att vi ändrar värdet på isRunning till false, eftersom den inte tickar längre! :)
-    saveTimer(); // sen sparar vi i vår saveTimer()
+  clearInterval(intervalId);
+  intervalId = null; // när vi stoppar timern så ändrar vi ID till null
+  isRunning = false; // samt att vi ändrar värdet på isRunning till false, eftersom den inte tickar längre! :)
+  saveTimer(); // sen sparar vi i vår saveTimer()
 }
 
 function updateDisplay() {
-    const minutes = Math.floor(elapsedTime / 60000);
-    const seconds = Math.floor((elapsedTime % 60000) / 1000);
+  const minutes = Math.floor(elapsedTime / 60000);
+  const seconds = Math.floor((elapsedTime % 60000) / 1000);
 
+  const displayMinutes = String(minutes).padStart(2, "0"); // funktion som säger att strängen 'minutes' alltid ska vara längden två, och om det bara finns en sträng i minutes, så läggs det till en 0:a framför.
+  const displaySeconds = String(seconds).padStart(2, "0"); // funktion som säger att strängen 'seconds' alltid ska vara längden två, och om det bara finns en sträng i seconds, så läggs det till en 0:a framför.
 
-    const displayMinutes = String(minutes).padStart(2, "0"); // funktion som säger att strängen 'minutes' alltid ska vara längden två, och om det bara finns en sträng i minutes, så läggs det till en 0:a framför. 
-    const displaySeconds = String(seconds).padStart(2, "0"); // funktion som säger att strängen 'seconds' alltid ska vara längden två, och om det bara finns en sträng i seconds, så läggs det till en 0:a framför. 
-
-    const timerDisplay = document.querySelector('#timerDisplay');
-    if (!timerDisplay) {
-        return;
-    }
-    timerDisplay.textContent = `${displayMinutes}:${displaySeconds}`; // byter ut innehållet i spanen timerDisplay från 00:00 till den tiden som gått i spelet
+  const timerDisplay = document.querySelector("#timerDisplay");
+  if (!timerDisplay) {
+    return;
+  }
+  timerDisplay.textContent = `${displayMinutes}:${displaySeconds}`; // byter ut innehållet i spanen timerDisplay från 00:00 till den tiden som gått i spelet
 }
 
 export function initTimer() {
-    loadTimer();
+  loadTimer();
 
-    const timerEl = document.querySelector("#mainTimer");
-    if (!timerEl) return;
+  const timerEl = document.querySelector("#mainTimer");
+  if (!timerEl) return;
 
-    timerEl.innerHTML =
-        `<span>Speltid: </span><span id="timerDisplay">00:00</span>`;
+  timerEl.innerHTML = `<span>Speltid: </span><span id="timerDisplay">00:00</span>`;
 
-    updateDisplay();
+  updateDisplay();
 
-    // restart the interval when the state indicates the timer was running
-    if (isRunning === true) {
-        startTimer();
-    }
+  // restart the interval when the state indicates the timer was running
+  if (isRunning === true) {
+    startTimer();
+  }
 
-    const startBtn = document.querySelector("#startRoom1Btn");
-    startBtn?.addEventListener("click", startTimer);
+  const startBtn = document.querySelector("#startRoom1Btn");
+  startBtn?.addEventListener("click", startTimer);
+}
+
+export function getElapsedTime() {
+  return elapsedTime;
 }
 
 export function resetTimer() {
-    stopTimer();
+  stopTimer();
 
-    elapsedTime = 0;
+  elapsedTime = 0;
 
-    updateDisplay();
+  updateDisplay();
 
-    localStorage.removeItem('gameTimerState');
-
-
-
+  localStorage.removeItem("gameTimerState");
 }
