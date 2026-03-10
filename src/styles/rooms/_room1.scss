@@ -13,6 +13,14 @@
   position: relative;
 }
 
+.subheading-game-over {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: left;
+}
+
+
 .heading {
   font-size: 24px;
   text-align: center;
@@ -54,6 +62,12 @@
   margin: 0 30px;
   margin-top: 40px;
   cursor: pointer;
+}
+
+#startRoom1Btn:hover {
+  background: #ffda1a;
+  border: #ffda1a;
+  color: #333;
 }
 
 .description-flex {
@@ -148,6 +162,11 @@
   
 }
 
+.exit:hover {
+  outline: 2px solid #ffda1a;
+  outline-offset: 4px;
+}
+
 .zone {
   cursor: pointer;
 }
@@ -186,8 +205,12 @@
 .dialog-header-room-1 {
   width: 600px;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.chair-dialog-header {
+  margin-left: 150px;
 }
 
 .daughter-argument {
@@ -220,7 +243,14 @@
   margin: 0 auto;
   padding-bottom: 40px;
   margin-top: 40px;
+  
+  .all-dialog-buttons {
+    margin-left: 45px;
+  }
+
 }
+
+
 
 .dad-image {
   position: absolute;
@@ -243,28 +273,39 @@
 .tantrum {
   display: flex;
   position: relative;
-  border: 1px solid black;
-  border-radius: 20px;
-  width: 600px;
-  height: 300px;
-  padding-top: 40px;
+  
+  width: 500px;
+  height: fit-content;
+  justify-content: flex-start;
   margin: 0 auto;
   padding-bottom: 40px;
-  margin-top: 40px;
+  
 
   p {
-    padding: 30px;
+    padding: 5px 0;
   }
 }
 
-.all-dialog-buttons {
+.all-dialog-buttons, .chair-dialog-btn {
   padding: 10px 20px;
   color: #ffffff;
   background-color: #006fd0;
   border-radius: 30px;
   border: #006fd0;
-  margin: 20px 45px;
+  margin: 0 auto;
+  margin-top: 20px;
+  
 }
+
+.all-dialog-buttons:hover, 
+.chair-dialog-btn:hover,
+.lamp-button:hover {
+  outline: 2px solid #006fd0;
+  outline-offset: 3px;
+  background-color: #006fd0;
+}
+
+
 
 .bold-blue-text-room-1 {
   font-weight: 600;
@@ -277,9 +318,7 @@
   background-color: #006fd0;
   border-radius: 30px;
   border: #006fd0;
-  position: absolute;
-  left: 130px;
-  top: 350px;
+  
 }
 
 .chair-image {
@@ -288,16 +327,24 @@
   height: fit-content;
 }
 
+
+
 .lamp-button {
   padding: 10px 20px;
   color: #ffffff;
   background-color: #006fd0;
   border-radius: 30px;
   border: #006fd0;
-  position: absolute;
-  left: 500px;
-  top: 350px;
+  margin: 10px 150px;
 }
+
+.chair-dialog-btn {
+  position: relative;
+  left: 150px;
+  top: -100px;
+
+}
+
 
 //Arrows
 
@@ -441,3 +488,4 @@
     }
   }
 }
+

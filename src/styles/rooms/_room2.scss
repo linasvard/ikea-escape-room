@@ -41,25 +41,33 @@
       margin-top: 16px;
     }
     button {
-      font-family: "Noto", Courier, monospace;
-      min-height: 56px;
-      padding: 16px 64px;
-      margin-top: 16px;
-      margin-bottom: 32px;
+      font-family: "noto-sans", sans-serif;
+      height: fit-content;
+      padding: 13px 40px;
+      margin-top: 30px;
+      margin-bottom: 0px;
       border-radius: 64px;
-      background-color: #006fd0;
+      
       color: #ffffff;
       border: none;
-      margin-left: auto;
+      
       display: block;
+      
+    }
+    .go-to-start-btn:hover {
+      background-color: #ffda1a;
+      border-color: #ffda1a;
+      color: black;
     }
     button:hover {
       background-color: #0057a3;
+      outline: 2px solid #0057a3;
+      outline-offset: 3px;
     }
   }
 }
 .room-2-instruction-last-line {
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .room-2-tooltip {
@@ -166,6 +174,7 @@ h3 {
   width: 50%;
   justify-self: center;
   align-self: center;
+  margin-top: 70px;
 }
 
 .room-2-lamp-img {
@@ -177,6 +186,9 @@ h3 {
   display: grid;
   justify-items: center;
   align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  
   button {
     justify-items: center;
     background: none;
@@ -186,6 +198,12 @@ h3 {
     font: inherit;
     cursor: pointer;
     outline: inherit;
+  }
+
+  button:hover {
+    background: none;
+    outline: none;
+    transform: scale(1.05);
   }
   button:disabled {
     cursor: default;
@@ -228,34 +246,39 @@ h3 {
   z-index: 1000;
   div {
     position: relative;
-    border: 1px solid #000000;
+    
     padding: 32px 32px;
     display: block;
-    margin: 64px;
+    margin: 0 auto;
     color: #333333;
     font-size: 1rem;
     width: 50%;
     padding-bottom: 16px;
     p {
       padding: 0;
+      
+      
+
     }
     button {
       font-family: "Noto", Courier, monospace;
-      min-height: 56px;
-      padding: 16px 62px;
-      margin-top: 150px;
-      margin-bottom: 32px;
+      height: fit-content;
+      padding: 16px 30px;
+      margin-top: 50px;
+      margin-bottom: 20px;
       border-radius: 64px;
-      background-color: #006fd0;
+      
       color: #ffffff;
       border: none;
-      margin-left: auto;
+      margin: 40px auto;
       display: block;
     }
-    button:hover {
-      background-color: #0057a3;
-    }
+    
   }
+}
+
+.first-row-p {
+  margin-top: 20px;
 }
 
 .room-2-ikea-man-sad {
@@ -268,10 +291,14 @@ h3 {
 //   border: 1px solid black;
 // }
 
-.room-2-game-over-btn {
+.go-to-start-btn button {
   text-decoration: none;
-  color: #ffffff;
+  background-color: rgb(204, 0, 8);
+  color: white;
+  border: none;
 }
+
+
 
 .room2WinScreenDiv1,
 .room2WinScreenDiv2 {
@@ -292,4 +319,12 @@ h3 {
 }
 .room-2-green-color {
   background-color: #4caf50;
+}
+
+.room-3-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline-end: 20px;
+    
 }

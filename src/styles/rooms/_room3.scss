@@ -366,60 +366,7 @@
   gap: 10px;
 }
 
-#room3GameOver {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  text-align: left;
-  gap: 1px;
 
-  h2 {
-    font-size: 2.5rem;
-    color: #171717;
-    margin: 10px 0 20px 0;
-  }
-
-  p {
-    font-size: 1rem;
-    color: #3b3b3b;
-    margin: 25px 0;
-    max-width: 460px;
-    text-align: left;
-    
-  }
-
-  button {
-    width: fit-content;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    background: none;
-    border: 1.5px solid black;
-    border-radius: 30px;
-    pointer-events: all;
-    margin: 20px 0;
-    margin-bottom: 30px;
-    margin-right: 20px;
-  }
-
-  #toIndexBtn {
-    background-color: #d50000;
-    border-color: #d50000;
-    color: white;
-  }
-  #toIndexBtn:hover, #restartGameBtn:hover {
-    background-color: #ffda1a;
-    border-color: #ffda1a;
-    color: black;
-  }
-
-  #restartGameBtn {
-    background-color: #0058a3;
-    border-color: #0058a3;
-    color: white;
-  }
-}
 
 .right-before-button-room-3 {
   

@@ -88,17 +88,20 @@ p {
 }
 
 button {
-  background-color: #ffda1a;
-  padding: 10px 15px;
+  background-color: #006fd0;
+  padding: 10px 20px;
   border-radius: 20px;
-  border: 1px solid #ffda1a;
+  border: 1px solid #006fd0;
   color: #333333;
   cursor: pointer;
+  font-family: "noto-sans", sans-serif;
 }
 
 button:hover {
-  background-color: #0058a3;
+  background-color: #006fd0;
   color: white;
+  outline: 2px solid #006fd0;
+  outline-offset: 4px;
 }
 
 .hidden {
@@ -138,3 +141,112 @@ button:hover {
   margin: 0;
   background-color: #ececec;
 }
+
+.all-game-over-header {
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(204, 0, 8);
+}
+
+.game-over-div {
+  background-color: white;
+  height: auto;
+  border: none;
+}
+
+.game-over-btns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  position: absolute;
+  left: 290px;
+  top: 350px;
+
+}
+
+.to-index-btn {
+  background-color: rgb(204, 0, 8);
+  color: white;
+  border: none;
+}
+
+.to-index-btn:hover {
+  background: #ffda1a;
+  color: #333333;
+}
+
+.room-game-over-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  gap: 1px;
+  margin: 0 auto;
+  width: 100%;
+  border: none;
+
+  h1 {
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    color: #0058a3;
+    margin: 30px 0 15px 0;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #3b3b3b;
+    margin: 20px 0;
+    max-width: 500px;
+    text-align: left;
+    
+  }
+
+  button {
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    background: none;
+    border: 1.5px solid black;
+    border-radius: 30px;
+    pointer-events: all;
+    margin: 20px 0;
+    margin-bottom: 30px;
+    margin-right: 20px;
+  }
+  
+
+  #toIndexBtn {
+    background-color: #d50000;
+    border-color: #d50000;
+    color: white;
+  }
+  button:hover {
+    background-color: #ffda1a;
+    border-color: #ffda1a;
+    color: black;
+  }
+
+  .go-to-start-btn {
+    background-color: #0058a3;
+    border-color: #0058a3;
+    color: white;
+
+    .go-to-start-btn:hover {
+      background-color: #ffda1a;
+      border-color: #ffda1a;
+      color: black;
+    }
+  }
+}
+
+/*.tantrum-buttons:hover {
+  background: #ffda1a;
+  color: #333333;
+}
+  */
+
