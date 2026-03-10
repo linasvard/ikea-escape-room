@@ -189,15 +189,25 @@
           <p>Lycka till! Du kommer att behöva det.</p>
         </div>
         <div class="login-wrapper">
-          <div>
-            <img class="ikea-img" src="ikea-frontpage.jpg" alt="" />
+          <div class="img-wrapper">
+            <div class="front-img">
+              <img class="ikea-building" src="/building.jpg" alt="" />
+            </div>
+            <div class="front-img">
+              <img class="ikea-img" src="ikea-frontpage.jpg" alt="" />
+            </div>
           </div>
+
           <form>
-            <label for="name">Logga in</label>
-            <input type="text" id="name" placeholder="Ditt namn" />
+            <label for="name">
+              <span class="login-text">Logga in med</span>
+              <span class="family-text">Ikea Family</span></label
+            >
             <div class="start-btn-wrapper">
-              <button id="startGameBtn" type="submit">→</button>
-              <p>Starta spelet</p>
+              <input type="text" id="name" placeholder="Ditt namn" />
+              <div class="btn-positioner">
+                <button id="startGameBtn" type="submit">→</button>
+              </div>
             </div>
           </form>
         </div>
@@ -205,11 +215,14 @@
 
       <div class="rooms-intro">
         <!-- card 1 -->
-        <div class="scene">
-          <div class="card">
+
+        <div class="card">
+          <div class="card-front">
             <div class="front">
               <h2>Utforska BARNAVDELNINGEN</h2>
             </div>
+          </div>
+          <div class="card-back">
             <div class="back">
               <h4>
                 Hitta och plocka upp en hjärtlampa till dotterns sovrum –
@@ -222,11 +235,13 @@
         </div>
 
         <!-- card 2 -->
-        <div class="scene">
-          <div class="card">
+        <div class="card">
+          <div class="card-front">
             <div class="front">
               <h2>Utforska LAMPAVDELNINGEN</h2>
             </div>
+          </div>
+          <div class="card-back">
             <div class="back">
               <h4>
                 Säkerställ att du väljer rätt glödlampa. (Fel ljusstyrka kan få
@@ -237,11 +252,13 @@
         </div>
 
         <!-- card 3 -->
-        <div class="scene">
-          <div class="card">
+        <div class="card">
+          <div class="card-front">
             <div class="front">
               <h2>Utforska <br />TAG-SJÄLV-LAGRET</h2>
             </div>
+          </div>
+          <div class="card-back">
             <div class="back">
               <h4>
                 Lokalisera rätt hyllplats och lasta på en platt kartong med en
@@ -253,11 +270,13 @@
         </div>
 
         <!-- card 4 -->
-        <div class="scene">
-          <div class="card">
+        <div class="card">
+          <div class="card-front">
             <div class="front">
               <h2>Utforska <br />KASSAN</h2>
             </div>
+          </div>
+          <div class="card-back">
             <div class="back">
               <h4>
                 Du måste minnas din pinkod. Ett enda feltryck… och dramatiken
