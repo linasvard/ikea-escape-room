@@ -12,6 +12,7 @@
 /* Rum-specifika stilar — varje person jobbar i sin egen fil */
 
 @use "./rooms/header";
+@use "./rooms/infopage";
 @use "./rooms/room1";
 @use "./rooms/room2";
 @use "./rooms/room3";
@@ -21,26 +22,20 @@
   outline: none;
 }
 
-
- 
-
-button:focus-visible, 
+button:focus-visible,
 input:focus-visible {
   outline: 2px solid #0058a3;
   outline-offset: 4px;
-  
 }
 
 .furniture-option:focus-visible {
   outline: 2px solid #0058a3;
   outline-offset: 2px;
   border-radius: 2px;
-  
 }
 
 .main-rooms {
   margin: 15px auto;
-  
 }
 
 body {
@@ -54,22 +49,20 @@ p {
   font-family: "noto-sans", sans-serif;
   font-weight: 300;
   line-height: 1.4;
-
 }
 
-h1, h2 {
-    font-family: "futura-pt", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    
-    
-  }
+h1,
+h2 {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
 
 h1 {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 600;
-  
+
   color: #000000;
 }
 
@@ -86,7 +79,7 @@ h3 {
   margin: 15px 0 10px 0;
   color: #0058a3;
 }
-   
+
 p {
   line-height: 1.4;
 }
@@ -114,8 +107,6 @@ button:hover {
   font-size: 3.5rem;
   width: 800px;
   margin: 0 auto;
-  
-  
 }
 
 .for-all-room-header-wrapper {
@@ -125,9 +116,8 @@ button:hover {
   margin-inline-end: 20px;
 
   h1 {
-    align-self:first baseline;
+    align-self: first baseline;
   }
-    
 }
 
 .for-all-room-header {
@@ -141,7 +131,7 @@ button:hover {
   border-radius: 50px;
   display: flex;
   justify-content: center;
-  
+
   margin: 0;
   background-color: #ececec;
 }
