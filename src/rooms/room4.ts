@@ -5,7 +5,7 @@
  */
 
 import type {} from "../types/models";
-
+import { saveHighscore } from "./highscore";
 import { saveFinishedRoomToLS } from "./roomProgress";
 import { stopTimer } from "./timer";
 
@@ -14,7 +14,6 @@ export default function initRoom4() {
   const startBtn = document.getElementById(
     "room4-start-btn",
   ) as HTMLButtonElement;
-  // const grid = document.getElementById("room4-grid") as HTMLDivElement;
   const cells = document.querySelectorAll(
     ".room4-cell",
   ) as NodeListOf<HTMLDivElement>;
@@ -44,37 +43,46 @@ export default function initRoom4() {
   ) as NodeListOf<HTMLButtonElement>;
 
   // Spelvariabler
-  let yellowCells: number[] = []; // Vilka rutor som är gula
-  let playerGuesses: number[] = []; // Spelarens gissningar
-  let isGuessing = false; // Är spelaren i gissningsfasen?
+  let yellowCells: number[] = [];
+  let playerGuesses: number[] = [];
+  let isGuessing = false;
   const correctCode = "6767";
   const codeDigits = ["6", "7", "6", "7"];
   let enteredCode = "";
+  let wrongMemoryAttempts = 0;
+  let wrongCodeAttempts = 0;
 
   // Välj 4 slumpmässiga rutor som ska vara gula
   function selectRandomYellowCells(): number[] {
     const indices: number[] = [];
-
     while (indices.length < 4) {
       const randomIndex = Math.floor(Math.random() * 10);
-
       if (!indices.includes(randomIndex)) {
         indices.push(randomIndex);
       }
     }
-
     return indices;
+  }
+
+  // Förlust — stänger av spelet och visar meddelande
+  function handleLose(reason: string): void {
+    stopTimer();
+    localStorage.setItem("gameState", "lost");
+    message.textContent = reason;
+    message.style.color = "#e74c3c";
+    checkoutMessage.textContent = reason;
+    checkoutMessage.style.color = "#e74c3c";
+    startBtn.disabled = true;
+    keys.forEach((key) => (key.disabled = true));
   }
 
   // Starta spelet - visa gula rutor i 5 sekunder
   function startGame() {
-    // Återställ spelet
     yellowCells = selectRandomYellowCells();
     playerGuesses = [];
     isGuessing = false;
     message.textContent = "";
 
-    // Visa gula rutor
     cells.forEach((cell, index) => {
       cell.textContent = "";
       if (yellowCells.includes(index)) {
@@ -92,7 +100,6 @@ export default function initRoom4() {
       }
     });
 
-    // Starta timer
     let timeLeft = 5;
     timerDisplay.textContent = `Tid kvar: ${timeLeft} sekunder`;
     startBtn.disabled = true;
@@ -100,7 +107,6 @@ export default function initRoom4() {
     const timer = setInterval(() => {
       timeLeft--;
       timerDisplay.textContent = `Tid kvar: ${timeLeft} sekunder`;
-
       if (timeLeft <= 0) {
         clearInterval(timer);
         hideYellowCells();
@@ -110,13 +116,10 @@ export default function initRoom4() {
 
   // Dölj gula rutor och börja gissningsfasen
   function hideYellowCells() {
-    // Gör ala rutor blåa igen
     cells.forEach((cell) => {
       cell.style.backgroundColor = "#0058a3";
       cell.textContent = "";
     });
-
-    // Aktivera gissningsfasen
     isGuessing = true;
     timerDisplay.textContent = "";
     instructions.textContent = "Klicka på de 4 gula rutorna!";
@@ -124,29 +127,23 @@ export default function initRoom4() {
 
   // Hantera klick på rutorna
   function handleCellClick(cell: HTMLDivElement, index: number) {
-    // Ignorera om inte i gissningsfasen
     if (!isGuessing) return;
-
-    // Ignorera om redan klickad
     if (playerGuesses.includes(index)) return;
 
-    // Lägg till gissningen
     playerGuesses.push(index);
 
-    // Visa om rätt eller fel
     if (yellowCells.includes(index)) {
-      cell.style.backgroundColor = "#ffda1a"; // Gult för rätt
+      cell.style.backgroundColor = "#ffda1a";
     } else {
-      cell.style.backgroundColor = "#e74c3c"; // Röd för fel
+      cell.style.backgroundColor = "#e74c3c";
     }
 
-    // Kolla om spelaren har klickat 4 gånger
     if (playerGuesses.length === 4) {
       checkMemoryWin();
     }
   }
 
-  // Kontrollera om spelaren vann
+  // Kontrollera om spelaren vann memoryt
   function checkMemoryWin() {
     isGuessing = false;
 
@@ -157,18 +154,23 @@ export default function initRoom4() {
     if (correctGuesses === 4) {
       message.textContent = "Rätt! Nu ska du skriva in koden i kassan...";
       message.style.color = "#27ae60";
-
       setTimeout(() => {
         memorySection.hidden = true;
         checkoutSection.hidden = false;
       }, 2000);
     } else {
-      message.textContent = `Fel! Du hade ${correctGuesses} av 4 rätt. Försök igen!`;
-      message.style.color = "#e74c3c";
-      startBtn.disabled = false;
+      wrongMemoryAttempts++;
+      if (wrongMemoryAttempts >= 3) {
+        handleLose("Game over! Du misslyckades 3 gånger.");
+      } else {
+        message.textContent = `Fel! Du hade ${correctGuesses} av 4 rätt. ${3 - wrongMemoryAttempts} försök kvar.`;
+        message.style.color = "#e74c3c";
+        startBtn.disabled = false;
+      }
     }
   }
 
+  // Hantera knapptryck i kassan
   function handleKeyPress(key: string) {
     if (key === "clear") {
       enteredCode = "";
@@ -179,22 +181,27 @@ export default function initRoom4() {
 
     if (key === "enter") {
       if (enteredCode === correctCode) {
-        stopTimer();
         saveFinishedRoomToLS();
         checkoutMessage.textContent = "Rätt kod!";
         checkoutMessage.style.color = "#27ae60";
+        stopTimer();
+        saveHighscore();
       } else {
-        checkoutMessage.textContent = "Fel kod! Försök igen.";
-        checkoutMessage.style.color = "#e74c3c";
-        enteredCode = "";
-        codeDisplay.textContent = "----";
+        wrongCodeAttempts++;
+        if (wrongCodeAttempts >= 3) {
+          handleLose("Game over! Du angav fel kod 3 gånger. Larmet gick!");
+        } else {
+          checkoutMessage.textContent = `Fel kod! ${3 - wrongCodeAttempts} försök kvar.`;
+          checkoutMessage.style.color = "#e74c3c";
+          enteredCode = "";
+          codeDisplay.textContent = "----";
+        }
       }
       return;
     }
 
     if (enteredCode.length < 4) {
       enteredCode += key;
-
       let display = "";
       for (let i = 0; i < 4; i++) {
         display += enteredCode[i] || "-";

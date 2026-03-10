@@ -18,8 +18,6 @@
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
-
-  
 }
 
 .room-4-memory {
@@ -179,14 +177,13 @@
 
 .room4-instructions {
   color: #333;
-  font-size: 1rem; 
+  font-size: 1rem;
 }
 
 .room4-instructions {
   margin: 0 auto;
   width: 400px;
 }
-
 
 .room4-checkout-instruction {
   color: #333;
@@ -240,21 +237,25 @@
 .cart-terminal-wrapper {
   display: flex;
   justify-content: space-evenly;
-  
+
   margin: 0 auto;
   gap: 50px;
 }
 
-.room-4-last-message { /* Lagt till så att rätt kod kommer upp ovanpå terminal*/
+.room-4-last-message {
+  /* Lagt till så att rätt kod kommer upp ovanpå terminal*/
   position: absolute;
   right: 60px;
   left: 60px;
-  
+
   top: 530px;
   /*background-color: white;
   box-shadow: 1px 1.5px 5px rgba(0, 0, 0, 0.3);*/
   padding: 15px 40px;
   border-radius: 50px;
-  
-  
+}
+.room4-daughter {
+  img {
+    width: 100px;
+  }
 }
