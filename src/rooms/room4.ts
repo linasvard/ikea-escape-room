@@ -162,6 +162,9 @@ export default function initRoom4() {
       wrongMemoryAttempts++;
       if (wrongMemoryAttempts >= 3) {
         handleLose("Game over! Du misslyckades 3 gånger.");
+        document.querySelector("#room4memory")?.classList.add("hidden");
+        document.querySelector("#room4GameOver")?.classList.remove("hidden");
+        document.querySelector("#headerRoom4Wrapper")?.classList.add("hidden");
       } else {
         message.textContent = `Fel! Du hade ${correctGuesses} av 4 rätt. ${3 - wrongMemoryAttempts} försök kvar.`;
         message.style.color = "#e74c3c";
@@ -190,6 +193,9 @@ export default function initRoom4() {
         wrongCodeAttempts++;
         if (wrongCodeAttempts >= 3) {
           handleLose("Game over! Du angav fel kod 3 gånger. Larmet gick!");
+          document.querySelector("#room4checkout")?.classList.add("hidden");
+          document.querySelector("#room4GameOver")?.classList.remove("hidden");
+          document.querySelector("#headerRoom4Wrapper")?.classList.add("hidden");
         } else {
           checkoutMessage.textContent = `Fel kod! ${3 - wrongCodeAttempts} försök kvar.`;
           checkoutMessage.style.color = "#e74c3c";
