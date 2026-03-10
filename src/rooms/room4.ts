@@ -8,6 +8,7 @@ import type {} from "../types/models";
 import { saveHighscore } from "./highscore";
 import { saveFinishedRoomToLS } from "./roomProgress";
 import { stopTimer } from "./timer";
+import { resetTimer } from "./timer";
 
 export default function initRoom4() {
   // Hämta HTML-element - Memory
@@ -162,6 +163,8 @@ export default function initRoom4() {
       wrongMemoryAttempts++;
       if (wrongMemoryAttempts >= 3) {
         handleLose("Game over! Du misslyckades 3 gånger.");
+        localStorage.removeItem('currentRoom');  // kör denna kod för att ta bort minnet av hur måga rum som är klarade!
+        resetTimer(); // resettar timern när man misslyckas med rummet
         document.querySelector("#room4memory")?.classList.add("hidden");
         document.querySelector("#room4GameOver")?.classList.remove("hidden");
         document.querySelector("#headerRoom4Wrapper")?.classList.add("hidden");
@@ -193,6 +196,8 @@ export default function initRoom4() {
         wrongCodeAttempts++;
         if (wrongCodeAttempts >= 3) {
           handleLose("Game over! Du angav fel kod 3 gånger. Larmet gick!");
+          localStorage.removeItem('currentRoom');  // kör denna kod för att ta bort minnet av hur måga rum som är klarade!
+          resetTimer(); // resettar timern när man misslyckas med rummet
           document.querySelector("#room4checkout")?.classList.add("hidden");
           document.querySelector("#room4GameOver")?.classList.remove("hidden");
           document.querySelector("#headerRoom4Wrapper")?.classList.add("hidden");
