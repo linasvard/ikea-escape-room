@@ -464,30 +464,35 @@
 
         <!--ZONES-->
 
-        <div id="zonePillow" class="zone zone-pillow zone-inactive">
-          <img src="/assets-room-1/heartpillow.png" alt="" />
-        </div>
+        <!-- Monkey-zonen: fokuseras direkt när rummet startas -->
+<div id="zoneMonkey" class="zone zone-monkey" tabindex="0" role="button" aria-label="Den söta apan">
+  <img src="/assets-room-1/monkey-small.png" alt="" />
+</div>
 
-        <div id="zoneMonkey" class="zone zone-monkey">
-          <img src="/assets-room-1/monkey-small.png" alt="" />
-        </div>
+<!-- Pillow: börjar som inactive, tabindex sätts via JS -->
+<div id="zonePillow" class="zone zone-pillow zone-inactive" tabindex="-1" role="button" aria-label="Hjärtkudden">
+  <img src="/assets-room-1/heartpillow.png" alt="" />
+</div>
 
-        <div id="zoneChair" class="zone zone-chair zone-inactive">
-          <img src="/assets-room-1/chair.png" alt="" />
-        </div>
+<!-- Chair -->
+<div id="zoneChair" class="zone zone-chair zone-inactive" tabindex="-1" role="button" aria-label="Stolen">
+  <img src="/assets-room-1/chair.png" alt="" />
+</div>
 
-        <div id="zoneBedsheets" class="zone zone-bedsheets zone-inactive">
-          <img src="/assets-room-1/heartsheets.png" alt="" />
-        </div>
+<!-- Bedsheets -->
+<div id="zoneBedsheets" class="zone zone-bedsheets zone-inactive" tabindex="-1" role="button" aria-label="Hjärtlakan">
+  <img src="/assets-room-1/heartsheets.png" alt="" />
+</div>
 
-        <div id="zoneLamp" class="zone zone-lamp zone-inactive">
-          <img src="/assets-room-1/heartlamp.png" alt="" />
-        </div>
+<!-- Lamp -->
+<div id="zoneLamp" class="zone zone-lamp zone-inactive" tabindex="-1" role="button" aria-label="Hjärtlampan">
+  <img src="/assets-room-1/heartlamp.png" alt="" />
+</div>
 
-        <div id="zoneSuccess" class="zone exit animation zone-inactive">
-          ← UTGÅNG
-        </div>
-
+<!-- Exit -->
+<div id="zoneSuccess" class="zone exit animation zone-inactive" tabindex="-1" role="button" aria-label="Utgång">
+  ← UTGÅNG
+</div>
         <!--LINES-->
 
         <!--line 1-->
