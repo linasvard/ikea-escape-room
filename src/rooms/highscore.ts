@@ -65,3 +65,22 @@ export function initHighscore(): void {
     overlay?.classList.add("hidden");
   });
 }
+
+export function finishedGameHSEl() {
+  const listEl: HTMLDivElement | null = document.querySelector('#finishedGameHSEl');
+
+  const scores = getHighscores();
+  if (listEl) {
+    if (scores.length === 0) {
+      listEl.innerHTML = `<li>Inga resultat ännu</li>`;
+
+    } else {
+      listEl.innerHTML = scores
+          .map(
+            (entry, index) =>
+              `<li><span>#${index + 1} ${entry.name}</span><span>${formatTime(entry.time)}</span><span>${entry.date}</span></li>`,
+          )
+          .join("");
+      }
+  }
+}

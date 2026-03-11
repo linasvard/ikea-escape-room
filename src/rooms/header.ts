@@ -23,7 +23,9 @@ export default function initHeader() {
   }
 
   const homeBtn: HTMLButtonElement | null = document.querySelector("#homeBtn");
+  const homeFromHSBtn: HTMLButtonElement | null = document.querySelector("#homeFromHSBtn");
   homeBtn?.addEventListener("click", goToHomePage);
+  homeFromHSBtn?.addEventListener("click", goToHomePage);
 
   function goToHomePage() {
     resetTimer();
