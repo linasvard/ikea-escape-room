@@ -272,6 +272,7 @@
           designprofil, vilket gjorde projektet extra intressant ur ett
           design- och frontendperspektiv.
         </p>
+        <div class="about-us-btn-wrapper"><button class="aboutBtn">Stäng "Om oss"</button></div>
       </div>
     </section>
 
@@ -817,8 +818,6 @@
         </div>
       </div>
       <div class="room-game-over-section room-2-overlay room-2-lose-screen" id="room2LoseScreen">
-        <!--room-2-overlay-->
-
         <div>
           <img class="room-2-ikea-man-sad" src="/room_2_ikea_man_sad.png" alt="" />
           <h1 class="all-game-over-header">Game over</h1>
@@ -828,19 +827,17 @@
             ditt barn tröttnat och sprungit iväg.
           </p>
           <p>
-            När vi hittat vårt barn måste vi fundera på vad vi vill göra. Ska vi börja om eller ge upp och lämna <span
-              class="room-2-ikea-word">IKEA</span>?
+            Det blev ingen handling denna gång, så vi får lämna <span class="room-2-ikea-word">IKEA</span> tomhänta.
           </p>
 
           <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
           <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
 
-          <a class="room-2-game-over-btn" href="">
+          <a class="room-game-over-btn" href="">
             <button id="goToStartBtn" class="go-to-start-btn">
-              Börja om
+              Ge upp
             </button>
           </a>
-          <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
         </div>
       </div>
       <div class="room-2-win-screen room-2-overlay" id="room2WinScreen">
@@ -1031,17 +1028,15 @@
             När du letat klart, vill du spela igen eller vill du lämna
             varuhuset?
           </p>
-          <div>
-            <div>
-              <a href="">
-                <button id="restartGameBtn" class="go-to-start-btn">
-                  Spela igen
-                </button>
-              </a>
 
-              <button id="toIndexBtn">Ta mig hem</button>
-            </div>
-          </div>
+
+          <a class="room-game-over-btn" href="">
+            <button id="goToStartBtn" class="go-to-start-btn">
+              Ge upp
+            </button>
+          </a>
+
+
         </div>
       </section>
       <div class="overlayRoom3" id="warnOverlayRoom3">
@@ -1170,17 +1165,15 @@
     <section id="room4GameOver" class="room-game-over-section hidden">
       <div>
         <h1 class="all-game-over-header">Game over</h1>
-        <h2 class="subheading-game-over">Köpet gick inte igenom</h2>
-        <p>Du tog alldeles för många försök på dig och kunde inte genomföra ditt köp. Din dotter blir jätteledsen och du
-          funderar på vad du vill göra.</p>
+        <h2 class="subheading-game-over">Köpet gick inte igenom!</h2>
+        <p>Du tog alldeles för många försök på dig och kunde inte genomföra ditt köp. Din dotter blir jätteledsen och
+          börjar skrika, och du inser att den enda lösningen är att släppa alla produkter och åka hem.</p>
         <p class="right-before-button-room-3">Vill du testa igen eller vill du ge upp och åka hem?</p>
-        <div>
-          <a>
-            <button class="go-to-start-btn">Börja om</button>
-          </a>
-
-          <button id="toIndexBtn" class="to-index-btn">Jag ger upp</button>
-        </div>
+        <a class="room-game-over-btn" href="">
+          <button id="goToStartBtn" class="go-to-start-btn">
+            Ge upp
+          </button>
+        </a>
       </div>
 
     </section>
