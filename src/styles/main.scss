@@ -19,6 +19,7 @@
 @use "./rooms/room3";
 @use "./rooms/room4";
 @use "./highscore";
+@use "./rooms/footer";
 
 * {
   outline: none;
@@ -42,7 +43,7 @@ input:focus-visible {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: "futura-pt", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ffffff;
   color: #333333;
@@ -207,10 +208,6 @@ button:hover {
     margin: 20px 0;
     max-width: 500px;
     text-align: left;
-  }
-  a {
-    display: flex;
-    justify-self: start;
   }
 
   button {

@@ -2,7 +2,7 @@ const TIMER_STORAGE_KEY = "gameTimerState";
 
 let elapsedTime = 0;
 let intervalId: number | null = null;
-let isRunning = false; // timer should not start automatically
+let isRunning = false;
 
 function saveTimer() {
   const timerState = {
@@ -15,7 +15,6 @@ function saveTimer() {
 function loadTimer() {
   const saved = localStorage.getItem(TIMER_STORAGE_KEY);
   if (!saved) {
-    // nothing stored yet; keep defaults (elapsedTime=0, isRunning=false)
     return;
   }
 
@@ -70,7 +69,6 @@ export function initTimer() {
 
   updateDisplay();
 
-  // restart the interval when the state indicates the timer was running
   if (isRunning === true) {
     startTimer();
   }
