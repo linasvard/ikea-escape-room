@@ -143,6 +143,22 @@
   outline-offset: 4px;
 }
 
+// Fokus-stilar för tangentbordsnavigation
+.zone:focus {
+  outline: 3px solid #006fd0;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.zone-inactive:focus {
+  outline: none; // Inaktiva zoner ska inte vara fokuserbara
+}
+
+.exit:focus {
+  outline: 3px solid #0057a3;
+  outline-offset: 4px;
+}
+
 .zone {
   cursor: pointer;
 }

@@ -5,6 +5,9 @@
   height: 48px;
   color: #f5f5f5;
   background-color: #000000;
+  width: 100%;
+  box-sizing: border-box;
+  
   .top-header-left {
     display: flex;
     align-items: center;
@@ -39,13 +42,20 @@
   }
 }
 
+
 .bottom-header {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100px;
-  width: auto;
+  width: 100%;
+  box-sizing: border-box;
 
+  .icon-nav {
+    width: 24px;
+    height: 24px;
+  }
+  
   img {
     height: 85px;
   }
@@ -65,9 +75,12 @@
     padding: 8px 12px;
     border-radius: 30px;
     text-decoration: none;
+    outline: none;
+   
   }
   button:hover {
     background-color: #f5f5f5;
+    outline: none;
   }
 }
 
