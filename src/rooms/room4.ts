@@ -52,6 +52,10 @@ export default function initRoom4() {
   let enteredCode = "";
   let wrongMemoryAttempts = 0;
   let wrongCodeAttempts = 0;
+  const room4Start = document.getElementById("room4Start") as HTMLDivElement;
+  const room4StartBtn = document.getElementById(
+    "room4StartBtn",
+  ) as HTMLButtonElement;
 
   // Välj 4 slumpmässiga rutor som ska vara gula
   function selectRandomYellowCells(): number[] {
@@ -101,7 +105,7 @@ export default function initRoom4() {
       }
     });
 
-    let timeLeft = 5;
+    let timeLeft = 3;
     timerDisplay.textContent = `Tid kvar: ${timeLeft} sekunder`;
     startBtn.disabled = true;
 
@@ -253,5 +257,10 @@ export default function initRoom4() {
         handleKeyPress(keyValue);
       }
     });
+  });
+
+  room4StartBtn.addEventListener("click", () => {
+    room4Start.hidden = true;
+    memorySection.hidden = false;
   });
 }
