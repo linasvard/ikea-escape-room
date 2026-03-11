@@ -15,15 +15,9 @@
   <header>
     <div class="top-header">
       <div class="top-header-left">
-        <svg fill="#f5f5f5" viewBox="0 0 24 24" focusable="false" width="24" height="24" data-skapa="ssr-icon@11.3.1"
-          aria-hidden="true" class="hnf-svg-icon hnf-btn__icon">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7467 18.1766C12.9482 19.7737 12.2151 20 12 20c-.2151 
-          0-.9482-.2263-1.7467-1.8234-.3065-.6131-.5745-1.3473-.7831-2.1766h5.0596c-.2086.8293-.4766 
-          1.5635-.7831 2.1766zM14.8885 14h-5.777A17.7354 17.7354 0 0 1 9 12c0-.6949.0392-1.3641.1115-2h5.777c.0723.6359.1115 
-          1.3051.1115 2 0 .6949-.0392 1.3641-.1115 2z"></path>
-        </svg>
+        <img class="icon-nav" src="/globe-language-white.svg">
         <span class="header-lang-left">SE</span>
-        <span class="header-lang-right">svenska</span>
+        <span class="header-lang-right">Svenska</span>
       </div>
 
       <div class="top-header-right">
@@ -33,7 +27,7 @@
             <path fill-rule="evenodd" clip-rule="evenodd"
               d="M2 4v16h20V4H2zm2 4V6h16v2H4zm0 2v8h3v-6h10v6h3v-8H4zm11 4h-2v4h2v-4zm-4 0H9v4h2v-4z"></path>
           </svg>
-          <span>Stockholm Gallerian</span>
+          <span>Göteborg Kållered</span>
         </button>
       </div>
     </div>
@@ -54,18 +48,11 @@
         </button>
 
         <button id="aboutBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="black">
-            <path d="M440-280h80v-240h-80v240Zm68.5-331.5Q520-623 520-640t-11.5-28.5Q497-680 480-680t-28.5 
-            11.5Q440-657 440-640t11.5 28.5Q463-600 480-600t28.5-11.5Z" />
-          </svg>
+          <img class="icon-nav" src="/info-icon-nav.svg">
         </button>
 
         <button id="highscoreBtn">
-          <svg class="header-highscore-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
-            width="24" fill-rule="evenodd">
-            <path
-              d="M160-200h160v-320H160v320Zm240 0h160v-560H400v560Zm240 0h160v-240H640v240ZM80-120v-480h240v-240h320v320h240v400H80Z" />
-          </svg>
+          <img class="icon-nav" src="/highscore-black.svg">
         </button>
       </div>
       <div class="progress-bar-wrapper">
@@ -294,7 +281,7 @@
     <section class="startpage">
       <div class="intro-flex-div">
         <div class="game-intro">
-          <h4 class="tag">Instruktioner</h4>
+          <h4 class="tag">Introduktion</h4>
           <p class="intro-header bold-blue-text-p">
             Det som skulle bli en snabb och harmonisk tur till IKEA har
             förvandlats till ett prövningarnas test.
@@ -304,36 +291,36 @@
           <p>Du har… en trött och mycket bestämd femåring vid din sida.</p>
           <p class="mission">
             Butiken är enorm. Det finns ingen genväg. Ingen återvändo. Bara
-            avdelning efter avdelning.
+            avdelning efter avdelning. Försök att ta dig ut, med både ditt och dotterns humör i behåll.
           </p>
-          <p class="bold-blue-text-p">🎯 Ditt uppdrag:</p>
-          <p>
-            Du måste ta dig igenom fyra stationer och överleva varje utmaning.
-          </p>
-          <p>Lycka till! Du kommer att behöva det.</p>
+          <p class="last-line-intro">Är du redo?</p>
         </div>
         <div class="login-wrapper">
+          
+          <div class="log-in-form-wrapper">
+            <form class="log-in-form">
+              <label for="name">
+                <p class="login-text">Logga in med</p>
+                <p class="bold-blue-text-p">ditt namn</p>
+              </label>
+              <div class="start-btn-wrapper">
+                <span class="">Namn</span>
+                <input type="text" id="name" placeholder="Ditt namn" />
+                <div class="btn-positioner">
+                  <button id="startGameBtn" type="submit">Starta spelet</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          
           <div class="img-wrapper">
             <div class="front-img">
-              <img class="ikea-building" src="/building.jpg" alt="" />
+              <img class="ikea-building" src="/ikea-garden.jpg" alt="" />
             </div>
             <div class="front-img">
-              <img class="ikea-img" src="ikea-frontpage.jpg" alt="" />
+              <img class="ikea-img" src="girl-in-ikea.jpg" alt="" />
             </div>
           </div>
-
-          <form class="log-in-form">
-            <label for="name">
-              <p class="login-text">Logga in med</p>
-              <p class="bold-blue-text-p">Ikea Family</p>
-            </label>
-            <div class="start-btn-wrapper">
-              <input type="text" id="name" placeholder="Ditt namn" />
-              <div class="btn-positioner">
-                <button id="startGameBtn" type="submit">→</button>
-              </div>
-            </div>
-          </form>
         </div>
 
       </div>
@@ -349,10 +336,10 @@
           </div>
           <div class="card-back">
             <div class="back">
-              <p class="bold-blue-text-p">Hämta hjärtlampan!</p>
+              <h2>Hämta hjärtlampan!</h2>
               <p>
-                ⚠️ Ta dig igenom hela barnavdelningen utan att plocka på dig
-                en massa annat. Obs! Se till att välja rätt väg.
+                Ta dig igenom hela barnavdelningen utan att plocka på dig
+                en massa annat.<span class="bold-blue-text-p"> Obs!</span> Se till att välja rätt väg.
               </p>
             </div>
           </div>
@@ -367,8 +354,8 @@
           </div>
           <div class="card-back">
             <div class="back">
-              <p class="bold-blue-text-p">Välj rätt glödlampa.</p>
-              <p>⚠️ Fel ljusstyrka kan få konsekvenser!</p>
+              <h2>Välj rätt glödlampa.</h2>
+              <p>Fel ljusstyrka kan få konsekvenser!</p>
             </div>
           </div>
         </div>
@@ -382,9 +369,9 @@
           </div>
           <div class="card-back">
             <div class="back">
-              <p class="bold-blue-text-p">Lokalisera rätt hyllplats</p>
+              <h2>Lokalisera rätt hyllplats</h2>
               <p>
-                ⚠️ Varning: Vagnens svängradie är begränsad. Femåringens
+                <span class="bold-blue-text-p">Varning:</span> Vagnens svängradie är begränsad. Femåringens
                 tålamod ännu mer.
               </p>
             </div>
@@ -400,9 +387,9 @@
           </div>
           <div class="card-back">
             <div class="back">
-              <p class="bold-blue-text-p">Slå in rätt pinkod.</p>
+              <h2>Slå in rätt pinkod.</h2>
 
-              <p>⚠️ Ett enda feltryck… och dramatiken eskalerar.</p>
+              <p>Ett enda feltryck… och dramatiken eskalerar.</p>
             </div>
           </div>
         </div>

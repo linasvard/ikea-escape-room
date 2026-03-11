@@ -24,6 +24,8 @@
   outline: none;
 }
 
+
+
 button:focus-visible,
 button:focus-visible,
 input:focus-visible {
@@ -47,6 +49,8 @@ body {
   background-color: #ffffff;
   color: #333333;
   display: grid;
+  grid-template-columns: 1fr;
+  
 }
 p {
   font-family: "noto-sans", sans-serif;
