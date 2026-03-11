@@ -39,11 +39,11 @@
     </div>
 
     <div class="bottom-header">
-      <a href="https://www.ikea.com/se/sv/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.ikea.com/se/sv/" target="_blank" rel="noopener noreferrer" class="img-go-to-ikea">
         <img src="/IKEA-Logo.wine.svg" alt="IKEA logo" />
       </a>
 
-      <h2>Välkommen till spelet...</h2>
+      <h2>Välkommen till spelet <span id="headerPlayerName"></span> </h2>
 
       <div class="header-ikea-icons-wrapper">
         <button id="homeBtn">
@@ -291,7 +291,7 @@
     <!-- ================================== -->
     <!-- ============= STARTSIDA  ========= -->
     <!-- ================================== -->
-    <section class="startpage">
+    <section class="startpage main-rooms" id="room0">
       <div class="intro-flex-div">
         <div class="game-intro">
           <h4 class="tag">Instruktioner</h4>
@@ -322,15 +322,15 @@
             </div>
           </div>
 
-          <form class="log-in-form">
-            <label for="name">
+          <form class="log-in-form" autocomplete="off">
+            <label for="playerLoginName">
               <p class="login-text">Logga in med</p>
               <p class="bold-blue-text-p">Ikea Family</p>
             </label>
             <div class="start-btn-wrapper">
-              <input type="text" id="name" placeholder="Ditt namn" />
+              <input type="text" id="playerLoginName" placeholder="Ditt namn" />
               <div class="btn-positioner">
-                <button id="startGameBtn" type="submit">→</button>
+                <button id="startGameBtn" type="button">→</button>
               </div>
             </div>
           </form>
@@ -803,22 +803,22 @@
         </div>
         <div class="room-2-btncontainer">
           <button type="button" id="room2Btn1">
-            <img src="/room_2_remote.jpg" alt="" />
+            <img src="/room_2_remote.jpg" alt="Knapp som tänder/släcker lampor ett, två och tre." />
           </button>
         </div>
         <div class="room-2-btncontainer">
           <button type="button" id="room2Btn2">
-            <img src="/room_2_remote.jpg" alt="" />
+            <img src="/room_2_remote.jpg" alt="Knapp som tänder/släcker lampor två och tre." />
           </button>
         </div>
         <div class="room-2-btncontainer">
           <button type="button" id="room2Btn3">
-            <img src="/room_2_remote.jpg" alt="" />
+            <img src="/room_2_remote.jpg" alt="Knapp som tänder/släcker lampor ett, tre och fyra." />
           </button>
         </div>
         <div class="room-2-btncontainer">
           <button type="button" id="room2Btn4">
-            <img src="/room_2_remote.jpg" alt="" />
+            <img src="/room_2_remote.jpg" alt="Knapp som tänder/släcker lampor ett och två." />
           </button>
         </div>
       </div>
@@ -1169,7 +1169,7 @@
       </div>
 
     </section>
-    <section id="room4GameOver" class="room-game-over-section"> <!--class="hidden"-->
+    <section id="room4GameOver" class="room-game-over-section hidden">
       <div>
         <h1 class="all-game-over-header">Game over</h1>
         <h2 class="subheading-game-over">Köpet gick inte igenom</h2>

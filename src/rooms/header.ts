@@ -30,6 +30,7 @@ export default function initHeader() {
   function goToHomePage() {
     resetTimer();
     localStorage.removeItem("currentRoom");
+    localStorage.removeItem("playerName");
     window.location.reload();
   }
 }

@@ -75,7 +75,7 @@ export function initTimer() {
     startTimer();
   }
 
-  const startBtn = document.querySelector("#startRoom1Btn");
+  const startBtn = document.querySelector("#startGameBtn");
   startBtn?.addEventListener("click", startTimer);
 }
 
@@ -83,7 +83,7 @@ export function getElapsedTime() {
   return elapsedTime;
 }
 
-export function resetTimer() {
+export function resetTimer() { // denna kör vi 
   stopTimer();
 
   elapsedTime = 0;
@@ -91,4 +91,5 @@ export function resetTimer() {
   updateDisplay();
 
   localStorage.removeItem("gameTimerState");
+  localStorage.removeItem("playerName");
 }

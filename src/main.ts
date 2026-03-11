@@ -19,6 +19,7 @@ import "./styles/main.scss"; // importerar scss till .ts som sedan körs i html 
 import type {} from "./types/models";
 
 import initHeader from "./rooms/header"; // importerar funktionen initHeader från filen header.ts i mappen rooms
+import initStartPage from "./rooms/startPage"; // importerar funktionen initStartPage från filen startPage.ts i mappen rooms;
 import { initTimer } from "./rooms/timer"; // importerar funktionen createTimerEl från filen timer.ts i mappen rooms
 import { initRoomProgress } from "./rooms/roomProgress"; // importerar funktionen initRoomProgress från filen roomProgress.ts i mappen rooms
 import initRoom1 from "./rooms/room1"; // importerar funktionen initRoom1 från filen room1.ts i mappen rooms
@@ -29,6 +30,7 @@ import initRoom5 from "./rooms/room5";
 import { initHighscore } from "./rooms/highscore"; // importerar funktionen initHighscore från filen highscore.ts i mappen rooms
 
 initHeader(); // initierar all ts för vår header
+initStartPage();
 initTimer(); // skapar en timer uppe i headern som startas när 'starta-spelet-knappen' trycks på
 initRoom1(); // kör funktionen initRoom1 som vi importerat från filen room1.ts i mappen rooms
 initRoom2(); // kör funktionen initRoom2 som vi importerat från filen room2.ts i mappen rooms

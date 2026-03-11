@@ -147,6 +147,8 @@ export default function initRoom2() {
       );
       if (lampImg) {
         lampImg.src = getLampImage(lamp);
+
+        lampImg.alt = `Lampa ${lamp.id} är ${lamp.on ? 'på' : 'av'}`;
       }
     });
   }
