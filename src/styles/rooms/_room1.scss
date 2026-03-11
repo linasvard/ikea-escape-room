@@ -144,26 +144,32 @@
 }
 
 // Fokus-stilar för tangentbordsnavigation
-.zone:focus {
-  outline: 3px solid #006fd0;
-  outline-offset: 4px;
-  border-radius: 8px;
+.zone:focus-visible { //lägger till så att den aktiveras när Tab trycks ner
+  
+  filter: drop-shadow(5px 5px 8px rgba(0, 2, 0, 0.7));
 }
 
 .zone-inactive:focus {
   outline: none; // Inaktiva zoner ska inte vara fokuserbara
 }
 
-.exit:focus {
+.exit:focus-visible {
   outline: 3px solid #0057a3;
   outline-offset: 4px;
+  filter: none;
 }
 
 .zone {
   cursor: pointer;
+  transition: all 0.1s ease-in-out; // la till ease in på hover
 }
 .zone-active {
   cursor: pointer;
+}
+
+.zone:hover {
+  filter: drop-shadow(5px 5px 8px rgba(0, 2, 0, 0.7)); // skugga på hover
+  transform: scale(1.0);
 }
 
 .zone-inactive {
