@@ -11,21 +11,31 @@ body {
 .game-intro {
   width: fill;
   background-color: #0058a3;
-  padding: 30px;
-  padding-bottom: 50px;
-  align-content: center;
-  padding-bottom: 60px;
   
+  padding: 0 70px;
+  align-content: center;
+  
+  .intro-header {
+    color: #ffda1a;
+  }
   .intro-header,
   .mission {
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
 
   p {
     margin: 0;
     color: #eee;
   }
+  .last-line-intro {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffda1a;
 }
+
+}
+
+
 
 .img-wrapper {
   display: grid;
@@ -125,12 +135,13 @@ body {
 }
 
 .tag {
-  text-transform: uppercase;
+ 
   color: white;
-
+  font-family: "noto-sans", sans-serif;
   font-size: 3rem;
   margin: 5px 0;
   margin-bottom: 20px;
+  font-weight: 800;
 }
 
 .scene {
