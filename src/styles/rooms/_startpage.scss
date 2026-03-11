@@ -1,0 +1,162 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.startpage {
+  margin: 20px;
+  border-top: 1px solid rgb(201, 72, 12);
+  padding-top: 20px;
+}
+.game-intro {
+  width: 600px;
+  background-color: #f5f5f5;
+  padding: 10px;
+  padding-bottom: 50px;
+
+  .intro-header,
+  .mission {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.img-wrapper {
+  display: flex;
+  gap: 10px; // fixade "10pxß" typo
+}
+.front-img {
+  width: 295px;
+  height: 295px;
+  .ikea-img {
+    width: 100%;
+    height: 100%;
+  }
+  .ikea-building {
+    width: 100%;
+    height: 100%;
+  }
+}
+.login-wrapper {
+  position: relative;
+}
+
+.intro-flex-div {
+  display: flex;
+  gap: 20px;
+}
+
+.log-in-form {
+  position: absolute;
+  bottom: 0px;
+  width: 600px;
+  display: flex;
+  border: 1px solid #d3cdcd;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  input {
+    height: 20px;
+  }
+
+  p {
+    display: inline;
+  }
+}
+
+.start-btn-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.btn-positioner {
+  position: absolute;
+  left: 470px;
+  top: -25px;
+}
+
+.rooms-intro {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.tag {
+  background-color: rgb(201, 72, 12);
+  width: 110px;
+  color: white;
+  padding: 5px;
+
+  margin: 5px;
+  margin-bottom: 20px;
+}
+
+.scene {
+  perspective: 600px;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.6s ease;
+}
+
+.card-back {
+  opacity: 0;
+}
+
+.card:hover .card-front {
+  opacity: 0;
+}
+
+.card:hover .card-back {
+  opacity: 1;
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(201, 72, 12);
+
+  h2 {
+    color: white;
+    padding: 20px;
+  }
+}
+
+.back {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border: 1px solid #d3cdcd;
+  padding: 20px;
+}
+
+#startGameBtn {
+  width: 45px;
+  height: 45px;
+  font-size: 1rem;
+  font-weight: 500;
+  background: none;
+  padding: 10px;
+  border: 1.5px solid black;
+  border-radius: 30px;
+}
+
+#startGameBtn:hover {
+  background-color: #ffda1a;
+  border-color: #ffda1a;
+  color: #333333;
+}

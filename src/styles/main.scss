@@ -11,6 +11,7 @@
 */
 /* Rum-specifika stilar — varje person jobbar i sin egen fil */
 
+@use "./rooms/startpage";
 @use "./rooms/header";
 @use "./rooms/infopage";
 @use "./rooms/room1";
@@ -23,6 +24,7 @@
   outline: none;
 }
 
+button:focus-visible,
 button:focus-visible,
 input:focus-visible {
   outline: 2px solid #0058a3;
@@ -100,6 +102,11 @@ button:hover {
   color: white;
   outline: 2px solid #006fd0;
   outline-offset: 4px;
+}
+
+.bold-blue-text-p {
+  font-weight: 600;
+  color: #0057a3;
 }
 
 .hidden {
@@ -240,6 +247,47 @@ button:hover {
       color: black;
     }
   }
+}
+
+.intro-room-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  
+    
+  button {
+    font-family: "futura-pt", sans-serif;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: none;
+    padding: 10px;
+    border: 1.5px solid #333;
+    border-radius: 40px;
+    pointer-events: all;
+    
+    
+    }
+
+    button:hover {
+      background-color: #ffda1a;
+      border-color: #ffda1a;
+
+      outline: none;
+      color: #333333;
+    }
+  
+  span {
+    margin-inline: 15px;
+    font-family: "futura-pt", sans-serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    
+  }  
+
 }
 
 /*.tantrum-buttons:hover {

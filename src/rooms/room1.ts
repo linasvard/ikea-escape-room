@@ -21,7 +21,7 @@ export default function initRoom1() {
   });
 
   // ALLA RESETKNAPPAR
-  document.querySelectorAll(".resetBtn").forEach((btn) => {
+  document.querySelectorAll(".reset-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       usedZones.clear();
       resetRoom1();
@@ -40,7 +40,7 @@ export default function initRoom1() {
     if (usedZones.has("monkey")) return;
     usedZones.add("monkey");
     monkeyDialog?.classList.remove("hidden");
-    document.querySelector(".animation")?.classList.remove("animation");
+    document.getElementById("arrow1")?.classList.remove("animation");
   });
 
   submitMonkeyArgument?.addEventListener("click", () => {
@@ -77,7 +77,7 @@ export default function initRoom1() {
     if (usedZones.has("pillow")) return;
     usedZones.add("pillow");
     pillowArgument?.classList.remove("hidden");
-    document.querySelector(".animation")?.classList.remove("animation");
+    document.getElementById("arrow2")?.classList.remove("animation");
   });
 
   submitPillowArgument?.addEventListener("click", () => {
@@ -117,7 +117,6 @@ export default function initRoom1() {
     if (usedZones.has("bedsheets")) return;
     usedZones.add("bedsheets");
     bedsheetDialog?.classList.remove("hidden");
-    document.querySelector(".animation")?.classList.remove("animation");
   });
 
   // -------------------------
@@ -134,6 +133,7 @@ export default function initRoom1() {
   });
 
   chairDialogBtn?.addEventListener("click", () => {
+    document.getElementById("arrow4")?.classList.remove("animation");
     chairDialog?.classList.add("hidden");
 
     document
@@ -142,6 +142,7 @@ export default function initRoom1() {
 
     showArrow("arrow5");
     hideArrow("arrow3");
+    hideZone("zoneBedsheets");
   });
 
   // -------------------------
@@ -156,7 +157,7 @@ export default function initRoom1() {
     if (usedZones.has("lamp")) return;
     usedZones.add("lamp");
     lampDialog?.classList.remove("hidden");
-    document.querySelector(".animation")?.classList.remove("animation");
+    document.getElementById("arrow5")?.classList.remove("animation");
   });
 
   lampDialogBtn?.addEventListener("click", () => {
@@ -206,9 +207,18 @@ function handleTantrum(
 // RESET-FUNKTION
 // -------------------------
 function resetRoom1() {
+  // Återställ alla zoner till inactive
   document.querySelectorAll(".zone").forEach((zone) => {
     zone.classList.replace("zone-active", "zone-inactive");
   });
+
+  // Monkey ska alltid vara active och klickbar efter reset
+  document
+    .getElementById("zoneMonkey")
+    ?.classList.replace("zone-inactive", "zone-active");
+
+  // Återställ zoneBedsheets om den blivit hidden
+  document.getElementById("zoneBedsheets")?.classList.remove("hidden");
 
   document.querySelectorAll('input[type="radio"]').forEach((radio) => {
     (radio as HTMLInputElement).checked = false;
@@ -228,9 +238,14 @@ function resetRoom1() {
     document.getElementById(id)?.classList.add("hidden");
   });
 
+  // Ta bort visible från alla pilar först
   document.querySelectorAll(".arrow").forEach((arrow) => {
     arrow.classList.remove("visible");
   });
+
+  // Återställ arrow1 med animation och visible sist
+  document.getElementById("arrow1")?.classList.add("animation");
+  document.getElementById("arrow1")?.classList.add("visible");
 }
 
 // -------------------------
@@ -242,4 +257,8 @@ function showArrow(id: string) {
 
 function hideArrow(id: string) {
   document.getElementById(id)?.classList.remove("visible");
+}
+
+function hideZone(id: string) {
+  document.getElementById(id)?.classList.add("hidden");
 }
