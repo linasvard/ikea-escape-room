@@ -13,13 +13,38 @@ export default function initHeader() {
     locationInfo?.classList.toggle("store-hidden");
   }
 
-  const aboutBtn: HTMLButtonElement | null =
-    document.querySelector("#aboutBtn");
-  aboutBtn?.addEventListener("click", displayAboutPage);
+  // eftersom vi har flera knappar som kan ta oss till aboutpage så använder vi klass istället för id
+  const aboutBtns: HTMLButtonElement | null =
+    document.querySelectorAll(".aboutBtn");
+  aboutBtns.forEach((btn) => {
+    btn.addEventListener("click", displayAboutPage);
+  });
+
+  let lastVisibleRoom: HTMLElement | null = null; // håller koll på vilket det senaste rummet var som visades
 
   function displayAboutPage() {
     const aboutPage: HTMLElement | null = document.querySelector("#aboutPage");
-    aboutPage?.classList.toggle("hidden");
+    if (!aboutPage) return;
+
+    const opening = aboutPage.classList.contains("hidden");
+
+    if (opening) {
+      // hittar nuvarande rum och gömmer just det!
+      const currentRoom: HTMLElement | null =
+        document.querySelector(".main-rooms:not(.hidden)");
+      if (currentRoom) {
+        currentRoom.classList.add("hidden");
+        lastVisibleRoom = currentRoom;
+      }
+      aboutPage.classList.remove("hidden");
+    } else {
+      // Sen när man stänger så visas det rummet vi tidigare gömde!
+      aboutPage.classList.add("hidden");
+      if (lastVisibleRoom) {
+        lastVisibleRoom.classList.remove("hidden");
+        lastVisibleRoom = null;
+      }
+    }
   }
 
   const homeBtn: HTMLButtonElement | null = document.querySelector("#homeBtn");
