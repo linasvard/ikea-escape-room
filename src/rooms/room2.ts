@@ -13,7 +13,7 @@ import lampOff from "/room2_lamp_off.png";
 import lampOn from "/room2_lamp_on.png";
 
 import { saveFinishedRoomToLS, showRoom } from "./roomProgress"; // Importerar funktion from roomProgress som sparar
-import { resetTimer } from "./timer";
+import { resetGame } from "./timer";
 
 
 export default function initRoom2() {
@@ -103,7 +103,6 @@ export default function initRoom2() {
     }
 
     if (numberOfClicks >= maxNumberOfClicks) {
-      localStorage.removeItem('currentRoom');
       lampChangeBtn1?.setAttribute("disabled", "");
       lampChangeBtn2?.setAttribute("disabled", "");
       lampChangeBtn3?.setAttribute("disabled", "");
@@ -111,7 +110,7 @@ export default function initRoom2() {
       console.log("Inga fler klick kvar!");
       setTimeout(() => room2PlayLosingSound(), 300);
       setTimeout(() => loseScreen?.classList.add("room-2-is-visible"), 1200);
-      resetTimer();
+      resetGame();
       return;
     }
 

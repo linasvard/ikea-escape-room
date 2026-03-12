@@ -9,7 +9,7 @@ import optionsRoom3 from "./furniture-options-room3.json";
 import type {  } from "../types/models"; // Om du vill använda dig av models på samma sätt vi fick lära oss på budgetappen, så kan du använda denna för att importera från ../types/models
 
 import { saveFinishedRoomToLS, showRoom } from "./roomProgress"; // funktioner som ligger i filen roomProgress.ts. I den filen finns info om vad varje funktion gör!
-import { resetTimer } from "./timer";
+import { resetGame } from "./timer";
 
 export default function initRoom3() {
   // Visa div:en för rum 3
@@ -129,8 +129,7 @@ function renderRoom3Options(items: IOptionsRoom3[]): void {
       wrongClicksRoom3++;
       
       if (wrongClicksRoom3 >= 2) {
-        localStorage.removeItem('currentRoom');  // kör denna kod för att ta bort minnet av hur måga rum som är klarade!
-        resetTimer(); // resettar timern när man misslyckas med rummet
+        resetGame(); // resettar timern när man misslyckas med rummet
         document.querySelector("#room3Part2")?.classList.add("hidden");
         document.querySelector("#room3GameOver")?.classList.remove("hidden");
         document.querySelector("#room2Start")?.classList.add("hidden");

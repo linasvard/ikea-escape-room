@@ -20,7 +20,6 @@
   position: relative;
 }
 
-
 .room-2-win-screen,
 .room-2-lose-screen {
   position: absolute;
@@ -47,12 +46,11 @@
       margin-top: 30px;
       margin-bottom: 0px;
       border-radius: 64px;
-      
+
       color: #ffffff;
       border: none;
-      
+
       display: block;
-      
     }
     .go-to-start-btn:hover {
       background-color: #ffda1a;
@@ -85,12 +83,11 @@
     h2 {
       margin-top: 16px;
     }
-    
+
     .intro-room-btn {
       margin-top: 25px;
     }
-
-}
+  }
 }
 .room-2-instruction-last-line {
   margin-bottom: 20px;
@@ -214,7 +211,7 @@ h3 {
   align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  
+
   button {
     justify-items: center;
     background: none;
@@ -272,7 +269,7 @@ h3 {
   z-index: 1000;
   div {
     position: relative;
-    
+
     padding: 32px 32px;
     display: block;
     margin: 0 auto;
@@ -282,9 +279,6 @@ h3 {
     padding-bottom: 16px;
     p {
       padding: 0;
-      
-      
-
     }
     button {
       font-family: "Noto", Courier, monospace;
@@ -293,13 +287,12 @@ h3 {
       margin-top: 50px;
       margin-bottom: 20px;
       border-radius: 64px;
-      
+
       color: #ffffff;
       border: none;
       margin: 40px auto;
       display: block;
     }
-    
   }
 }
 
@@ -323,8 +316,6 @@ h3 {
   color: white;
   border: none;
 }
-
-
 
 .room2WinScreenDiv1,
 .room2WinScreenDiv2 {
@@ -352,5 +343,4 @@ h3 {
   justify-content: space-between;
   align-items: center;
   margin-inline-end: 20px;
-    
 }

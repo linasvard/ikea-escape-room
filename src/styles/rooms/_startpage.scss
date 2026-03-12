@@ -4,37 +4,42 @@ body {
 }
 
 .startpage {
-  margin: 30px;
   border-top: 3px solid #eee;
   padding-top: 20px;
+  width: min(1750px, calc(100% - 100px));
+  max-width: 1248px;
 }
 .game-intro {
   width: fill;
   background-color: #0058a3;
-  padding: 0 75px;
+  padding: 20px 60px;
   align-content: center;
-  
+
+  .last-line-intro,
+  .intro-header,
+  .mission,
+  .tag {
+    margin: 10px 40px;
+    max-width: 550px;
+    padding: 5px 0;
+  }
+
   .intro-header {
     color: #ffda1a;
   }
-  .intro-header,
-  .mission {
-    margin: 20px 0;
-  }
 
   p {
-    margin: 0;
+    padding: 0 auto;
     color: #eee;
+    margin: 0 40px;
   }
   .last-line-intro {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #ffda1a;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffda1a;
+    margin-bottom: 20px;
+  }
 }
-
-}
-
-
 
 .img-wrapper {
   display: grid;
@@ -46,7 +51,6 @@ body {
 .front-img {
   max-width: auto;
   height: 290px;
-  
 }
 
 .front-img img {
@@ -59,7 +63,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  
 }
 
 .intro-flex-div {
@@ -73,7 +76,7 @@ body {
   width: 100%;
   flex: 1;
   position: relative;
-  
+
   input {
     width: 300px;
     height: 25px;
@@ -95,7 +98,7 @@ body {
     color: #eee;
     width: 100%;
     border: none;
-    font-weight: 700;;
+    font-weight: 700;
   }
 
   button:hover {
@@ -110,21 +113,19 @@ body {
 }
 
 .log-in-form {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   background-color: #f5f5f5;
   justify-content: center;
   gap: 10px;
   align-items: center;
   height: 100%;
-  box-sizing: border-box;  
-  
+  box-sizing: border-box;
+
   p {
     display: inline;
   }
 }
-
-
 
 .rooms-intro {
   display: flex;
@@ -134,7 +135,6 @@ body {
 }
 
 .tag {
- 
   color: white;
   font-family: "noto-sans", sans-serif;
   font-size: 3rem;
@@ -149,16 +149,16 @@ body {
 
 .card {
   width: 100%;
-  height: 400px;
+  height: 320px;
   position: relative;
-  
+
   cursor: pointer;
 }
 
 .card-front,
 .card-back {
   width: 100%;
-  height: 330px;
+  aspect-ratio: 1 / 1; // has to be the same size as .back
   position: absolute;
   inset: 0;
   transition: opacity 0.3s ease;
@@ -181,18 +181,17 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgb(201, 72, 12);
-  
+
   h2 {
     color: white;
     padding: 25px 30px;
-    
   }
 }
 
 .back {
   position: absolute;
   width: 100%;
-  height: 330px; // has to be the same size as .card-front, .card-back {...}
+  aspect-ratio: 1 / 1; // has to be the same size as .card-front, .card-back {...}
   box-sizing: border-box;
   background: #eee;
   color: #333;
@@ -205,6 +204,3 @@ body {
     font-size: 1rem;
   }
 }
-
-
-

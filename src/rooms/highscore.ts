@@ -85,6 +85,12 @@ export function initHighscore(): void {
 }
 
 export function finishedGameHSEl() {
+  // display the current run time (not from an undefined `entry` variable)
+  const timeEl: HTMLSpanElement | null = document.querySelector('#room5GameTime');
+  if (timeEl) {
+    timeEl.textContent = formatTime(getElapsedTime());
+  }
+
   const listEl: HTMLDivElement | null =
     document.querySelector("#finishedGameHSEl");
 
