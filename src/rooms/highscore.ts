@@ -16,14 +16,24 @@ function getHighscores(): HighscoreEntry[] {
   return JSON.parse(data) as HighscoreEntry[];
 }
 
-// Sparar ett nytt highscore och behåller bara top 10
+// Sparar ett nytt highscore och behåller bara top 10 (unikt per namn, bara bästa tid)
 export function saveHighscore(): void {
-  const name = localStorage.getItem("playerName") || "Anonym"; // Hämtar spelarens namn från localStorage, eller sätter det till "Anonym" om inget namn finns sparat
+  const name = localStorage.getItem("playerName") || "Anonym";
   const time = getElapsedTime();
   const date = new Date().toLocaleDateString("sv-SE");
 
   const scores = getHighscores();
-  scores.push({ name, time, date });
+  const nameLower = name.toLowerCase();
+  const existing = scores.findIndex((s) => s.name.toLowerCase() === nameLower);
+
+  if (existing !== -1) {
+    if (time < scores[existing].time) {
+      scores[existing] = { name, time, date };
+    }
+  } else {
+    scores.push({ name, time, date });
+  }
+
   scores.sort((a, b) => a.time - b.time);
   const top10 = scores.slice(0, 10);
   localStorage.setItem(HIGHSCORE_KEY, JSON.stringify(top10));
