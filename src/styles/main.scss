@@ -32,15 +32,37 @@ input:focus-visible {
   outline-offset: 4px;
 }
 
+
 .furniture-option:focus-visible {
   outline: 2px solid #0058a3;
   outline-offset: 2px;
   border-radius: 2px;
 }
 
-.main-rooms {
-  margin: 15px auto;
+.startpage {
+  margin: 0 auto;
 }
+
+.room-1 {
+  margin: 0 auto;
+}
+
+
+.room-2 {
+  margin: 0 auto 90px auto;
+  
+  
+}
+
+
+.room-3 {
+  margin: 0 auto 20px auto;
+}
+
+.room-4 {
+  margin: 0 auto 90px auto;
+}
+
 
 body {
   margin: 0 auto;
