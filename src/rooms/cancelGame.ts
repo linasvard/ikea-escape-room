@@ -1,3 +1,4 @@
+import { resetGame } from "./timer";
 
 export default function initCancelBtnAnywhere() {
     
@@ -8,6 +9,9 @@ export default function initCancelBtnAnywhere() {
     document.querySelector(".room-3"),
     document.querySelector(".room-4")
    ];
+
+   const cancelGameBtn: HTMLButtonElement | null = document.querySelector("#cancelGameBtn");
+   cancelGameBtn?.addEventListener("click", cancelAndGoToHomepage);
 
    function updateCancelBtnAnywhere() {
     const anyRoomVisible = allRooms.some( // returns true om minst en av rummen inte har hidden
@@ -30,5 +34,13 @@ export default function initCancelBtnAnywhere() {
    });
    updateCancelBtnAnywhere();
 
+
+   function cancelAndGoToHomepage() {
+    resetGame();
+    localStorage.removeItem("currentRoom");
+    localStorage.removeItem("playerName");
+    window.location.reload();
+   }
+
+
 }
-    
