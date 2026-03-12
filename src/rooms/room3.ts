@@ -15,7 +15,13 @@ export default function initRoom3() {
   // Visa div:en för rum 3
   // övrig kod för rum 3
 
-
+interface IOptionsRoom3 {
+  id: number;
+  name: string;
+  type: string;
+  img: string;
+  correct: boolean;
+}
 
 // ==================
 // Starta rum 3
@@ -32,7 +38,7 @@ room3StartBtn.addEventListener("click", () => {
 const regexHylla = /^5$/;
 const regexFack = /^38$/;
 
-// const formFackHylla = document.querySelector("#guessHyllaFackSection") as HTMLFormElement;
+
 const fackInput = document.querySelector("#fackInput") as HTMLInputElement;
 const hyllaInput = document.querySelector("#hyllaInput") as HTMLInputElement;
 
@@ -48,7 +54,7 @@ function checkAndSubmitHyllaFack() {
   const hyllaValid = validateHyllaInput(hyllaInput.value);
   const fackValid = validateFackInput(fackInput.value);
 
-  // visa grön eller röd - för testning
+  // visa grön eller svart
   hyllaInput.style.background = hyllaValid ? "green" : "black";
   fackInput.style.background = fackValid ? "green" : "black";
 
@@ -64,13 +70,7 @@ fackInput.addEventListener("input", checkAndSubmitHyllaFack);
 
 // Del två
 
-interface IOptionsRoom3 {
-  id: number;
-  name: string;
-  type: string;
-  img: string;
-  correct: boolean;
-}
+
 
 let wrongClicksRoom3 = 0;
 
@@ -147,24 +147,3 @@ document.querySelector("#closeWarnPopupRoom3Btn")?.addEventListener("click", () 
 renderRoom3Options(optionsRoom3);
 
 }
-// 
-
-/* function renderFurnitureOptions(options: IOptionsRoom3[]) {
-  const furnitureOptionsContainer = document.querySelector("#guessFurniture") as HTMLDivElement;
-  furnitureOptionsContainer.innerHTML = ""; // Rensa tidigare innehåll
-  options.forEach(option => {
-    const imgElement = document.createElement("img");
-    imgElement.src = option.img;
-    imgElement.alt = option.name;
-    imgElement.dataset.id = option.id.toString();
-    imgElement.addEventListener("click", () => {
-      // Här kan du lägga till logik för vad som händer när en möbel klickas på
-      console.log(`Vald möbel: ${option.name}`);
-    });
-    furnitureOptionsContainer.appendChild(imgElement);
-  }
-  );
-}
-
-// Anropa funktionen för att rendera möbelalternativen
-renderFurnitureOptions(optionsRoom3);  */

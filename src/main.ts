@@ -28,6 +28,7 @@ import initRoom3 from "./rooms/room3"; // importerar funktionen initRoom3 från 
 import initRoom4 from "./rooms/room4"; // importerar funktionen initRoom4 från filen room4.ts i mappen rooms
 import initRoom5 from "./rooms/room5";
 import { initHighscore } from "./rooms/highscore"; // importerar funktionen initHighscore från filen highscore.ts i mappen rooms
+import initCancelBtnAnywhere from "./rooms/cancelGame";
 
 initHeader(); // initierar all ts för vår header
 initStartPage();
@@ -39,3 +40,5 @@ initRoom4(); // kör funktionen initRoom4 som vi importerat från filen room4.ts
 initRoom5();
 initRoomProgress();
 initHighscore();
+initCancelBtnAnywhere();
+

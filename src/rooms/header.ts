@@ -3,6 +3,7 @@ import type {} from "../types/models"; // Om du vill använda dig av models på 
 
 import { resetGame } from "./timer";
 
+
 export default function initHeader() {
   const storePageBtn: HTMLButtonElement | null =
     document.querySelector("#storePageBtn");
@@ -61,3 +62,4 @@ export default function initHeader() {
     window.location.reload();
   }
 }
+
