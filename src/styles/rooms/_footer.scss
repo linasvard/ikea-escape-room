@@ -5,21 +5,34 @@ footer {
 
 .footer-wrapper-main {
   background-color: rgb(245, 245, 245);
-  margin: 0 50px;
-  padding-bottom: 16px;
-}
-.footer-wrapper-left {
-  display: grid;
-  justify-items: start;
-  h3 {
-    margin-bottom: 0;
-    color: #000000;
+  margin: 0 16px;
+  padding-bottom: 32px;
+  display: block;
+  justify-content: center;
+  .footer-wrapper-about-us-header {
+    display: grid;
+    justify-content: center;
+    align-items: center;
   }
-  a {
-    font-size: 1rem;
+  h3 {
+    margin-top: 4px;
     color: #484848;
+  }
+  h3:hover {
+    color: #000000;
+    transition: 0.3s ease;
+  }
+}
+
+.footer-about-us-names {
+  display: flex;
+  justify-content: space-around;
+  justify-self: center;
+  width: 300px;
+  padding-top: 4px;
+  a {
     text-decoration: none;
-    padding: 4px 0px;
+    color: #484848;
   }
   a:hover {
     color: #000000;
@@ -27,20 +40,16 @@ footer {
     transition: 0.3s ease;
   }
 }
-.footer-wrapper-right {
-  display: grid;
-}
 
-.footer-about-us {
+.footer-about-us-header {
   all: unset;
   font-family: "futura-pt", sans-serif;
   font-weight: 600;
   font-size: 1.3rem;
-  margin: 15px 0 10px 0;
+  margin: 15px 0 0 0;
 }
-.footer-about-us:hover {
+.footer-about-us-header:hover {
   all: unset;
   cursor: pointer;
-  margin: 15px 0 10px 0;
-  color: #484848;
+  margin: 15px 0 0 0;
 }

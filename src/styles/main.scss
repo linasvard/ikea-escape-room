@@ -32,7 +32,6 @@ input:focus-visible {
   outline-offset: 4px;
 }
 
-
 .furniture-option:focus-visible {
   outline: 2px solid #0058a3;
   outline-offset: 2px;
@@ -47,13 +46,9 @@ input:focus-visible {
   margin: 0 auto;
 }
 
-
 .room-2 {
   margin: 0 auto 90px auto;
-  
-  
 }
-
 
 .room-3 {
   margin: 0 auto 20px auto;
@@ -62,7 +57,6 @@ input:focus-visible {
 .room-4 {
   margin: 0 auto 90px auto;
 }
-
 
 body {
   margin: 0 auto;
@@ -340,7 +334,7 @@ button:hover {
     outline: none;
     border: #eee;
   }
-  
+
   span {
     z-index: 0;
     height: 50px;
@@ -353,20 +347,17 @@ button:hover {
     margin-inline-end: -22px;
     padding-inline-start: 30px;
     padding-inline-end: 40px;
-    border-top-left-radius: 30px; 
+    border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateX(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-   
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
-
-
-
 }
 .cancel-game-btn:hover {
-  
   border-radius: 30px;
   outline: 2px solid rgba(255, 255, 255, 0.2);
 }
@@ -375,7 +366,6 @@ button:hover {
   opacity: 1;
   transform: translateX(0);
 }
-
 
 /*.tantrum-buttons:hover {
   background: #ffda1a;

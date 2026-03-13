@@ -1,1586 +1,1302 @@
 <!doctype html>
 <html lang="sv">
-  <head>
-    <link rel="stylesheet" href="https://use.typekit.net/hmn0sku.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IKEA Escape Room</title>
-  </head>
 
-  <body>
-    <!-- ================================== -->
-    <!-- ============= HEADER ============= -->
-    <!-- ================================== -->
-    <header>
-      <div class="top-header">
-        <div class="top-header-left">
-          <img class="icon-nav" src="/globe-language-white.svg" />
-          <span class="header-lang-left">SE</span>
-          <span class="header-lang-right">Svenska</span>
-        </div>
+<head>
+  <link rel="stylesheet" href="https://use.typekit.net/hmn0sku.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IKEA Escape Room</title>
+</head>
 
-        <div class="top-header-right">
-          <button id="storePageBtn">
-            <svg
-              fill="#f5f5f5"
-              viewBox="0 0 24 24"
-              focusable="false"
-              width="24"
-              height="24"
-              data-skapa="ssr-icon@11.3.1"
-              aria-hidden="true"
-              class="hnf-svg-icon"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M2 4v16h20V4H2zm2 4V6h16v2H4zm0 2v8h3v-6h10v6h3v-8H4zm11 4h-2v4h2v-4zm-4 0H9v4h2v-4z"
-              ></path>
-            </svg>
-            <span>Göteborg Kållered</span>
-          </button>
-        </div>
+<body>
+  <!-- ================================== -->
+  <!-- ============= HEADER ============= -->
+  <!-- ================================== -->
+  <header>
+    <div class="top-header">
+      <div class="top-header-left">
+        <img class="icon-nav" src="/globe-language-white.svg" />
+        <span class="header-lang-left">SE</span>
+        <span class="header-lang-right">Svenska</span>
       </div>
 
-      <div class="bottom-header">
-        <a
-          href="https://www.ikea.com/se/sv/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="img-go-to-ikea"
-        >
-          <img src="/IKEA-Logo.wine.svg" alt="IKEA logo" />
+      <div class="top-header-right">
+        <button id="storePageBtn">
+          <svg fill="#f5f5f5" viewBox="0 0 24 24" focusable="false" width="24" height="24" data-skapa="ssr-icon@11.3.1"
+            aria-hidden="true" class="hnf-svg-icon">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2 4v16h20V4H2zm2 4V6h16v2H4zm0 2v8h3v-6h10v6h3v-8H4zm11 4h-2v4h2v-4zm-4 0H9v4h2v-4z"></path>
+          </svg>
+          <span>Göteborg Kållered</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="bottom-header">
+      <a href="https://www.ikea.com/se/sv/" target="_blank" rel="noopener noreferrer" class="img-go-to-ikea">
+        <img src="/IKEA-Logo.wine.svg" alt="IKEA logo" />
+      </a>
+
+      <h2>Välkommen till spelet <span id="headerPlayerName"></span></h2>
+
+      <div class="header-ikea-icons-wrapper">
+        <button id="homeBtn" aria-label="Gå till startsidan">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="black">
+            <path
+              d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Z" />
+          </svg>
+        </button>
+
+        <button class="aboutBtn" aria-label="Om oss">
+          <img class="icon-nav" src="/info-icon-nav.svg" />
+        </button>
+
+        <button id="highscoreBtn" aria-label="Visa highscore">
+          <img class="icon-nav" src="/highscore-black.svg" />
+        </button>
+        <audio id="storeAudio" style="display:none;" loop>
+          <source src="/ikea_store_ambience_sound.mp3">
+        </audio>
+        <button id="audioBtn" aria-label="Slå på och av ljud">
+          <img id="audioIconOff" class="icon-nav" src="/sound-off-icon.svg" />
+          <img id="audioIconOn" class="icon-nav hidden" src="/sound-on-icon.svg" />
+        </button>
+      </div>
+      <div class="progress-bar-wrapper">
+        <div id="progressBar" role="progressbar" aria-label="Spelframsteg">
+          <div id="progressBarFill"></div>
+        </div>
+        <span id="progressText">0 / 4 rum klarade</span>
+      </div>
+
+      <div class="main-timer-wrapper">
+        <div id="mainTimer" class="main-timer"></div>
+      </div>
+    </div>
+
+    <div id="storePage" class="store-info-wrapper store-hidden" tabindex="0">
+      <div class="store-info">
+        <h2>Stockholm Gallerian</h2>
+        <p>Hamngatan 37, Stockholm</p>
+
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Stockholm%20Gallerian&destination_place_id=ChIJ7Vztgl6dX0YRHVGPrPNF_10"
+          target="_blank" rel="noreferrer">
+          Få vägbeskrivningar
         </a>
 
-        <h2>Välkommen till spelet <span id="headerPlayerName"></span></h2>
-
-        <div class="header-ikea-icons-wrapper">
-          <button id="homeBtn" aria-label="Gå till startsidan">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24"
-              viewBox="0 -960 960 960"
-              width="24"
-              fill="black"
-            >
-              <path
-                d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Z"
-              />
-            </svg>
-          </button>
-
-          <button class="aboutBtn" aria-label="Om oss">
-            <img class="icon-nav" src="/info-icon-nav.svg" />
-          </button>
-
-          <button id="highscoreBtn" aria-label="Visa highscore">
-            <img class="icon-nav" src="/highscore-black.svg" />
-          </button>
+        <div>
+          <h3>Öppettider</h3>
+          <dl class="open-hours">
+            <dt>Mån - Fre</dt>
+            <dd>10:00 - 20:00</dd>
+            <dt>Lör</dt>
+            <dd>10:00 - 19:00</dd>
+            <dt>Sön</dt>
+            <dd>11:00 - 19:00</dd>
+          </dl>
         </div>
-        <div class="progress-bar-wrapper">
-          <div id="progressBar" role="progressbar" aria-label="Spelframsteg">
-            <div id="progressBarFill"></div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- ================================== -->
+    <!-- =========== Info Page ============ -->
+    <!-- ================================== -->
+    <section class="about-page hidden" id="aboutPage">
+      <h1 class="about-page-header-1">Om oss</h1>
+
+      <h2 class="about-page-header-2">Bakgrund</h2>
+      <p>Välkommen till vårt IKEA-inspirerade escape room-spel!</p>
+      <p>
+        Vi som har utvecklat spelet studerar första terminen på utbildningen
+        Front-End Developer på Medieinstitutet. Utbildningen fokuserar på
+        modern webbutveckling med särskilt fokus på form, funktion,
+        tillgänglighet och användarvänlighet.
+      </p>
+      <p>
+        Målet med utbildningen är att utveckla de tekniska och kreativa
+        färdigheter som krävs för att kunna arbeta professionellt med
+        webbutveckling - från idé och koncept till färdiga, interaktiva
+        webbapplikationer för olika plattformar och enheter.
+      </p>
+      <p>
+        Detta spel är ett grupprojekt som genomförts inom ramen för kurserna
+        <span class="about-page-names">JavaScript</span> och
+        <span class="about-page-names">Agila Metoder</span>, där fokus har
+        legat på att utveckla en interaktiv webbapplikation i ett team.
+      </p>
+      <h2 class="about-page-header-2">Vilka är vi?</h2>
+      <p>
+        Vårt team består av <span class="about-page-names">Elena</span>,
+        <span class="about-page-names">Lina</span>,
+        <span class="about-page-names">Oscar</span> och
+        <span class="about-page-names">Erik</span>.
+      </p>
+      <p>
+        Under projektet har vi arbetat intensivt tillsammans med att ta fram
+        både koncept, design och teknisk implementation av spelet. För oss
+        alla är detta också första gången vi utvecklar ett större projekt
+        tillsammans i ett team, vilket har gett oss värdefull erfarenhet av
+        samarbete, kodstruktur och gemensam problemlösning.
+      </p>
+
+      <p>
+        Vill du veta mer om oss som individer är du välkommen att klicka på
+        våra namn för att komma till våra individuella presentationssidor.
+      </p>
+
+      <h2 class="about-page-header-2">Spelet</h2>
+      <p>
+        Spelet vi har utvecklat heter "<span class="about-page-ikea">IKEA</span>
+        escape-room". Målet är att ta sig från ingången till utgången i ett
+        <span class="about-page-ikea">IKEA</span>-varuhus genom att lösa olika
+        utmaningar längs vägen. Spelet består av fyra olika rum där varje rum
+        innehåller ett eget spelmoment.
+      </p>
+
+      <div class="info-page-extra-info">
+        <h3 class="about-page-header-3">Rum 1: Barnavdelningen</h3>
+        <p>
+          Spelaren måste navigera genom barnavdelningen samtidigt som ett barn
+          försöker övertala dig att köpa saker som inte finns på inköpslistan.
+          För att komma vidare måste spelaren välja rätt svar och undvika att
+          utlösa ett utbrott.
+        </p>
+        <h3 class="about-page-header-3">Rum 2: Lampavdelningen</h3>
+        <p>
+          I detta rum ska spelaren tända lampor i rätt ordning för att hitta
+          den specifika lampa som ska läggas i kundkorgen.
+        </p>
+
+        <h3 class="about-page-header-3">Rum 3: Ta-själv-lagret</h3>
+        <p>
+          Här måste spelaren lösa en rebus för att hitta rätt hylla och fack i
+          lagret - ett klassiskt
+          <span class="about-page-ikea">IKEA</span>-moment där man försöker
+          minnas exakt vilken produkt man egentligen skulle hämta.
+        </p>
+        <h3 class="about-page-header-3">Rum 4 - Kassan</h3>
+        <p>
+          I det sista rummet ska spelaren försöka komma ihåg rätt kod till
+          sitt betalkort inom en begränsad tid.
+        </p>
+        <p>
+          När spelaren klarar alla rum registreras den totala tiden och sparas
+          i en highscore-lista.
+        </p>
+        <h2 class="about-page-header-2">Vilka tekniker har vi använt?</h2>
+        <p>
+          I detta projekt har vi valt att arbeta med
+          <span class="about-page-names">TypeScript</span>,
+          <span class="about-page-names">CSS/SASS</span>,
+          <span class="about-page-names">HTML</span> och
+          <span class="about-page-names">Vite</span>. Vi har medvetet valt att
+          bygga spelet utan ramverk, såsom React eller Vue, för att få en
+          djupare förståelse för hur moderna webbapplikationer fungerar på en
+          mer grundläggande nivå.
+        </p>
+        <p>
+          <span class="about-page-names">HTML</span> har använts för att
+          strukturera spelets innehåll och skapa de olika vyerna och
+          interaktiva elementen i spelet.
+          <span class="about-page-names">CSS</span> och
+          <span class="about-page-names">SASS</span> har använts för styling
+          och layout. Genom att använda
+          <span class="about-page-names">SASS</span> har vi kunnat organisera
+          vår styling bättre med variabler och en mer strukturerad kod.
+        </p>
+        <p>
+          Spelets logik är skriven i
+          <span class="about-page-names">TypeScript</span>.
+          <span class="about-page-names">TypeScript</span> har gjort det
+          lättare för oss att upptäcka fel redan under utvecklingen, något som
+          har underlättat för oss då vi arbetat i grupp. Detta har hjälpt oss
+          att skriva mer säker, tydlig och förutsägbar kod.
+        </p>
+        <p>
+          Som utvecklingsmiljö har vi använt oss utav
+          <span class="about-page-names">Vite</span>. Det har gett oss en
+          snabb utvecklingsserver, bundling och smidig hantering av våra
+          moduler.
+        </p>
+
+        <h2 class="about-page-header-2">Tekniska funktioner</h2>
+        <p>I projektet har vi bland annat implementerat:</p>
+        <ul class="about-page-ul">
+          <li>flera interaktiva spelmoment byggda med DOM-manipulation</li>
+          <li>
+            en progress-bar som kommer ihåg vilket rum spelaren senast var i
+          </li>
+          <li>en speltimer som sparas i webbläsaren med LocalStorage</li>
+          <li>ett highscore-system baserat på spelarens totala tid</li>
+          <li>modulär kodstruktur i TypeScript</li>
+          <li>komponenter och logik för varje spelrum</li>
+        </ul>
+
+        <h2 class="about-page-header-2">Arbetsprocess</h2>
+        <p>
+          Projektet genomfördes som ett grupparbete där vi arbetade enligt
+          agila principer. Arbetet delades upp mellan oss i teamet där varje
+          person ansvarade för olika delar av spelet, samtidigt som vi
+          kontinuerligt samarbetade kring integrationen mellan funktionerna.
+        </p>
+        <p>
+          Vi använde Git för versionshantering, där vi arbetade med branches
+          och pull requests för att hantera kodändringar och säkerställa att
+          ny kod granskades innan den integrerades i projektet. Detta gav oss
+          erfarenhet av hur utvecklingsarbete i team fungerar i praktiken.
+        </p>
+        <h2 class="about-page-header-2">Vad vi har lärt oss</h2>
+        <p>
+          Genom projektet har vi bland annat utvecklat vår förståelse för:
+        </p>
+
+        <ul class="about-page-ul">
+          <li>hur man strukturerar ett större frontend-projekt</li>
+          <li>modulär JavaScript/TypeScript-kod</li>
+          <li>DOM-manipulation och event-hantering</li>
+          <li>hur man lagrar data lokalt i webbläsaren med LocalStorage</li>
+          <li>samarbete i utvecklingsteam och versionshantering med Git</li>
+          <li>komponenter och logik för varje spelrum</li>
+        </ul>
+
+        <p>
+          Projektet har gett oss praktisk erfarenhet av att gå från idé till
+          en fungerande interaktiv webbapplikation.
+        </p>
+        <h3 class="about-page-header-3">
+          Varför vi skapade just det här spelet
+        </h3>
+        <p>
+          När vi började diskutera vilket spel vi ville utveckla ville vi
+          skapa något som både var igenkännbart och lätt att relatera till.
+        </p>
+        <p>
+          Idén att skapa ett escape room i ett
+          <span class="about-page-ikea">IKEA</span>-varuhus uppstod tidigt och
+          kändes direkt som ett roligt och kreativt koncept. Samtidigt gav det
+          oss möjlighet att arbeta med en redan etablerad visuell stil och
+          designprofil, vilket gjorde projektet extra intressant ur ett
+          design- och frontendperspektiv.
+        </p>
+        <div class="close-about-btn-wrapper">
+          <div class="close-about-btn">
+            <span>Stäng sidan</span>
+            <button class="aboutBtn" aria-label="Stäng om-sidan knapp"><img class="close-icon-btn"
+                src="/close-white.svg"></button>
           </div>
-          <span id="progressText">0 / 4 rum klarade</span>
         </div>
 
-        <div class="main-timer-wrapper">
-          <div id="mainTimer" class="main-timer"></div>
+        <!-- <section class="cancel-game-btn-wrapper" id="cancelGameBtnWrapper">
+          <div class="hidden room-game-over-btn cancel-game-btn">
+            <span>Avsluta spelet</span>
+            <button id="cancelGameBtn" aria-label="Avsluta spelet knapp"><img class="close-icon-btn"
+                src="/close-white.svg"></button>
+          </div>
+        </section> -->
+
+      </div>
+    </section>
+
+    <!-- ================================== -->
+    <!-- ============= STARTSIDA  ========= -->
+    <!-- ================================== -->
+    <section class="startpage main-rooms" id="room0">
+      <div class="intro-flex-div">
+        <div class="game-intro">
+          <h4 class="tag">Introduktion</h4>
+          <p class="intro-header bold-blue-text-p">
+            Det som skulle bli en snabb och harmonisk tur till IKEA har
+            förvandlats till ett prövningarnas test.
+          </p>
+          <p>Du har en lista.</p>
+          <p>Du har en plan.</p>
+          <p>Du har… en trött och mycket bestämd femåring vid din sida.</p>
+          <p class="mission">
+            Butiken är enorm. Det finns ingen genväg. Ingen återvändo. Bara
+            avdelning efter avdelning. Försök att ta dig ut, med både ditt och
+            dotterns humör i behåll.
+          </p>
+          <p class="last-line-intro">Är du redo?</p>
+        </div>
+        <div class="login-wrapper">
+          <div class="log-in-form-wrapper">
+            <form class="log-in-form" autocomplete="off">
+              <label for="playerLoginName">
+                <p class="login-text">Logga in med</p>
+                <p class="bold-blue-text-p">ditt namn</p>
+              </label>
+              <div class="start-btn-wrapper">
+                <span class="">Namn</span>
+                <input type="text" id="playerLoginName" placeholder="Ditt namn" />
+                <div class="btn-positioner">
+                  <button id="startGameBtn" class="init-cancel-btn" type="button">
+                    Starta spelet
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="img-wrapper">
+            <div class="front-img">
+              <img class="ikea-building" src="/ikea-garden.jpg" alt="" />
+            </div>
+            <div class="front-img">
+              <img class="ikea-img" src="girl-in-ikea.jpg" alt="" />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div id="storePage" class="store-info-wrapper store-hidden" tabindex="0">
-        <div class="store-info">
-          <h2>Stockholm Gallerian</h2>
-          <p>Hamngatan 37, Stockholm</p>
+      <div class="rooms-intro">
+        <!-- card 1 -->
 
-          <a
-            href="https://www.google.com/maps/dir/?api=1&destination=Stockholm%20Gallerian&destination_place_id=ChIJ7Vztgl6dX0YRHVGPrPNF_10"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Få vägbeskrivningar
-          </a>
-
-          <div>
-            <h3>Öppettider</h3>
-            <dl class="open-hours">
-              <dt>Mån - Fre</dt>
-              <dd>10:00 - 20:00</dd>
-              <dt>Lör</dt>
-              <dd>10:00 - 19:00</dd>
-              <dt>Sön</dt>
-              <dd>11:00 - 19:00</dd>
-            </dl>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <!-- ================================== -->
-      <!-- =========== Info Page ============ -->
-      <!-- ================================== -->
-      <section class="about-page hidden" id="aboutPage">
-        <h1 class="about-page-header-1">Om oss</h1>
-
-        <h2 class="about-page-header-2">Bakgrund</h2>
-        <p>Välkommen till vårt IKEA-inspirerade escape room-spel!</p>
-        <p>
-          Vi som har utvecklat spelet studerar första terminen på utbildningen
-          Front-End Developer på Medieinstitutet. Utbildningen fokuserar på
-          modern webbutveckling med särskilt fokus på form, funktion,
-          tillgänglighet och användarvänlighet.
-        </p>
-        <p>
-          Målet med utbildningen är att utveckla de tekniska och kreativa
-          färdigheter som krävs för att kunna arbeta professionellt med
-          webbutveckling - från idé och koncept till färdiga, interaktiva
-          webbapplikationer för olika plattformar och enheter.
-        </p>
-        <p>
-          Detta spel är ett grupprojekt som genomförts inom ramen för kurserna
-          <span class="about-page-names">JavaScript</span> och
-          <span class="about-page-names">Agila Metoder</span>, där fokus har
-          legat på att utveckla en interaktiv webbapplikation i ett team.
-        </p>
-        <h2 class="about-page-header-2">Vilka är vi?</h2>
-        <p>
-          Vårt team består av <span class="about-page-names">Elena</span>,
-          <span class="about-page-names">Lina</span>,
-          <span class="about-page-names">Oscar</span> och
-          <span class="about-page-names">Erik</span>.
-        </p>
-        <p>
-          Under projektet har vi arbetat intensivt tillsammans med att ta fram
-          både koncept, design och teknisk implementation av spelet. För oss
-          alla är detta också första gången vi utvecklar ett större projekt
-          tillsammans i ett team, vilket har gett oss värdefull erfarenhet av
-          samarbete, kodstruktur och gemensam problemlösning.
-        </p>
-
-        <p>
-          Vill du veta mer om oss som individer är du välkommen att klicka på
-          våra namn för att komma till våra individuella presentationssidor.
-        </p>
-
-        <h2 class="about-page-header-2">Spelet</h2>
-        <p>
-          Spelet vi har utvecklat heter "<span class="about-page-ikea"
-            >IKEA</span
-          >
-          escape-room". Målet är att ta sig från ingången till utgången i ett
-          <span class="about-page-ikea">IKEA</span>-varuhus genom att lösa olika
-          utmaningar längs vägen. Spelet består av fyra olika rum där varje rum
-          innehåller ett eget spelmoment.
-        </p>
-
-        <div class="info-page-extra-info">
-          <h3 class="about-page-header-3">Rum 1: Barnavdelningen</h3>
-          <p>
-            Spelaren måste navigera genom barnavdelningen samtidigt som ett barn
-            försöker övertala dig att köpa saker som inte finns på inköpslistan.
-            För att komma vidare måste spelaren välja rätt svar och undvika att
-            utlösa ett utbrott.
-          </p>
-          <h3 class="about-page-header-3">Rum 2: Lampavdelningen</h3>
-          <p>
-            I detta rum ska spelaren tända lampor i rätt ordning för att hitta
-            den specifika lampa som ska läggas i kundkorgen.
-          </p>
-
-          <h3 class="about-page-header-3">Rum 3: Ta-själv-lagret</h3>
-          <p>
-            Här måste spelaren lösa en rebus för att hitta rätt hylla och fack i
-            lagret - ett klassiskt
-            <span class="about-page-ikea">IKEA</span>-moment där man försöker
-            minnas exakt vilken produkt man egentligen skulle hämta.
-          </p>
-          <h3 class="about-page-header-3">Rum 4 - Kassan</h3>
-          <p>
-            I det sista rummet ska spelaren försöka komma ihåg rätt kod till
-            sitt betalkort inom en begränsad tid.
-          </p>
-          <p>
-            När spelaren klarar alla rum registreras den totala tiden och sparas
-            i en highscore-lista.
-          </p>
-          <h2 class="about-page-header-2">Vilka tekniker har vi använt?</h2>
-          <p>
-            I detta projekt har vi valt att arbeta med
-            <span class="about-page-names">TypeScript</span>,
-            <span class="about-page-names">CSS/SASS</span>,
-            <span class="about-page-names">HTML</span> och
-            <span class="about-page-names">Vite</span>. Vi har medvetet valt att
-            bygga spelet utan ramverk, såsom React eller Vue, för att få en
-            djupare förståelse för hur moderna webbapplikationer fungerar på en
-            mer grundläggande nivå.
-          </p>
-          <p>
-            <span class="about-page-names">HTML</span> har använts för att
-            strukturera spelets innehåll och skapa de olika vyerna och
-            interaktiva elementen i spelet.
-            <span class="about-page-names">CSS</span> och
-            <span class="about-page-names">SASS</span> har använts för styling
-            och layout. Genom att använda
-            <span class="about-page-names">SASS</span> har vi kunnat organisera
-            vår styling bättre med variabler och en mer strukturerad kod.
-          </p>
-          <p>
-            Spelets logik är skriven i
-            <span class="about-page-names">TypeScript</span>.
-            <span class="about-page-names">TypeScript</span> har gjort det
-            lättare för oss att upptäcka fel redan under utvecklingen, något som
-            har underlättat för oss då vi arbetat i grupp. Detta har hjälpt oss
-            att skriva mer säker, tydlig och förutsägbar kod.
-          </p>
-          <p>
-            Som utvecklingsmiljö har vi använt oss utav
-            <span class="about-page-names">Vite</span>. Det har gett oss en
-            snabb utvecklingsserver, bundling och smidig hantering av våra
-            moduler.
-          </p>
-
-          <h2 class="about-page-header-2">Tekniska funktioner</h2>
-          <p>I projektet har vi bland annat implementerat:</p>
-          <ul class="about-page-ul">
-            <li>flera interaktiva spelmoment byggda med DOM-manipulation</li>
-            <li>
-              en progress-bar som kommer ihåg vilket rum spelaren senast var i
-            </li>
-            <li>en speltimer som sparas i webbläsaren med LocalStorage</li>
-            <li>ett highscore-system baserat på spelarens totala tid</li>
-            <li>modulär kodstruktur i TypeScript</li>
-            <li>komponenter och logik för varje spelrum</li>
-          </ul>
-
-          <h2 class="about-page-header-2">Arbetsprocess</h2>
-          <p>
-            Projektet genomfördes som ett grupparbete där vi arbetade enligt
-            agila principer. Arbetet delades upp mellan oss i teamet där varje
-            person ansvarade för olika delar av spelet, samtidigt som vi
-            kontinuerligt samarbetade kring integrationen mellan funktionerna.
-          </p>
-          <p>
-            Vi använde Git för versionshantering, där vi arbetade med branches
-            och pull requests för att hantera kodändringar och säkerställa att
-            ny kod granskades innan den integrerades i projektet. Detta gav oss
-            erfarenhet av hur utvecklingsarbete i team fungerar i praktiken.
-          </p>
-          <h2 class="about-page-header-2">Vad vi har lärt oss</h2>
-          <p>
-            Genom projektet har vi bland annat utvecklat vår förståelse för:
-          </p>
-
-          <ul class="about-page-ul">
-            <li>hur man strukturerar ett större frontend-projekt</li>
-            <li>modulär JavaScript/TypeScript-kod</li>
-            <li>DOM-manipulation och event-hantering</li>
-            <li>hur man lagrar data lokalt i webbläsaren med LocalStorage</li>
-            <li>samarbete i utvecklingsteam och versionshantering med Git</li>
-            <li>komponenter och logik för varje spelrum</li>
-          </ul>
-
-          <p>
-            Projektet har gett oss praktisk erfarenhet av att gå från idé till
-            en fungerande interaktiv webbapplikation.
-          </p>
-          <h3 class="about-page-header-3">
-            Varför vi skapade just det här spelet
-          </h3>
-          <p>
-            När vi började diskutera vilket spel vi ville utveckla ville vi
-            skapa något som både var igenkännbart och lätt att relatera till.
-          </p>
-          <p>
-            Idén att skapa ett escape room i ett
-            <span class="about-page-ikea">IKEA</span>-varuhus uppstod tidigt och
-            kändes direkt som ett roligt och kreativt koncept. Samtidigt gav det
-            oss möjlighet att arbeta med en redan etablerad visuell stil och
-            designprofil, vilket gjorde projektet extra intressant ur ett
-            design- och frontendperspektiv.
-          </p>
-          <div class="about-us-btn-wrapper">
-            <button class="aboutBtn">Stäng "Om oss"</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================== -->
-      <!-- ============= STARTSIDA  ========= -->
-      <!-- ================================== -->
-      <section class="startpage main-rooms" id="room0">
-        <div class="intro-flex-div">
-          <div class="game-intro">
-            <h4 class="tag">Introduktion</h4>
-            <p class="intro-header bold-blue-text-p">
-              Det som skulle bli en snabb och harmonisk tur till IKEA har
-              förvandlats till ett prövningarnas test.
-            </p>
-            <p>Du har en lista.</p>
-            <p>Du har en plan.</p>
-            <p>Du har… en trött och mycket bestämd femåring vid din sida.</p>
-            <p class="mission">
-              Butiken är enorm. Det finns ingen genväg. Ingen återvändo. Bara
-              avdelning efter avdelning. Försök att ta dig ut, med både ditt och
-              dotterns humör i behåll.
-            </p>
-            <p class="last-line-intro">Är du redo?</p>
-          </div>
-          <div class="login-wrapper">
-            <div class="log-in-form-wrapper">
-              <form class="log-in-form" autocomplete="off">
-                <label for="playerLoginName">
-                  <p class="login-text">Logga in med</p>
-                  <p class="bold-blue-text-p">ditt namn</p>
-                </label>
-                <div class="start-btn-wrapper">
-                  <span class="">Namn</span>
-                  <input
-                    type="text"
-                    id="playerLoginName"
-                    placeholder="Ditt namn"
-                  />
-                  <div class="btn-positioner">
-                    <button id="startGameBtn" class="init-cancel-btn" type="button">
-                      Starta spelet
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-
-            <div class="img-wrapper">
-              <div class="front-img">
-                <img class="ikea-building" src="/ikea-garden.jpg" alt="" />
-              </div>
-              <div class="front-img">
-                <img class="ikea-img" src="girl-in-ikea.jpg" alt="" />
-              </div>
+        <div class="card">
+          <div class="card-front">
+            <div class="front">
+              <h2>
+                Utforska <br />
+                BARN-AVDELNINGEN
+              </h2>
             </div>
           </div>
-        </div>
-
-        <div class="rooms-intro">
-          <!-- card 1 -->
-
-          <div class="card">
-            <div class="card-front">
-              <div class="front">
-                <h2>
-                  Utforska <br />
-                  BARN-AVDELNINGEN
-                </h2>
-              </div>
-            </div>
-            <div class="card-back">
-              <div class="back">
-                <h2>Hämta hjärtlampan!</h2>
-                <p>
-                  Ta dig igenom hela barnavdelningen utan att plocka på dig en
-                  massa annat.<span class="bold-blue-text-p"> Obs!</span> Se
-                  till att välja rätt väg.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- card 2 -->
-          <div class="card">
-            <div class="card-front">
-              <div class="front">
-                <h2>
-                  Utforska <br />
-                  LAMP-AVDELNINGEN
-                </h2>
-              </div>
-            </div>
-            <div class="card-back">
-              <div class="back">
-                <h2>Välj rätt glödlampa.</h2>
-                <p>Fel ljusstyrka kan få konsekvenser!</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- card 3 -->
-          <div class="card">
-            <div class="card-front">
-              <div class="front">
-                <h2>Utforska <br />TAG-SJÄLV-LAGRET</h2>
-              </div>
-            </div>
-            <div class="card-back">
-              <div class="back">
-                <h2>Lokalisera rätt hyllplats</h2>
-                <p>
-                  <span class="bold-blue-text-p">Varning:</span> Vagnens
-                  svängradie är begränsad. Femåringens tålamod ännu mer.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- card 4 -->
-          <div class="card">
-            <div class="card-front">
-              <div class="front">
-                <h2>Utforska <br />KASSAN</h2>
-              </div>
-            </div>
-            <div class="card-back">
-              <div class="back">
-                <h2>Slå in rätt pinkod.</h2>
-
-                <p>Ett enda feltryck… och dramatiken eskalerar.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================== -->
-      <!-- ============= RUM 1 ============== -->
-      <!-- ================================== -->
-
-      <section class="main-rooms room-1 hidden" id="room1">
-        <div class="for-all-room-header-wrapper">
-          <h1>Barnavdelningen</h1>
-          <div>
-            <p class="for-all-room-header">Rum 1</p>
-          </div>
-        </div>
-        <div id="map">
-          <!--INTRODUCTION-->
-          <div id="introductionDiv" class="introduction-div">
-            <article class="welcome-information">
-              <div class="description-flex">
-                <div>
-                  <div class="introduction-text all-dad-arguments">
-                    <p></p>
-                    <p>
-                      <span class="bold-blue-text-p"
-                        >Du kliver in på barnavdelningen på IKEA.</span
-                      >
-                    </p>
-                    <p>
-                      Ditt uppdrag är tydligt: Ta dig från ingången till
-                      utgången
-                    </p>
-                    <p>
-                      Samtidigt finns ett krav: Du måste plocka upp hjärtlampan.
-                      Missar du den måste du börja om. Men vägen är långt ifrån
-                      rak. Och full med prövningar. Femåringen drar. Pekar.
-                      Förhandlar. Hotar med att sätta sig på golvet.
-                    </p>
-
-                    <p>
-                      <span class="bold-blue-text-p"
-                        >⚠️ Reglerna är enkla men brutala:</span
-                      >
-                    </p>
-                    <p>
-                      Du får inte lägga något extra i vagnen. Du får inte ge med
-                      dig. Du får inte orsaka ett utbrott.
-                    </p>
-                    <p>
-                      Välj väg med omsorg. Ignorera distraktionerna. Håll
-                      energin uppe.
-                    </p>
-
-                    <p><span class="bold-blue-text-p">Lycka till!</span></p>
-                  </div>
-                  <div id="startRoom1Btn" class="intro-room-btn">
-                    <button>→</button>
-                    <span>Till rum 1</span>
-                  </div>
-                </div>
-                <div>
-                  <img
-                    class="intro-picture"
-                    src="/assets-room-1/intro-pic.png"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <!--MAZE-->
-
-          <img class="map-image" src="/assets-room-1/ikea-map.png" alt="" />
-
-          <!--ZONES-->
-
-          <!-- Monkey-zonen: fokuseras direkt när rummet startas -->
-          <div
-            id="zoneMonkey"
-            class="zone zone-monkey"
-            tabindex="0"
-            role="button"
-            aria-label="Den söta apan"
-          >
-            <img src="/assets-room-1/monkey-small.png" alt="" />
-          </div>
-
-          <!-- Pillow: börjar som inactive, tabindex sätts via JS -->
-          <div
-            id="zonePillow"
-            class="zone zone-pillow zone-inactive"
-            tabindex="-1"
-            role="button"
-            aria-label="Hjärtkudden"
-          >
-            <img src="/assets-room-1/heartpillow.png" alt="" />
-          </div>
-
-          <!-- Chair -->
-          <div
-            id="zoneChair"
-            class="zone zone-chair zone-inactive"
-            tabindex="-1"
-            role="button"
-            aria-label="Stolen"
-          >
-            <img src="/assets-room-1/chair.png" alt="" />
-          </div>
-
-          <!-- Bedsheets -->
-          <div
-            id="zoneBedsheets"
-            class="zone zone-bedsheets zone-inactive"
-            tabindex="-1"
-            role="button"
-            aria-label="Hjärtlakan"
-          >
-            <img src="/assets-room-1/heartsheets.png" alt="" />
-          </div>
-
-          <!-- Lamp -->
-          <div
-            id="zoneLamp"
-            class="zone zone-lamp zone-inactive"
-            tabindex="-1"
-            role="button"
-            aria-label="Hjärtlampan"
-          >
-            <img src="/assets-room-1/heartlamp.png" alt="" />
-          </div>
-
-          <!-- Exit -->
-          <div
-            id="zoneSuccess"
-            class="zone exit animation zone-inactive"
-            tabindex="-1"
-            role="button"
-            aria-label="Utgång"
-          >
-            ← UTGÅNG
-          </div>
-          <!--LINES-->
-
-          <!--line 1-->
-          <div id="arrow1" class="arrow visible animation">
-            <img src="/assets-room-1/line1.svg" alt="" />
-          </div>
-
-          <!--line 2-->
-          <div id="arrow2" class="arrow animation">
-            <img src="/assets-room-1/line2.svg" alt="" />
-          </div>
-
-          <!--line 3-->
-          <div id="arrow3" class="arrow animation">
-            <img src="/assets-room-1/line-3.svg" alt="" />
-          </div>
-
-          <!--line 4-->
-          <div id="arrow4" class="arrow animation">
-            <img src="/assets-room-1/line-4.svg" alt="" />
-          </div>
-
-          <!--arrow-5-->
-          <div id="arrow5" class="arrow animation">
-            <img src="/assets-room-1/line-5.svg" alt="" />
-          </div>
-
-          <!--arrow-6-->
-          <div id="arrow6" class="arrow animation">
-            <img src="/assets-room-1/line-6.svg" alt="" />
-          </div>
-        </div>
-
-        <!--------------------------->
-        <!-----------ACTIONS--------->
-        <!--------------------------->
-
-        <!-- monkey -->
-
-        <div id="monkeyDialog" class="hidden">
-          <div class="dialog-div">
-            <h2 class="dialog-header-room-1">Den söta apan</h2>
-            <div class="daughter-argument">
+          <div class="card-back">
+            <div class="back">
+              <h2>Hämta hjärtlampan!</h2>
               <p>
-                <span class="bold-blue-text-p"
-                  >Ni har knappt hunnit innanför dörren förrän</span
-                >
-                första hindret dyker upp! Den virala apan Punch! Din dotter drar
-                fram det tunga artilleriet- lägger huvudet på sned, tittar på
-                dig med de stora blanka valpögonen och drar till med det mest
-                bedårande
-                <span class="bold-blue-text-p">"Snäääääällla"</span> du någonsin
-                hört. Hur tusan ska du ta dig ur det här?!
-              </p>
-
-              <img
-                class="want-monkey-pic"
-                src="/assets-room-1/monkey-big.png"
-                alt=""
-              />
-            </div>
-
-            <div class="all-dad-arguments">
-              <img class="dad-image" src="/assets-room-1/mr_ikea.png" alt="" />
-
-              <div class="daddy-argument">
-                <input
-                  type="radio"
-                  name="monkey-choose-argument"
-                  value="D"
-                  id="monkeyArgA"
-                />
-                <label for="monkeyArgA">
-                  "Det blir absolut ingen apa! Du har redan hela rummet fullt av
-                  gosedjur."</label
-                >
-              </div>
-
-              <div class="daddy-argument">
-                <input
-                  type="radio"
-                  name="monkey-choose-argument"
-                  value="E"
-                  id="monkeyArgB"
-                />
-                <label for="monkeyArgB">
-                  " Vet du vad, vi kom ju precis in på IKEA... ska vi inte titta
-                  vidare lite först. Det finns ju en massa fina saker längre
-                  in!</label
-                >
-              </div>
-
-              <div class="daddy-argument">
-                <input
-                  type="radio"
-                  name="monkey-choose-argument"
-                  value="F"
-                  id="monkeyArgC"
-                />
-                <label for="monkeyArgC">
-                  "Ska du redan börja tjata om mer! Vi sa ju att vi skulle ha en
-                  lampa till ditt rum och inget mer."</label
-                >
-              </div>
-              <button class="all-dialog-buttons" id="submitMonkeyArgument">
-                Skicka in argument
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="dialog-div hidden" id="wantmonkeyTantrum">
-          <!--hidden -->
-          <h1 class="all-game-over-header">Game over</h1>
-          <h2 class="subheading-game-over">Du kom inte långt</h2>
-          <div class="tantrum game-over-div">
-            <p>
-              <span class="bold-blue-text-p">Åh nej!</span> Dottern gillar inte
-              ditt svar. Hon får världens utbrott och du får skynda ut till
-              bistron för att muta henne med en glass innan du kan börja om din
-              runda.
-            </p>
-            <img
-              class="icecream-pic"
-              src="/assets-room-1/icecream.png"
-              alt=""
-            />
-          </div>
-          <div class="game-over-btns">
-            <a class="room-game-over-btn" href="">
-              <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
-            </a>
-          </div>
-        </div>
-
-        <!-- PILLOW -->
-
-        <div id="pillowArgument" class="hidden dialog">
-          <div class="dialog-div">
-            <h2 class="dialog-header-room-1">Men den röda kudden då?</h2>
-            <div class="daughter-argument">
-              <p class="please-section">
-                <span class="bold-blue-text-p">Nästa utmaning </span>blir en
-                fluffig, röd hjärtkudde. Din dotter trycker den mot bröstet,
-                tittar på dig med stora ögon och viskar ett utdraget:
-                <span class="bold-blue-text-p">"Snääääälla…"</span>
-              </p>
-
-              <img
-                class="want-pillow-pic"
-                src="/assets-room-1/heartpillow.png"
-                alt=""
-              />
-            </div>
-
-            <div class="all-dad-arguments">
-              <img class="dad-image" src="/assets-room-1/mr_ikea.png" alt="" />
-
-              <div class="daddy-argument">
-                <input
-                  type="radio"
-                  name="pillow-choose-argument"
-                  value="A"
-                  id="argA"
-                />
-                <label for="argA"
-                  >Du har ju redan en nästan likadan kudde hemma..den där rosa
-                  du vet...</label
-                >
-              </div>
-              <div class="daddy-argument">
-                <input
-                  type="radio"
-                  name="pillow-choose-argument"
-                  value="B"
-                  id="argB"
-                />
-                <label for="argB"
-                  >NEJ! Vi ska inte ha något mer sa jag ju.</label
-                >
-              </div>
-              <div class="daddy-argument">
-                <input
-                  type="radio"
-                  name="pillow-choose-argument"
-                  value="C"
-                  id="argC"
-                />
-                <label for="argC"
-                  >Kuddar har du ju massor. Vi skulle ju ha den där fina
-                  hjärt-lampan. Kom, jag tycker jag ser den där framme...</label
-                >
-              </div>
-
-              <button id="submitPillowArgument" class="all-dialog-buttons">
-                Skicka in argument
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="dialog-div hidden" id="wantPillowTantrum">
-          <!--hidden-->
-          <h1 class="all-game-over-header">Game over</h1>
-          <h2 class="subheading-game-over">Nu stirrar alla på er...</h2>
-          <div class="tantrum game-over-div">
-            <div>
-              <p>"JAG VIIIIIILL HA KUDDEN!!!!!!"</p>
-              <p class="right-before-button-room-3">
-                Det blir genast dålig stämning och du funderar på vad du ska
-                göra. Ska du börja om eller ge upp och åka hem?
+                Ta dig igenom hela barnavdelningen utan att plocka på dig en
+                massa annat.<span class="bold-blue-text-p"> Obs!</span> Se
+                till att välja rätt väg.
               </p>
             </div>
           </div>
-          <div class="game-over-btns">
-            <a class="room-game-over-btn" href="">
-              <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
-            </a>
-          </div>
         </div>
 
-        <!--chair-->
-        <div class="dialog-div hidden" id="chairDialog">
-          <!---hidden -->
-          <h2 class="dialog-header-room-1 chair-dialog-header">Snart där!</h2>
-          <div class="tantrum">
-            <p>
-              <span class="bold-blue-text-p">Du valde rätt väg!</span> Som tur
-              var nöjde Emma sig med att provsitta den lurviga stolen så ni kan
-              fortsätta fram till lampan!
-            </p>
-            <img class="chair-image" src="/assets-room-1/chair.png" alt="" />
+        <!-- card 2 -->
+        <div class="card">
+          <div class="card-front">
+            <div class="front">
+              <h2>
+                Utforska <br />
+                LAMP-AVDELNINGEN
+              </h2>
+            </div>
           </div>
-          <button class="tantrum-buttons chair-dialog-btn" id="chairDialogBtn">
-            Gå vidare
-          </button>
-        </div>
-
-        <!--bedsheet-->
-        <div class="hidden dialog-div" id="bedsheetDialog">
-          <h1 class="all-game-over-header">Game over</h1>
-          <h2 class="subheading-game-over">Fel väg</h2>
-          <div class="tantrum game-over-div">
-            <p>
-              <span class="bold-blue-text-p">Oh no!</span> Du glömde att du
-              skulle plocka upp lampan. Börja om från början och välj rätt väg
-            </p>
-          </div>
-          <div class="game-over-btns">
-            <a class="room-game-over-btn" href="">
-              <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
-            </a>
-          </div>
-        </div>
-
-        <!--lamp-->
-        <div class="dialog-div hidden" id="lampDialog">
-          <!---hidden -->
-
-          <h2 class="dialog-header-room-1 chair-dialog-header">Bra jobbat</h2>
-          <div class="tantrum">
-            <p>
-              <span class="bold-blue-text-p">Grattis! </span>Du lyckades ta dig
-              till lampan utan att plocka på dig något mer! Gå till utgången för
-              att ta dig till lampavdelningen där det verkar vara något fel med
-              lamporna.
-            </p>
-          </div>
-          <button class="lamp-button" id="lampDialogBtn">
-            Ta mig till utgången
-          </button>
-        </div>
-      </section>
-      <!-- ================================== -->
-      <!-- ============= RUM 2 ============== -->
-      <!-- ================================== -->
-      <section class="main-rooms room-2 hidden" id="room2">
-        <div class="room-3-header">
-          <h1>Lampavdelningen</h1>
-          <div class="room3Title">
-            <p class="progress-in-room-3">Rum 2</p>
-          </div>
-        </div>
-        <div
-          class="room-2-instruction-container room-2-overlay room-2-is-visible"
-          id="room2InstructionContainer"
-        >
-          <div>
-            <img
-              class="room-2-ikea-man-box"
-              src="/room_2_ikea_man_box.png"
-              alt=""
-            />
-            <h2>Välkommen till rum 2</h2>
-            <p>
-              Åh, sådär, nu har vi äntligen hittat lampavdelningen! Men vad var
-              det vi skulle ha nu igen? Juste, vi skulle ju testa den nya,
-              flefärgade, smarta, coola, och trådlösa ljuskällan
-              <span class="room-2-tooltip" href=""
-                >KAJPLATS!<span class="room-2-tooltip-box"
-                  >LED ljuskälla, smart, färgat och vitt</span
-                >
-              </span>
-            </p>
-            <p>Men, alla lampor är ju släckta!?</p>
-            <p>
-              Jag vet vad vi måste göra! Om vi trycker på lampknappen
-              <span class="room-2-tooltip" href=""
-                >BILRESA
-                <span class="room-2-tooltip-box"
-                  >Fjärrkontroll, vit smart/två knappar</span
-                ></span
-              >
-              <span>
-                så att alla lampor i slutet lyser samtidigt, så ser vi vilken
-                hylla</span
-              >
-              <span class="room-2-tooltip" href=""
-                >KAJPLATS<span class="room-2-tooltip-box"
-                  >LED ljuskälla, smart, färgat och vitt</span
-                ></span
-              >
-
-              <span>
-                ligger i och vi kan då lägga den i vår gula påse och gå
-                vidare!</span
-              >
-            </p>
-            <p class="room-2-instruction-last-line">
-              Men kom ihåg: vi har bara 10 stycken tryck på oss innan tålamodet
-              går ut och vi måste åka hem!
-            </p>
-            <div class="intro-room-btn">
-              <button id="room2GoToGameBtn">→</button>
-              <span>Till rum 2</span>
+          <div class="card-back">
+            <div class="back">
+              <h2>Välj rätt glödlampa.</h2>
+              <p>Fel ljusstyrka kan få konsekvenser!</p>
             </div>
           </div>
         </div>
-        <div class="room-2-game-info-header">
-          <div class="room-2-hint-wrapper">
-            <img
-              class="room-2-ikea-man-question"
-              src="/room_2_ikea_man_question.png"
-              alt="Hint for solution"
-            />
-            <div class="room-2-hint-infobox">
+
+        <!-- card 3 -->
+        <div class="card">
+          <div class="card-front">
+            <div class="front">
+              <h2>Utforska <br />TAG-SJÄLV-LAGRET</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back">
+              <h2>Lokalisera rätt hyllplats</h2>
+              <p>
+                <span class="bold-blue-text-p">Varning:</span> Vagnens
+                svängradie är begränsad. Femåringens tålamod ännu mer.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- card 4 -->
+        <div class="card">
+          <div class="card-front">
+            <div class="front">
+              <h2>Utforska <br />KASSAN</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back">
+              <h2>Slå in rätt pinkod.</h2>
+
+              <p>Ett enda feltryck… och dramatiken eskalerar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================== -->
+    <!-- ============= RUM 1 ============== -->
+    <!-- ================================== -->
+
+    <section class="main-rooms room-1 hidden" id="room1">
+      <div class="for-all-room-header-wrapper">
+        <h1>Barnavdelningen</h1>
+        <div>
+          <p class="for-all-room-header">Rum 1</p>
+        </div>
+      </div>
+      <div id="map">
+        <!--INTRODUCTION-->
+        <div id="introductionDiv" class="introduction-div">
+          <article class="welcome-information">
+            <div class="description-flex">
               <div>
-                <h4>Tips:</h4>
-                <span>Alla knappar måste användas för att lösa spelet!</span>
-              </div>
-            </div>
-          </div>
-          <div class="room-2-game-info-text">
-            <h2>Kortslutning</h2>
-            <p>
-              Tryck på
-              <span class="room-2-tooltip" href=""
-                >BILRESA<span class="room-2-tooltip-box"
-                  >Fjärrkontroll, vit smart/två knappar</span
-                ></span
-              >
-              för att tända
-              <span class="room-2-tooltip" href=""
-                >KAJPLATS!<span class="room-2-tooltip-box"
-                  >LED ljuskälla, smart, färgat och vitt</span
-                >
-              </span>
-              Rummet är klarat när alla lampor lyser samtidigt!
-            </p>
-          </div>
-          <div class="room-2-click-counter" id="room2ClickCounter"></div>
-        </div>
+                <div class="introduction-text all-dad-arguments">
+                  <p></p>
+                  <p>
+                    <span class="bold-blue-text-p">Du kliver in på barnavdelningen på IKEA.</span>
+                  </p>
+                  <p>
+                    Ditt uppdrag är tydligt: Ta dig från ingången till
+                    utgången
+                  </p>
+                  <p>
+                    Samtidigt finns ett krav: Du måste plocka upp hjärtlampan.
+                    Missar du den måste du börja om. Men vägen är långt ifrån
+                    rak. Och full med prövningar. Femåringen drar. Pekar.
+                    Förhandlar. Hotar med att sätta sig på golvet.
+                  </p>
 
-        <div class="room-2-gamewrapper">
-          <div class="room-2-lampcontainer">
-            <img src="" id="lamp1" alt="" class="room-2-lamp-img" />
-          </div>
-          <div class="room-2-lampcontainer">
-            <img src="" id="lamp2" alt="" class="room-2-lamp-img" />
-          </div>
-          <div class="room-2-lampcontainer">
-            <img src="" id="lamp3" alt="" class="room-2-lamp-img" />
-          </div>
-          <div class="room-2-lampcontainer">
-            <img src="" id="lamp4" alt="" class="room-2-lamp-img" />
-          </div>
-          <div class="room-2-btncontainer">
-            <button type="button" id="room2Btn1">
-              <img
-                src="/room_2_remote.jpg"
-                alt="Knapp som tänder/släcker lampor ett, två och tre."
-              />
-            </button>
-          </div>
-          <div class="room-2-btncontainer">
-            <button type="button" id="room2Btn2">
-              <img
-                src="/room_2_remote.jpg"
-                alt="Knapp som tänder/släcker lampor två och tre."
-              />
-            </button>
-          </div>
-          <div class="room-2-btncontainer">
-            <button type="button" id="room2Btn3">
-              <img
-                src="/room_2_remote.jpg"
-                alt="Knapp som tänder/släcker lampor ett, tre och fyra."
-              />
-            </button>
-          </div>
-          <div class="room-2-btncontainer">
-            <button type="button" id="room2Btn4">
-              <img
-                src="/room_2_remote.jpg"
-                alt="Knapp som tänder/släcker lampor ett och två."
-              />
-            </button>
-          </div>
-        </div>
-        <div
-          class="room-game-over-section room-2-overlay room-2-lose-screen"
-          id="room2LoseScreen"
-        >
-          <div>
-            <img
-              class="room-2-ikea-man-sad"
-              src="/room_2_ikea_man_sad.png"
-              alt=""
-            />
-            <h1 class="all-game-over-header">Game over</h1>
-            <h2 class="subheading-game-over">Du tände inte alla lampor</h2>
-            <p class="first-row-p">
-              Åh, nej! Vi lyckades inte tända alla lampor i tid och nu har ditt
-              barn tröttnat och sprungit iväg.
-            </p>
-            <p>
-              Det blev ingen handling denna gång, så vi får lämna
-              <span class="room-2-ikea-word">IKEA</span> tomhänta.
-            </p>
+                  <p>
+                    <span class="bold-blue-text-p">⚠️ Reglerna är enkla men brutala:</span>
+                  </p>
+                  <p>
+                    Du får inte lägga något extra i vagnen. Du får inte ge med
+                    dig. Du får inte orsaka ett utbrott.
+                  </p>
+                  <p>
+                    Välj väg med omsorg. Ignorera distraktionerna. Håll
+                    energin uppe.
+                  </p>
 
-            <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
-          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
-
-            <a class="room-game-over-btn" href="">
-              <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
-            </a>
-          </div>
-        </div>
-        <div class="room-2-win-screen room-2-overlay" id="room2WinScreen">
-          <div>
-            <img
-              class="room-2-ikea-man-box"
-              src="/room_2_ikea_man_box.png"
-              alt=""
-            />
-            <h2>Bra jobbat</h2>
-            <p>
-              Yes! Vi lyckades tända alla lampor och nu ser vi ju var
-              <span class="room-2-tooltip" href=""
-                >KAJPLATS<span class="room-2-tooltip-box"
-                  >LED ljuskälla, smart färgat och vitt</span
-                >
-              </span>
-              ligger någonstans!
-            </p>
-            <p>
-              Vi tar en
-              <span class="room-2-tooltip" href=""
-                >KAJPLATS<span class="room-2-tooltip-box"
-                  >LED ljuskälla, smart, färgat och vitt</span
-                >
-              </span>
-              och lägger den i vår
-              <span class="room-2-ikea-word">IKEA</span>-påse, så går kan vi gå
-              vidare till <span class="room-2-ikea-word">Ta-själv-lagret</span>?
-            </p>
-
-            <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
-          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
-            <button id="goToRoom3Btn">
-              <span>Till ta-själv-lagret!</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================== -->
-      <!-- ============= RUM 3 ============== -->
-      <!-- ================================== -->
-
-      <!-------✨ Linas Rum ✨-------->
-
-      <section class="main-rooms room-3 hidden" id="room3">
-        <div id="room3Start">
-          <div class="room-3-header">
-            <h1>Tag själv lagret</h1>
-            <div class="room3Title">
-              <p class="progress-in-room-3">Rum 3</p>
-            </div>
-          </div>
-          <!--class="hidden"-->
-          <h2>Välkommen till rum 3</h2>
-          <p>
-            <span class="bold-blue-text-p"
-              >Nu när du har lämnat lampavdelningen</span
-            >
-            är nästa steg att hitta rätt möbel inne på lagret. Vi ska bara ha en
-            möbel och första steget är att ta reda på vilken hylla och fack vi
-            ska till.
-          </p>
-          <h3>Är du redo?</h3>
-          <div>
-            <div class="intro-room-btn">
-              <button id="room3StartBtn" aria-label="Gå till rum 3">→</button
-              ><span>Till rum 3</span>
-            </div>
-          </div>
-        </div>
-        <section id="room3Part1" class="hidden">
-          <div class="room-3-header">
-            <h1>Tag själv lagret</h1>
-            <div class="room3Title">
-              <p class="progress-in-room-3">Rum 3</p>
-            </div>
-          </div>
-          <!--class="hidden"-->
-          <h2>Vilken hylla och fack?</h2>
-          <p>
-            <span class="bold-blue-text-p">Puh!</span> Du tog dig ut från
-            lampavdelningen, du är snart ute.
-          </p>
-          <p>
-            MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den
-            kommer vi inte till kassorna.
-          </p>
-          <p>
-            <span class="bold-blue-text-p">Du kommer ihåg lappen</span> du fick
-            med dig hemifrån och blir lite fundersam över vad som står.
-          </p>
-
-          <div class="clue-1-room-3-wrapper">
-            <img
-              id="confusedIkeaManRoom3"
-              src="/gubbe-ikea-forvirrad.png"
-              alt="Lapp med kod"
-            />
-            <div>
-              <h3>Lös rebusen:</h3>
-
-              <div id="clue1Room3">
-                <p class="step-numbers">1.</p>
-                <img
-                  src="/clue-room-3-1.png"
-                  alt="Lapp där det står: Hylla = Kyrre, Fack = Pax + Ekenäset"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div
-            id="guessInput1Room3Wrapper"
-            class="guess-input-1-room-3-wrapper"
-          >
-            <p class="step-numbers">2.</p>
-            <p id="titleHylla">1x Hylla</p>
-            <p>BILLY</p>
-            <div id="guessInput1Room3" class="guess-input-1-room-3">
-              <form id="guessHyllaFackSection" class="guess-hylla-fack-section">
-                <p>
-                  <span class="id-number-item">403.834.74</span>
-                </p>
-                <p class="guess-input-room-3">
-                  <label>Hylla:</label
-                  ><input
-                    id="hyllaInput"
-                    maxlength="2"
-                    type="number"
-                    placeholder="00"
-                  />
-                </p>
-                <p class="guess-input-room-3">
-                  <label>Fack:</label
-                  ><input
-                    id="fackInput"
-                    maxlength="2"
-                    type="number"
-                    placeholder="00"
-                  />
-                </p>
-              </form>
-            </div>
-          </div>
-        </section>
-        <section id="room3Part2" class="hidden">
-          <!--class="hidden"-->
-          <div class="room-3-header">
-            <h1>Tag själv lagret</h1>
-            <div class="room3Title">
-              <p class="progress-in-room-3">Rum 3</p>
-            </div>
-          </div>
-          <h2>Korrekt</h2>
-          <div class="descriptionRoom3">
-            <p>
-              Bra jobbat! Du har hittat rätt hylla och fack.
-              <span>MEN</span>
-              någon har lämnat det i totalt kaos och skyltningen är förstörd, nu
-              måste du hitta rätt möbel.
-            </p>
-            <p><span>Var du uppmärksam i förra steget?</span></p>
-          </div>
-          <div class="clue-2-room-3-wrapper">
-            <div id="shelfForFurnituresRoom3Wrapper">
-              <div id="shelfImageRoom3">
-                <div id="scribbleColumn1">
-                  <img
-                    src="/scribble-room3.png"
-                    alt="Överstrykning av möbelbild i blått"
-                  />
+                  <p><span class="bold-blue-text-p">Lycka till!</span></p>
                 </div>
-                <div id="scribbleColumn2">
-                  <img
-                    id="scribbleYellowRoom3"
-                    src="/scribble-yellow.png"
-                    alt="Överstrykning av möbelnamn i gult"
-                  />
-
-                  <p>000.000.00</p>
-                  <img id="barcodeRoom3" src="/barcodeRoom3.png" />
+                <div id="startRoom1Btn" class="intro-room-btn">
+                  <button>→</button>
+                  <span>Till rum 1</span>
                 </div>
               </div>
-
-              <div id="hyllaAndFackShelfRoom3">
-                <div id="redBackgroundHyllaFack">
-                  <p class="hylla-fack-title">Hylla</p>
-                  <p>05</p>
-                  <p class="hylla-fack-title">Fack</p>
-                  <p>38</p>
-                </div>
+              <div>
+                <img class="intro-picture" src="/assets-room-1/intro-pic.png" alt="" />
               </div>
             </div>
-          </div>
-          <h3>Välj rätt möbel:</h3>
-          <div id="guessFurniture">
-            <!---Rendering av alternativ--->
-          </div>
-          <div id="clueRoom3Part2">
-            <p>
-              <span class="bold-blue-text-p">Psst!</span> Klicka inte för många
-              gånger.
-            </p>
-          </div>
-        </section>
+          </article>
+        </div>
 
-        <section id="room3End" class="hidden">
-          <div class="room-3-header">
-            <h1>Tag själv lagret</h1>
-            <div class="room3Title">
-              <p class="progress-in-room-3">Rum 3</p>
-            </div>
-          </div>
-          <h2>Du hittade Billy</h2>
-          <p>
-            <span class="bold-blue-text-p">Bra jobbat!</span> Du tog dig från
-            tag själv lagret med bokhyllan Billy. Nu är det dags och ta sig till
-            kassan för att betala.
-            <span class="bold-blue-text-p">Snart ute!</span>
-          </p>
-          <div id="room3ToRoom4" class="intro-room-btn">
-            <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button
-            ><span>Till rum 4</span>
-          </div>
-        </section>
-        <section id="room3GameOver" class="room-game-over-section hidden">
-          <!--class="hidden"-->
-          <div>
-            <h1 class="all-game-over-header">Game over</h1>
-            <h2 class="subheading-game-over">Du tog fel möbel!</h2>
+        <!--MAZE-->
+
+        <img class="map-image" src="/assets-room-1/ikea-map.png" alt="" />
+
+        <!--ZONES-->
+
+        <!-- Monkey-zonen: fokuseras direkt när rummet startas -->
+        <div id="zoneMonkey" class="zone zone-monkey" tabindex="0" role="button" aria-label="Den söta apan">
+          <img src="/assets-room-1/monkey-small.png" alt="" />
+        </div>
+
+        <!-- Pillow: börjar som inactive, tabindex sätts via JS -->
+        <div id="zonePillow" class="zone zone-pillow zone-inactive" tabindex="-1" role="button"
+          aria-label="Hjärtkudden">
+          <img src="/assets-room-1/heartpillow.png" alt="" />
+        </div>
+
+        <!-- Chair -->
+        <div id="zoneChair" class="zone zone-chair zone-inactive" tabindex="-1" role="button" aria-label="Stolen">
+          <img src="/assets-room-1/chair.png" alt="" />
+        </div>
+
+        <!-- Bedsheets -->
+        <div id="zoneBedsheets" class="zone zone-bedsheets zone-inactive" tabindex="-1" role="button"
+          aria-label="Hjärtlakan">
+          <img src="/assets-room-1/heartsheets.png" alt="" />
+        </div>
+
+        <!-- Lamp -->
+        <div id="zoneLamp" class="zone zone-lamp zone-inactive" tabindex="-1" role="button" aria-label="Hjärtlampan">
+          <img src="/assets-room-1/heartlamp.png" alt="" />
+        </div>
+
+        <!-- Exit -->
+        <div id="zoneSuccess" class="zone exit animation zone-inactive" tabindex="-1" role="button" aria-label="Utgång">
+          ← UTGÅNG
+        </div>
+        <!--LINES-->
+
+        <!--line 1-->
+        <div id="arrow1" class="arrow visible animation">
+          <img src="/assets-room-1/line1.svg" alt="" />
+        </div>
+
+        <!--line 2-->
+        <div id="arrow2" class="arrow animation">
+          <img src="/assets-room-1/line2.svg" alt="" />
+        </div>
+
+        <!--line 3-->
+        <div id="arrow3" class="arrow animation">
+          <img src="/assets-room-1/line-3.svg" alt="" />
+        </div>
+
+        <!--line 4-->
+        <div id="arrow4" class="arrow animation">
+          <img src="/assets-room-1/line-4.svg" alt="" />
+        </div>
+
+        <!--arrow-5-->
+        <div id="arrow5" class="arrow animation">
+          <img src="/assets-room-1/line-5.svg" alt="" />
+        </div>
+
+        <!--arrow-6-->
+        <div id="arrow6" class="arrow animation">
+          <img src="/assets-room-1/line-6.svg" alt="" />
+        </div>
+      </div>
+
+      <!--------------------------->
+      <!-----------ACTIONS--------->
+      <!--------------------------->
+
+      <!-- monkey -->
+
+      <div id="monkeyDialog" class="hidden">
+        <div class="dialog-div">
+          <h2 class="dialog-header-room-1">Den söta apan</h2>
+          <div class="daughter-argument">
             <p>
-              Tyvärr tog tålamodet slut hos ditt barn och istället för att leta
-              rätt på möbeln måste du nu leta rätt på ditt barn istället.
+              <span class="bold-blue-text-p">Ni har knappt hunnit innanför dörren förrän</span>
+              första hindret dyker upp! Den virala apan Punch! Din dotter drar
+              fram det tunga artilleriet- lägger huvudet på sned, tittar på
+              dig med de stora blanka valpögonen och drar till med det mest
+              bedårande
+              <span class="bold-blue-text-p">"Snäääääällla"</span> du någonsin
+              hört. Hur tusan ska du ta dig ur det här?!
             </p>
+
+            <img class="want-monkey-pic" src="/assets-room-1/monkey-big.png" alt="" />
+          </div>
+
+          <div class="all-dad-arguments">
+            <img class="dad-image" src="/assets-room-1/mr_ikea.png" alt="" />
+
+            <div class="daddy-argument">
+              <input type="radio" name="monkey-choose-argument" value="D" id="monkeyArgA" />
+              <label for="monkeyArgA">
+                "Det blir absolut ingen apa! Du har redan hela rummet fullt av
+                gosedjur."</label>
+            </div>
+
+            <div class="daddy-argument">
+              <input type="radio" name="monkey-choose-argument" value="E" id="monkeyArgB" />
+              <label for="monkeyArgB">
+                " Vet du vad, vi kom ju precis in på IKEA... ska vi inte titta
+                vidare lite först. Det finns ju en massa fina saker längre
+                in!</label>
+            </div>
+
+            <div class="daddy-argument">
+              <input type="radio" name="monkey-choose-argument" value="F" id="monkeyArgC" />
+              <label for="monkeyArgC">
+                "Ska du redan börja tjata om mer! Vi sa ju att vi skulle ha en
+                lampa till ditt rum och inget mer."</label>
+            </div>
+            <button class="all-dialog-buttons" id="submitMonkeyArgument">
+              Skicka in argument
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dialog-div hidden" id="wantmonkeyTantrum">
+        <!--hidden -->
+        <h1 class="all-game-over-header">Game over</h1>
+        <h2 class="subheading-game-over">Du kom inte långt</h2>
+        <div class="tantrum game-over-div">
+          <p>
+            <span class="bold-blue-text-p">Åh nej!</span> Dottern gillar inte
+            ditt svar. Hon får världens utbrott och du får skynda ut till
+            bistron för att muta henne med en glass innan du kan börja om din
+            runda.
+          </p>
+          <img class="icecream-pic" src="/assets-room-1/icecream.png" alt="" />
+        </div>
+        <div class="game-over-btns">
+          <a class="room-game-over-btn" href="">
+            <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- PILLOW -->
+
+      <div id="pillowArgument" class="hidden dialog">
+        <div class="dialog-div">
+          <h2 class="dialog-header-room-1">Men den röda kudden då?</h2>
+          <div class="daughter-argument">
+            <p class="please-section">
+              <span class="bold-blue-text-p">Nästa utmaning </span>blir en
+              fluffig, röd hjärtkudde. Din dotter trycker den mot bröstet,
+              tittar på dig med stora ögon och viskar ett utdraget:
+              <span class="bold-blue-text-p">"Snääääälla…"</span>
+            </p>
+
+            <img class="want-pillow-pic" src="/assets-room-1/heartpillow.png" alt="" />
+          </div>
+
+          <div class="all-dad-arguments">
+            <img class="dad-image" src="/assets-room-1/mr_ikea.png" alt="" />
+
+            <div class="daddy-argument">
+              <input type="radio" name="pillow-choose-argument" value="A" id="argA" />
+              <label for="argA">Du har ju redan en nästan likadan kudde hemma..den där rosa
+                du vet...</label>
+            </div>
+            <div class="daddy-argument">
+              <input type="radio" name="pillow-choose-argument" value="B" id="argB" />
+              <label for="argB">NEJ! Vi ska inte ha något mer sa jag ju.</label>
+            </div>
+            <div class="daddy-argument">
+              <input type="radio" name="pillow-choose-argument" value="C" id="argC" />
+              <label for="argC">Kuddar har du ju massor. Vi skulle ju ha den där fina
+                hjärt-lampan. Kom, jag tycker jag ser den där framme...</label>
+            </div>
+
+            <button id="submitPillowArgument" class="all-dialog-buttons">
+              Skicka in argument
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dialog-div hidden" id="wantPillowTantrum">
+        <!--hidden-->
+        <h1 class="all-game-over-header">Game over</h1>
+        <h2 class="subheading-game-over">Nu stirrar alla på er...</h2>
+        <div class="tantrum game-over-div">
+          <div>
+            <p>"JAG VIIIIIILL HA KUDDEN!!!!!!"</p>
             <p class="right-before-button-room-3">
-              När du letat klart, vill du spela igen eller vill du lämna
-              varuhuset?
+              Det blir genast dålig stämning och du funderar på vad du ska
+              göra. Ska du börja om eller ge upp och åka hem?
             </p>
-
-            <a class="room-game-over-btn" href="">
-              <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
-            </a>
-          </div>
-        </section>
-        <div class="overlayRoom3" id="warnOverlayRoom3">
-          <div class="popupRoom3">
-            <div class="warningSymbol">⚠</div>
-            <h2>Fel möbel</h2>
-            <p>Var försiktig, du har bara ett försök kvar.</p>
-            <button class="popup-room-3-btn" id="closeWarnPopupRoom3Btn">
-              Försök igen
-            </button>
           </div>
         </div>
-      </section>
-      <!-- ================================== -->
-      <!-- ============= RUM 4 ============== -->
-      <!-- ================================== -->
-      <section class="main-rooms room-4 hidden" id="room4">
-        <div id="headerRoom4Wrapper" class="for-all-room-header-wrapper">
-          <h1>Kassan</h1>
-          <div>
-            <p class="for-all-room-header">Rum 4</p>
-          </div>
+        <div class="game-over-btns">
+          <a class="room-game-over-btn" href="">
+            <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
+          </a>
         </div>
+      </div>
 
-        <!-- Introduktion Rum 4 -->
-        <div id="room4Start" class="room-4-start">
-          <h2>Välkommen till rum 4</h2>
+      <!--chair-->
+      <div class="dialog-div hidden" id="chairDialog">
+        <!---hidden -->
+        <h2 class="dialog-header-room-1 chair-dialog-header">Snart där!</h2>
+        <div class="tantrum">
           <p>
-            <span class="bold-blue-text-p">Äntligen framme vid kassan!</span> Du
-            har lyckats ta dig genom hela varuhuset med alla varor i vagnen. Nu
-            återstår bara en sak — att betala.
+            <span class="bold-blue-text-p">Du valde rätt väg!</span> Som tur
+            var nöjde Emma sig med att provsitta den lurviga stolen så ni kan
+            fortsätta fram till lampan!
           </p>
+          <img class="chair-image" src="/assets-room-1/chair.png" alt="" />
+        </div>
+        <button class="tantrum-buttons chair-dialog-btn" id="chairDialogBtn">
+          Gå vidare
+        </button>
+      </div>
+
+      <!--bedsheet-->
+      <div class="hidden dialog-div" id="bedsheetDialog">
+        <h1 class="all-game-over-header">Game over</h1>
+        <h2 class="subheading-game-over">Fel väg</h2>
+        <div class="tantrum game-over-div">
           <p>
-            Men det finns ett problem. Du har glömt din pinkod. Tur i oturen har
-            du ett minne som kanske räcker — om du kan memorera de gula rutorna
-            och komma ihåg siffrorna som visas.
+            <span class="bold-blue-text-p">Oh no!</span> Du glömde att du
+            skulle plocka upp lampan. Börja om från början och välj rätt väg
           </p>
+        </div>
+        <div class="game-over-btns">
+          <a class="room-game-over-btn" href="">
+            <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
+          </a>
+        </div>
+      </div>
+
+      <!--lamp-->
+      <div class="dialog-div hidden" id="lampDialog">
+        <!---hidden -->
+
+        <h2 class="dialog-header-room-1 chair-dialog-header">Bra jobbat</h2>
+        <div class="tantrum">
           <p>
-            Du har <span class="bold-blue-text-p">3 försök</span> på memoryt och
-            <span class="bold-blue-text-p">3 försök</span> på att slå in rätt
-            kod. Misslyckas du går larmet och du får börja om.
+            <span class="bold-blue-text-p">Grattis! </span>Du lyckades ta dig
+            till lampan utan att plocka på dig något mer! Gå till utgången för
+            att ta dig till lampavdelningen där det verkar vara något fel med
+            lamporna.
+          </p>
+        </div>
+        <button class="lamp-button" id="lampDialogBtn">
+          Ta mig till utgången
+        </button>
+      </div>
+    </section>
+    <!-- ================================== -->
+    <!-- ============= RUM 2 ============== -->
+    <!-- ================================== -->
+    <section class="main-rooms room-2 hidden" id="room2">
+      <div class="room-3-header">
+        <h1>Lampavdelningen</h1>
+        <div class="room3Title">
+          <p class="progress-in-room-3">Rum 2</p>
+        </div>
+      </div>
+      <div class="room-2-instruction-container room-2-overlay room-2-is-visible" id="room2InstructionContainer">
+        <div>
+          <img class="room-2-ikea-man-box" src="/room_2_ikea_man_box.png" alt="" />
+          <h2>Välkommen till rum 2</h2>
+          <p>
+            Åh, sådär, nu har vi äntligen hittat lampavdelningen! Men vad var
+            det vi skulle ha nu igen? Juste, vi skulle ju testa den nya,
+            flefärgade, smarta, coola, och trådlösa ljuskällan
+            <span class="room-2-tooltip" href="">KAJPLATS!<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat
+                och vitt</span>
+            </span>
+          </p>
+          <p>Men, alla lampor är ju släckta!?</p>
+          <p>
+            Jag vet vad vi måste göra! Om vi trycker på lampknappen
+            <span class="room-2-tooltip" href="">BILRESA
+              <span class="room-2-tooltip-box">Fjärrkontroll, vit smart/två knappar</span></span>
+            <span>
+              så att alla lampor i slutet lyser samtidigt, så ser vi vilken
+              hylla</span>
+            <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat
+                och vitt</span></span>
+
+            <span>
+              ligger i och vi kan då lägga den i vår gula påse och gå
+              vidare!</span>
+          </p>
+          <p class="room-2-instruction-last-line">
+            Men kom ihåg: vi har bara 10 stycken tryck på oss innan tålamodet
+            går ut och vi måste åka hem!
           </p>
           <div class="intro-room-btn">
-            <button id="room4StartBtn">→</button>
-            <span>Till rum 4</span>
+            <button id="room2GoToGameBtn">→</button>
+            <span>Till rum 2</span>
           </div>
         </div>
-
-        <!-- Memory -->
-        <div id="room4memory" class="room-4-memory" hidden>
-          <p
-            class="room4-instructions"
-            id="room4-instructions"
-            aria-live="polite"
-          >
-            Memorera var de gula rutorna är och dess siffror!
+      </div>
+      <div class="room-2-game-info-header">
+        <div class="room-2-hint-wrapper">
+          <img class="room-2-ikea-man-question" src="/room_2_ikea_man_question.png" alt="Hint for solution" />
+          <div class="room-2-hint-infobox">
+            <div>
+              <h4>Tips:</h4>
+              <span>Alla knappar måste användas för att lösa spelet!</span>
+            </div>
+          </div>
+        </div>
+        <div class="room-2-game-info-text">
+          <h2>Kortslutning</h2>
+          <p>
+            Tryck på
+            <span class="room-2-tooltip" href="">BILRESA<span class="room-2-tooltip-box">Fjärrkontroll, vit smart/två
+                knappar</span></span>
+            för att tända
+            <span class="room-2-tooltip" href="">KAJPLATS!<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat
+                och vitt</span>
+            </span>
+            Rummet är klarat när alla lampor lyser samtidigt!
           </p>
+        </div>
+        <div class="room-2-click-counter" id="room2ClickCounter"></div>
+      </div>
 
-          <p
-            class="room4-timer"
-            id="room4-timer"
-            aria-live="polite"
-            aria-atomic="true"
-          >
-            00:00
-          </p>
-
-          <button
-            type="button"
-            id="room4-start-btn"
-            class="show-yellow-cards-btn"
-          >
-            Visa de gula rutorna
+      <div class="room-2-gamewrapper">
+        <div class="room-2-lampcontainer">
+          <img src="" id="lamp1" alt="" class="room-2-lamp-img" />
+        </div>
+        <div class="room-2-lampcontainer">
+          <img src="" id="lamp2" alt="" class="room-2-lamp-img" />
+        </div>
+        <div class="room-2-lampcontainer">
+          <img src="" id="lamp3" alt="" class="room-2-lamp-img" />
+        </div>
+        <div class="room-2-lampcontainer">
+          <img src="" id="lamp4" alt="" class="room-2-lamp-img" />
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn1">
+            <img src="/room_2_remote.jpg" alt="Knapp som tänder/släcker lampor ett, två och tre." />
           </button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn2">
+            <img src="/room_2_remote.jpg" alt="Knapp som tänder/släcker lampor två och tre." />
+          </button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn3">
+            <img src="/room_2_remote.jpg" alt="Knapp som tänder/släcker lampor ett, tre och fyra." />
+          </button>
+        </div>
+        <div class="room-2-btncontainer">
+          <button type="button" id="room2Btn4">
+            <img src="/room_2_remote.jpg" alt="Knapp som tänder/släcker lampor ett och två." />
+          </button>
+        </div>
+      </div>
+      <div class="room-game-over-section room-2-overlay room-2-lose-screen" id="room2LoseScreen">
+        <div>
+          <img class="room-2-ikea-man-sad" src="/room_2_ikea_man_sad.png" alt="" />
+          <h1 class="all-game-over-header">Game over</h1>
+          <h2 class="subheading-game-over">Du tände inte alla lampor</h2>
+          <p class="first-row-p">
+            Åh, nej! Vi lyckades inte tända alla lampor i tid och nu har ditt
+            barn tröttnat och sprungit iväg.
+          </p>
+          <p>
+            Det blev ingen handling denna gång, så vi får lämna
+            <span class="room-2-ikea-word">IKEA</span> tomhänta.
+          </p>
 
-          <div class="room4-grid" id="room4-grid">
-            <div
-              class="room4-cell"
-              data-index="0"
-              role="button"
-              tabindex="0"
-              aria-label="ruta 1"
-            ></div>
-            <div
-              class="room4-cell"
-              data-index="1"
-              role="button"
-              tabindex="0"
-              aria-label="ruta 2"
-            ></div>
-            <div
-              class="room4-cell"
-              data-index="2"
-              role="button"
-              tabindex="0"
-              aria-label="ruta 3"
-            ></div>
-            <div
-              class="room4-cell"
-              data-index="3"
-              role="button"
-              tabindex="0"
-              aria-label="ruta 4"
-            ></div>
-            <div
-              class="room4-cell"
-              data-index="4"
-              role="button"
-              tabindex="0"
-              aria-label="ruta 5"
-            ></div>
-            <div
-              class="room4-cell"
-              data-index="5"
-              role="button"
-              tabindex="0"
-              aria-label="ruta 6"
-            ></div>
-            <div
-              class="room4-cell"
-              data-index="6"
-              role="button"
-              tabindex="0"
-              aria-label="ruta 7"
-            ></div>
-            <div
-              class="room4-cell"
-              data-index="7"
-              role="button"
-              tabindex="0"
-              aria-label="ruta 8"
-            ></div>
-            <div
-              class="room4-cell"
-              data-index="8"
-              role="button"
-              tabindex="0"
-              aria-label="ruta 9"
-            ></div>
-            <div
-              class="room4-cell"
-              data-index="9"
-              role="button"
-              tabindex="0"
-              aria-label="ruta 10"
-            ></div>
+          <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
+          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
+
+          <a class="room-game-over-btn" href="">
+            <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
+          </a>
+        </div>
+      </div>
+      <div class="room-2-win-screen room-2-overlay" id="room2WinScreen">
+        <div>
+          <img class="room-2-ikea-man-box" src="/room_2_ikea_man_box.png" alt="" />
+          <h2>Bra jobbat</h2>
+          <p>
+            Yes! Vi lyckades tända alla lampor och nu ser vi ju var
+            <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla, smart färgat
+                och vitt</span>
+            </span>
+            ligger någonstans!
+          </p>
+          <p>
+            Vi tar en
+            <span class="room-2-tooltip" href="">KAJPLATS<span class="room-2-tooltip-box">LED ljuskälla, smart, färgat
+                och vitt</span>
+            </span>
+            och lägger den i vår
+            <span class="room-2-ikea-word">IKEA</span>-påse, så går kan vi gå
+            vidare till <span class="room-2-ikea-word">Ta-själv-lagret</span>?
+          </p>
+
+          <!-- <div class="room-2-win-text" id="room2WinScreenDiv1"></div>
+          <div class="room-2-win-text" id="room2WinScreenDiv2"></div> -->
+          <button id="goToRoom3Btn">
+            <span>Till ta-själv-lagret!</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================== -->
+    <!-- ============= RUM 3 ============== -->
+    <!-- ================================== -->
+
+    <!-------✨ Linas Rum ✨-------->
+
+    <section class="main-rooms room-3 hidden" id="room3">
+      <div id="room3Start">
+        <div class="room-3-header">
+          <h1>Tag själv lagret</h1>
+          <div class="room3Title">
+            <p class="progress-in-room-3">Rum 3</p>
           </div>
+        </div>
+        <!--class="hidden"-->
+        <h2>Välkommen till rum 3</h2>
+        <p>
+          <span class="bold-blue-text-p">Nu när du har lämnat lampavdelningen</span>
+          är nästa steg att hitta rätt möbel inne på lagret. Vi ska bara ha en
+          möbel och första steget är att ta reda på vilken hylla och fack vi
+          ska till.
+        </p>
+        <h3>Är du redo?</h3>
+        <div>
+          <div class="intro-room-btn">
+            <button id="room3StartBtn" aria-label="Gå till rum 3">→</button><span>Till rum 3</span>
+          </div>
+        </div>
+      </div>
+      <section id="room3Part1" class="hidden">
+        <div class="room-3-header">
+          <h1>Tag själv lagret</h1>
+          <div class="room3Title">
+            <p class="progress-in-room-3">Rum 3</p>
+          </div>
+        </div>
+        <!--class="hidden"-->
+        <h2>Vilken hylla och fack?</h2>
+        <p>
+          <span class="bold-blue-text-p">Puh!</span> Du tog dig ut från
+          lampavdelningen, du är snart ute.
+        </p>
+        <p>
+          MEN, nu måste vi hitta den möbel du kom hit för att köpa, utan den
+          kommer vi inte till kassorna.
+        </p>
+        <p>
+          <span class="bold-blue-text-p">Du kommer ihåg lappen</span> du fick
+          med dig hemifrån och blir lite fundersam över vad som står.
+        </p>
 
-          <p class="room4-message" id="room4-message" aria-live="polite"></p>
+        <div class="clue-1-room-3-wrapper">
+          <img id="confusedIkeaManRoom3" src="/gubbe-ikea-forvirrad.png" alt="Lapp med kod" />
+          <div>
+            <h3>Lös rebusen:</h3>
+
+            <div id="clue1Room3">
+              <p class="step-numbers">1.</p>
+              <img src="/clue-room-3-1.png" alt="Lapp där det står: Hylla = Kyrre, Fack = Pax + Ekenäset" />
+            </div>
+          </div>
         </div>
 
-        <!-- Kassakoden -->
-        <div id="room4checkout" hidden>
-          <h3 class="header-room-4">Du är så nära!</h3>
-
-          <p class="room4-checkout-instruction">
-            Skriv in koden från de gula rutorna för att betala dina varor.
-            <span>Kommer du ihåg vad som stod på rutorna?</span>
-          </p>
-          <div class="cart-terminal-wrapper">
-            <div class="summary-and-clue-room-4">
-              <div class="room4-cart">
-                <h4>Sammanfattning</h4>
-                <ul class="room4-cart-list">
-                  <li><span>BILLY</span><span>399 kr</span></li>
-                  <li><span>KAJPLATS</span><span>59 kr</span></li>
-                  <li><span>UPPLYST</span><span>149 kr</span></li>
-                </ul>
-                <div class="room4-cart-total">
-                  <span>Totalt</span><span>607 kr</span>
-                </div>
-              </div>
-              <div class="room4-daughter">
-                <figure class="girl-illustration">
-                  <img src="/assets/daughter67.png" alt="Liten flicka" />
-                </figure>
-                <div class="room4-daughter-bubble">
-                  <p class="daughter-bubble-p">
-                    <span>Pappa är 67 år...</span> nej vänta, 67 år... öh, 6767?
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="room4-terminal">
-              <div class="room4-display">
-                <div class="room4-display-price">607,00 kr</div>
-                <div class="room4-display-blipp">
-                  <img
-                    src="/assets/blipp.png"
-                    alt=""
-                    width="40"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div class="room4-display-code">
-                  <span
-                    id="room4CodeDisplay"
-                    aria-live="polite"
-                    aria-label="Inmatad kod"
-                    >----</span
-                  >
-                </div>
-              </div>
-
-              <div class="room4-keypad">
-                <button type="button" class="room4-key" data-key="1">1</button>
-                <button type="button" class="room4-key" data-key="2">2</button>
-                <button type="button" class="room4-key" data-key="3">3</button>
-                <button type="button" class="room4-key" data-key="4">4</button>
-                <button type="button" class="room4-key" data-key="5">5</button>
-                <button type="button" class="room4-key" data-key="6">6</button>
-                <button type="button" class="room4-key" data-key="7">7</button>
-                <button type="button" class="room4-key" data-key="8">8</button>
-                <button type="button" class="room4-key" data-key="9">9</button>
-                <button
-                  type="button"
-                  class="room4-key room4-key-clear"
-                  data-key="clear"
-                  aria-label="Rensa kod"
-                >
-                  C
-                </button>
-                <button type="button" class="room4-key" data-key="0">0</button>
-                <button
-                  type="button"
-                  class="room4-key room4-key-enter"
-                  data-key="enter"
-                  aria-label="Bekräfta kod"
-                >
-                  OK
-                </button>
-              </div>
-              <p
-                class="room4-message room-4-last-message"
-                id="room4CheckoutMessage"
-                aria-live="assertive"
-              ></p>
-            </div>
+        <div id="guessInput1Room3Wrapper" class="guess-input-1-room-3-wrapper">
+          <p class="step-numbers">2.</p>
+          <p id="titleHylla">1x Hylla</p>
+          <p>BILLY</p>
+          <div id="guessInput1Room3" class="guess-input-1-room-3">
+            <form id="guessHyllaFackSection" class="guess-hylla-fack-section">
+              <p>
+                <span class="id-number-item">403.834.74</span>
+              </p>
+              <p class="guess-input-room-3">
+                <label>Hylla:</label><input id="hyllaInput" maxlength="2" type="number" placeholder="00" />
+              </p>
+              <p class="guess-input-room-3">
+                <label>Fack:</label><input id="fackInput" maxlength="2" type="number" placeholder="00" />
+              </p>
+            </form>
           </div>
         </div>
       </section>
-      <section id="room4GameOver" class="room-game-over-section hidden">
+      <section id="room3Part2" class="hidden">
+        <!--class="hidden"-->
+        <div class="room-3-header">
+          <h1>Tag själv lagret</h1>
+          <div class="room3Title">
+            <p class="progress-in-room-3">Rum 3</p>
+          </div>
+        </div>
+        <h2>Korrekt</h2>
+        <div class="descriptionRoom3">
+          <p>
+            Bra jobbat! Du har hittat rätt hylla och fack.
+            <span>MEN</span>
+            någon har lämnat det i totalt kaos och skyltningen är förstörd, nu
+            måste du hitta rätt möbel.
+          </p>
+          <p><span>Var du uppmärksam i förra steget?</span></p>
+        </div>
+        <div class="clue-2-room-3-wrapper">
+          <div id="shelfForFurnituresRoom3Wrapper">
+            <div id="shelfImageRoom3">
+              <div id="scribbleColumn1">
+                <img src="/scribble-room3.png" alt="Överstrykning av möbelbild i blått" />
+              </div>
+              <div id="scribbleColumn2">
+                <img id="scribbleYellowRoom3" src="/scribble-yellow.png" alt="Överstrykning av möbelnamn i gult" />
+
+                <p>000.000.00</p>
+                <img id="barcodeRoom3" src="/barcodeRoom3.png" />
+              </div>
+            </div>
+
+            <div id="hyllaAndFackShelfRoom3">
+              <div id="redBackgroundHyllaFack">
+                <p class="hylla-fack-title">Hylla</p>
+                <p>05</p>
+                <p class="hylla-fack-title">Fack</p>
+                <p>38</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>Välj rätt möbel:</h3>
+        <div id="guessFurniture">
+          <!---Rendering av alternativ--->
+        </div>
+        <div id="clueRoom3Part2">
+          <p>
+            <span class="bold-blue-text-p">Psst!</span> Klicka inte för många
+            gånger.
+          </p>
+        </div>
+      </section>
+
+      <section id="room3End" class="hidden">
+        <div class="room-3-header">
+          <h1>Tag själv lagret</h1>
+          <div class="room3Title">
+            <p class="progress-in-room-3">Rum 3</p>
+          </div>
+        </div>
+        <h2>Du hittade Billy</h2>
+        <p>
+          <span class="bold-blue-text-p">Bra jobbat!</span> Du tog dig från
+          tag själv lagret med bokhyllan Billy. Nu är det dags och ta sig till
+          kassan för att betala.
+          <span class="bold-blue-text-p">Snart ute!</span>
+        </p>
+        <div id="room3ToRoom4" class="intro-room-btn">
+          <button id="room3ToRoom4Btn" aria-label="Gå till kassan">→</button><span>Till rum 4</span>
+        </div>
+      </section>
+      <section id="room3GameOver" class="room-game-over-section hidden">
+        <!--class="hidden"-->
         <div>
           <h1 class="all-game-over-header">Game over</h1>
-          <h2 class="subheading-game-over">Köpet gick inte igenom!</h2>
+          <h2 class="subheading-game-over">Du tog fel möbel!</h2>
           <p>
-            Du tog alldeles för många försök på dig och kunde inte genomföra
-            ditt köp. Din dotter blir jätteledsen och börjar skrika, och du
-            inser att den enda lösningen är att släppa alla produkter och åka
-            hem.
+            Tyvärr tog tålamodet slut hos ditt barn och istället för att leta
+            rätt på möbeln måste du nu leta rätt på ditt barn istället.
           </p>
           <p class="right-before-button-room-3">
-            Vill du testa igen eller vill du ge upp och åka hem?
+            När du letat klart, vill du spela igen eller vill du lämna
+            varuhuset?
           </p>
+
           <a class="room-game-over-btn" href="">
             <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
           </a>
         </div>
       </section>
-      <section class="room-game-over-section room-5 hidden" id="room5">
-        <div>
-          <h1>Utgången</h1>
-          <h2>Grattis, du har lyckats ta dig ut från IKEA!</h2>
-          <p>
-            Efter många om och men har vi tagit oss från barnavdelningen, hela
-            vägen till utgången, utan att fastna på vägen. Lägg därtill en glad
-            dotter samt att vi lyckades hitta alla saker som skulle inhandlas,
-            så får vi säga att det blev en lyckad handling!
-          </p>
-          <p>
-            Din sluttid på spelet blev <span id="room5GameTime"></span>. Nedan
-            kan du se vart det placerar dig på highscore-listan!
-          </p>
-        </div>
-        <div class="highscore-modal">
-          <h2>Highscore</h2>
-          <ol id="finishedGameHSEl"></ol>
-        </div>
-
-        <button id="homeFromHSBtn">Tillbaka till startsidan</button>
-      </section>
-
-      <section id="gameOverRoom"></section>
-      
-      <section class="cancel-game-btn-wrapper" id="cancelGameBtnWrapper">
-        <div class="hidden room-game-over-btn cancel-game-btn">
-          <span>Avsluta spelet</span>
-          <button id="cancelGameBtn" aria-label="Avsluta spelet knapp"><img class="close-icon-btn" src="/close-white.svg"></button>
-        </div>    
-      </section>
-
-    </main>
-    <footer>
-      <div class="footer-wrapper-main">
-        <div class="footer-wrapper-left">
-          <button class="footer-about-us aboutBtn">
-            <h3 class="footer-h3">Om oss</h3>
+      <div class="overlayRoom3" id="warnOverlayRoom3">
+        <div class="popupRoom3">
+          <div class="warningSymbol">⚠</div>
+          <h2>Fel möbel</h2>
+          <p>Var försiktig, du har bara ett försök kvar.</p>
+          <button class="popup-room-3-btn" id="closeWarnPopupRoom3Btn">
+            Försök igen
           </button>
+        </div>
+      </div>
+    </section>
+    <!-- ================================== -->
+    <!-- ============= RUM 4 ============== -->
+    <!-- ================================== -->
+    <section class="main-rooms room-4 hidden" id="room4">
+      <div id="headerRoom4Wrapper" class="for-all-room-header-wrapper">
+        <h1>Kassan</h1>
+        <div>
+          <p class="for-all-room-header">Rum 4</p>
+        </div>
+      </div>
+
+      <!-- Introduktion Rum 4 -->
+      <div id="room4Start" class="room-4-start">
+        <h2>Välkommen till rum 4</h2>
+        <p>
+          <span class="bold-blue-text-p">Äntligen framme vid kassan!</span> Du
+          har lyckats ta dig genom hela varuhuset med alla varor i vagnen. Nu
+          återstår bara en sak — att betala.
+        </p>
+        <p>
+          Men det finns ett problem. Du har glömt din pinkod. Tur i oturen har
+          du ett minne som kanske räcker — om du kan memorera de gula rutorna
+          och komma ihåg siffrorna som visas.
+        </p>
+        <p>
+          Du har <span class="bold-blue-text-p">3 försök</span> på memoryt och
+          <span class="bold-blue-text-p">3 försök</span> på att slå in rätt
+          kod. Misslyckas du går larmet och du får börja om.
+        </p>
+        <div class="intro-room-btn">
+          <button id="room4StartBtn">→</button>
+          <span>Till rum 4</span>
+        </div>
+      </div>
+
+      <!-- Memory -->
+      <div id="room4memory" class="room-4-memory" hidden>
+        <p class="room4-instructions" id="room4-instructions" aria-live="polite">
+          Memorera var de gula rutorna är och dess siffror!
+        </p>
+
+        <p class="room4-timer" id="room4-timer" aria-live="polite" aria-atomic="true">
+          00:00
+        </p>
+
+        <button type="button" id="room4-start-btn" class="show-yellow-cards-btn">
+          Visa de gula rutorna
+        </button>
+
+        <div class="room4-grid" id="room4-grid">
+          <div class="room4-cell" data-index="0" role="button" tabindex="0" aria-label="ruta 1"></div>
+          <div class="room4-cell" data-index="1" role="button" tabindex="0" aria-label="ruta 2"></div>
+          <div class="room4-cell" data-index="2" role="button" tabindex="0" aria-label="ruta 3"></div>
+          <div class="room4-cell" data-index="3" role="button" tabindex="0" aria-label="ruta 4"></div>
+          <div class="room4-cell" data-index="4" role="button" tabindex="0" aria-label="ruta 5"></div>
+          <div class="room4-cell" data-index="5" role="button" tabindex="0" aria-label="ruta 6"></div>
+          <div class="room4-cell" data-index="6" role="button" tabindex="0" aria-label="ruta 7"></div>
+          <div class="room4-cell" data-index="7" role="button" tabindex="0" aria-label="ruta 8"></div>
+          <div class="room4-cell" data-index="8" role="button" tabindex="0" aria-label="ruta 9"></div>
+          <div class="room4-cell" data-index="9" role="button" tabindex="0" aria-label="ruta 10"></div>
+        </div>
+
+        <p class="room4-message" id="room4-message" aria-live="polite"></p>
+      </div>
+
+      <!-- Kassakoden -->
+      <div id="room4checkout" hidden>
+        <h3 class="header-room-4">Du är så nära!</h3>
+
+        <p class="room4-checkout-instruction">
+          Skriv in koden från de gula rutorna för att betala dina varor.
+          <span>Kommer du ihåg vad som stod på rutorna?</span>
+        </p>
+        <div class="cart-terminal-wrapper">
+          <div class="summary-and-clue-room-4">
+            <div class="room4-cart">
+              <h4>Sammanfattning</h4>
+              <ul class="room4-cart-list">
+                <li><span>BILLY</span><span>399 kr</span></li>
+                <li><span>KAJPLATS</span><span>59 kr</span></li>
+                <li><span>UPPLYST</span><span>149 kr</span></li>
+              </ul>
+              <div class="room4-cart-total">
+                <span>Totalt</span><span>607 kr</span>
+              </div>
+            </div>
+            <div class="room4-daughter">
+              <figure class="girl-illustration">
+                <img src="/assets/daughter67.png" alt="Liten flicka" />
+              </figure>
+              <div class="room4-daughter-bubble">
+                <p class="daughter-bubble-p">
+                  <span>Pappa är 67 år...</span> nej vänta, 67 år... öh, 6767?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="room4-terminal">
+            <div class="room4-display">
+              <div class="room4-display-price">607,00 kr</div>
+              <div class="room4-display-blipp">
+                <img src="/assets/blipp.png" alt="" width="40" aria-hidden="true" />
+              </div>
+              <div class="room4-display-code">
+                <span id="room4CodeDisplay" aria-live="polite" aria-label="Inmatad kod">----</span>
+              </div>
+            </div>
+
+            <div class="room4-keypad">
+              <button type="button" class="room4-key" data-key="1">1</button>
+              <button type="button" class="room4-key" data-key="2">2</button>
+              <button type="button" class="room4-key" data-key="3">3</button>
+              <button type="button" class="room4-key" data-key="4">4</button>
+              <button type="button" class="room4-key" data-key="5">5</button>
+              <button type="button" class="room4-key" data-key="6">6</button>
+              <button type="button" class="room4-key" data-key="7">7</button>
+              <button type="button" class="room4-key" data-key="8">8</button>
+              <button type="button" class="room4-key" data-key="9">9</button>
+              <button type="button" class="room4-key room4-key-clear" data-key="clear" aria-label="Rensa kod">
+                C
+              </button>
+              <button type="button" class="room4-key" data-key="0">0</button>
+              <button type="button" class="room4-key room4-key-enter" data-key="enter" aria-label="Bekräfta kod">
+                OK
+              </button>
+            </div>
+            <p class="room4-message room-4-last-message" id="room4CheckoutMessage" aria-live="assertive"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="room4GameOver" class="room-game-over-section hidden">
+      <div>
+        <h1 class="all-game-over-header">Game over</h1>
+        <h2 class="subheading-game-over">Köpet gick inte igenom!</h2>
+        <p>
+          Du tog alldeles för många försök på dig och kunde inte genomföra
+          ditt köp. Din dotter blir jätteledsen och börjar skrika, och du
+          inser att den enda lösningen är att släppa alla produkter och åka
+          hem.
+        </p>
+        <p class="right-before-button-room-3">
+          Vill du testa igen eller vill du ge upp och åka hem?
+        </p>
+        <a class="room-game-over-btn" href="">
+          <button id="goToStartBtn" class="go-to-start-btn">Ge upp</button>
+        </a>
+      </div>
+    </section>
+    <section class="room-game-over-section room-5 hidden" id="room5">
+      <div>
+        <h1>Utgången</h1>
+        <h2>Grattis, du har lyckats ta dig ut från IKEA!</h2>
+        <p>
+          Efter många om och men har vi tagit oss från barnavdelningen, hela
+          vägen till utgången, utan att fastna på vägen. Lägg därtill en glad
+          dotter samt att vi lyckades hitta alla saker som skulle inhandlas,
+          så får vi säga att det blev en lyckad handling!
+        </p>
+        <p>
+          Din sluttid på spelet blev <span id="room5GameTime"></span>. Nedan
+          kan du se vart det placerar dig på highscore-listan!
+        </p>
+      </div>
+      <div class="highscore-modal">
+        <h2>Highscore</h2>
+        <ol id="finishedGameHSEl"></ol>
+      </div>
+
+      <button id="homeFromHSBtn">Tillbaka till startsidan</button>
+    </section>
+
+    <section id="gameOverRoom"></section>
+
+    <section class="cancel-game-btn-wrapper" id="cancelGameBtnWrapper">
+      <div class="hidden room-game-over-btn cancel-game-btn">
+        <span>Avsluta spelet</span>
+        <button id="cancelGameBtn" aria-label="Avsluta spelet knapp"><img class="close-icon-btn"
+            src="/close-white.svg"></button>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <div class="footer-wrapper-main">
+      <div class="footer-wrapper-about-us-header">
+        <button class="footer-about-us-header aboutBtn">
+          <h3>Om oss</h3>
+        </button>
+      </div>
+      <div>
+        <div class="footer-about-us-names">
           <a href=""><span>Lina</span></a>
           <a href=""><span>Elena</span></a>
           <a href=""><span>Oscar</span> </a>
           <a href=""><span>Erik</span></a>
         </div>
-        <div class="footer-wrapper-right"></div>
       </div>
-    </footer>
 
-    <div id="highscoreOverlay" class="highscore-overlay hidden" tabindex="-1">
-      <div class="highscore-modal">
-        <h2>Highscore</h2>
-        <ol id="highscoreList"></ol>
-        <button id="highscoreCloseBtn">Stäng</button>
-      </div>
     </div>
+  </footer>
 
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  <div id="highscoreOverlay" class="highscore-overlay hidden" tabindex="-1">
+    <div class="highscore-modal">
+      <h2>Highscore</h2>
+      <ol id="highscoreList"></ol>
+      <button id="highscoreCloseBtn">Stäng</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
