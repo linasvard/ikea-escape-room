@@ -1,4 +1,4 @@
-# Daily standup tisdag 12/3
+# Daily standup torsdag 12/3
 
 ## Lina
 
