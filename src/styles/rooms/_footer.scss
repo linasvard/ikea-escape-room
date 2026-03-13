@@ -1,6 +1,7 @@
 footer {
   height: auto;
   background-color: rgb(245, 245, 245);
+  padding: 20px 0;
 }
 
 .footer-wrapper-main {
@@ -30,6 +31,8 @@ footer {
   justify-self: center;
   width: 300px;
   padding-top: 4px;
+  text-align: center;
+  margin: 5px auto;
   a {
     text-decoration: none;
     color: #484848;
@@ -52,9 +55,15 @@ footer {
   font-weight: 600;
   font-size: 1.3rem;
   margin: 15px 0 0 0;
+  
 }
 .footer-about-us-header:hover {
   all: unset;
   cursor: pointer;
   margin: 15px 0 0 0;
+}
+
+.aboutBtn {
+  position: relative;
+  color: white;
 }

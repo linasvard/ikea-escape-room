@@ -1,10 +1,217 @@
 .about-page {
-  margin: 64px;
-  max-width: 1200px;
+  margin: 40px auto;
+  max-width: 1300px;
+
+  h1 {
+    font-family: "noto-sans", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    text-transform: none;
+    color: #333;
+  }
+
+  h2 {
+    color: #333;
+    font-family: "noto-sans", sans-serif;
+    font-weight: bold;
+  }
+}
+
+.background-section {
+  max-width: 700px;
+
+  h2 {
+    font-weight: 800;
+  }
+
+}
+
+.who-are-we-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  height: fill;
+  background-color: #eee;
+  align-items: stretch;
+}
+
+.profile-img-wrapper {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.hover-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20px 35px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0058a3;
+  color: #eee;
+  text-align: left;
+  justify-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  
+
+  h2 {
+    text-transform: uppercase;
+    color: #eee; 
+    margin-bottom: 6px;
+    font-family: "futura-pt", sans-serif;
+    font-size: 2rem;
+  }
+  
+  p {
+    width: fit-content;
+    margin-top: 0px;
+    margin-bottom: 0;
+    line-height: normal;
+    max-width: 200px;
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.linkedin:hover {
+
+border-radius: 7px;
+outline: 2px solid #eee;
+
+}
+
+.github:hover {
+  border-radius: 25px;
+  outline: 2px solid #eee;
+  outline-offset: 2px;
+}
+
+.social-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.profile-img-wrapper:hover .hover-label {
+  opacity: 1;
+}
+
+.profile-img-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.images-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.about-us-images-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 0;
+  height: fit-content;
+}
+
+
+.text-info-section {
+  background: #ffda1a;
+  padding: 50px 70px;
+}
+
+.about-game-section,
+.who-are-we-section,
+.info-page-extra-info {
+  margin-top: 80px;
+}
+
+.about-game-section {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 30px;
+}
+
+.about-game-text {
+  max-width: 400px;
+  padding: 10px 0;
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+}
+
+.about-game-image {
+  width: fill;
+  height: 500px;
+}
+
+.about-game-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+
+.info-each-room {
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.image-and-text-info {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 30px;
+}
+.room-info {
+  max-width: 350px;
 }
 
 .about-page-names {
   font-weight: 700;
+}
+
+.info-image-wrapper {
+  width: fill;
+  height: 600px;
+
+  h2 {
+    font-size: 3rem;
+    margin-top: 0;
+  }
+  p {
+    max-width: 400px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0058a3;
+  }
+}
+.info-image-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .about-page-extra-info {
@@ -86,4 +293,108 @@
 .close-about-btn:hover span {
   opacity: 1;
   transform: translateX(0);
+}
+
+.specs-used {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  
+
+  h2 {
+    font-size: 3rem;
+    margin-top: 0;
+  }
+  
+  p {
+    max-width: 500px;
+  }
+
+  h2, p {
+    padding: 0;
+    
+  }
+
+}
+
+.spec-tech {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 70px;
+  
+  h2 {
+    font-size: 3rem;
+    margin-top: 0;
+    color: #0058a3;
+  }
+}
+
+.img-div {
+  width: fill;
+  height: 700px;
+}
+
+.img-div img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.img-div-2 {
+  width: fill;
+  height: 500px;
+}
+.img-div-2 img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.how-we-worked {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 50px 0;
+  align-items: top;
+  margin-bottom: 60px;
+  
+  h2 {
+    font-size: 3rem;
+    margin: 0;
+    color: #0058a3;
+  }
+
+  p {
+    max-width: 550px;
+  }
+}
+
+.how-we-worked {
+  margin-top: 90px;
+}
+
+.learned-and-why-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 90px;
+  gap: 30px;
+  
+  h2, h3, ul {
+    font-family: "noto-sans", sans-serif;
+    font-size: 1rem;
+  }
+
+  h2, h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  ul, p {
+    max-width: 550px;
+  }
 }
