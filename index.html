@@ -149,7 +149,7 @@
             <div class="images-row">
               <div class="profile-img-wrapper">
                 <img src="/elena-portratt.jpg">
-                <div class="hover-label lina-label">
+                <div class="hover-label elena-label">
                   <div>
                     <h2>Elena Holmberg, 43</h2>
                     <p>
@@ -191,12 +191,42 @@
             </div>  
             <div class="images-row">
               <div class="profile-img-wrapper">
-                <img src="">
-                <div class="hover-label">Lina</div>
+                <img src="placeholder-oscar.svg">
+                <div class="hover-label oscar-label">
+                  <div>
+                    <h2>Oscar Holmblad, 23</h2>
+                    <p>
+                      Front-end student
+                    </p>
+                  </div>
+                  <div class="contact-icons">
+                    <a href="https://www.linkedin.com/in/lina-sv%C3%A4rd-b04a12109/" target="_blank">
+                      <img class="social-icon linkedin" src="/linkedin-icon-2.svg">
+                    </a>
+                    <a href="">
+                      <img class="social-icon github" src="/github-icon-2.svg">
+                    </a>
+                  </div>  
+                </div>
               </div>
               <div class="profile-img-wrapper">
                 <img src="/erik-portratt.jpg">
-                <div class="hover-label erik-label">Lina</div>
+                <div class="hover-label erik-label">
+                  <div>
+                    <h2>Erik Grahn, 34</h2>
+                    <p>
+                      Front-end student & utbildad låtskrivare/musikproducent.
+                    </p>
+                  </div>
+                  <div class="contact-icons">
+                    <a href="https://www.linkedin.com/in/lina-sv%C3%A4rd-b04a12109/" target="_blank">
+                      <img class="social-icon linkedin" src="/linkedin-icon-2.svg">
+                    </a>
+                    <a href="">
+                      <img class="social-icon github" src="/github-icon-2.svg">
+                    </a>
+                  </div>  
+                </div>
               </div>
             </div>  
           </div>
@@ -224,143 +254,198 @@
 
         </div>  
           
-
-        <h2 class="about-page-header-2">Spelet</h2>
-        <p>
-          Spelet vi har utvecklat heter "<span class="about-page-ikea"
-            >IKEA</span
-          >
-          escape-room". Målet är att ta sig från ingången till utgången i ett
-          <span class="about-page-ikea">IKEA</span>-varuhus genom att lösa olika
-          utmaningar längs vägen. Spelet består av fyra olika rum där varje rum
-          innehåller ett eget spelmoment.
-        </p>
-
+        <div class="about-game-section">
+          <div class="about-game-text">
+            <h2 class="about-page-header-2">Spelet</h2>
+            <p>
+              Spelet vi har utvecklat heter "<span class="about-page-ikea"
+                >IKEA</span
+              >
+              Escape Room". Målet är att ta sig från ingången till utgången i ett
+              <span class="about-page-ikea">IKEA</span>-varuhus genom att lösa olika
+              utmaningar längs vägen. Spelet består av fyra olika rum där varje rum
+              innehåller ett eget spelmoment.
+            </p>
+          </div>
+          <div class="about-game-image">
+            <img src="/ikea-info-sign.jpg">
+          </div>  
+        </div>  
         <div class="info-page-extra-info">
-          <h3 class="about-page-header-3">Rum 1: Barnavdelningen</h3>
-          <p>
-            Spelaren måste navigera genom barnavdelningen samtidigt som ett barn
-            försöker övertala dig att köpa saker som inte finns på inköpslistan.
-            För att komma vidare måste spelaren välja rätt svar och undvika att
-            utlösa ett utbrott.
-          </p>
-          <h3 class="about-page-header-3">Rum 2: Lampavdelningen</h3>
-          <p>
-            I detta rum ska spelaren tända lampor i rätt ordning för att hitta
-            den specifika lampa som ska läggas i kundkorgen.
-          </p>
+          <div class="image-and-text-info">
 
-          <h3 class="about-page-header-3">Rum 3: Ta-själv-lagret</h3>
-          <p>
-            Här måste spelaren lösa en rebus för att hitta rätt hylla och fack i
-            lagret - ett klassiskt
-            <span class="about-page-ikea">IKEA</span>-moment där man försöker
-            minnas exakt vilken produkt man egentligen skulle hämta.
-          </p>
-          <h3 class="about-page-header-3">Rum 4 - Kassan</h3>
-          <p>
-            I det sista rummet ska spelaren försöka komma ihåg rätt kod till
-            sitt betalkort inom en begränsad tid.
-          </p>
-          <p>
-            När spelaren klarar alla rum registreras den totala tiden och sparas
-            i en highscore-lista.
-          </p>
-          <h2 class="about-page-header-2">Vilka tekniker har vi använt?</h2>
-          <p>
-            I detta projekt har vi valt att arbeta med
-            <span class="about-page-names">TypeScript</span>,
-            <span class="about-page-names">CSS/SASS</span>,
-            <span class="about-page-names">HTML</span> och
-            <span class="about-page-names">Vite</span>. Vi har medvetet valt att
-            bygga spelet utan ramverk, såsom React eller Vue, för att få en
-            djupare förståelse för hur moderna webbapplikationer fungerar på en
-            mer grundläggande nivå.
-          </p>
-          <p>
-            <span class="about-page-names">HTML</span> har använts för att
-            strukturera spelets innehåll och skapa de olika vyerna och
-            interaktiva elementen i spelet.
-            <span class="about-page-names">CSS</span> och
-            <span class="about-page-names">SASS</span> har använts för styling
-            och layout. Genom att använda
-            <span class="about-page-names">SASS</span> har vi kunnat organisera
-            vår styling bättre med variabler och en mer strukturerad kod.
-          </p>
-          <p>
-            Spelets logik är skriven i
-            <span class="about-page-names">TypeScript</span>.
-            <span class="about-page-names">TypeScript</span> har gjort det
-            lättare för oss att upptäcka fel redan under utvecklingen, något som
-            har underlättat för oss då vi arbetat i grupp. Detta har hjälpt oss
-            att skriva mer säker, tydlig och förutsägbar kod.
-          </p>
-          <p>
-            Som utvecklingsmiljö har vi använt oss utav
-            <span class="about-page-names">Vite</span>. Det har gett oss en
-            snabb utvecklingsserver, bundling och smidig hantering av våra
-            moduler.
-          </p>
+          
+            <div class="info-image-wrapper">
+              <h2>De olika rummen</h2>
+              <p>Varje enskild gruppmedlem fick i huvudansvar i att 
+                komma fram och koda sitt eget rum.</p>
+              <p>→</p>
+              
+            </div>
+            <div class="info-each-room-wrapper">
 
-          <h2 class="about-page-header-2">Tekniska funktioner</h2>
-          <p>I projektet har vi bland annat implementerat:</p>
-          <ul class="about-page-ul">
-            <li>flera interaktiva spelmoment byggda med DOM-manipulation</li>
-            <li>
-              en progress-bar som kommer ihåg vilket rum spelaren senast var i
-            </li>
-            <li>en speltimer som sparas i webbläsaren med LocalStorage</li>
-            <li>ett highscore-system baserat på spelarens totala tid</li>
-            <li>modulär kodstruktur i TypeScript</li>
-            <li>komponenter och logik för varje spelrum</li>
-          </ul>
+              
+              <div class="info-each-room">
+                <div class="room-info">
+                  <h3 class="about-page-header-3">Rum 1: Barnavdelningen</h3>
+                  <p>
+                    Spelaren måste navigera genom barnavdelningen samtidigt som ett barn
+                    försöker övertala dig att köpa saker som inte finns på inköpslistan.
+                    För att komma vidare måste spelaren välja rätt svar och undvika att
+                    utlösa ett utbrott.
+                  </p>
+                </div> 
+                <div class="room-info">
+                  <h3 class="about-page-header-3">Rum 2: Lampavdelningen</h3>
+                  <p>
+                    I detta rum ska spelaren tända lampor i rätt ordning för att hitta
+                    den specifika lampa som ska läggas i kundkorgen. Om du klickar för många gånger får du game over och måste åka hem.
+                  </p>
+                </div> 
+                  
+                <div class="room-info">
+                  <h3 class="about-page-header-3">Rum 3: Ta-själv-lagret</h3>
+                  <p>
+                    Här måste spelaren lösa en rebus för att hitta rätt hylla och fack i
+                    lagret - ett klassiskt
+                    <span class="about-page-ikea">IKEA</span>-moment där man försöker
+                    minnas exakt vilken produkt man egentligen skulle hämta, var det Pax eller Bily? Tar du fel möbel får du börja om.
+                  </p>
+                </div>  
+                <div class="room-info">
+                  <h3 class="about-page-header-3">Rum 4 - Kassan</h3>
+                  <p>
+                    I det sista rummet ska spelaren försöka komma ihåg rätt kod till
+                    sitt betalkort inom en begränsad tid.
+                  </p>
+                  <p>
+                    När spelaren klarar alla rum registreras den totala tiden och sparas
+                    i en highscore-lista.
+                  </p>
+                  
+                </div> 
+              </div>
+            </div>  
+          </div> 
+          <section class="specs-info-wrapper">  
+            <div class="specs-used">
+              <div>
+                <h2 class="about-page-header-2">Vilka tekniker har vi använt?</h2>
+                <p>
+                  I detta projekt har vi valt att arbeta med
+                  <span class="about-page-names">TypeScript</span>,
+                  <span class="about-page-names">CSS/SASS</span>,
+                  <span class="about-page-names">HTML</span> och
+                  <span class="about-page-names">Vite</span>. Vi har medvetet valt att
+                  bygga spelet utan ramverk, såsom React eller Vue, för att få en
+                  djupare förståelse för hur moderna webbapplikationer fungerar på en
+                  mer grundläggande nivå.
+                </p>
+                <p>
+                  <span class="about-page-names">HTML</span> har använts för att
+                  strukturera spelets innehåll och skapa de olika vyerna och
+                  interaktiva elementen i spelet.
+                  <span class="about-page-names">CSS</span> och
+                  <span class="about-page-names">SASS</span> har använts för styling
+                  och layout. Genom att använda
+                  <span class="about-page-names">SASS</span> har vi kunnat organisera
+                  vår styling bättre med variabler och en mer strukturerad kod.
+                </p>
+                <p>
+                  Spelets logik är skriven i
+                  <span class="about-page-names">TypeScript</span>.
+                  <span class="about-page-names">TypeScript</span> har gjort det
+                  lättare för oss att upptäcka fel redan under utvecklingen, något som
+                  har underlättat för oss då vi arbetat i grupp. Detta har hjälpt oss
+                  att skriva mer säker, tydlig och förutsägbar kod.
+                </p>
+                <p>
+                  Som utvecklingsmiljö har vi använt oss utav
+                  <span class="about-page-names">Vite</span>. Det har gett oss en
+                  snabb utvecklingsserver, bundling och smidig hantering av våra
+                  moduler.
+                </p>
+              </div>  
+              <div class="img-div"> 
+                <img src="/ikea-tool.jpg">
+              </div>
+            </div>  
+            <div class="spec-tech"> 
+              <h2 class="about-page-header-2">Tekniska funktioner</h2>
+              <div>
+                
+                <p>I projektet har vi bland annat implementerat:</p>
+                <ul class="about-page-ul">
+                  <li>flera interaktiva spelmoment byggda med DOM-manipulation</li>
+                  <li>
+                    en progress-bar som kommer ihåg vilket rum spelaren senast var i
+                  </li>
+                  <li>en speltimer som sparas i webbläsaren med LocalStorage</li>
+                  <li>ett highscore-system baserat på spelarens totala tid</li>
+                  <li>modulär kodstruktur i TypeScript</li>
+                  <li>komponenter och logik för varje spelrum</li>
+                </ul>
+              </div>  
+            </div>     
+          </section> 
+          <section class="how-we-worked"> 
+            <h2 class="about-page-header-2">Arbetsprocess</h2>
+            <div> 
+               
+              <p>
+                Projektet genomfördes som ett grupparbete där vi arbetade enligt
+                agila principer. Arbetet delades upp mellan oss i teamet där varje
+                person ansvarade för olika delar av spelet, samtidigt som vi
+                kontinuerligt samarbetade kring integrationen mellan funktionerna.
+              </p>
+              <p>
+                Vi använde Git för versionshantering, där vi arbetade med branches
+                och pull requests för att hantera kodändringar och säkerställa att
+                ny kod granskades innan den integrerades i projektet. Detta gav oss
+                erfarenhet av hur utvecklingsarbete i team fungerar i praktiken.
+              </p>
+            </div>    
+            
+          </section>  
+          <section class="learned-and-why-section">
+             
+            <div>
+              <h3 class="about-page-header-3">
+                Varför detta spel?
+              </h3>
+              <p>
+                När vi började diskutera vilket spel vi ville utveckla ville vi
+                skapa något som både var igenkännbart och lätt att relatera till.
+              </p>
+              <p>
+                Idén att skapa ett escape room i ett
+                <span class="about-page-ikea">IKEA</span>-varuhus uppstod tidigt och
+                kändes direkt som ett roligt och kreativt koncept. Samtidigt gav det
+                oss möjlighet att arbeta med en redan etablerad visuell stil och
+                designprofil, vilket gjorde projektet extra intressant ur ett
+                design- och frontendperspektiv.
+              </p>
+            </div>
+            <div>
+              <h2 class="about-page-header-2">Vad vi har lärt oss</h2>
+              <p>
+                Genom projektet har vi bland annat utvecklat vår förståelse för:
+              </p>
 
-          <h2 class="about-page-header-2">Arbetsprocess</h2>
-          <p>
-            Projektet genomfördes som ett grupparbete där vi arbetade enligt
-            agila principer. Arbetet delades upp mellan oss i teamet där varje
-            person ansvarade för olika delar av spelet, samtidigt som vi
-            kontinuerligt samarbetade kring integrationen mellan funktionerna.
-          </p>
-          <p>
-            Vi använde Git för versionshantering, där vi arbetade med branches
-            och pull requests för att hantera kodändringar och säkerställa att
-            ny kod granskades innan den integrerades i projektet. Detta gav oss
-            erfarenhet av hur utvecklingsarbete i team fungerar i praktiken.
-          </p>
-          <h2 class="about-page-header-2">Vad vi har lärt oss</h2>
-          <p>
-            Genom projektet har vi bland annat utvecklat vår förståelse för:
-          </p>
-
-          <ul class="about-page-ul">
-            <li>hur man strukturerar ett större frontend-projekt</li>
-            <li>modulär JavaScript/TypeScript-kod</li>
-            <li>DOM-manipulation och event-hantering</li>
-            <li>hur man lagrar data lokalt i webbläsaren med LocalStorage</li>
-            <li>samarbete i utvecklingsteam och versionshantering med Git</li>
-            <li>komponenter och logik för varje spelrum</li>
-          </ul>
-
-          <p>
-            Projektet har gett oss praktisk erfarenhet av att gå från idé till
-            en fungerande interaktiv webbapplikation.
-          </p>
-          <h3 class="about-page-header-3">
-            Varför vi skapade just det här spelet
-          </h3>
-          <p>
-            När vi började diskutera vilket spel vi ville utveckla ville vi
-            skapa något som både var igenkännbart och lätt att relatera till.
-          </p>
-          <p>
-            Idén att skapa ett escape room i ett
-            <span class="about-page-ikea">IKEA</span>-varuhus uppstod tidigt och
-            kändes direkt som ett roligt och kreativt koncept. Samtidigt gav det
-            oss möjlighet att arbeta med en redan etablerad visuell stil och
-            designprofil, vilket gjorde projektet extra intressant ur ett
-            design- och frontendperspektiv.
-          </p>
+              <ul class="about-page-ul">
+                <li>hur man strukturerar ett större frontend-projekt</li>
+                <li>modulär JavaScript/TypeScript-kod</li>
+                <li>DOM-manipulation och event-hantering</li>
+                <li>hur man lagrar data lokalt i webbläsaren med LocalStorage</li>
+                <li>samarbete i utvecklingsteam och versionshantering med Git</li>
+                <li>komponenter och logik för varje spelrum</li>
+              </ul>
+              <p>
+                Projektet har gett oss praktisk erfarenhet av att gå från idé till
+                en fungerande interaktiv webbapplikation.
+              </p>
+            </div>
+          </section>    
           <div class="about-us-btn-wrapper">
             <button class="aboutBtn">Stäng "Om oss"</button>
           </div>
