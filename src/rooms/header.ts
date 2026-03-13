@@ -14,12 +14,15 @@ export default function initHeader() {
       document.querySelector("#storePage");
     locationInfo?.classList.toggle("store-hidden");
   }
+
+  // there are multiple about buttons so we get a NodeList
   const aboutBtns: NodeListOf<HTMLButtonElement> =
     document.querySelectorAll(".aboutBtn");
   aboutBtns.forEach((btn) => {
     btn.addEventListener("click", displayAboutPage);
   });
 
+  // keep track of which room we hid when the about page opened
   let lastVisibleRoom: HTMLElement | null = null;
 
   function displayAboutPage() {
@@ -29,6 +32,7 @@ export default function initHeader() {
     const opening = aboutPage.classList.contains("hidden");
 
     if (opening) {
+      // find currently visible room and hide it
       const currentRoom: HTMLElement | null =
         document.querySelector<HTMLElement>(".main-rooms:not(.hidden)");
       if (currentRoom) {
@@ -37,6 +41,7 @@ export default function initHeader() {
       }
       aboutPage.classList.remove("hidden");
     } else {
+      // closing the about page: restore the room we hid earlier
       aboutPage.classList.add("hidden");
       if (lastVisibleRoom) {
         lastVisibleRoom.classList.remove("hidden");
@@ -57,6 +62,7 @@ export default function initHeader() {
     window.location.reload();
   }
 
+
   const pageAudio: HTMLAudioElement | null = document.querySelector("#storeAudio");
   document.querySelector('#storeAudio').volume = 0.05;
   const audioBtn: HTMLButtonElement | null = document.querySelector("#audioBtn");
@@ -75,5 +81,5 @@ export default function initHeader() {
     iconOn.classList.add('hidden');
     }
   });
-
 }
+
