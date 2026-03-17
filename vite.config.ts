@@ -9,7 +9,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/fed25d-js-intro-grupparbete-the-vorticon-vikings/",
+  base: "/ikea-escape-room/",
   build: {
     outDir: "dist",
   },
