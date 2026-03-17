@@ -9,7 +9,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/",
+  base: "/ikea-escape-room/",
   build: {
     outDir: "dist",
   },
