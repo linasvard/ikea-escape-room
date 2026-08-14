@@ -1,7 +1,13 @@
-# 🛋️ IKEA Escape Room
+# IKEA Escape Room
 
 ## Om spelet
 Det som skulle bli en snabb och harmonisk tur till IKEA har förvandlats till ett prövningarnas test. Du har en lista, en plan, och en trött och mycket bestämd femåring vid din sida. Butiken är enorm – ingen genväg, ingen återvändo, bara avdelning efter avdelning. Ta dig igenom 4 avdelningar, lös pusslen och håll humöret i behåll hela vägen till kassan.
+
+## Demo
+[Live-demo 🔗](https://linasvard.github.io/ikea-escape-room/)
+
+<img width="1470" height="840" alt="ikea-demo-comp" src="https://github.com/user-attachments/assets/db772a2c-50e8-4dee-888e-1fcd6b358a53" />
+
 
 ### Bakgrund
 Vi är fyra studenter på Front-End Developer-utbildningen på Medieinstitutet som har skapat detta spel, som en del av ett grupprojekt inom kurserna **JavaScript** och **Agila Metoder**. Varje gruppmedlem har haft i huvudansvar att designa och koda sitt eget rum.
@@ -17,7 +23,7 @@ När vi började diskutera vilket spel vi ville utveckla ville vi skapa något s
 
 Vid klarat spel registreras totaltiden och sparas i highscore-listan. Misslyckas man i något av rummen är det game over, och spelet börjar om från början.
 
-## Spelets upplägg
+### Spelets upplägg
 Spelaren loggar in med sitt namn och tar sig genom rum för rum. Varje rum introduceras med namn och beskrivning innan det startas. Men kom ihåg, om du misslyckas med ett rum raderas din progress och du måste börja om från början. 
 
 ## Funktioner
